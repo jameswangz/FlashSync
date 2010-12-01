@@ -9,6 +9,8 @@
 #import "DetailViewController.h"
 #import "RootViewController.h"
 #import "NSObject-Dialog.h"
+#import "UITableView-WithCell.h"
+
 
 @interface DetailViewController ()
 @property (nonatomic, retain) UIPopoverController *popoverController;
@@ -19,7 +21,8 @@
 
 @implementation DetailViewController
 
-@synthesize toolbar, popoverController, detailItem, detailDescriptionLabel;
+@synthesize popoverController, detailItem;
+@synthesize fullPathLabel;
 
 #pragma mark -
 #pragma mark Managing the detail item
@@ -58,23 +61,12 @@
 #pragma mark Split view support
 
 - (void)splitViewController: (UISplitViewController*)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem*)barButtonItem forPopoverController: (UIPopoverController*)pc {
-    
-    barButtonItem.title = @"Root List";
-    NSMutableArray *items = [[toolbar items] mutableCopy];
-    [items insertObject:barButtonItem atIndex:0];
-    [toolbar setItems:items animated:YES];
-    [items release];
-    self.popoverController = pc;
+	self.popoverController = pc;
 }
 
 
 // Called when the view is shown again in the split view, invalidating the button and popover controller.
 - (void)splitViewController: (UISplitViewController*)svc willShowViewController:(UIViewController *)aViewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem {
-    
-    NSMutableArray *items = [[toolbar items] mutableCopy];
-    [items removeObjectAtIndex:0];
-    [toolbar setItems:items animated:YES];
-    [items release];
     self.popoverController = nil;
 }
 
@@ -89,62 +81,51 @@
 
 
 #pragma mark -
+#pragma mark UITableView DataSource Methods
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+	return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section {
+	return 10;
+}
+
+- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	UITableViewCell *cell = [tableView dequeueOrInit:@"Cell"];
+	cell.textLabel.text = [NSString stringWithFormat: @"File %d", [indexPath row]];
+	return cell;
+}
+
+#pragma mark -
+#pragma mark IBAction Methods
+
+- (IBAction)syncAll {
+	[@"Syncing" showInDialog];
+}
+
+#pragma mark -
 #pragma mark View lifecycle
 
-/*
- // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
-    [super viewDidLoad];
-}
- */
-
-/*
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-*/
-/*
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-*/
-/*
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-}
-*/
-/*
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-}
-*/
 
 - (void)viewDidUnload {
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
     self.popoverController = nil;
+	self.fullPathLabel = nil;
 }
 
 
 #pragma mark -
 #pragma mark Memory management
 
-/*
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-*/
 
 - (void)dealloc {
     [popoverController release];
-    [toolbar release];
-    
     [detailItem release];
-    [detailDescriptionLabel release];
-	[super dealloc];
+	[fullPathLabel release];
+    [super dealloc];
 }
+
 
 @end

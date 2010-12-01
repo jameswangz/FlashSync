@@ -11,7 +11,7 @@
 			<string key="NS.object.0">123</string>
 		</object>
 		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
-			<integer value="40"/>
+			<integer value="55"/>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -92,15 +92,39 @@
 						</object>
 					</array>
 				</object>
-				<object class="IBUIViewController" key="IBUIDetailViewController" id="23693665">
-					<reference key="IBUIToolbarItems" ref="0"/>
+				<object class="IBUINavigationController" key="IBUIDetailViewController" id="550577137">
 					<reference key="IBUIParentViewController" ref="1001026670"/>
-					<string key="IBUINibName">DetailView</string>
+					<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics">
+						<int key="IBUIStatusBarStyle">2</int>
+					</object>
 					<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 						<int key="interfaceOrientation">1</int>
 					</object>
 					<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 					<bool key="IBUIHorizontal">NO</bool>
+					<object class="IBUINavigationBar" key="IBUINavigationBar" id="51744837">
+						<nil key="NSNextResponder"/>
+						<int key="NSvFlags">256</int>
+						<string key="NSFrameSize">{0, 0}</string>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<bool key="IBUIMultipleTouchEnabled">YES</bool>
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+					</object>
+					<array class="NSMutableArray" key="IBUIViewControllers">
+						<object class="IBUIViewController" id="344384300">
+							<object class="IBUINavigationItem" key="IBUINavigationItem" id="723367077">
+								<reference key="IBUINavigationBar"/>
+								<string key="IBUITitle">文件列表</string>
+								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+							</object>
+							<reference key="IBUIParentViewController" ref="550577137"/>
+							<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
+								<int key="interfaceOrientation">1</int>
+							</object>
+							<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+							<bool key="IBUIHorizontal">NO</bool>
+						</object>
+					</array>
 				</object>
 			</object>
 		</array>
@@ -138,30 +162,6 @@
 					</object>
 					<int key="connectionID">44</int>
 				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">detailViewController</string>
-						<reference key="source" ref="963208320"/>
-						<reference key="destination" ref="23693665"/>
-					</object>
-					<int key="connectionID">45</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">detailViewController</string>
-						<reference key="source" ref="720143809"/>
-						<reference key="destination" ref="23693665"/>
-					</object>
-					<int key="connectionID">46</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">delegate</string>
-						<reference key="source" ref="1001026670"/>
-						<reference key="destination" ref="23693665"/>
-					</object>
-					<int key="connectionID">49</int>
-				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -197,7 +197,7 @@
 						<reference key="object" ref="1001026670"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="500269011"/>
-							<reference ref="23693665"/>
+							<reference ref="550577137"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -208,11 +208,6 @@
 							<reference ref="720143809"/>
 							<reference ref="663704304"/>
 						</array>
-						<reference key="parent" ref="1001026670"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">39</int>
-						<reference key="object" ref="23693665"/>
 						<reference key="parent" ref="1001026670"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -233,6 +228,33 @@
 						<reference key="object" ref="441316548"/>
 						<reference key="parent" ref="720143809"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">54</int>
+						<reference key="object" ref="550577137"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="344384300"/>
+							<reference ref="51744837"/>
+						</array>
+						<reference key="parent" ref="1001026670"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">55</int>
+						<reference key="object" ref="344384300"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="723367077"/>
+						</array>
+						<reference key="parent" ref="550577137"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">56</int>
+						<reference key="object" ref="51744837"/>
+						<reference key="parent" ref="550577137"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">57</int>
+						<reference key="object" ref="723367077"/>
+						<reference key="parent" ref="344384300"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -245,18 +267,21 @@
 				<string key="37.IBEditorWindowLastContentRect">{{241, 62}, {1039, 694}}</string>
 				<string key="37.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="38.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="39.CustomClassName">DetailViewController</string>
-				<string key="39.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="40.CustomClassName">RootViewController</string>
 				<string key="40.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="41.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="42.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="54.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="55.CustomClassName">DetailViewController</string>
+				<string key="55.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="56.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="57.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">49</int>
+			<int key="maxID">57</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -266,7 +291,6 @@
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="detailDescriptionLabel">UILabel</string>
 						<string key="detailItem">id</string>
-						<string key="titleItem">UIBarItem</string>
 						<string key="toolbar">UIToolbar</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -278,10 +302,6 @@
 							<string key="name">detailItem</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="titleItem">
-							<string key="name">titleItem</string>
-							<string key="candidateClassName">UIBarItem</string>
-						</object>
 						<object class="IBToOneOutletInfo" key="toolbar">
 							<string key="name">toolbar</string>
 							<string key="candidateClassName">UIToolbar</string>
@@ -289,7 +309,7 @@
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Classes/DetailViewController.h</string>
+						<string key="minorKey">Classes/controllers/DetailViewController.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -328,7 +348,7 @@
 					<string key="className">NSObject</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Classes/NSObject-Dialog.h</string>
+						<string key="minorKey">Classes/helper/NSObject-Dialog.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -347,7 +367,7 @@
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Classes/RootViewController.h</string>
+						<string key="minorKey">Classes/controllers/RootViewController.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
