@@ -1,0 +1,219 @@
+// !$*UTF8*$!
+{
+	1A1DEBBE12A68F2C00C7053B /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 1A05643512A5578200C1D423 /* NSObject-Dialog.m */;
+	};
+	1A1DEBBF12A68F2C00C7053B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A1DEBC012A68F2C00C7053B /* NSObject-Dialog.m */;
+		name = "NSObject-Dialog.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 483;
+		vrLoc = 0;
+	};
+	1A1DEBC012A68F2C00C7053B /* NSObject-Dialog.m */ = {
+		isa = PBXFileReference;
+		name = "NSObject-Dialog.m";
+		path = "/Users/James/iphone/FlashSync/Classes/NSObject-Dialog.m";
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {859, 464}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 483}";
+		};
+	};
+	1AB8B78012A2726A00038C19 /* FlashSync */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = FlashSync;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+		variableFormatDictionary = {
+		};
+	};
+	1AB8B78E12A2728A00038C19 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	1AB8B78F12A2728A00038C19 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	1AB8B7CA12A294F000038C19 /* DetailViewController.m:62 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 2804200A108E984D000629CD /* DetailViewController.m */;
+		functionName = "-splitViewController:willHideViewController:withBarButtonItem:forPopoverController:";
+		hitCount = 1;
+		ignoreCount = 0;
+		lineNumber = 62;
+		location = FlashSync;
+		modificationTime = 312644861.6078981;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	1AB8B7CC12A294F200038C19 /* DetailViewController.m:74 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 2804200A108E984D000629CD /* DetailViewController.m */;
+		functionName = "-splitViewController:willShowViewController:invalidatingBarButtonItem:";
+		hitCount = 1;
+		ignoreCount = 0;
+		lineNumber = 74;
+		location = FlashSync;
+		modificationTime = 312645037.936313;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	1D3623240D0F684500981E51 /* FlashSyncAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1206, 588}}";
+			sepNavSelRange = "{329, 21}";
+			sepNavVisRange = "{0, 782}";
+			sepNavWindowFrame = "{{15, 62}, {1265, 716}}";
+		};
+	};
+	1D3623250D0F684500981E51 /* FlashSyncAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {2244, 1168}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{416, 1245}";
+			sepNavWindowFrame = "{{15, 62}, {1265, 716}}";
+		};
+	};
+	1D6058900D05DD3D006BFB54 /* FlashSync */ = {
+		activeExec = 0;
+		executables = (
+			1AB8B78012A2726A00038C19 /* FlashSync */,
+		);
+	};
+	28042007108E984D000629CD /* RootViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1206, 565}}";
+			sepNavSelRange = "{324, 0}";
+			sepNavVisRange = "{0, 417}";
+			sepNavWindowFrame = "{{15, 62}, {1265, 716}}";
+		};
+	};
+	28042008108E984D000629CD /* RootViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1206, 1478}}";
+			sepNavSelRange = "{1243, 0}";
+			sepNavVisRange = "{1035, 1141}";
+			sepNavWindowFrame = "{{15, 62}, {1265, 716}}";
+		};
+	};
+	28042009108E984D000629CD /* DetailViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1206, 565}}";
+			sepNavSelRange = "{594, 0}";
+			sepNavVisRange = "{0, 600}";
+			sepNavWindowFrame = "{{15, 62}, {1265, 716}}";
+		};
+	};
+	2804200A108E984D000629CD /* DetailViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {859, 2384}}";
+			sepNavSelRange = "{408, 0}";
+			sepNavVisRange = "{205, 605}";
+			sepNavWindowFrame = "{{15, 62}, {1265, 716}}";
+		};
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 1AB8B78012A2726A00038C19 /* FlashSync */;
+		activeSDKPreference = iphoneos3.2;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* FlashSync */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* FlashSync */,
+		);
+		breakpoints = (
+			1AB8B7CA12A294F000038C19 /* DetailViewController.m:62 */,
+			1AB8B7CC12A294F200038C19 /* DetailViewController.m:74 */,
+		);
+		codeSenseManager = 1AB8B78F12A2728A00038C19 /* Code sense */;
+		executables = (
+			1AB8B78012A2726A00038C19 /* FlashSync */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					681,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 312905429;
+			PBXWorkspaceStateSaveDate = 312905429;
+		};
+		perUserProjectItems = {
+			1A1DEBBE12A68F2C00C7053B /* PBXBookmark */ = 1A1DEBBE12A68F2C00C7053B /* PBXBookmark */;
+			1A1DEBBF12A68F2C00C7053B /* PBXTextBookmark */ = 1A1DEBBF12A68F2C00C7053B /* PBXTextBookmark */;
+		};
+		sourceControlManager = 1AB8B78E12A2728A00038C19 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	8D1107310486CEB800E47090 /* FlashSync-Info.plist */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{15, 62}, {1265, 716}}";
+		};
+	};
+}
