@@ -21,7 +21,8 @@
 
 @implementation DetailViewController
 
-@synthesize popoverController, detailItem;
+@synthesize popoverController;
+@synthesize detailItem;
 @synthesize fullPathLabel;
 
 #pragma mark -
@@ -35,6 +36,7 @@
         [detailItem release];
         detailItem = [newDetailItem retain];
         
+		[newDetailItem showInDialog];
         // Update the view.
         [self configureView];
     }

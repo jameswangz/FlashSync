@@ -8,6 +8,8 @@
 
 #import "RootViewController.h"
 #import "DetailViewController.h"
+#import "UITableView-WithCell.h"
+#import "Constants.h"
 
 
 @implementation RootViewController
@@ -46,17 +48,8 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     static NSString *CellIdentifier = @"CellIdentifier";
-    
-    // Dequeue or create a cell of the appropriate type.
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    }
-    
-    // Configure the cell.
+    UITableViewCell *cell = [tableView dequeueOrInit:CellIdentifier];
     cell.textLabel.text = (NSString *) [navigationItems objectAtIndex:[indexPath row]];
     return cell;
 }
@@ -66,11 +59,14 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    /*
-     When a row is selected, set the detail view controller's detail item to the item associated with the selected row.
-     */
-    detailViewController.detailItem = [NSString stringWithFormat:@"Row %d", indexPath.row];
+	NSString * type = nil;
+	int row = [indexPath row];
+	if (row == 0) {
+		type = kImported;
+	} else {
+		type = kFlashDisk;
+	}
+    detailViewController.detailItem = type;
 }
 
 
