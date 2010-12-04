@@ -12,7 +12,7 @@
 
 @interface RootViewController : UITableViewController {
     DetailViewController *detailViewController;
-	NSArray *navigationItems;
+	NSArray *panelItems;
 }
 
 @property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;

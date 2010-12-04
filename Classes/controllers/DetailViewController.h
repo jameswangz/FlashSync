@@ -8,18 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailViewController : UIViewController 
-	<UIPopoverControllerDelegate, UISplitViewControllerDelegate, UITableViewDelegate, UITableViewDataSource> {
+@interface DetailViewController : UIViewController<UIPopoverControllerDelegate, UISplitViewControllerDelegate, 
+	UITableViewDelegate, UITableViewDataSource> {
     
     UIPopoverController *popoverController;
     
     id detailItem;
+	
+	NSMutableArray *contentsOfCurrentFolder;
+
 	UILabel *fullPathLabel;
+	UITableView *contentsTableView;
 }
 
 
 @property (nonatomic, retain) id detailItem;
 @property (nonatomic, retain) IBOutlet UILabel *fullPathLabel;
+@property (nonatomic, retain) IBOutlet UITableView *contentsTableView;
 
 - (IBAction)syncAll;
 

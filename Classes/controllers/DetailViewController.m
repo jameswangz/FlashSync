@@ -12,6 +12,7 @@
 #import "UITableView-WithCell.h"
 #import "NSDataUtils.h"
 #import "Constants.h"
+#import "File.h"
 
 @interface DetailViewController ()
 @property (nonatomic, retain) UIPopoverController *popoverController;
@@ -25,6 +26,7 @@
 @synthesize popoverController;
 @synthesize detailItem;
 @synthesize fullPathLabel;
+@synthesize contentsTableView;
 
 #pragma mark -
 #pragma mark Managing the detail item
@@ -47,14 +49,25 @@
 
 
 - (void)configureView {
-	NSString *folder = [NSString stringWithFormat:@"%@", self.detailItem];
-	[folder showInDialog];
+	NSDictionary *dict = self.detailItem;
+	NSString *path = [dict objectForKey:@"path"];
+	self.title = [dict objectForKey:@"name"];
 	NSError *error;
-	NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[NSDataUtils pathForFolder:folder] error:&error];
-	for (NSString *c in contents) {
-		NSLog(@"%@", c);
-		[c showInDialog];
+	NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[NSDataUtils pathForFolder:path] error:&error];
+	NSLog(@"contents : %@", contents);
+
+	[contentsOfCurrentFolder removeAllObjects];
+	
+	for (NSString *name in contents) {
+		NSLog(@"content : %@", name);
+		NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfItemAtPath:[NSDataUtils pathForFolder:path name:name] error:nil];
+		NSLog(@"attrs : %@", attrs);
+		[contentsOfCurrentFolder addObject:[[File alloc] initWithName:name path:nil attributes:attrs]];
 	}
+	
+	NSLog(@"contentsOfCurrentFolder : %@", contentsOfCurrentFolder);
+	
+	[self.contentsTableView reloadData];
 }
 
 
@@ -89,12 +102,19 @@
 }
 
 - (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section {
-	return 10;
+	return [contentsOfCurrentFolder count];
 }
 
-- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	UITableViewCell *cell = [tableView dequeueOrInit:@"Cell"];
-	cell.textLabel.text = [NSString stringWithFormat: @"File %d", [indexPath row]];
+- (UITableViewCell *) tableView:(UITableView *)table cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	UITableViewCell *cell = [table dequeueOrInit:@"Cell"];
+	File *file = [contentsOfCurrentFolder objectAtIndex:[indexPath row]];
+	id type = [file.attributes objectForKey:NSFileType];
+	if (type == NSFileTypeDirectory) {
+		NSLog(@"dir");
+	} else if (type == NSFileTypeRegular) {
+		NSLog(@"file");
+	}	
+	cell.textLabel.text = file.name;
 	return cell;
 }
 
@@ -110,6 +130,7 @@
 
 - (void)viewDidLoad {
 	[self createImportedFolderIfRequired];
+	contentsOfCurrentFolder = [[NSMutableArray alloc] init];
 }
 
 - (void)viewDidUnload {
@@ -117,6 +138,7 @@
     // e.g. self.myOutlet = nil;
     self.popoverController = nil;
 	self.fullPathLabel = nil;
+	self.contentsTableView = nil;
 }
 
 
@@ -128,6 +150,8 @@
     [popoverController release];
     [detailItem release];
 	[fullPathLabel release];
+	[contentsTableView release];
+	[contentsOfCurrentFolder release];
     [super dealloc];
 }
 

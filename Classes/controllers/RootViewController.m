@@ -11,7 +11,6 @@
 #import "UITableView-WithCell.h"
 #import "Constants.h"
 
-
 @implementation RootViewController
 
 @synthesize detailViewController;
@@ -24,7 +23,7 @@
     [super viewDidLoad];
     self.clearsSelectionOnViewWillAppear = NO;
     self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
-	navigationItems = [[NSArray alloc] initWithObjects:@"已导入文件", @"U 盘文件", nil];
+	panelItems = [[NSArray alloc] initWithObjects:@"已导入文件", @"U 盘文件", nil];
 }
 
 
@@ -43,14 +42,14 @@
 
 
 - (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)section {
-	return [navigationItems count];
+	return [panelItems count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"CellIdentifier";
     UITableViewCell *cell = [tableView dequeueOrInit:CellIdentifier];
-    cell.textLabel.text = (NSString *) [navigationItems objectAtIndex:[indexPath row]];
+    cell.textLabel.text = (NSString *) [panelItems objectAtIndex:[indexPath row]];
     return cell;
 }
 
@@ -59,14 +58,18 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	NSString * type = nil;
+	NSString * path = nil;
 	int row = [indexPath row];
 	if (row == 0) {
-		type = kImported;
+		path = kImported;
 	} else {
-		type = kFlashDisk;
+		path = kFlashDisk;
 	}
-    detailViewController.detailItem = type;
+	
+	NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+	[dict setObject:path forKey:@"path"];
+	[dict setObject:[panelItems objectAtIndex:[indexPath row]] forKey:@"name"];
+    detailViewController.detailItem = dict;
 }
 
 
@@ -82,7 +85,7 @@
 
 - (void)dealloc {
     [detailViewController release];
-	[navigationItems release];
+	[panelItems release];
     [super dealloc];
 }
 
