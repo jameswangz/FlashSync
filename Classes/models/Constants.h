@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 
-#define kImported @"imported"
-#define kFlashDisk @"flashdisk"
+#define kImported @"Imported"
+#define kFlashDisk @"FlashDisk"
 
 @interface Constants : NSObject {
 

@@ -10,6 +10,7 @@
 		1A05643712A5578200C1D423 /* NSObject-Dialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A05643512A5578200C1D423 /* NSObject-Dialog.m */; };
 		1A1DEC2E12A6990200C7053B /* UITableView-WithCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1DEC2C12A6990100C7053B /* UITableView-WithCell.m */; };
 		1A1DEC4912A69D5900C7053B /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1DEC4812A69D5900C7053B /* Constants.m */; };
+		1A69181F12AA2AE100686504 /* NSDataUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A69181D12AA2AE100686504 /* NSDataUtils.m */; };
 		1D3623260D0F684500981E51 /* FlashSyncAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* FlashSyncAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -28,6 +29,8 @@
 		1A1DEC2D12A6990200C7053B /* UITableView-WithCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView-WithCell.h"; sourceTree = "<group>"; };
 		1A1DEC4712A69D5900C7053B /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		1A1DEC4812A69D5900C7053B /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		1A69181D12AA2AE100686504 /* NSDataUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataUtils.m; sourceTree = "<group>"; };
+		1A69181E12AA2AE100686504 /* NSDataUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataUtils.h; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* FlashSyncAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashSyncAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* FlashSyncAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashSyncAppDelegate.m; sourceTree = "<group>"; };
@@ -93,6 +96,8 @@
 		1A1DEBBB12A68F1600C7053B /* helper */ = {
 			isa = PBXGroup;
 			children = (
+				1A69181D12AA2AE100686504 /* NSDataUtils.m */,
+				1A69181E12AA2AE100686504 /* NSDataUtils.h */,
 				1A1DEC2C12A6990100C7053B /* UITableView-WithCell.m */,
 				1A1DEC2D12A6990200C7053B /* UITableView-WithCell.h */,
 				1A05643512A5578200C1D423 /* NSObject-Dialog.m */,
@@ -220,6 +225,7 @@
 				1A05643712A5578200C1D423 /* NSObject-Dialog.m in Sources */,
 				1A1DEC2E12A6990200C7053B /* UITableView-WithCell.m in Sources */,
 				1A1DEC4912A69D5900C7053B /* Constants.m in Sources */,
+				1A69181F12AA2AE100686504 /* NSDataUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,13 +10,14 @@
 #import "RootViewController.h"
 #import "NSObject-Dialog.h"
 #import "UITableView-WithCell.h"
-
+#import "NSDataUtils.h"
+#import "Constants.h"
 
 @interface DetailViewController ()
 @property (nonatomic, retain) UIPopoverController *popoverController;
 - (void)configureView;
+- (void)createImportedFolderIfRequired;
 @end
-
 
 
 @implementation DetailViewController
@@ -35,9 +36,7 @@
     if (detailItem != newDetailItem) {
         [detailItem release];
         detailItem = [newDetailItem retain];
-        
-		[newDetailItem showInDialog];
-        // Update the view.
+		// Update the view.
         [self configureView];
     }
 
@@ -48,10 +47,10 @@
 
 
 - (void)configureView {
-	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	NSString *docPath = [paths objectAtIndex:0];
+	NSString *folder = [NSString stringWithFormat:@"%@", self.detailItem];
+	[folder showInDialog];
 	NSError *error;
-	NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:docPath error:&error];
+	NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[NSDataUtils pathForFolder:folder] error:&error];
 	for (NSString *c in contents) {
 		NSLog(@"%@", c);
 		[c showInDialog];
@@ -109,6 +108,9 @@
 #pragma mark -
 #pragma mark View lifecycle
 
+- (void)viewDidLoad {
+	[self createImportedFolderIfRequired];
+}
 
 - (void)viewDidUnload {
     // Release any retained subviews of the main view.
@@ -127,6 +129,13 @@
     [detailItem release];
 	[fullPathLabel release];
     [super dealloc];
+}
+
+#pragma mark -
+#pragma mark Initialization Methods
+
+- (void)createImportedFolderIfRequired {
+	[NSDataUtils createFolderIfRequired:kImported];
 }
 
 
