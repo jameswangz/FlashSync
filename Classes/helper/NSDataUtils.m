@@ -40,8 +40,8 @@
 	BOOL dir = YES;
 	BOOL exists = [fileManager fileExistsAtPath:path isDirectory:&dir];
 	if (!exists) {
-		NSError **error = nil;
-		[fileManager createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:error];
+		NSError *error = nil;
+		[fileManager createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:&error];
 		if (error != nil) {
 			NSLog(@"%@", error);
 		} else {

@@ -54,18 +54,13 @@
 	self.title = [dict objectForKey:kName];
 	NSError *error;
 	NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[NSDataUtils pathForFolder:path] error:&error];
-	NSLog(@"contents : %@", contents);
-
+	
 	[contentsOfCurrentFolder removeAllObjects];
 	
 	for (NSString *name in contents) {
-		NSLog(@"content : %@", name);
 		NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfItemAtPath:[NSDataUtils pathForFolder:path name:name] error:nil];
-		NSLog(@"attrs : %@", attrs);
 		[contentsOfCurrentFolder addObject:[[File alloc] initWithName:name path:nil attributes:attrs]];
 	}
-	
-	NSLog(@"contentsOfCurrentFolder : %@", contentsOfCurrentFolder);
 	
 	[self.contentsTableView reloadData];
 }
@@ -125,7 +120,29 @@
 #pragma mark IBAction Methods
 
 - (IBAction)syncAll {
-	[@"Syncing" showInDialog];
+	NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[NSDataUtils pathForFolder:kFlashDisk] error:nil];
+	
+	for (NSString *name in contents) {
+		NSError *error = nil;
+		NSString *src = [NSDataUtils pathForFolder:[NSString stringWithFormat:@"%@/%@", kFlashDisk, name]];
+		NSString *dst = [NSDataUtils pathForFolder:[NSString stringWithFormat:@"%@/%@", kImported, name]];
+		
+		BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:dst];
+		if (!fileExists) {
+			BOOL dir = YES;
+			fileExists = [[NSFileManager defaultManager] fileExistsAtPath:dst isDirectory:&dir];
+		}
+		
+		if (fileExists) {
+			NSLog(@"File %@ already exists ", dst);
+			continue;
+		}
+		
+		NSLog(@"Copying %@ to %@", src, dst);
+		Boolean result = [[NSFileManager defaultManager] copyItemAtPath:src	toPath:dst error:&error];
+		NSLog(@"Error : %@", error);
+		NSLog(@"Success : %d", result);
+	}
 }
 
 #pragma mark -
