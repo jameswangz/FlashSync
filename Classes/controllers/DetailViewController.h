@@ -19,14 +19,14 @@
 
 	UILabel *fullPathLabel;
 	UITableView *contentsTableView;
-		
-	NSCondition *condition;
+	UIBarItem *syncButton;
 }
 
 
 @property (nonatomic, retain) id detailItem;
 @property (nonatomic, retain) IBOutlet UILabel *fullPathLabel;
 @property (nonatomic, retain) IBOutlet UITableView *contentsTableView;
+@property (nonatomic, retain) IBOutlet UIBarItem *syncButton;
 
 - (IBAction)syncAll;
 

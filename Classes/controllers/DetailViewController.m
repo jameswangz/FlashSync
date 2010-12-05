@@ -28,6 +28,7 @@
 @synthesize detailItem;
 @synthesize fullPathLabel;
 @synthesize contentsTableView;
+@synthesize syncButton;
 
 #pragma mark -
 #pragma mark Managing the detail item
@@ -133,13 +134,38 @@
 
 }
 - (IBAction)syncAll {
+	UIActionSheet *actionSheet = [[UIActionSheet alloc] 
+								  initWithTitle:@"同步会覆盖已导入的所有文件, 确认吗?"
+								  delegate:self
+								  cancelButtonTitle:@"取消"
+								  destructiveButtonTitle:@"确定" 
+								  otherButtonTitles:nil,
+								  nil];
+	actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
+	[actionSheet showInView:self.view];
+	[actionSheet release];
+}
+
+- (void)disableSyncButton {
+	self.syncButton.title = @"同步中, 请稍候...";
+	self.syncButton.enabled = NO;
+}
+
+- (void)enableSyncButton {
+	self.syncButton.title = @"从 U 盘同步所有文件";
+	self.syncButton.enabled = YES;
+}
+
+- (void)actualSync {
+	[self performSelectorInBackground:@selector(disableSyncButton) withObject:nil];
+	
 	NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[NSDataUtils pathForFolder:kFlashDisk] error:nil];
 	
 	for (NSString *name in contents) {
 		NSError *error = nil;
 		NSString *src = [NSDataUtils pathForFolder:[NSString stringWithFormat:@"%@/%@", kFlashDisk, name]];
 		NSString *dst = [NSDataUtils pathForFolder:[NSString stringWithFormat:@"%@/%@", kImported, name]];
-
+		
 		BOOL dir;
 		NSString *type = @"文件";
 		BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:dst isDirectory:&dir];
@@ -148,16 +174,9 @@
 		}
 		
 		if (fileExists) {
-//			[self performSelectorOnMainThread:@selector(showActionSheet:) 
-//								   withObject:[NSArray arrayWithObjects:type, name, nil] 
-//								waitUntilDone:YES];
 			NSLog(@"Deleting %@", dst);
 			[[NSFileManager defaultManager] removeItemAtPath:dst error:nil];
 		}
-		
-//		[condition lock];
-//		[condition wait];
-//		[condition unlock];
 		
 		NSLog(@"Copying %@ to %@", src, dst);
 		Boolean result = [[NSFileManager defaultManager] copyItemAtPath:src	toPath:dst error:&error];
@@ -165,17 +184,19 @@
 		NSLog(@"Success : %d", result);
 	}
 	
-	[@"同步文件已完成, 请点击左侧 <已导入文件> 查看" showInDialogWithTitle:@"提示信息"]; 
+	
+	[@"同步文件已完成, 请点击左侧 [已导入文件] 查看" showInDialogWithTitle:@"提示信息"];	
+	[self enableSyncButton];
 }
 
 #pragma mark -
 #pragma mark UIActionSheetDelegate Methods
 
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
-	NSLog(@"Selected : %d", buttonIndex);
-//	[condition lock];
-//	[condition broadcast];
-//	[condition unlock];
+	NSLog(@"Selected : %d", buttonIndex);	
+	if (buttonIndex == 0) {
+		[self performSelectorInBackground:@selector(actualSync) withObject:nil];
+	}
 }
 
 #pragma mark -
@@ -184,7 +205,6 @@
 - (void)viewDidLoad {
 	[self createImportedFolderIfRequired];
 	contentsOfCurrentFolder = [[NSMutableArray alloc] init];
-	condition = [[NSCondition alloc] init];
 }
 
 - (void)viewDidUnload {
@@ -193,6 +213,7 @@
     self.popoverController = nil;
 	self.fullPathLabel = nil;
 	self.contentsTableView = nil;
+	self.syncButton = nil;
 }
 
 
@@ -206,8 +227,8 @@
 	[fullPathLabel release];
 	[contentsTableView release];
 	[contentsOfCurrentFolder release];
-	[condition release];
-    [super dealloc];
+	[syncButton release];
+	[super dealloc];
 }
 
 #pragma mark -
