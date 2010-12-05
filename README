@@ -1,0 +1,4 @@
+Install FlashSync.app
+
+ln -s /var/mnt/mount1 `find /var/mobile/Applications -name FlashSync.app`/../Documents/FlashDisk 
+ln -s `find /var/mobile/Applications -name FlashSync.app`/../Documents/Imported/ /var/mobile/Imported

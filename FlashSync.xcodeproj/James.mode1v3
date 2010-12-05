@@ -216,10 +216,11 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>1A4AD46312AB834E00173889</string>
+						<string>1A4AD53012AB988B00173889</string>
 						<key>history</key>
 						<array>
-							<string>1A4AD3ED12AB79A700173889</string>
+							<string>1A4AD4F912AB91AB00173889</string>
+							<string>1A4AD4FA12AB91AB00173889</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -360,7 +361,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Dossier</string>
+								<string>DetailViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -368,22 +369,22 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Dossier</string>
+										<string>DetailViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>1A4AD46212AB834E00173889</string>
+										<string>1A4AD52F12AB988B00173889</string>
 										<key>history</key>
 										<array>
 											<string>1A1DEBBE12A68F2C00C7053B</string>
 											<string>1A1DEC5C12A69E5E00C7053B</string>
 											<string>1A1DEC7312A69EB100C7053B</string>
 											<string>1A69182E12AA2C6500686504</string>
-											<string>1A69197012AA476100686504</string>
 											<string>1A6919B412AA4ABC00686504</string>
 											<string>1A4AD37C12AB6CCD00173889</string>
 											<string>1A4AD3A212AB6E4800173889</string>
-											<string>1A4AD3A312AB6E4800173889</string>
+											<string>1A4AD4A912AB879900173889</string>
+											<string>1A4AD4CE12AB893F00173889</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -581,12 +582,14 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>1A69183C12AA2C6500686504</string>
 		<string>1A4AD38912AB6CCD00173889</string>
 		<string>1A4AD38A12AB6CCD00173889</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>1A4AD38B12AB6CCD00173889</string>
 		<string>1AB8B79C12A278F200038C19</string>
 		<string>/Users/James/iphone/FlashSync/FlashSync.xcodeproj</string>
+		<string>1A4AD4AD12AB879900173889</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1A4AD3BB12AB732200173889</string>
 	</array>
@@ -1225,8 +1228,8 @@
 			<true/>
 			<key>TableOfContents</key>
 			<array>
-				<string>1A69187412AA351600686504</string>
-				<string>1A69187512AA351600686504</string>
+				<string>1A4AD4AD12AB879900173889</string>
+				<string>1A4AD4AE12AB879900173889</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
 				<string>1CA1AED706398EBD00589147</string>
 			</array>
@@ -1235,9 +1238,9 @@
 			<key>WindowString</key>
 			<string>36 346 744 409 0 0 1280 778 </string>
 			<key>WindowToolGUID</key>
-			<string>1A69187412AA351600686504</string>
+			<string>1A4AD4AD12AB879900173889</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
@@ -1469,7 +1472,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1A69183C12AA2C6500686504</string>
-				<string>1A69183D12AA2C6500686504</string>
+				<string>1A4AD51412AB96BF00173889</string>
 				<string>1A69183B12AA2C6500686504</string>
 			</array>
 			<key>WindowString</key>

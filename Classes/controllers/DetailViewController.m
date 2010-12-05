@@ -13,6 +13,7 @@
 #import "NSDataUtils.h"
 #import "Constants.h"
 #import "File.h"
+#import "FlashSyncAppDelegate.h"
 
 @interface DetailViewController ()
 @property (nonatomic, retain) UIPopoverController *popoverController;
@@ -111,14 +112,26 @@
 	} else if (type == NSFileTypeRegular) {
 		cell.imageView.image =[UIImage imageNamed:@"TextEdit.png"];
 		cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-	}	
-	cell.detailTextLabel.text = type;
+	}
 	return cell;
 }
 
 #pragma mark -
 #pragma mark IBAction Methods
 
+- (void) showActionSheet: (NSArray *) params {
+	UIActionSheet *actionSheet = [[UIActionSheet alloc] 
+								  initWithTitle:[NSString stringWithFormat:@"%@ %@ 已存在", [params objectAtIndex:0], [params objectAtIndex:1]]
+								  delegate:self
+								  cancelButtonTitle:@"跳过"
+								  destructiveButtonTitle:@"覆盖" 
+								  otherButtonTitles:@"全部覆盖",
+								  nil];
+	actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
+	[actionSheet showInView:self.view];
+	[actionSheet release];
+
+}
 - (IBAction)syncAll {
 	NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[NSDataUtils pathForFolder:kFlashDisk] error:nil];
 	
@@ -126,23 +139,43 @@
 		NSError *error = nil;
 		NSString *src = [NSDataUtils pathForFolder:[NSString stringWithFormat:@"%@/%@", kFlashDisk, name]];
 		NSString *dst = [NSDataUtils pathForFolder:[NSString stringWithFormat:@"%@/%@", kImported, name]];
-		
-		BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:dst];
-		if (!fileExists) {
-			BOOL dir = YES;
-			fileExists = [[NSFileManager defaultManager] fileExistsAtPath:dst isDirectory:&dir];
+
+		BOOL dir;
+		NSString *type = @"文件";
+		BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:dst isDirectory:&dir];
+		if (dir) {
+			type = @"目录";
 		}
 		
 		if (fileExists) {
-			NSLog(@"File %@ already exists ", dst);
-			continue;
+//			[self performSelectorOnMainThread:@selector(showActionSheet:) 
+//								   withObject:[NSArray arrayWithObjects:type, name, nil] 
+//								waitUntilDone:YES];
+			NSLog(@"Deleting %@", dst);
+			[[NSFileManager defaultManager] removeItemAtPath:dst error:nil];
 		}
+		
+//		[condition lock];
+//		[condition wait];
+//		[condition unlock];
 		
 		NSLog(@"Copying %@ to %@", src, dst);
 		Boolean result = [[NSFileManager defaultManager] copyItemAtPath:src	toPath:dst error:&error];
 		NSLog(@"Error : %@", error);
 		NSLog(@"Success : %d", result);
 	}
+	
+	[@"同步文件已完成, 请点击左侧 <已导入文件> 查看" showInDialogWithTitle:@"提示信息"]; 
+}
+
+#pragma mark -
+#pragma mark UIActionSheetDelegate Methods
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
+	NSLog(@"Selected : %d", buttonIndex);
+//	[condition lock];
+//	[condition broadcast];
+//	[condition unlock];
 }
 
 #pragma mark -
@@ -151,6 +184,7 @@
 - (void)viewDidLoad {
 	[self createImportedFolderIfRequired];
 	contentsOfCurrentFolder = [[NSMutableArray alloc] init];
+	condition = [[NSCondition alloc] init];
 }
 
 - (void)viewDidUnload {
@@ -172,6 +206,7 @@
 	[fullPathLabel release];
 	[contentsTableView release];
 	[contentsOfCurrentFolder release];
+	[condition release];
     [super dealloc];
 }
 

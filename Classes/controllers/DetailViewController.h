@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface DetailViewController : UIViewController<UIPopoverControllerDelegate, UISplitViewControllerDelegate, 
-	UITableViewDelegate, UITableViewDataSource> {
+	UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate> {
     
     UIPopoverController *popoverController;
     
@@ -19,6 +19,8 @@
 
 	UILabel *fullPathLabel;
 	UITableView *contentsTableView;
+		
+	NSCondition *condition;
 }
 
 
