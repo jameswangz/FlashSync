@@ -23,7 +23,9 @@
     [super viewDidLoad];
     self.clearsSelectionOnViewWillAppear = NO;
     self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
-	panelItems = [[NSArray alloc] initWithObjects:@"已导入文件", @"U 盘文件", nil];
+	panelItems = [[NSMutableArray alloc] init];
+	[panelItems addObject:[NSDictionary dictionaryWithObjectsAndKeys:kImported, kPath, @"已导入文件", kName, @"HDD.png", kImage, nil]];
+	[panelItems addObject:[NSDictionary dictionaryWithObjectsAndKeys:kFlashDisk, kPath, @"U 盘文件", kName, @"HDD USB.png", kImage, nil]];
 }
 
 
@@ -49,7 +51,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"CellIdentifier";
     UITableViewCell *cell = [tableView dequeueOrInit:CellIdentifier];
-    cell.textLabel.text = (NSString *) [panelItems objectAtIndex:[indexPath row]];
+	NSDictionary *dict = [panelItems objectAtIndex:[indexPath row]];
+    cell.textLabel.text = [dict objectForKey:kName];
+	cell.imageView.image = [UIImage imageNamed:[dict objectForKey:kImage]];
     return cell;
 }
 
@@ -58,18 +62,7 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	NSString * path = nil;
-	int row = [indexPath row];
-	if (row == 0) {
-		path = kImported;
-	} else {
-		path = kFlashDisk;
-	}
-	
-	NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-	[dict setObject:path forKey:@"path"];
-	[dict setObject:[panelItems objectAtIndex:[indexPath row]] forKey:@"name"];
-    detailViewController.detailItem = dict;
+  detailViewController.detailItem = [panelItems objectAtIndex:[indexPath row]];
 }
 
 

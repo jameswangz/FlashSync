@@ -12,6 +12,10 @@
 #define kImported @"Imported"
 #define kFlashDisk @"FlashDisk"
 
+#define kPath @"path"
+#define kName @"name"
+#define kImage @"image"
+
 @interface Constants : NSObject {
 
 }

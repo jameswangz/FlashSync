@@ -10,6 +10,11 @@
 		1A05643712A5578200C1D423 /* NSObject-Dialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A05643512A5578200C1D423 /* NSObject-Dialog.m */; };
 		1A1DEC2E12A6990200C7053B /* UITableView-WithCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1DEC2C12A6990100C7053B /* UITableView-WithCell.m */; };
 		1A1DEC4912A69D5900C7053B /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1DEC4812A69D5900C7053B /* Constants.m */; };
+		1A4AD35A12AB6A4800173889 /* Dossier.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A4AD35512AB6A4800173889 /* Dossier.png */; };
+		1A4AD35B12AB6A4800173889 /* HDD.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A4AD35612AB6A4800173889 /* HDD.png */; };
+		1A4AD35C12AB6A4800173889 /* HDD USB.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A4AD35712AB6A4800173889 /* HDD USB.png */; };
+		1A4AD35D12AB6A4800173889 /* Pages.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A4AD35812AB6A4800173889 /* Pages.png */; };
+		1A4AD35E12AB6A4800173889 /* TextEdit.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A4AD35912AB6A4800173889 /* TextEdit.png */; };
 		1A69181F12AA2AE100686504 /* NSDataUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A69181D12AA2AE100686504 /* NSDataUtils.m */; };
 		1A6918F012AA403800686504 /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6918EF12AA403800686504 /* File.m */; };
 		1D3623260D0F684500981E51 /* FlashSyncAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* FlashSyncAppDelegate.m */; };
@@ -30,6 +35,11 @@
 		1A1DEC2D12A6990200C7053B /* UITableView-WithCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView-WithCell.h"; sourceTree = "<group>"; };
 		1A1DEC4712A69D5900C7053B /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		1A1DEC4812A69D5900C7053B /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		1A4AD35512AB6A4800173889 /* Dossier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dossier.png; sourceTree = "<group>"; };
+		1A4AD35612AB6A4800173889 /* HDD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HDD.png; sourceTree = "<group>"; };
+		1A4AD35712AB6A4800173889 /* HDD USB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HDD USB.png"; sourceTree = "<group>"; };
+		1A4AD35812AB6A4800173889 /* Pages.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pages.png; sourceTree = "<group>"; };
+		1A4AD35912AB6A4800173889 /* TextEdit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TextEdit.png; sourceTree = "<group>"; };
 		1A69181D12AA2AE100686504 /* NSDataUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataUtils.m; sourceTree = "<group>"; };
 		1A69181E12AA2AE100686504 /* NSDataUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataUtils.h; sourceTree = "<group>"; };
 		1A6918EE12AA403800686504 /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = File.h; sourceTree = "<group>"; };
@@ -120,6 +130,26 @@
 			path = models;
 			sourceTree = "<group>";
 		};
+		1A4AD35312AB697B00173889 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				1A4AD35412AB69A700173889 /* Icons */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		1A4AD35412AB69A700173889 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				1A4AD35512AB6A4800173889 /* Dossier.png */,
+				1A4AD35612AB6A4800173889 /* HDD.png */,
+				1A4AD35712AB6A4800173889 /* HDD USB.png */,
+				1A4AD35812AB6A4800173889 /* Pages.png */,
+				1A4AD35912AB6A4800173889 /* TextEdit.png */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +174,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1A4AD35312AB697B00173889 /* Images */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 				2804203B108E9BAB000629CD /* DetailView.xib */,
 				8D1107310486CEB800E47090 /* FlashSync-Info.plist */,
@@ -213,6 +244,11 @@
 			files = (
 				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
 				2804203C108E9BAB000629CD /* DetailView.xib in Resources */,
+				1A4AD35A12AB6A4800173889 /* Dossier.png in Resources */,
+				1A4AD35B12AB6A4800173889 /* HDD.png in Resources */,
+				1A4AD35C12AB6A4800173889 /* HDD USB.png in Resources */,
+				1A4AD35D12AB6A4800173889 /* Pages.png in Resources */,
+				1A4AD35E12AB6A4800173889 /* TextEdit.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -50,8 +50,8 @@
 
 - (void)configureView {
 	NSDictionary *dict = self.detailItem;
-	NSString *path = [dict objectForKey:@"path"];
-	self.title = [dict objectForKey:@"name"];
+	NSString *path = [dict objectForKey:kPath];
+	self.title = [dict objectForKey:kName];
 	NSError *error;
 	NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[NSDataUtils pathForFolder:path] error:&error];
 	NSLog(@"contents : %@", contents);
@@ -106,15 +106,18 @@
 }
 
 - (UITableViewCell *) tableView:(UITableView *)table cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	UITableViewCell *cell = [table dequeueOrInit:@"Cell"];
+	UITableViewCell *cell = [table dequeueOrInit:@"Cell" withStyle:UITableViewCellStyleSubtitle];
 	File *file = [contentsOfCurrentFolder objectAtIndex:[indexPath row]];
 	id type = [file.attributes objectForKey:NSFileType];
-	if (type == NSFileTypeDirectory) {
-		NSLog(@"dir");
-	} else if (type == NSFileTypeRegular) {
-		NSLog(@"file");
-	}	
 	cell.textLabel.text = file.name;
+	if (type == NSFileTypeDirectory) {
+		cell.imageView.image =[UIImage imageNamed:@"Dossier.png"];
+		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+	} else if (type == NSFileTypeRegular) {
+		cell.imageView.image =[UIImage imageNamed:@"TextEdit.png"];
+		cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+	}	
+	cell.detailTextLabel.text = type;
 	return cell;
 }
 
