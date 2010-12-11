@@ -75,6 +75,7 @@
 	[folders release];
 	[files release];
 }
+
 - (void)configureView {
 	NSDictionary *dict = self.detailItem;
 	NSString *path = [dict objectForKey:kPath];
