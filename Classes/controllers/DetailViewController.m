@@ -131,7 +131,7 @@
 		NSString *path = [[dict valueForKey:kPath] stringByAppendingPathComponent:file.name];
 		NSLog(@"%@", path);
 		detailViewController.pushedFromNavigationController = YES;
-		detailViewController.detailItem = [[NSDictionary alloc] initWithObjectsAndKeys:path, kPath, nil], 
+		detailViewController.detailItem = [[NSDictionary alloc] initWithObjectsAndKeys:path, kPath, file.name, kName, nil];
 		[self.navigationController pushViewController:detailViewController animated:YES];
 	} else {
 		NSLog(@"File");

@@ -20,6 +20,7 @@
     
     RootViewController *rootViewController;
     DetailViewController *detailViewController;
+	UINavigationController *detailNavigationController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
@@ -27,5 +28,6 @@
 @property (nonatomic, retain) IBOutlet UISplitViewController *splitViewController;
 @property (nonatomic, retain) IBOutlet RootViewController *rootViewController;
 @property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
+@property (nonatomic, retain) IBOutlet UINavigationController *detailNavigationController;
 
 @end

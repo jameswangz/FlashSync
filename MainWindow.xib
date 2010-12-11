@@ -177,6 +177,14 @@
 					</object>
 					<int key="connectionID">59</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">detailNavigationController</string>
+						<reference key="source" ref="963208320"/>
+						<reference key="destination" ref="550577137"/>
+					</object>
+					<int key="connectionID">63</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -296,7 +304,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">62</int>
+			<int key="maxID">63</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -347,12 +355,17 @@
 					<string key="className">FlashSyncAppDelegate</string>
 					<string key="superclassName">NSObject</string>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="detailNavigationController">UINavigationController</string>
 						<string key="detailViewController">DetailViewController</string>
 						<string key="rootViewController">RootViewController</string>
 						<string key="splitViewController">UISplitViewController</string>
 						<string key="window">UIWindow</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="detailNavigationController">
+							<string key="name">detailNavigationController</string>
+							<string key="candidateClassName">UINavigationController</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="detailViewController">
 							<string key="name">detailViewController</string>
 							<string key="candidateClassName">DetailViewController</string>

@@ -10,6 +10,7 @@
 #import "DetailViewController.h"
 #import "UITableView-WithCell.h"
 #import "Constants.h"
+#import "FlashSyncAppDelegate.h"
 
 @implementation RootViewController
 
@@ -62,7 +63,9 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  detailViewController.detailItem = [panelItems objectAtIndex:[indexPath row]];
+	FlashSyncAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+	[delegate.detailNavigationController popToRootViewControllerAnimated:YES];
+	detailViewController.detailItem = [panelItems objectAtIndex:[indexPath row]];
 }
 
 

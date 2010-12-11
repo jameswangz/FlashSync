@@ -16,7 +16,7 @@
 @implementation FlashSyncAppDelegate
 
 @synthesize window, splitViewController, rootViewController, detailViewController;
-
+@synthesize detailNavigationController;
 
 #pragma mark -
 #pragma mark Application lifecycle
