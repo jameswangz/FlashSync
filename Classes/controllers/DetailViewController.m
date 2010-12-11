@@ -192,8 +192,8 @@
 	self.syncButton.enabled = YES;
 }
 
-- (void)actualSync {
-	[self performSelectorInBackground:@selector(disableSyncButton) withObject:nil];
+- (void) syncInBackground {
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	
 	NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[NSDataUtils pathForFolder:kFlashDisk] error:nil];
 	
@@ -222,7 +222,15 @@
 	
 	
 	[@"同步文件已完成, 请点击左侧 [已导入文件] 查看" showInDialogWithTitle:@"提示信息"];	
-	[self enableSyncButton];
+	[self performSelectorOnMainThread:@selector(enableSyncButton) withObject:nil waitUntilDone:YES];
+	
+	[pool release];
+}
+
+
+- (void)actualSync {
+	[self disableSyncButton];
+	[self performSelectorInBackground:@selector(syncInBackground) withObject:nil];
 }
 
 #pragma mark -

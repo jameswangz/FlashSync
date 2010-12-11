@@ -130,7 +130,7 @@
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
-	1AAA5B6512B3AA2800577207 /* DetailViewController.m:244 */ = {
+	1AAA5B6512B3AA2800577207 /* DetailViewController.m:252 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -142,7 +142,7 @@
 		functionName = "-viewDidLoad";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 244;
+		lineNumber = 252;
 		location = FlashSync;
 		modificationTime = 313764393.3405989;
 		originalNumberOfMultipleMatches = 1;
@@ -172,11 +172,7 @@
 		isa = PBXBookmark;
 		fRef = 1AAA5BDC12B3C23F00577207 /* Assistant Migration.png */;
 	};
-	1AAA5C0012B3C4BF00577207 /* PBXBookmark */ = {
-		isa = PBXBookmark;
-		fRef = 8D1107310486CEB800E47090 /* FlashSync-Info.plist */;
-	};
-	1AAA5C0112B3C4BF00577207 /* PlistBookmark */ = {
+	1AAA5C2D12B3C66700577207 /* PlistBookmark */ = {
 		isa = PlistBookmark;
 		fRef = 8D1107310486CEB800E47090 /* FlashSync-Info.plist */;
 		fallbackIsa = PBXBookmark;
@@ -187,236 +183,11 @@
 		rLen = 0;
 		rLoc = 9223372036854775808;
 	};
-	1AAA5C0E12B3C4CA00577207 /* PBXBookmark */ = {
-		isa = PBXBookmark;
-		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
-	};
-	1AAA5C2D12B3C66700577207 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 8D1107310486CEB800E47090 /* FlashSync-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/James/iphone/FlashSync/FlashSync-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	1AAA5C2E12B3C66700577207 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 8D1107310486CEB800E47090 /* FlashSync-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/James/iphone/FlashSync/FlashSync-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	1AAA5C3312B3C66700577207 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
-		name = "DetailViewController.m: 79";
-		rLen = 0;
-		rLoc = 2128;
-		rType = 0;
-		vrLen = 1200;
-		vrLoc = 1919;
-	};
-	1AAA5C4412B3C67C00577207 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 8D1107310486CEB800E47090 /* FlashSync-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/James/iphone/FlashSync/FlashSync-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	1AAA5C4512B3C67C00577207 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
-		name = "DetailViewController.m: 76";
-		rLen = 0;
-		rLoc = 2101;
-		rType = 0;
-		vrLen = 1200;
-		vrLoc = 1919;
-	};
-	1AAA5C4612B3C68D00577207 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 8D1107310486CEB800E47090 /* FlashSync-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/James/iphone/FlashSync/FlashSync-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	1AAA5C4712B3C68D00577207 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
-		name = "DetailViewController.m: 76";
-		rLen = 0;
-		rLoc = 2101;
-		rType = 0;
-		vrLen = 1200;
-		vrLoc = 1919;
-	};
-	1AAA5C4E12B3C6BF00577207 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 8D1107310486CEB800E47090 /* FlashSync-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/James/iphone/FlashSync/FlashSync-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	1AAA5C4F12B3C6BF00577207 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
-		name = "DetailViewController.m: 76";
-		rLen = 0;
-		rLoc = 2101;
-		rType = 0;
-		vrLen = 1200;
-		vrLoc = 1919;
-	};
-	1AAA5C5212B3C6E400577207 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 8D1107310486CEB800E47090 /* FlashSync-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/James/iphone/FlashSync/FlashSync-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	1AAA5C5312B3C6E400577207 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
-		name = "DetailViewController.m: 89";
-		rLen = 0;
-		rLoc = 2396;
-		rType = 0;
-		vrLen = 1231;
-		vrLoc = 1919;
-	};
-	1AAA5C5412B3C84C00577207 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 8D1107310486CEB800E47090 /* FlashSync-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/James/iphone/FlashSync/FlashSync-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	1AAA5C5512B3C84C00577207 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
-		name = "DetailViewController.m: 87";
-		rLen = 0;
-		rLoc = 2396;
-		rType = 0;
-		vrLen = 1189;
-		vrLoc = 2010;
-	};
-	1AAA5C5C12B3C8A200577207 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 8D1107310486CEB800E47090 /* FlashSync-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/James/iphone/FlashSync/FlashSync-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	1AAA5C5D12B3C8A200577207 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
-		name = "DetailViewController.m: 83";
-		rLen = 0;
-		rLoc = 2281;
-		rType = 0;
-		vrLen = 1201;
-		vrLoc = 2010;
-	};
-	1AAA5C5E12B3C8AB00577207 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 8D1107310486CEB800E47090 /* FlashSync-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/James/iphone/FlashSync/FlashSync-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	1AAA5C5F12B3C8AB00577207 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
-		name = "DetailViewController.m: 83";
-		rLen = 0;
-		rLoc = 2281;
-		rType = 0;
-		vrLen = 1201;
-		vrLoc = 2010;
-	};
-	1AAA5C6412B3C8E600577207 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 8D1107310486CEB800E47090 /* FlashSync-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/James/iphone/FlashSync/FlashSync-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	1AAA5C6512B3C8E600577207 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
-		name = "DetailViewController.m: 93";
-		rLen = 0;
-		rLoc = 2396;
-		rType = 0;
-		vrLen = 1247;
-		vrLoc = 2010;
-	};
-	1AAA5C6A12B3C91400577207 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 8D1107310486CEB800E47090 /* FlashSync-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/James/iphone/FlashSync/FlashSync-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	1AAA5C6B12B3C91400577207 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
-		name = "DetailViewController.m: 95";
-		rLen = 0;
-		rLoc = 2396;
-		rType = 0;
-		vrLen = 1065;
-		vrLoc = 2010;
-	};
 	1AAA5C7E12B3C9C700577207 /* PBXBookmark */ = {
 		isa = PBXBookmark;
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 	};
-	1AAA5C8112B3C9E600577207 /* PlistBookmark */ = {
+	1AAA5CAD12B3D0ED00577207 /* PlistBookmark */ = {
 		isa = PlistBookmark;
 		fRef = 8D1107310486CEB800E47090 /* FlashSync-Info.plist */;
 		fallbackIsa = PBXBookmark;
@@ -425,114 +196,9 @@
 		);
 		name = "/Users/James/iphone/FlashSync/FlashSync-Info.plist";
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
-	1AAA5C8412B3C9E600577207 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
-		name = "DetailViewController.m: 88";
-		rLen = 0;
-		rLoc = 2396;
-		rType = 0;
-		vrLen = 835;
-		vrLoc = 1946;
-	};
-	1AAA5C9112B3CC7500577207 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 8D1107310486CEB800E47090 /* FlashSync-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/James/iphone/FlashSync/FlashSync-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	1AAA5C9212B3CC7500577207 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
-		name = "DetailViewController.m: 95";
-		rLen = 0;
-		rLoc = 2396;
-		rType = 0;
-		vrLen = 917;
-		vrLoc = 1919;
-	};
-	1AAA5C9512B3CCBC00577207 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 8D1107310486CEB800E47090 /* FlashSync-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/James/iphone/FlashSync/FlashSync-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	1AAA5C9612B3CCBC00577207 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
-		name = "DetailViewController.m: 102";
-		rLen = 0;
-		rLoc = 2396;
-		rType = 0;
-		vrLen = 950;
-		vrLoc = 1919;
-	};
-	1AAA5C9912B3CD2E00577207 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 8D1107310486CEB800E47090 /* FlashSync-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/James/iphone/FlashSync/FlashSync-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	1AAA5C9A12B3CD2E00577207 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
-		name = "DetailViewController.m: 93";
-		rLen = 0;
-		rLoc = 2396;
-		rType = 0;
-		vrLen = 1391;
-		vrLoc = 2129;
-	};
-	1AAA5CA112B3CDCA00577207 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 8D1107310486CEB800E47090 /* FlashSync-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/James/iphone/FlashSync/FlashSync-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	1AAA5CA212B3CDCA00577207 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
-		name = "DetailViewController.m: 91";
-		rLen = 0;
-		rLoc = 2396;
-		rType = 0;
-		vrLen = 1266;
-		vrLoc = 2129;
-	};
-	1AAA5CA512B3CE2B00577207 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 8D1107310486CEB800E47090 /* FlashSync-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/James/iphone/FlashSync/FlashSync-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	1AAA5CA612B3CE2B00577207 /* PBXTextBookmark */ = {
+	1AAA5CAE12B3D0ED00577207 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 82";
@@ -588,7 +254,7 @@
 		isa = PBXCodeSenseManager;
 		indexTemplatePath = "";
 	};
-	1AC132CA12ABED5300642A7E /* DetailViewController.m:195 */ = {
+	1AC132CA12ABED5300642A7E /* DetailViewController.m:197 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -600,13 +266,13 @@
 		functionName = "-actualSync";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 195;
+		lineNumber = 197;
 		location = FlashSync;
 		modificationTime = 313764393.175033;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
-	1AC132E712ABEE0A00642A7E /* DetailViewController.m:195 */ = {
+	1AC132E712ABEE0A00642A7E /* DetailViewController.m:197 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -618,11 +284,53 @@
 		functionName = "-actualSync";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 195;
+		lineNumber = 197;
 		location = FlashSync;
 		modificationTime = 313764393.240313;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
+	};
+	1AFEFC3112B3D17D009A25F0 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* FlashSync-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/James/iphone/FlashSync/FlashSync-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	1AFEFC3412B3D17D009A25F0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
+		name = "DetailViewController.m: 82";
+		rLen = 0;
+		rLoc = 2240;
+		rType = 0;
+		vrLen = 1294;
+		vrLoc = 2010;
+	};
+	1AFEFC3812B3D2DA009A25F0 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* FlashSync-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/James/iphone/FlashSync/FlashSync-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	1AFEFC3912B3D2DA009A25F0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
+		name = "DetailViewController.m: 191";
+		rLen = 0;
+		rLoc = 6115;
+		rType = 0;
+		vrLen = 1056;
+		vrLoc = 5918;
 	};
 	1D3623240D0F684500981E51 /* FlashSyncAppDelegate.h */ = {
 		uiCtxt = {
@@ -672,9 +380,9 @@
 	};
 	2804200A108E984D000629CD /* DetailViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1724, 4592}}";
-			sepNavSelRange = "{2240, 0}";
-			sepNavVisRange = "{2010, 1295}";
+			sepNavIntBoundsRect = "{{0, 0}, {1206, 4514}}";
+			sepNavSelRange = "{6115, 0}";
+			sepNavVisRange = "{5918, 1056}";
 			sepNavWindowFrame = "{{15, 62}, {1265, 716}}";
 		};
 	};
@@ -688,10 +396,10 @@
 		);
 		breakpoints = (
 			1A4AD4CD12AB893F00173889 /* DetailViewController.m:159 */,
-			1AC132CA12ABED5300642A7E /* DetailViewController.m:195 */,
-			1AC132E712ABEE0A00642A7E /* DetailViewController.m:195 */,
+			1AC132CA12ABED5300642A7E /* DetailViewController.m:197 */,
+			1AC132E712ABEE0A00642A7E /* DetailViewController.m:197 */,
 			1AAA5AFF12B3A3F100577207 /* DetailViewController.m:41 */,
-			1AAA5B6512B3AA2800577207 /* DetailViewController.m:244 */,
+			1AAA5B6512B3AA2800577207 /* DetailViewController.m:252 */,
 		);
 		codeSenseManager = 1AB8B78F12A2728A00038C19 /* Code sense */;
 		executables = (
@@ -780,8 +488,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 313771204;
-			PBXWorkspaceStateSaveDate = 313771204;
+			PBXPerProjectTemplateStateSaveDate = 313774456;
+			PBXWorkspaceStateSaveDate = 313774456;
 		};
 		perUserProjectItems = {
 			1A1DEBBE12A68F2C00C7053B = 1A1DEBBE12A68F2C00C7053B /* PBXBookmark */;
@@ -792,43 +500,14 @@
 			1AAA5B7012B3AD3700577207 = 1AAA5B7012B3AD3700577207 /* PBXTextBookmark */;
 			1AAA5BFE12B3C4BF00577207 = 1AAA5BFE12B3C4BF00577207 /* PBXTextBookmark */;
 			1AAA5BFF12B3C4BF00577207 = 1AAA5BFF12B3C4BF00577207 /* PBXBookmark */;
-			1AAA5C0012B3C4BF00577207 = 1AAA5C0012B3C4BF00577207 /* PBXBookmark */;
-			1AAA5C0112B3C4BF00577207 = 1AAA5C0112B3C4BF00577207 /* PlistBookmark */;
-			1AAA5C0E12B3C4CA00577207 /* PBXBookmark */ = 1AAA5C0E12B3C4CA00577207 /* PBXBookmark */;
-			1AAA5C2D12B3C66700577207 /* PlistBookmark */ = 1AAA5C2D12B3C66700577207 /* PlistBookmark */;
-			1AAA5C2E12B3C66700577207 /* PlistBookmark */ = 1AAA5C2E12B3C66700577207 /* PlistBookmark */;
-			1AAA5C3312B3C66700577207 /* PBXTextBookmark */ = 1AAA5C3312B3C66700577207 /* PBXTextBookmark */;
-			1AAA5C4412B3C67C00577207 /* PlistBookmark */ = 1AAA5C4412B3C67C00577207 /* PlistBookmark */;
-			1AAA5C4512B3C67C00577207 /* PBXTextBookmark */ = 1AAA5C4512B3C67C00577207 /* PBXTextBookmark */;
-			1AAA5C4612B3C68D00577207 /* PlistBookmark */ = 1AAA5C4612B3C68D00577207 /* PlistBookmark */;
-			1AAA5C4712B3C68D00577207 /* PBXTextBookmark */ = 1AAA5C4712B3C68D00577207 /* PBXTextBookmark */;
-			1AAA5C4E12B3C6BF00577207 /* PlistBookmark */ = 1AAA5C4E12B3C6BF00577207 /* PlistBookmark */;
-			1AAA5C4F12B3C6BF00577207 /* PBXTextBookmark */ = 1AAA5C4F12B3C6BF00577207 /* PBXTextBookmark */;
-			1AAA5C5212B3C6E400577207 /* PlistBookmark */ = 1AAA5C5212B3C6E400577207 /* PlistBookmark */;
-			1AAA5C5312B3C6E400577207 /* PBXTextBookmark */ = 1AAA5C5312B3C6E400577207 /* PBXTextBookmark */;
-			1AAA5C5412B3C84C00577207 /* PlistBookmark */ = 1AAA5C5412B3C84C00577207 /* PlistBookmark */;
-			1AAA5C5512B3C84C00577207 /* PBXTextBookmark */ = 1AAA5C5512B3C84C00577207 /* PBXTextBookmark */;
-			1AAA5C5C12B3C8A200577207 /* PlistBookmark */ = 1AAA5C5C12B3C8A200577207 /* PlistBookmark */;
-			1AAA5C5D12B3C8A200577207 /* PBXTextBookmark */ = 1AAA5C5D12B3C8A200577207 /* PBXTextBookmark */;
-			1AAA5C5E12B3C8AB00577207 /* PlistBookmark */ = 1AAA5C5E12B3C8AB00577207 /* PlistBookmark */;
-			1AAA5C5F12B3C8AB00577207 /* PBXTextBookmark */ = 1AAA5C5F12B3C8AB00577207 /* PBXTextBookmark */;
-			1AAA5C6412B3C8E600577207 /* PlistBookmark */ = 1AAA5C6412B3C8E600577207 /* PlistBookmark */;
-			1AAA5C6512B3C8E600577207 /* PBXTextBookmark */ = 1AAA5C6512B3C8E600577207 /* PBXTextBookmark */;
-			1AAA5C6A12B3C91400577207 /* PlistBookmark */ = 1AAA5C6A12B3C91400577207 /* PlistBookmark */;
-			1AAA5C6B12B3C91400577207 /* PBXTextBookmark */ = 1AAA5C6B12B3C91400577207 /* PBXTextBookmark */;
-			1AAA5C7E12B3C9C700577207 /* PBXBookmark */ = 1AAA5C7E12B3C9C700577207 /* PBXBookmark */;
-			1AAA5C8112B3C9E600577207 /* PlistBookmark */ = 1AAA5C8112B3C9E600577207 /* PlistBookmark */;
-			1AAA5C8412B3C9E600577207 /* PBXTextBookmark */ = 1AAA5C8412B3C9E600577207 /* PBXTextBookmark */;
-			1AAA5C9112B3CC7500577207 /* PlistBookmark */ = 1AAA5C9112B3CC7500577207 /* PlistBookmark */;
-			1AAA5C9212B3CC7500577207 /* PBXTextBookmark */ = 1AAA5C9212B3CC7500577207 /* PBXTextBookmark */;
-			1AAA5C9512B3CCBC00577207 /* PlistBookmark */ = 1AAA5C9512B3CCBC00577207 /* PlistBookmark */;
-			1AAA5C9612B3CCBC00577207 /* PBXTextBookmark */ = 1AAA5C9612B3CCBC00577207 /* PBXTextBookmark */;
-			1AAA5C9912B3CD2E00577207 /* PlistBookmark */ = 1AAA5C9912B3CD2E00577207 /* PlistBookmark */;
-			1AAA5C9A12B3CD2E00577207 /* PBXTextBookmark */ = 1AAA5C9A12B3CD2E00577207 /* PBXTextBookmark */;
-			1AAA5CA112B3CDCA00577207 /* PlistBookmark */ = 1AAA5CA112B3CDCA00577207 /* PlistBookmark */;
-			1AAA5CA212B3CDCA00577207 /* PBXTextBookmark */ = 1AAA5CA212B3CDCA00577207 /* PBXTextBookmark */;
-			1AAA5CA512B3CE2B00577207 /* PlistBookmark */ = 1AAA5CA512B3CE2B00577207 /* PlistBookmark */;
-			1AAA5CA612B3CE2B00577207 /* PBXTextBookmark */ = 1AAA5CA612B3CE2B00577207 /* PBXTextBookmark */;
+			1AAA5C2D12B3C66700577207 = 1AAA5C2D12B3C66700577207 /* PlistBookmark */;
+			1AAA5C7E12B3C9C700577207 = 1AAA5C7E12B3C9C700577207 /* PBXBookmark */;
+			1AAA5CAD12B3D0ED00577207 = 1AAA5CAD12B3D0ED00577207 /* PlistBookmark */;
+			1AAA5CAE12B3D0ED00577207 = 1AAA5CAE12B3D0ED00577207 /* PBXTextBookmark */;
+			1AFEFC3112B3D17D009A25F0 /* PlistBookmark */ = 1AFEFC3112B3D17D009A25F0 /* PlistBookmark */;
+			1AFEFC3412B3D17D009A25F0 /* PBXTextBookmark */ = 1AFEFC3412B3D17D009A25F0 /* PBXTextBookmark */;
+			1AFEFC3812B3D2DA009A25F0 /* PlistBookmark */ = 1AFEFC3812B3D2DA009A25F0 /* PlistBookmark */;
+			1AFEFC3912B3D2DA009A25F0 /* PBXTextBookmark */ = 1AFEFC3912B3D2DA009A25F0 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 1AB8B78E12A2728A00038C19 /* Source Control */;
 		userBuildSettings = {
