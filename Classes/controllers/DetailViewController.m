@@ -29,6 +29,7 @@
 @synthesize fullPathLabel;
 @synthesize contentsTableView;
 @synthesize syncButton;
+@synthesize pushedFromNavigationController;
 
 #pragma mark -
 #pragma mark Managing the detail item
@@ -53,7 +54,9 @@
 - (void)configureView {
 	NSDictionary *dict = self.detailItem;
 	NSString *path = [dict objectForKey:kPath];
+	NSLog(@"name : %@", dict);
 	self.title = [dict objectForKey:kName];
+	self.fullPathLabel.text = path;
 	NSError *error;
 	NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[NSDataUtils pathForFolder:path] error:&error];
 	
@@ -115,6 +118,25 @@
 		cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
 	}
 	return cell;
+}
+
+#pragma mark -
+#pragma mark UITableViewDelegate Methods
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	File *file = [contentsOfCurrentFolder objectAtIndex:[indexPath row]];
+	id type = [file.attributes objectForKey:NSFileType];
+	if (type == NSFileTypeDirectory) {
+		DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailView" bundle:nil];
+		NSDictionary *dict = self.detailItem;
+		NSString *path = [[dict valueForKey:kPath] stringByAppendingPathComponent:file.name];
+		NSLog(@"%@", path);
+		detailViewController.pushedFromNavigationController = YES;
+		detailViewController.detailItem = [[NSDictionary alloc] initWithObjectsAndKeys:path, kPath, nil], 
+		[self.navigationController pushViewController:detailViewController animated:YES];
+	} else {
+		NSLog(@"File");
+	}
+		
 }
 
 #pragma mark -
@@ -205,6 +227,12 @@
 - (void)viewDidLoad {
 	[self createImportedFolderIfRequired];
 	contentsOfCurrentFolder = [[NSMutableArray alloc] init];
+	if ([self.detailItem isKindOfClass:[NSDictionary class]] == NO) {
+		self.detailItem = [[NSDictionary alloc] initWithObjectsAndKeys:kImported, kPath, @"已导入文件", kName, nil];
+	}
+	if (pushedFromNavigationController) {
+		[self configureView];
+	}
 }
 
 - (void)viewDidUnload {
