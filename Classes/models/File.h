@@ -21,4 +21,6 @@
 
 - (id)initWithName:(NSString *)name path:(NSString *)path attributes:(NSDictionary *)attributes;
 
+- (BOOL)isDir;
+
 @end

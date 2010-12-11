@@ -51,22 +51,37 @@
 }
 
 
+- (void) fillContentsOfCurrentFolder: (NSString *) path  {
+	NSError *error;
+	NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[NSDataUtils pathForFolder:path] error:&error];
+	
+	[contentsOfCurrentFolder removeAllObjects];
+	
+	NSMutableArray *folders = [[NSMutableArray alloc] init];
+	NSMutableArray  *files = [[NSMutableArray alloc] init];
+	
+	for (NSString *name in contents) {
+		NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfItemAtPath:[NSDataUtils pathForFolder:path name:name] error:nil];
+		File *file = [[File alloc] initWithName:name path:nil attributes:attrs];
+		if ([file isDir]) {
+			[folders addObject:file];
+		} else {
+			[files addObject:file];
+		}
+	}
+
+	[contentsOfCurrentFolder addObjectsFromArray:folders];
+	[contentsOfCurrentFolder addObjectsFromArray:files];
+	[folders release];
+	[files release];
+}
 - (void)configureView {
 	NSDictionary *dict = self.detailItem;
 	NSString *path = [dict objectForKey:kPath];
 	NSLog(@"name : %@", dict);
 	self.title = [dict objectForKey:kName];
 	self.fullPathLabel.text = path;
-	NSError *error;
-	NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[NSDataUtils pathForFolder:path] error:&error];
-	
-	[contentsOfCurrentFolder removeAllObjects];
-	
-	for (NSString *name in contents) {
-		NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfItemAtPath:[NSDataUtils pathForFolder:path name:name] error:nil];
-		[contentsOfCurrentFolder addObject:[[File alloc] initWithName:name path:nil attributes:attrs]];
-	}
-	
+	[self fillContentsOfCurrentFolder: path];
 	[self.contentsTableView reloadData];
 }
 
@@ -108,12 +123,11 @@
 - (UITableViewCell *) tableView:(UITableView *)table cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	UITableViewCell *cell = [table dequeueOrInit:@"Cell" withStyle:UITableViewCellStyleSubtitle];
 	File *file = [contentsOfCurrentFolder objectAtIndex:[indexPath row]];
-	id type = [file.attributes objectForKey:NSFileType];
 	cell.textLabel.text = file.name;
-	if (type == NSFileTypeDirectory) {
+	if ([file isDir]) {
 		cell.imageView.image =[UIImage imageNamed:@"Dossier.png"];
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-	} else if (type == NSFileTypeRegular) {
+	} else {
 		cell.imageView.image =[UIImage imageNamed:@"TextEdit.png"];
 		cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
 	}
@@ -124,8 +138,7 @@
 #pragma mark UITableViewDelegate Methods
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	File *file = [contentsOfCurrentFolder objectAtIndex:[indexPath row]];
-	id type = [file.attributes objectForKey:NSFileType];
-	if (type == NSFileTypeDirectory) {
+	if ([file isDir]) {
 		DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailView" bundle:nil];
 		NSDictionary *dict = self.detailItem;
 		NSString *path = [[dict valueForKey:kPath] stringByAppendingPathComponent:file.name];

@@ -24,4 +24,9 @@
 	return self;
 }
 
+- (BOOL)isDir {
+	id type = [self.attributes objectForKey:NSFileType];
+	return type == NSFileTypeDirectory;		
+}
+
 @end
