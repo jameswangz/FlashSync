@@ -308,6 +308,11 @@
 		vrLoc = 2543;
 	};
 	1ACF8F4612B4DD3900D76EDC /* flashsync.xcclassmodel */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = wrapper.xcclassmodel;
+		name = flashsync.xcclassmodel;
+		path = /Users/James/iphone/FlashSync/Classes/diagram/flashsync.xcclassmodel;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			"Xdesign Model Editor Bookmark Key" = {
 				UIContextForClassArea = {

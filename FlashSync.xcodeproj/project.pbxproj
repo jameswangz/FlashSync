@@ -53,7 +53,7 @@
 		1ACF8C4C12B4A14D00D76EDC /* InspectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectorViewController.h; sourceTree = "<group>"; };
 		1ACF8C4D12B4A14D00D76EDC /* InspectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectorViewController.m; sourceTree = "<group>"; };
 		1ACF8C4E12B4A14D00D76EDC /* InspectorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InspectorViewController.xib; sourceTree = "<group>"; };
-		1ACF8F4612B4DD3900D76EDC /* flashsync.xcclassmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcclassmodel; path = flashsync.xcclassmodel; sourceTree = "<group>"; };
+		1ACF8F9912B4F41100D76EDC /* flashsync.xcclassmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcclassmodel; path = flashsync.xcclassmodel; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* FlashSyncAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashSyncAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* FlashSyncAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashSyncAppDelegate.m; sourceTree = "<group>"; };
@@ -169,7 +169,7 @@
 		1ACF8F4312B4DCFB00D76EDC /* diagram */ = {
 			isa = PBXGroup;
 			children = (
-				1ACF8F4612B4DD3900D76EDC /* flashsync.xcclassmodel */,
+				1ACF8F9912B4F41100D76EDC /* flashsync.xcclassmodel */,
 			);
 			path = diagram;
 			sourceTree = "<group>";
