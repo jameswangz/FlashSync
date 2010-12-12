@@ -133,6 +133,8 @@
 	} else {
 		cell.imageView.image =[UIImage imageNamed:@"TextEdit.png"];
 		cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+		NSLog(@"%@", file.attributes);
+		cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ @ %@", file.size, file.modifiedAt];		
 	}
 	return cell;
 }
@@ -175,6 +177,10 @@
 	} else {
 		[self presentContentOfFile: file];
 	}
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	return 60;
 }
 
 #pragma mark -

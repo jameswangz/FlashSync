@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+#define K 1024
 
 @interface File : NSObject {
 	NSString *name;
@@ -18,6 +19,8 @@
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *path;
 @property (nonatomic, retain) NSDictionary *attributes;
+@property (nonatomic, retain) NSString *size;
+@property (nonatomic, retain) NSString *modifiedAt;
 
 - (id)initWithName:(NSString *)name path:(NSString *)path attributes:(NSDictionary *)attributes;
 
