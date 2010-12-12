@@ -21,9 +21,9 @@
 #pragma mark View lifecycle
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
     self.clearsSelectionOnViewWillAppear = NO;
     self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
+	self.tableView.backgroundColor = [UIColor colorWithRed:0.8 green:0.9 blue:0.9 alpha:1.0];
 	panelItems = [[NSMutableArray alloc] init];
 	[panelItems addObject:[NSDictionary dictionaryWithObjectsAndKeys:kImported, kPath, @"已导入文件", kName, @"HDD.png", kImage, nil]];
 	[panelItems addObject:[NSDictionary dictionaryWithObjectsAndKeys:kFlashDisk, kPath, @"U 盘文件", kName, @"HDD USB.png", kImage, nil]];
