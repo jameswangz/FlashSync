@@ -72,6 +72,10 @@
 		}
 	}
 
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+	[folders sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+	[files sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+	[sortDescriptor release];
 	[contentsOfCurrentFolder addObjectsFromArray:folders];
 	[contentsOfCurrentFolder addObjectsFromArray:files];
 	[folders release];
