@@ -53,6 +53,7 @@
 		1ACF8C4C12B4A14D00D76EDC /* InspectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectorViewController.h; sourceTree = "<group>"; };
 		1ACF8C4D12B4A14D00D76EDC /* InspectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectorViewController.m; sourceTree = "<group>"; };
 		1ACF8C4E12B4A14D00D76EDC /* InspectorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InspectorViewController.xib; sourceTree = "<group>"; };
+		1ACF8F4612B4DD3900D76EDC /* flashsync.xcclassmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcclassmodel; path = flashsync.xcclassmodel; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* FlashSyncAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashSyncAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* FlashSyncAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashSyncAppDelegate.m; sourceTree = "<group>"; };
@@ -87,6 +88,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1ACF8F4312B4DCFB00D76EDC /* diagram */,
 				1A1DEC3C12A69B2100C7053B /* models */,
 				1A1DEBBB12A68F1600C7053B /* helper */,
 				1D3623240D0F684500981E51 /* FlashSyncAppDelegate.h */,
@@ -162,6 +164,14 @@
 				1A4AD35912AB6A4800173889 /* TextEdit.png */,
 			);
 			path = Icons;
+			sourceTree = "<group>";
+		};
+		1ACF8F4312B4DCFB00D76EDC /* diagram */ = {
+			isa = PBXGroup;
+			children = (
+				1ACF8F4612B4DD3900D76EDC /* flashsync.xcclassmodel */,
+			);
+			path = diagram;
 			sourceTree = "<group>";
 		};
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
