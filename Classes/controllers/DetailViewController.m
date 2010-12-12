@@ -81,7 +81,6 @@
 - (void)configureView {
 	NSDictionary *dict = self.detailItem;
 	NSString *path = [dict objectForKey:kPath];
-	NSLog(@"name : %@", dict);
 	self.title = [dict objectForKey:kName];
 	self.fullPathLabel.text = path;
 	[self fillContentsOfCurrentFolder: path];
@@ -133,7 +132,6 @@
 	} else {
 		cell.imageView.image =[UIImage imageNamed:@"TextEdit.png"];
 		cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-		NSLog(@"%@", file.attributes);
 		cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ @ %@", file.size, file.modifiedAt];		
 	}
 	return cell;
@@ -146,7 +144,6 @@
 	DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailView" bundle:nil];
 	NSDictionary *dict = self.detailItem;
 	NSString *path = [[dict valueForKey:kPath] stringByAppendingPathComponent:file.name];
-	NSLog(@"%@", path);
 	detailViewController.pushedFromNavigationController = YES;
 	detailViewController.detailItem = [[NSDictionary alloc] initWithObjectsAndKeys:path, kPath, file.name, kName, nil];
 	[self.navigationController pushViewController:detailViewController animated:YES];
@@ -240,21 +237,18 @@
 		}
 		
 		if (fileExists) {
-			NSLog(@"Deleting %@", dst);
 			[[NSFileManager defaultManager] removeItemAtPath:dst error:nil];
 		}
 		
-		NSLog(@"Copying %@ to %@", src, dst);
-		Boolean result = [[NSFileManager defaultManager] copyItemAtPath:src	toPath:dst error:&error];
+		[[NSFileManager defaultManager] copyItemAtPath:src	toPath:dst error:&error];
 		NSLog(@"Error : %@", error);
-		NSLog(@"Success : %d", result);
 	}
 	
 	
 	[@"同步文件已完成, 请点击左侧 [已导入文件] 查看" showInDialogWithTitle:@"提示信息"];	
-	[self performSelectorOnMainThread:@selector(enableSyncButton) withObject:nil waitUntilDone:YES];
-	
 	[pool release];
+	
+	[self performSelectorOnMainThread:@selector(enableSyncButton) withObject:nil waitUntilDone:YES];
 }
 
 
@@ -267,9 +261,8 @@
 #pragma mark UIActionSheetDelegate Methods
 
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
-	NSLog(@"Selected : %d", buttonIndex);	
 	if (buttonIndex == 0) {
-		[self performSelectorInBackground:@selector(actualSync) withObject:nil];
+		[self actualSync];
 	}
 }
 

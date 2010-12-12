@@ -57,7 +57,7 @@
 		isa = PBXBookmark;
 		fRef = 1A4AD35512AB6A4800173889 /* Dossier.png */;
 	};
-	1A4AD4CD12AB893F00173889 /* DetailViewController.m:202 */ = {
+	1A4AD4CD12AB893F00173889 /* DetailViewController.m:199 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -69,7 +69,7 @@
 		functionName = "-syncAll";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 202;
+		lineNumber = 199;
 		location = FlashSync;
 		modificationTime = 313834399.787023;
 		originalNumberOfMultipleMatches = 1;
@@ -187,7 +187,7 @@
 		isa = PBXCodeSenseManager;
 		indexTemplatePath = "";
 	};
-	1AC132CA12ABED5300642A7E /* DetailViewController.m:240 */ = {
+	1AC132CA12ABED5300642A7E /* DetailViewController.m:237 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -199,13 +199,13 @@
 		functionName = "-actualSync";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 240;
+		lineNumber = 237;
 		location = FlashSync;
 		modificationTime = 313834399.790825;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
-	1AC132E712ABEE0A00642A7E /* DetailViewController.m:240 */ = {
+	1AC132E712ABEE0A00642A7E /* DetailViewController.m:237 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -217,7 +217,7 @@
 		functionName = "-actualSync";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 240;
+		lineNumber = 237;
 		location = FlashSync;
 		modificationTime = 313834399.79466;
 		originalNumberOfMultipleMatches = 1;
@@ -326,12 +326,12 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 98";
 		rLen = 13;
-		rLoc = 2767;
+		rLoc = 2739;
 		rType = 0;
 		vrLen = 1406;
 		vrLoc = 2377;
 	};
-	1ACF8D5412B4B63400D76EDC /* DetailViewController.m:98 */ = {
+	1ACF8D5412B4B63400D76EDC /* DetailViewController.m:97 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -343,7 +343,7 @@
 		functionName = "-splitViewController:willHideViewController:withBarButtonItem:forPopoverController:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 98;
+		lineNumber = 97;
 		location = FlashSync;
 		modificationTime = 313834399.809137;
 		originalNumberOfMultipleMatches = 1;
@@ -353,7 +353,7 @@
 		isa = PBXTextBookmark;
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		rLen = 1;
-		rLoc = 97;
+		rLoc = 96;
 		rType = 1;
 	};
 	1ACF8D5E12B4B6A800D76EDC /* PBXTextBookmark */ = {
@@ -371,7 +371,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 98";
 		rLen = 40;
-		rLoc = 2763;
+		rLoc = 2735;
 		rType = 0;
 		vrLen = 758;
 		vrLoc = 2543;
@@ -391,7 +391,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 103";
 		rLen = 0;
-		rLoc = 3008;
+		rLoc = 2980;
 		rType = 0;
 		vrLen = 1373;
 		vrLoc = 2410;
@@ -401,12 +401,12 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 103";
 		rLen = 0;
-		rLoc = 3008;
+		rLoc = 2980;
 		rType = 0;
 		vrLen = 1330;
 		vrLoc = 2453;
 	};
-	1ACF8D6612B4B6B500D76EDC /* DetailViewController.m:110 */ = {
+	1ACF8D6612B4B6B500D76EDC /* DetailViewController.m:109 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -418,7 +418,7 @@
 		functionName = "-splitViewController:willShowViewController:invalidatingBarButtonItem:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 110;
+		lineNumber = 109;
 		location = FlashSync;
 		modificationTime = 313834399.811511;
 		originalNumberOfMultipleMatches = 1;
@@ -429,7 +429,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 98";
 		rLen = 40;
-		rLoc = 2763;
+		rLoc = 2735;
 		rType = 0;
 		vrLen = 758;
 		vrLoc = 2543;
@@ -439,7 +439,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 103";
 		rLen = 0;
-		rLoc = 3008;
+		rLoc = 2980;
 		rType = 0;
 		vrLen = 1330;
 		vrLoc = 2453;
@@ -449,7 +449,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 103";
 		rLen = 0;
-		rLoc = 3008;
+		rLoc = 2980;
 		rType = 0;
 		vrLen = 1330;
 		vrLoc = 2453;
@@ -459,7 +459,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 98";
 		rLen = 40;
-		rLoc = 2763;
+		rLoc = 2735;
 		rType = 0;
 		vrLen = 817;
 		vrLoc = 2543;
@@ -469,7 +469,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 98";
 		rLen = 40;
-		rLoc = 2763;
+		rLoc = 2735;
 		rType = 0;
 		vrLen = 817;
 		vrLoc = 2543;
@@ -479,7 +479,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 98";
 		rLen = 40;
-		rLoc = 2763;
+		rLoc = 2735;
 		rType = 0;
 		vrLen = 817;
 		vrLoc = 2543;
@@ -507,7 +507,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 98";
 		rLen = 40;
-		rLoc = 2763;
+		rLoc = 2735;
 		rType = 0;
 		vrLen = 817;
 		vrLoc = 2543;
@@ -517,7 +517,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 98";
 		rLen = 40;
-		rLoc = 2763;
+		rLoc = 2735;
 		rType = 0;
 		vrLen = 758;
 		vrLoc = 2543;
@@ -547,7 +547,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 98";
 		rLen = 40;
-		rLoc = 2763;
+		rLoc = 2735;
 		rType = 0;
 		vrLen = 758;
 		vrLoc = 2543;
@@ -702,9 +702,9 @@
 	};
 	2804200A108E984D000629CD /* DetailViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1206, 4856}}";
-			sepNavSelRange = "{6054, 4}";
-			sepNavVisRange = "{5499, 1245}";
+			sepNavIntBoundsRect = "{{0, 0}, {1206, 5272}}";
+			sepNavSelRange = "{4279, 0}";
+			sepNavVisRange = "{7373, 1084}";
 			sepNavWindowFrame = "{{15, 62}, {1265, 716}}";
 		};
 	};
@@ -717,12 +717,12 @@
 			1D6058900D05DD3D006BFB54 /* FlashSync */,
 		);
 		breakpoints = (
-			1A4AD4CD12AB893F00173889 /* DetailViewController.m:202 */,
-			1AC132CA12ABED5300642A7E /* DetailViewController.m:240 */,
-			1AC132E712ABEE0A00642A7E /* DetailViewController.m:240 */,
+			1A4AD4CD12AB893F00173889 /* DetailViewController.m:199 */,
+			1AC132CA12ABED5300642A7E /* DetailViewController.m:237 */,
+			1AC132E712ABEE0A00642A7E /* DetailViewController.m:237 */,
 			1ACF8CA712B4AD7C00D76EDC /* InspectorViewController.m:21 */,
-			1ACF8D5412B4B63400D76EDC /* DetailViewController.m:98 */,
-			1ACF8D6612B4B6B500D76EDC /* DetailViewController.m:110 */,
+			1ACF8D5412B4B63400D76EDC /* DetailViewController.m:97 */,
+			1ACF8D6612B4B6B500D76EDC /* DetailViewController.m:109 */,
 			1ACF8DC212B4B8CD00D76EDC /* FlashSyncAppDelegate.m:29 */,
 		);
 		codeSenseManager = 1AB8B78F12A2728A00038C19 /* Code sense */;
