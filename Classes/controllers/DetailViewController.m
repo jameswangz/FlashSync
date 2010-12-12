@@ -61,8 +61,9 @@
 	NSMutableArray  *files = [[NSMutableArray alloc] init];
 	
 	for (NSString *name in contents) {
-		NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfItemAtPath:[NSDataUtils pathForFolder:path name:name] error:nil];
-		File *file = [[File alloc] initWithName:name path:nil attributes:attrs];
+		NSString *fullPath = [NSDataUtils pathForFolder:path name:name];
+		NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfItemAtPath:fullPath error:nil];
+		File *file = [[File alloc] initWithName:name path:fullPath attributes:attrs];
 		if ([file isDir]) {
 			[folders addObject:file];
 		} else {
@@ -147,8 +148,14 @@
 		detailViewController.pushedFromNavigationController = YES;
 		detailViewController.detailItem = [[NSDictionary alloc] initWithObjectsAndKeys:path, kPath, file.name, kName, nil];
 		[self.navigationController pushViewController:detailViewController animated:YES];
+		[detailViewController release];
 	} else {
-		NSLog(@"File");
+		NSString *url = [NSString stringWithFormat:@"ifile://%@", file.path];
+		NSLog(@"url %@", url);
+		BOOL canOpenURL = [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:url]];
+		NSLog(@"Can open url %d", canOpenURL);
+		BOOL opened = [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+		NSLog(@"Opened %d", opened);
 	}
 		
 }
