@@ -14,6 +14,7 @@
 #import "Constants.h"
 #import "File.h"
 #import "FlashSyncAppDelegate.h"
+#import "InspectorViewController.h"
 
 @interface DetailViewController ()
 @property (nonatomic, retain) UIPopoverController *popoverController;
@@ -138,26 +139,42 @@
 
 #pragma mark -
 #pragma mark UITableViewDelegate Methods
+
+- (void) presentFilesInDir: (File *) file  {
+	DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailView" bundle:nil];
+	NSDictionary *dict = self.detailItem;
+	NSString *path = [[dict valueForKey:kPath] stringByAppendingPathComponent:file.name];
+	NSLog(@"%@", path);
+	detailViewController.pushedFromNavigationController = YES;
+	detailViewController.detailItem = [[NSDictionary alloc] initWithObjectsAndKeys:path, kPath, file.name, kName, nil];
+	[self.navigationController pushViewController:detailViewController animated:YES];
+	[detailViewController release];
+}
+
+- (void) presentContentOfFile: (File *) file  {
+//		NSString *url = [NSString stringWithFormat:@"ifile://%@", file.path];
+//		NSLog(@"url %@", url);
+//		BOOL canOpenURL = [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:url]];
+//		NSLog(@"Can open url %d", canOpenURL);
+//		BOOL opened = [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+//		NSLog(@"Opened %d", opened);
+
+	InspectorViewController *inspector = [[InspectorViewController alloc] initWithNibName:@"InspectorViewController" bundle:nil];
+	inspector.url = [NSURL fileURLWithPath:file.path];
+	inspector.title = file.name;
+	UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:inspector];
+	[self presentModalViewController:navigation animated:YES];
+	[inspector release];
+	[navigation release];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	File *file = [contentsOfCurrentFolder objectAtIndex:[indexPath row]];
 	if ([file isDir]) {
-		DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailView" bundle:nil];
-		NSDictionary *dict = self.detailItem;
-		NSString *path = [[dict valueForKey:kPath] stringByAppendingPathComponent:file.name];
-		NSLog(@"%@", path);
-		detailViewController.pushedFromNavigationController = YES;
-		detailViewController.detailItem = [[NSDictionary alloc] initWithObjectsAndKeys:path, kPath, file.name, kName, nil];
-		[self.navigationController pushViewController:detailViewController animated:YES];
-		[detailViewController release];
+		[self presentFilesInDir: file];
 	} else {
-		NSString *url = [NSString stringWithFormat:@"ifile://%@", file.path];
-		NSLog(@"url %@", url);
-		BOOL canOpenURL = [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:url]];
-		NSLog(@"Can open url %d", canOpenURL);
-		BOOL opened = [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
-		NSLog(@"Opened %d", opened);
+		[self presentContentOfFile: file];
 	}
-		
 }
 
 #pragma mark -
@@ -266,7 +283,6 @@
 
 - (void)viewDidUnload {
     // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
     self.popoverController = nil;
 	self.fullPathLabel = nil;
 	self.contentsTableView = nil;

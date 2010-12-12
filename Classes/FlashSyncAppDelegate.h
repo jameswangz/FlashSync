@@ -30,4 +30,5 @@
 @property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
 @property (nonatomic, retain) IBOutlet UINavigationController *detailNavigationController;
 
+
 @end
