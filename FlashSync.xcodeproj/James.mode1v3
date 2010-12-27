@@ -197,48 +197,7 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>1A79616312C8E1CE00D3F7F9</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>DetailViewController.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>1A79616412C8E1CE00D3F7F9</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>DetailViewController.m</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>1A79616512C8E1CE00D3F7F9</string>
-						<key>history</key>
-						<array>
-							<string>1A79615B12C8E0F600D3F7F9</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {1265, 619}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>15 118 1265 660 0 0 1280 778 </string>
-			</dict>
-		</dict>
-	</array>
+	<array/>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -361,7 +320,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>UITableView-WithCell.h</string>
+								<string>NSDataUtils.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -369,11 +328,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>UITableView-WithCell.h</string>
+										<string>NSDataUtils.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>1A79616212C8E1CE00D3F7F9</string>
+										<string>1A7961A712C8F5A800D3F7F9</string>
 										<key>history</key>
 										<array>
 											<string>1A4AD4A912AB879900173889</string>
@@ -392,7 +351,8 @@
 											<string>1ACF8FA112B50BAA00D76EDC</string>
 											<string>1ACF8FA212B50BAA00D76EDC</string>
 											<string>1A79611812C8DB8100D3F7F9</string>
-											<string>1A79611912C8DB8100D3F7F9</string>
+											<string>1A7961A512C8F5A800D3F7F9</string>
+											<string>1A7961A612C8F5A800D3F7F9</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -590,7 +550,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1A79616612C8E1CE00D3F7F9</string>
+		<string>1A7961A812C8F5A800D3F7F9</string>
 		<string>1A69183C12AA2C6500686504</string>
 		<string>1A79612812C8DB8100D3F7F9</string>
 		<string>1A79612912C8DB8100D3F7F9</string>
@@ -598,7 +558,6 @@
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>1AB8B79C12A278F200038C19</string>
 		<string>/Users/James/iphone/FlashSync/FlashSync.xcodeproj</string>
-		<string>1A79616312C8E1CE00D3F7F9</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 117 1280 661 0 0 1280 778 </string>
@@ -949,7 +908,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {969, 476}}</string>
 								<key>RubberWindowFrame</key>
-								<string>21 238 969 517 0 0 1280 778 </string>
+								<string>114 118 969 517 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXDebugCLIModule</string>
@@ -978,7 +937,7 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.consoleV3</string>
 			<key>WindowString</key>
-			<string>21 238 969 517 0 0 1280 778 </string>
+			<string>114 118 969 517 0 0 1280 778 </string>
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>

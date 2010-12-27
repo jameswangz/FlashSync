@@ -20,6 +20,8 @@
 @property (nonatomic, retain) UIPopoverController *popoverController;
 - (void)configureView;
 - (void)createImportedFolderIfRequired;
+- (void)openDirectly:(File *) file;
+- (void)openWithIFile:(File *) file;
 @end
 
 
@@ -168,20 +170,42 @@
 }
 
 - (void) presentContentOfFile: (File *) file  {
-//		NSString *url = [NSString stringWithFormat:@"ifile://%@", file.path];
-//		NSLog(@"url %@", url);
-//		BOOL canOpenURL = [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:url]];
-//		NSLog(@"Can open url %d", canOpenURL);
-//		BOOL opened = [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
-//		NSLog(@"Opened %d", opened);
+	activeFile = file;
+	
+	UIActionSheet *actionSheet = [[UIActionSheet alloc] 
+								  initWithTitle:@"请选择打开方式"
+								  delegate:self
+								  cancelButtonTitle:@"取消"
+								  destructiveButtonTitle:@"直接打开" 
+								  otherButtonTitles:@"在 iFile 中打开",
+								  nil];
+	actionSheet.tag = kOpenWayActionSheetTag;
+	actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
+	[actionSheet showInView:self.view];
+	[actionSheet release];
+}
 
+- (void)openDirectly:(File *)file {
 	InspectorViewController *inspector = [[InspectorViewController alloc] initWithNibName:@"InspectorViewController" bundle:nil];
 	inspector.url = [NSURL fileURLWithPath:file.path];
 	inspector.title = file.name;
 	UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:inspector];
 	[self presentModalViewController:navigation animated:YES];
 	[inspector release];
-	[navigation release];
+	[navigation release];	
+}
+
+- (void)openWithIFile:(File *)file {
+	NSString *url = [[NSString stringWithFormat:@"ifile://%@", file.path] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+	NSLog(@"url %@", url);
+	BOOL canOpenURL = [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:url]];
+	if (!canOpenURL) {
+		[@"无法使用 iFile 打开该文件" showInDialogWithTitle:@"错误信息"];
+		return;
+	}
+	NSLog(@"Can open url %d", canOpenURL);
+	BOOL opened = [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+	NSLog(@"Opened %d", opened);	
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -204,19 +228,6 @@
 #pragma mark -
 #pragma mark IBAction Methods
 
-- (void) showActionSheet: (NSArray *) params {
-	UIActionSheet *actionSheet = [[UIActionSheet alloc] 
-								  initWithTitle:[NSString stringWithFormat:@"%@ %@ 已存在", [params objectAtIndex:0], [params objectAtIndex:1]]
-								  delegate:self
-								  cancelButtonTitle:@"跳过"
-								  destructiveButtonTitle:@"覆盖" 
-								  otherButtonTitles:@"全部覆盖",
-								  nil];
-	actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
-	[actionSheet showInView:self.view];
-	[actionSheet release];
-
-}
 - (IBAction)syncAll {
 	UIActionSheet *actionSheet = [[UIActionSheet alloc] 
 								  initWithTitle:@"同步会覆盖已导入的所有文件, 确认吗?"
@@ -225,6 +236,7 @@
 								  destructiveButtonTitle:@"确定" 
 								  otherButtonTitles:nil,
 								  nil];
+	actionSheet.tag = kSyncActionSheetTag;
 	actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
 	[actionSheet showInView:self.view];
 	[actionSheet release];
@@ -293,8 +305,17 @@
 #pragma mark UIActionSheetDelegate Methods
 
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
-	if (buttonIndex == 0) {
-		[self actualSync];
+	if (actionSheet.tag == kSyncActionSheetTag) {
+		if (buttonIndex == 0) {
+			[self actualSync];
+		}		
+	}
+	if (actionSheet.tag == kOpenWayActionSheetTag) {
+		if (buttonIndex == 0) {
+			[self openDirectly:activeFile];
+		} else if (buttonIndex == 1) {
+			[self openWithIFile:activeFile];
+		}
 	}
 }
 

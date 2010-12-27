@@ -7,6 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "File.h"
+
+#define kSyncActionSheetTag		1
+#define kOpenWayActionSheetTag	2
+
 
 @interface DetailViewController : UIViewController<UIPopoverControllerDelegate, UISplitViewControllerDelegate, 
 	UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate> {
@@ -18,6 +23,8 @@
 	UILabel *fullPathLabel;
 	UITableView *contentsTableView;
 	UIBarItem *syncButton;
+	
+	File *activeFile;
 }
 
 
