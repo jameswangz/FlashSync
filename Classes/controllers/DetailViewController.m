@@ -141,6 +141,19 @@
 	return cell;
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+	NSLog(@"deleing row %d", [indexPath row]);
+	File *file = [contentsOfCurrentFolder objectAtIndex:[indexPath row]];
+	NSError *error = nil;
+	[[NSFileManager defaultManager] removeItemAtPath:file.path error:&error];
+	if (error != nil) {
+		[error showInDialog];
+		return;
+	}
+	[contentsOfCurrentFolder removeObjectAtIndex:[indexPath row]];
+	[self.contentsTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+}
+
 #pragma mark -
 #pragma mark UITableViewDelegate Methods
 
@@ -182,6 +195,10 @@
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 	return 60;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+	return @"删除";
 }
 
 #pragma mark -
@@ -261,6 +278,17 @@
 	[self performSelectorInBackground:@selector(syncInBackground) withObject:nil];
 }
 
+- (IBAction)toggleEdit {
+	[self.contentsTableView setEditing:!self.contentsTableView.editing animated:YES];
+	if (self.contentsTableView.editing) {
+		self.navigationItem.rightBarButtonItem.title = @"完成";
+		self.navigationItem.rightBarButtonItem.style = UIBarButtonItemStyleDone;
+	} else {
+		self.navigationItem.rightBarButtonItem.title = @"编辑";
+		self.navigationItem.rightBarButtonItem.style = UIBarButtonItemStylePlain;
+	}
+}
+
 #pragma mark -
 #pragma mark UIActionSheetDelegate Methods
 
@@ -273,6 +301,15 @@
 #pragma mark -
 #pragma mark View lifecycle
 
+- (void) addEditButton {
+	UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithTitle:@"编辑" 
+																   style:UIBarButtonItemStyleBordered 
+																  target:self 
+																  action:@selector(toggleEdit)];
+	self.navigationItem.rightBarButtonItem = editButton;
+	[editButton release];
+
+}
 - (void)viewDidLoad {
 	[self createImportedFolderIfRequired];
 	contentsOfCurrentFolder = [[NSMutableArray alloc] init];
@@ -282,6 +319,8 @@
 	if (pushedFromNavigationController) {
 		[self configureView];
 	}
+	[self addEditButton];
+
 }
 
 - (void)viewDidUnload {

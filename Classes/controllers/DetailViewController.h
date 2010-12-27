@@ -28,5 +28,6 @@
 @property (nonatomic) BOOL pushedFromNavigationController;
 
 - (IBAction)syncAll;
+- (IBAction)toggleEdit;
 
 @end
