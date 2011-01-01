@@ -388,19 +388,27 @@
 #pragma mark -
 #pragma mark identityCheck Methods
 
+- (NSString *)unencryptUdid:(NSString *)encryptedUdid {
+	//TODO encrypt
+	return encryptedUdid;
+}
 
 - (NSString *)udidFromFlashDisk {
 	NSString *keyDatPath = [NSDataUtils pathForFolder:kFlashDisk name:@"/ipad_documents/key.dat"];
 	NSString *content = [NSString stringWithContentsOfFile:keyDatPath encoding:NSUTF8StringEncoding error:nil];
-	[[NSString stringWithFormat:@"key.dat content %@", content] showInDialog];
-	return content;
+	NSArray *contents = [content componentsSeparatedByString:@"\n"];
+	if (contents.count < 2) {
+		return nil;
+	}
+	NSString *encryptedUdid = [contents objectAtIndex:1];	
+	return [self unencryptUdid:encryptedUdid];
 }
 
 - (BOOL)identityCheck {
 	NSString *udid = [[UIDevice currentDevice] uniqueIdentifier];
 	NSString *udidFromFlashDisk = [self udidFromFlashDisk];
 	
-	if (udid != udidFromFlashDisk) {
+	if (![udid isEqualToString:udidFromFlashDisk]) {
 		[[NSString stringWithFormat:@"对不起, 您的 iPad UDID 与优盘不匹配"] showInDialogWithTitle:@"错误信息"];
 		return NO;		
 	}
