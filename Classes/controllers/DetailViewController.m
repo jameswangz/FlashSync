@@ -22,6 +22,7 @@
 - (void)createImportedFolderIfRequired;
 - (void)openDirectly:(File *) file;
 - (void)openWithIFile:(File *) file;
+- (BOOL)identityCheck;
 @end
 
 
@@ -89,6 +90,14 @@
 	NSString *path = [dict objectForKey:kPath];
 	self.title = [dict objectForKey:kName];
 	self.fullPathLabel.text = path;
+	if (path == kFlashDisk) {
+		if (![self identityCheck]) {
+			[contentsOfCurrentFolder removeAllObjects];
+			[self.contentsTableView reloadData];
+			return;
+		}
+	}
+	
 	[self fillContentsOfCurrentFolder: path];
 	[self.contentsTableView reloadData];
 }
@@ -229,6 +238,9 @@
 #pragma mark IBAction Methods
 
 - (IBAction)syncAll {
+	if (![self identityCheck]) {
+		return;
+	}
 	UIActionSheet *actionSheet = [[UIActionSheet alloc] 
 								  initWithTitle:@"同步会覆盖已导入的所有文件, 确认吗?"
 								  delegate:self
@@ -341,7 +353,6 @@
 		[self configureView];
 	}
 	[self addEditButton];
-
 }
 
 - (void)viewDidUnload {
@@ -374,5 +385,26 @@
 	[NSDataUtils createFolderIfRequired:kImported];
 }
 
+#pragma mark -
+#pragma mark identityCheck Methods
+
+
+- (NSString *)udidFromFlashDisk {
+	NSString *keyDatPath = [NSDataUtils pathForFolder:kFlashDisk name:@"/ipad_documents/key.dat"];
+	NSString *content = [NSString stringWithContentsOfFile:keyDatPath encoding:NSUTF8StringEncoding error:nil];
+	[[NSString stringWithFormat:@"key.dat content %@", content] showInDialog];
+	return content;
+}
+
+- (BOOL)identityCheck {
+	NSString *udid = [[UIDevice currentDevice] uniqueIdentifier];
+	NSString *udidFromFlashDisk = [self udidFromFlashDisk];
+	
+	if (udid != udidFromFlashDisk) {
+		[[NSString stringWithFormat:@"对不起, 您的 iPad UDID 与优盘不匹配"] showInDialogWithTitle:@"错误信息"];
+		return NO;		
+	}
+	return YES;
+}
 
 @end
