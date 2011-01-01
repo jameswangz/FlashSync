@@ -1,4 +1,11 @@
 Install FlashSync.app
 
+# Drag built FlashSync.app to itunes
+# Install installous on iPad
+# In itune 'Apps' tab, right click FlasySync and select 'Show In Finder'
+# scp FlashSync\ 1.0.ipa mobile@192.168.1.169:/var/mobile/Documents/Installous/Downloads
+# Respring iPad
+
+
 ln -s /var/mnt/mount1 `find /var/mobile/Applications -name FlashSync.app`/../Documents/FlashDisk 
-ln -s `find /var/mobile/Applications -name FlashSync.app`/../Documents/Imported/ /var/mobile/Imported
+#ln -s `find /var/mobile/Applications -name FlashSync.app`/../Documents/Imported/ /var/mobile/Imported

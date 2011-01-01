@@ -18,6 +18,16 @@
 		vrLen = 425;
 		vrLoc = 11949;
 	};
+	1A16146512CF9E1E004AB919 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
+		name = "DetailViewController.m: 374";
+		rLen = 0;
+		rLoc = 12103;
+		rType = 0;
+		vrLen = 460;
+		vrLoc = 11949;
+	};
 	1A1DEC2C12A6990100C7053B /* UITableView-WithCell.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1206, 565}}";
@@ -125,7 +135,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 394";
 		rLen = 0;
-		rLoc = 12506;
+		rLoc = 12507;
 		rType = 0;
 		vrLen = 1133;
 		vrLoc = 12193;
@@ -202,7 +212,7 @@
 		comments = "Incomplete implementation of class 'DetailViewController'";
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		rLen = 1;
-		rLoc = 422;
+		rLoc = 423;
 		rType = 1;
 	};
 	1A95A21D12CF7EF800C86B6F /* PBXTextBookmark */ = {
@@ -694,9 +704,9 @@
 	};
 	2804200A108E984D000629CD /* DetailViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {930, 7110}}";
-			sepNavSelRange = "{12192, 0}";
-			sepNavVisRange = "{11949, 425}";
+			sepNavIntBoundsRect = "{{0, 0}, {930, 7238}}";
+			sepNavSelRange = "{12103, 0}";
+			sepNavVisRange = "{11949, 460}";
 			sepNavWindowFrame = "{{15, 62}, {1265, 716}}";
 		};
 	};
@@ -809,6 +819,7 @@
 		};
 		perUserProjectItems = {
 			1A16142812CF8DA2004AB919 /* PBXTextBookmark */ = 1A16142812CF8DA2004AB919 /* PBXTextBookmark */;
+			1A16146512CF9E1E004AB919 /* PBXTextBookmark */ = 1A16146512CF9E1E004AB919 /* PBXTextBookmark */;
 			1A4AD4A912AB879900173889 = 1A4AD4A912AB879900173889 /* PBXBookmark */;
 			1A65534912CF7F4200AE8863 = 1A65534912CF7F4200AE8863 /* PBXBookmark */;
 			1A65535012CF814D00AE8863 = 1A65535012CF814D00AE8863 /* PBXTextBookmark */;
