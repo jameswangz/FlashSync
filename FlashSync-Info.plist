@@ -32,5 +32,7 @@
 	</array>
 	<key>UIInterfaceOrientation</key>
 	<string>UIInterfaceOrientationLandscapeRight</string>
+	<key>CFBundleShortVersionString</key>
+	<string></string>
 </dict>
 </plist>

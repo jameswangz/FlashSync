@@ -405,6 +405,11 @@
 }
 
 - (BOOL)identityCheck {
+	NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"config" ofType:@"plist"]];
+	BOOL identityCheck = [[dic objectForKey:@"identity_check"] boolValue];
+	if (!identityCheck) {
+		return YES;
+	}
 	NSString *udid = [[UIDevice currentDevice] uniqueIdentifier];
 	NSString *udidFromFlashDisk = [self udidFromFlashDisk];
 	
