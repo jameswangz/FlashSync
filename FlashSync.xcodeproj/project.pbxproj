@@ -22,6 +22,7 @@
 		1AAA5BDF12B3C23F00577207 /* iSync.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AAA5BDD12B3C23F00577207 /* iSync.png */; };
 		1ACF8C4F12B4A14D00D76EDC /* InspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ACF8C4D12B4A14D00D76EDC /* InspectorViewController.m */; };
 		1ACF8C5012B4A14D00D76EDC /* InspectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ACF8C4E12B4A14D00D76EDC /* InspectorViewController.xib */; };
+		1AE47E2312D35D5E008930DA /* NSString-UDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE47E2212D35D5E008930DA /* NSString-UDID.m */; };
 		1D3623260D0F684500981E51 /* FlashSyncAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* FlashSyncAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -56,6 +57,8 @@
 		1ACF8C4D12B4A14D00D76EDC /* InspectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectorViewController.m; sourceTree = "<group>"; };
 		1ACF8C4E12B4A14D00D76EDC /* InspectorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InspectorViewController.xib; sourceTree = "<group>"; };
 		1ACF8F9912B4F41100D76EDC /* flashsync.xcclassmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcclassmodel; path = flashsync.xcclassmodel; sourceTree = "<group>"; };
+		1AE47E2112D35D5E008930DA /* NSString-UDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString-UDID.h"; sourceTree = "<group>"; };
+		1AE47E2212D35D5E008930DA /* NSString-UDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString-UDID.m"; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* FlashSyncAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashSyncAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* FlashSyncAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashSyncAppDelegate.m; sourceTree = "<group>"; };
@@ -131,6 +134,8 @@
 				1A1DEC2D12A6990200C7053B /* UITableView-WithCell.h */,
 				1A05643512A5578200C1D423 /* NSObject-Dialog.m */,
 				1A05643612A5578200C1D423 /* NSObject-Dialog.h */,
+				1AE47E2112D35D5E008930DA /* NSString-UDID.h */,
+				1AE47E2212D35D5E008930DA /* NSString-UDID.m */,
 			);
 			path = helper;
 			sourceTree = "<group>";
@@ -300,6 +305,7 @@
 				1A69181F12AA2AE100686504 /* NSDataUtils.m in Sources */,
 				1A6918F012AA403800686504 /* File.m in Sources */,
 				1ACF8C4F12B4A14D00D76EDC /* InspectorViewController.m in Sources */,
+				1AE47E2312D35D5E008930DA /* NSString-UDID.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
