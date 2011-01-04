@@ -8,10 +8,7 @@
 
 
 #import <SenTestingKit/SenTestingKit.h>
-#import <Foundation/Foundation.h>
 #import "NSString-UDID.h"
-#import "NSDataUtils.h"
-
 
 @interface NSString_UDIDTest : SenTestCase {
 	
@@ -22,13 +19,11 @@
 @implementation NSString_UDIDTest
 
 - (void)testUnecrypt {
-	NSLog(@"aaa %@", [NSDataUtils pathForFolder:@"aaa"]);
-	STAssertTrue([[NSDataUtils pathForFolder:@"aaa"] isEqualToString:[NSDataUtils pathForFolder:@"aaa"]], @"not equal");
-	
-	
-	SEL selector = @selector(unencrypt);
-	NSLog(@"Selector %@", selector);
-	STAssertEquals(@"ADFJKAFJKLSA20", [@"CNFKDADGHXJTBZBUIFIYFBAWIHIU" performSelector:selector], @"Not Equal");
+	NSString *unencrypted1 = [@"CNFKDADGHXJTBZBUIFIYFBAWIHIU" unencrypt];
+	NSLog(@"Unencrypted1 --- %@", unencrypted1);
+	STAssertTrue([@"ADFJKAFJKLSA20" isEqualToString:unencrypted1], @"Not Equal");
+	NSString *unencrypted2 = [@"75d182c70b85cd038f4089f6ee934eef39ed9517" unencrypt];
+	NSLog(@"Unencrypted2 --- %@", unencrypted2);
 }
 
 @end

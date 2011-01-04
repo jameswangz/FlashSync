@@ -202,7 +202,7 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>1AE47F8912D36CE1008930DA</string>
+				<string>1AE4800812D372EE008930DA</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>NSString-UDIDTest.m</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
@@ -210,16 +210,16 @@
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>1AE47F8A12D36CE1008930DA</string>
+						<string>1AE4800912D372EE008930DA</string>
 						<key>PBXProjectModuleLabel</key>
 						<string>NSString-UDIDTest.m</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>1AE47F9412D36D13008930DA</string>
+						<string>1AE4801C12D3734C008930DA</string>
 						<key>history</key>
 						<array>
-							<string>1AE47F8312D36CC9008930DA</string>
+							<string>1AE47FE912D3722A008930DA</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -256,7 +256,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>1AE47F9512D36D13008930DA</string>
+						<string>1AE4801D12D3734C008930DA</string>
 						<key>history</key>
 						<array>
 							<string>1AE47EF312D367FE008930DA</string>
@@ -296,7 +296,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>1AE47F9612D36D13008930DA</string>
+						<string>1AE4801E12D3734C008930DA</string>
 						<key>history</key>
 						<array>
 							<string>1AE47EF512D367FE008930DA</string>
@@ -411,7 +411,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 18}, {338, 602}}</string>
+							<string>{{0, 0}, {338, 602}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -446,7 +446,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>NSString-UDIDTest.m</string>
+								<string>NSString-UDID.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -454,11 +454,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>NSString-UDIDTest.m</string>
+										<string>NSString-UDID.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>1AE47F9312D36D13008930DA</string>
+										<string>1AE4801B12D3734C008930DA</string>
 										<key>history</key>
 										<array>
 											<string>1A4AD4A912AB879900173889</string>
@@ -480,11 +480,12 @@
 											<string>1A78DDC212D0D713005DFC09</string>
 											<string>1AE47E2E12D35E13008930DA</string>
 											<string>1AE47F7612D36C19008930DA</string>
-											<string>1AE47F7712D36C19008930DA</string>
 											<string>1AE47F7812D36C19008930DA</string>
 											<string>1AE47F7912D36C19008930DA</string>
-											<string>1AE47F7A12D36C19008930DA</string>
-											<string>1AE47F7B12D36C19008930DA</string>
+											<string>1AE47FDC12D37181008930DA</string>
+											<string>1AE4800512D372EE008930DA</string>
+											<string>1AE4800612D372EE008930DA</string>
+											<string>1AE47FDD12D37181008930DA</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -684,11 +685,11 @@
 	<array>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
+		<string>1AB8B79C12A278F200038C19</string>
 		<string>1A78DDD012D0D713005DFC09</string>
 		<string>1A78DDCA12D0D713005DFC09</string>
 		<string>/Users/James/iphone/FlashSync/FlashSync.xcodeproj</string>
-		<string>1AE47F8912D36CE1008930DA</string>
-		<string>1AB8B79C12A278F200038C19</string>
+		<string>1AE4800812D372EE008930DA</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 117 1280 661 0 0 1280 778 </string>
@@ -719,14 +720,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {892, 239}}</string>
+								<string>{{0, 0}, {952, 244}}</string>
 								<key>RubberWindowFrame</key>
-								<string>93 188 892 521 0 0 1280 778 </string>
+								<string>179 167 952 526 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>239pt</string>
+							<string>244pt</string>
 						</dict>
 						<dict>
 							<key>BecomeActive</key>
@@ -745,9 +746,9 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 244}, {892, 236}}</string>
+								<string>{{0, 249}, {952, 236}}</string>
 								<key>RubberWindowFrame</key>
-								<string>93 188 892 521 0 0 1280 778 </string>
+								<string>179 167 952 526 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXBuildResultsModule</string>
@@ -756,7 +757,7 @@
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>480pt</string>
+					<string>485pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -779,11 +780,11 @@
 			<key>WindowContentMinSize</key>
 			<string>486 300</string>
 			<key>WindowString</key>
-			<string>93 188 892 521 0 0 1280 778 </string>
+			<string>179 167 952 526 0 0 1280 778 </string>
 			<key>WindowToolGUID</key>
 			<string>1AB8B79C12A278F200038C19</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
