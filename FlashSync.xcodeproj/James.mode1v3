@@ -202,7 +202,7 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>1AE47E3D12D35E68008930DA</string>
+				<string>1AE47E5C12D3616C008930DA</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>DetailViewController.m</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
@@ -210,16 +210,16 @@
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>1AE47E3E12D35E68008930DA</string>
+						<string>1AE47E5D12D3616C008930DA</string>
 						<key>PBXProjectModuleLabel</key>
 						<string>DetailViewController.m</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>1AE47E4412D35E82008930DA</string>
+						<string>1AE47E5E12D3616C008930DA</string>
 						<key>history</key>
 						<array>
-							<string>1AE47E3712D35E41008930DA</string>
+							<string>1AE47E5812D3614D008930DA</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -256,7 +256,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>1AE47E4512D35E82008930DA</string>
+						<string>1AE47E5F12D3616C008930DA</string>
 						<key>history</key>
 						<array>
 							<string>1AC9BFD612D34D01000AC2C4</string>
@@ -296,7 +296,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>1AE47E4612D35E82008930DA</string>
+						<string>1AE47E6012D3616C008930DA</string>
 						<key>history</key>
 						<array>
 							<string>1AC9BFD712D34D01000AC2C4</string>
@@ -408,7 +408,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 43}, {338, 602}}</string>
+							<string>{{0, 89}, {338, 602}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -455,7 +455,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>1AE47E4312D35E82008930DA</string>
+										<string>1AE47E5B12D3616C008930DA</string>
 										<key>history</key>
 										<array>
 											<string>1A4AD4A912AB879900173889</string>
@@ -677,13 +677,13 @@
 	<array>
 		<string>1AE47E1412D35057008930DA</string>
 		<string>1AE47E1512D35057008930DA</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>1AB8B79C12A278F200038C19</string>
 		<string>1A78DDD012D0D713005DFC09</string>
 		<string>1A78DDCA12D0D713005DFC09</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/James/iphone/FlashSync/FlashSync.xcodeproj</string>
-		<string>1AE47E3D12D35E68008930DA</string>
+		<string>1AE47E5C12D3616C008930DA</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 117 1280 661 0 0 1280 778 </string>
@@ -1020,6 +1020,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -1065,7 +1067,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>

@@ -399,7 +399,6 @@
 	}
 	NSString *encryptedUdid = [contents objectAtIndex:1];	
 	NSLog(@"Encrypted udid %@", encryptedUdid);
-	[[NSString stringWithFormat:@"Encrypted udid %@", encryptedUdid] showInDialog];
 	return [encryptedUdid unencrypt];
 
 //	return [self unencryptUdid:@"CNFKDADGHXJTBZBUIFIYFBAWIHIU"];
@@ -413,11 +412,7 @@
 	}
 	NSString *udid = [[UIDevice currentDevice] uniqueIdentifier];
 	NSString *udidFromFlashDisk = [self udidFromFlashDisk];
-	
-	[[NSString stringWithFormat:@"udidFromFlashDisk %@", udidFromFlashDisk] showInDialog]; 
 	NSLog(@"Unencrypted udid %@", udidFromFlashDisk);
-	
-	
 	if (![udid isEqualToString:udidFromFlashDisk]) {
 		[[NSString stringWithFormat:@"对不起, 您的 iPad UDID 与优盘不匹配"] showInDialogWithTitle:@"错误信息"];
 		return NO;		
