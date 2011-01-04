@@ -390,8 +390,20 @@
 
 
 - (NSString *)unencryptUdid:(NSString *)encryptedUdid {
-	//TODO encrypt
-	return encryptedUdid;
+	int lengthOfSeed = [encryptedUdid length] / 2;
+	unsigned char seed[lengthOfSeed];
+	for (int i = 0; i<lengthOfSeed; i++) {
+		unsigned char j = ([encryptedUdid characterAtIndex:(2*i)]-65)*26;
+        j += [encryptedUdid characterAtIndex:(2*i+1)]-65;
+		seed[i] = j;
+	}
+	unsigned short int key = 98;
+	for(int i=0; i<lengthOfSeed; i++){
+		int current = seed[i];
+		seed[i] ^= (key>>8); // 将密钥移位后与字符异或
+		key = (current + key) * 52845 + 22719; // 产生下一个密钥
+    }
+	return [[NSString alloc] initWithBytes:seed length:sizeof(seed) encoding:NSASCIIStringEncoding];
 }
 
 - (NSString *)udidFromFlashDisk {
