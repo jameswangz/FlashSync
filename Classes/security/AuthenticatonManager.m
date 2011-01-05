@@ -47,6 +47,7 @@
 
 + (BOOL)authenticate {
 	NSString *udid = [[UIDevice currentDevice] uniqueIdentifier];
+	NSLog(@"Udid %@", udid);
 	//FIXME just for test
 	udid = @"ADFJKAFJKLSA20";
 	NSLog(@"Udid %@", udid);

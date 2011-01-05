@@ -202,47 +202,7 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>1AEB02AB12D430C6009284E5</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>RootViewController.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>1AEB02AC12D430C6009284E5</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>RootViewController.m</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>1AEB02AE12D430C6009284E5</string>
-						<key>history</key>
-						<array>
-							<string>1AEB02AD12D430C6009284E5</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {1265, 619}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>15 118 1265 660 0 0 1280 778 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>1AEB028812D42D1C009284E5</string>
+				<string>1AEB02C012D43592009284E5</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>AuthenticatonManager.m</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
@@ -250,16 +210,16 @@
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>1AEB028912D42D1C009284E5</string>
+						<string>1AEB02C112D43592009284E5</string>
 						<key>PBXProjectModuleLabel</key>
 						<string>AuthenticatonManager.m</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>1AEB02AF12D430C6009284E5</string>
+						<string>1AEB02F512D4373D009284E5</string>
 						<key>history</key>
 						<array>
-							<string>1AEB027E12D42BB1009284E5</string>
+							<string>1AEB02BC12D43585009284E5</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -310,8 +270,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -365,14 +323,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>7</integer>
-									<integer>5</integer>
-									<integer>4</integer>
+									<integer>3</integer>
+									<integer>2</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 29}, {338, 602}}</string>
+							<string>{{0, 3}, {338, 602}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -402,12 +360,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>DetailViewController.m</string>
+								<string>NSString-UDIDTest.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -415,11 +375,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>DetailViewController.m</string>
+										<string>NSString-UDIDTest.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>1AEB02AA12D430C6009284E5</string>
+										<string>1AEB02F412D4373D009284E5</string>
 										<key>history</key>
 										<array>
 											<string>1A4AD4A912AB879900173889</string>
@@ -442,11 +402,11 @@
 											<string>1AE47F7612D36C19008930DA</string>
 											<string>1AE47F7812D36C19008930DA</string>
 											<string>1AE47F7912D36C19008930DA</string>
-											<string>1AE4800512D372EE008930DA</string>
 											<string>1AE4800612D372EE008930DA</string>
 											<string>1AEB023D12D428E1009284E5</string>
 											<string>1AEB026D12D42AF4009284E5</string>
-											<string>1AEB026E12D42AF4009284E5</string>
+											<string>1AEB02F212D4373D009284E5</string>
+											<string>1AEB02F312D4373D009284E5</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -650,9 +610,8 @@
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>1AB8B79C12A278F200038C19</string>
+		<string>1AEB02C012D43592009284E5</string>
 		<string>/Users/James/iphone/FlashSync/FlashSync.xcodeproj</string>
-		<string>1AEB028812D42D1C009284E5</string>
-		<string>1AEB02AB12D430C6009284E5</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 117 1280 661 0 0 1280 778 </string>
@@ -676,7 +635,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>DetailViewController.m</string>
+								<string>NSString-UDIDTest.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
