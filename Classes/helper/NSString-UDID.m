@@ -20,7 +20,11 @@
 		seed[i] = j;
 	}
 	unsigned short int key = 98;
+	unsigned short int tempKey = key;
 	for(int i = 0; i < lengthOfSeed; i++){
+		if(i % 23 == 0) {
+			key = tempKey;
+		}
 		int current = seed[i];
 		seed[i] ^= (key >> 8); // 将密钥移位后与字符异或
 		key = (current + key) * 52845 + 22719; // 产生下一个密钥
