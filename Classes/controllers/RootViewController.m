@@ -20,10 +20,15 @@
 #pragma mark -
 #pragma mark View lifecycle
 
+
+- (UIColor *) backgroundColor {
+  return [UIColor colorWithRed:0.8 green:0.9 blue:0.9 alpha:1.0];
+}
+
 - (void)viewDidLoad {
     self.clearsSelectionOnViewWillAppear = NO;
     self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
-	self.tableView.backgroundColor = [UIColor colorWithRed:0.8 green:0.9 blue:0.9 alpha:1.0];
+	self.tableView.backgroundColor = [self backgroundColor];
 	panelItems = [[NSMutableArray alloc] init];
 	[panelItems addObject:[NSDictionary dictionaryWithObjectsAndKeys:kImported, kPath, @"已导入文件", kName, @"HDD.png", kImage, nil]];
 	[panelItems addObject:[NSDictionary dictionaryWithObjectsAndKeys:kFlashDisk, kPath, @"U 盘文件", kName, @"HDD USB.png", kImage, nil]];
@@ -74,8 +79,8 @@
 
 
 - (void)viewDidUnload {
-    // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
-    // For example: self.myOutlet = nil;
+	detailViewController = nil;
+	panelItems = nil;
 }
 
 
@@ -83,6 +88,20 @@
     [detailViewController release];
 	[panelItems release];
     [super dealloc];
+}
+
+#pragma mark -
+#pragma mark Custom Methods
+
+- (void)presentWelcomeLogo:(NSString *)username {
+	if (self.tableView.tableFooterView != nil) {
+		return;
+	}
+	UILabel *welcomeLabel = [[UILabel alloc] initWithFrame:CGRectMake(3, 3, 50, 40)];
+	welcomeLabel.text = [NSString stringWithFormat:@"您好, %@, 欢迎使用优盘同步工具", username];
+	welcomeLabel.backgroundColor = [self backgroundColor];
+	self.tableView.tableFooterView = welcomeLabel;
+	[welcomeLabel release];
 }
 
 

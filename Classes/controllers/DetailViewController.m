@@ -16,6 +16,7 @@
 #import "FlashSyncAppDelegate.h"
 #import "InspectorViewController.h"
 #import "NSString-UDID.h"
+#import "AuthenticatonManager.h"
 
 @interface DetailViewController ()
 @property (nonatomic, retain) UIPopoverController *popoverController;
@@ -23,7 +24,6 @@
 - (void)createImportedFolderIfRequired;
 - (void)openDirectly:(File *) file;
 - (void)openWithIFile:(File *) file;
-- (BOOL)identityCheck;
 @end
 
 
@@ -92,7 +92,7 @@
 	self.title = [dict objectForKey:kName];
 	self.fullPathLabel.text = path;
 	if (path == kFlashDisk) {
-		if (![self identityCheck]) {
+		if (![AuthenticatonManager authenticate]) {
 			[contentsOfCurrentFolder removeAllObjects];
 			[self.contentsTableView reloadData];
 			return;
@@ -239,7 +239,7 @@
 #pragma mark IBAction Methods
 
 - (IBAction)syncAll {
-	if (![self identityCheck]) {
+	if (![AuthenticatonManager authenticate]) {
 		return;
 	}
 	UIActionSheet *actionSheet = [[UIActionSheet alloc] 
@@ -386,38 +386,5 @@
 	[NSDataUtils createFolderIfRequired:kImported];
 }
 
-#pragma mark -
-#pragma mark identityCheck Methods
-
-
-- (NSString *)udidFromFlashDisk {
-	NSString *keyDatPath = [NSDataUtils pathForFolder:kFlashDisk name:@"/ipad_documents/key.dat"];
-	NSString *content = [NSString stringWithContentsOfFile:keyDatPath encoding:NSASCIIStringEncoding error:nil];
-	NSArray *contents = [content componentsSeparatedByString:@"\n"];
-	if (contents.count < 2) {
-		return nil;
-	}
-	NSString *encryptedUdid = [contents objectAtIndex:1];	
-	NSLog(@"Encrypted udid %@", encryptedUdid);
-	return [encryptedUdid unencrypt];
-
-//	return [self unencryptUdid:@"CNFKDADGHXJTBZBUIFIYFBAWIHIU"];
-}
-
-- (BOOL)identityCheck {
-	NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"config" ofType:@"plist"]];
-	BOOL identityCheck = [[dic objectForKey:@"identity_check"] boolValue];
-	if (!identityCheck) {
-		return YES;
-	}
-	NSString *udid = [[UIDevice currentDevice] uniqueIdentifier];
-	NSString *udidFromFlashDisk = [self udidFromFlashDisk];
-	NSLog(@"Unencrypted udid %@", udidFromFlashDisk);
-	if (![udid isEqualToString:udidFromFlashDisk]) {
-		[[NSString stringWithFormat:@"对不起, 您的 iPad UDID 与优盘不匹配"] showInDialogWithTitle:@"错误信息"];
-		return NO;		
-	}
-	return YES;
-}
 
 @end
