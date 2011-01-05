@@ -94,9 +94,6 @@
 #pragma mark Custom Methods
 
 - (void)presentWelcomeLogo:(NSString *)username {
-	if (self.tableView.tableFooterView != nil) {
-		return;
-	}
 	UILabel *welcomeLabel = [[UILabel alloc] initWithFrame:CGRectMake(3, 3, 50, 40)];
 	welcomeLabel.text = [NSString stringWithFormat:@"您好, %@, 欢迎使用优盘同步工具", username];
 	welcomeLabel.backgroundColor = [self backgroundColor];
