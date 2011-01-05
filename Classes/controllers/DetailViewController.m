@@ -279,8 +279,8 @@
 	}
 }
 
-- (void) sync: (NSString *) folder  {
-	NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:folder error:nil];
+- (void) sync: (NSString *) parentSrc to: (NSString*) parentDst  {
+	NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:parentSrc error:nil];
 	for (NSString *name in contents) {
 		NSString *src = [NSDataUtils pathForFolder:[NSString stringWithFormat:@"%@/%@", kFlashDisk, name]];
 		NSString *dst = [NSDataUtils pathForFolder:[NSString stringWithFormat:@"%@/%@", kImported, name]];
@@ -300,8 +300,9 @@
 }
 - (void) syncInBackground {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	NSString *folder = [NSDataUtils pathForFolder:kFlashDisk];
-	[self sync: folder];
+	NSString *src = [NSDataUtils pathForFolder:kFlashDisk];
+	NSString *dst = [NSDataUtils pathForFolder:kImported];
+	[self sync: src to: dst];
 	[@"同步文件已完成, 请点击左侧 [已导入文件] 查看" showInDialogWithTitle:@"提示信息"];	
 	[pool release];
 	

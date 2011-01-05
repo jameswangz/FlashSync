@@ -24,7 +24,7 @@
 }
 
 + (NSDictionary *)initializeAuthentication {
-	NSString *keyDatPath = [NSDataUtils pathForFolder:kFlashDisk name:@"/ipad_documents/key.dat"];
+	NSString *keyDatPath = [NSDataUtils pathForFolder:kFlashDisk name:@"key.dat"];
 	NSString *content = [NSString stringWithContentsOfFile:keyDatPath encoding:NSASCIIStringEncoding error:nil];
 	NSArray *contents = [content componentsSeparatedByString:@"\n"];
 	if (contents.count < 2) {

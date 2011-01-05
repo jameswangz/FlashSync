@@ -8,5 +8,5 @@ Install FlashSync.app
 
 
 # Plug in the usb disk firstly !!!
-ln -s /var/mnt/mount1 `find /var/mobile/Applications -name FlashSync.app`/../Documents/FlashDisk 
+ln -s /var/mnt/mount1/ipad_documents `find /var/mobile/Applications -name FlashSync.app`/../Documents/FlashDisk 
 #ln -s `find /var/mobile/Applications -name FlashSync.app`/../Documents/Imported/ /var/mobile/Imported
