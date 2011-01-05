@@ -16,6 +16,8 @@
 #define kName @"name"
 #define kImage @"image"
 
+#define kEncodedFileSuffix @".etmp"
+
 @interface Constants : NSObject {
 
 }

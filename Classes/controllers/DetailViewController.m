@@ -17,6 +17,7 @@
 #import "InspectorViewController.h"
 #import "NSString-UDID.h"
 #import "AuthenticatonManager.h"
+#import "DataEncoder.h"
 
 @interface DetailViewController ()
 @property (nonatomic, retain) UIPopoverController *popoverController;
@@ -287,26 +288,25 @@
 		
 		BOOL dir;
 		[[NSFileManager defaultManager] fileExistsAtPath:src isDirectory:&dir];		
-		
-//		NSLog(@"Dir %d", dir);
-//		NSLog(@"Name %@", name);
-	
 		if (dir) {
 			[NSDataUtils createFolderIfRequired:dst absolutePath:YES];
 			[self sync:src to:dst];
 		} else {
-			if ([name hasSuffix:@".etmp"]) {
-				//NSLog(@"Trying to decode %@", src);
+			if ([name hasSuffix:kEncodedFileSuffix]) {
 				NSData *data = [[NSData alloc] initWithContentsOfFile:src];
-				//NSLog(@"Content %@", data);
-				
+				NSMutableData *decoded = [[NSMutableData alloc] init];
+				[DataEncoder decode: data to: decoded];
+				NSString *dstFileName = [dst substringToIndex:([dst length] - [kEncodedFileSuffix length])];
+				[decoded writeToFile:dstFileName atomically:YES];
+				[data release];
+				[decoded release];
 			} else {
 				[self overwrite: src dst: dst];
 			}
 		}
 	}
-
 }
+
 - (void) syncInBackground {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	NSString *src = [NSDataUtils pathForFolder:kFlashDisk];
