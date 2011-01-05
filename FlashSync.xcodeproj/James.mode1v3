@@ -202,24 +202,24 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>1ACFC59412D4484300994D35</string>
+				<string>1ACFC5A512D44A2E00994D35</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>NSString-UDIDTest.m</string>
+				<string>AuthenticatonManager.m</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>1ACFC59512D4484300994D35</string>
+						<string>1ACFC5A612D44A2E00994D35</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>NSString-UDIDTest.m</string>
+						<string>AuthenticatonManager.m</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>1ACFC59612D4484300994D35</string>
+						<string>1ACFC5A712D44A2E00994D35</string>
 						<key>history</key>
 						<array>
-							<string>1ACFC59212D4483A00994D35</string>
+							<string>1ACFC59F12D44A2200994D35</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -325,9 +325,9 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>3</integer>
-									<integer>2</integer>
-									<integer>1</integer>
+									<integer>7</integer>
+									<integer>5</integer>
+									<integer>4</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -367,7 +367,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>NSString-UDIDTest.m</string>
+								<string>AuthenticatonManager.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -375,11 +375,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>NSString-UDIDTest.m</string>
+										<string>AuthenticatonManager.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>1ACFC59312D4484300994D35</string>
+										<string>1ACFC5A412D44A2E00994D35</string>
 										<key>history</key>
 										<array>
 											<string>1A4AD4A912AB879900173889</string>
@@ -406,7 +406,8 @@
 											<string>1AEB023D12D428E1009284E5</string>
 											<string>1AEB026D12D42AF4009284E5</string>
 											<string>1AEB02F212D4373D009284E5</string>
-											<string>1AEB032412D44436009284E5</string>
+											<string>1ACFC5A212D44A2E00994D35</string>
+											<string>1ACFC5A312D44A2E00994D35</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -610,7 +611,7 @@
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>1AB8B79C12A278F200038C19</string>
 		<string>/Users/James/iphone/FlashSync/FlashSync.xcodeproj</string>
-		<string>1ACFC59412D4484300994D35</string>
+		<string>1ACFC5A512D44A2E00994D35</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 117 1280 661 0 0 1280 778 </string>

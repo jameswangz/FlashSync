@@ -32,9 +32,7 @@
 	}
 	
 	NSString *encryptedUdid = [contents objectAtIndex:1];	
-	NSLog(@"Encrypted udid %@", encryptedUdid);
 	NSString *udid = [encryptedUdid unencrypt];
-	NSLog(@"Udid from flash disk %@", udid);
 	
 	NSMutableDictionary *dict = [[[NSMutableDictionary alloc] init] autorelease];
 	[dict setValue:[contents objectAtIndex:0] forKey:@"username"];
@@ -44,7 +42,6 @@
 
 + (BOOL)authenticate {
 	NSString *udid = [[UIDevice currentDevice] uniqueIdentifier];
-	NSLog(@"Udid %@", udid);
 	NSDictionary *authentication = [self initializeAuthentication];
 	if (authentication == nil) {
 		[[NSString stringWithFormat:@"读取身份认证信息失败"] showInDialogWithTitle:@"错误信息"];

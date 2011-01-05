@@ -542,7 +542,7 @@
 		fRef = 1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */;
 		name = "AuthenticatonManager.m: 47";
 		rLen = 0;
-		rLoc = 1426;
+		rLoc = 1315;
 		rType = 0;
 		vrLen = 1351;
 		vrLoc = 563;
@@ -570,6 +570,54 @@
 		rType = 0;
 		vrLen = 1059;
 		vrLoc = 0;
+	};
+	1ACFC59E12D44A0C00994D35 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1AE47E7712D363B2008930DA /* NSString-UDIDTest.m */;
+		name = "NSString-UDIDTest.m: 34";
+		rLen = 0;
+		rLoc = 1059;
+		rType = 0;
+		vrLen = 879;
+		vrLoc = 175;
+	};
+	1ACFC59F12D44A2200994D35 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */;
+	};
+	1ACFC5A212D44A2E00994D35 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1AE47E7712D363B2008930DA /* NSString-UDIDTest.m */;
+		name = "NSString-UDIDTest.m: 34";
+		rLen = 0;
+		rLoc = 1059;
+		rType = 0;
+		vrLen = 884;
+		vrLoc = 175;
+	};
+	1ACFC5A312D44A2E00994D35 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */;
+	};
+	1ACFC5A412D44A2E00994D35 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */;
+		name = "AuthenticatonManager.m: 35";
+		rLen = 0;
+		rLoc = 984;
+		rType = 0;
+		vrLen = 891;
+		vrLoc = 609;
+	};
+	1ACFC5A712D44A2E00994D35 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */;
+		name = "AuthenticatonManager.m: 45";
+		rLen = 0;
+		rLoc = 1315;
+		rType = 0;
+		vrLen = 1240;
+		vrLoc = 563;
 	};
 	1AE47E2112D35D5E008930DA /* NSString-UDID.h */ = {
 		uiCtxt = {
@@ -602,9 +650,9 @@
 	};
 	1AE47E7712D363B2008930DA /* NSString-UDIDTest.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1206, 588}}";
-			sepNavSelRange = "{251, 0}";
-			sepNavVisRange = "{0, 1059}";
+			sepNavIntBoundsRect = "{{0, 0}, {1012, 544}}";
+			sepNavSelRange = "{1059, 0}";
+			sepNavVisRange = "{175, 884}";
 			sepNavWindowFrame = "{{15, 62}, {1265, 716}}";
 		};
 	};
@@ -1647,9 +1695,9 @@
 	};
 	1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1206, 1030}}";
-			sepNavSelRange = "{1027, 0}";
-			sepNavVisRange = "{563, 1351}";
+			sepNavIntBoundsRect = "{{0, 0}, {1206, 982}}";
+			sepNavSelRange = "{1315, 0}";
+			sepNavVisRange = "{563, 1240}";
 			sepNavWindowFrame = "{{15, 62}, {1265, 716}}";
 		};
 	};
@@ -1836,7 +1884,7 @@
 		fRef = 1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */;
 		name = "AuthenticatonManager.m: 34";
 		rLen = 0;
-		rLoc = 1311;
+		rLoc = 1224;
 		rType = 0;
 		vrLen = 1172;
 		vrLoc = 437;
@@ -1860,7 +1908,7 @@
 		fRef = 1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */;
 		name = "AuthenticatonManager.m: 43";
 		rLen = 0;
-		rLoc = 1337;
+		rLoc = 1250;
 		rType = 0;
 		vrLen = 1150;
 		vrLoc = 383;
@@ -1880,7 +1928,7 @@
 		fRef = 1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */;
 		name = "AuthenticatonManager.m: 52";
 		rLen = 0;
-		rLoc = 1699;
+		rLoc = 1586;
 		rType = 0;
 		vrLen = 1286;
 		vrLoc = 564;
@@ -1900,7 +1948,7 @@
 		fRef = 1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */;
 		name = "AuthenticatonManager.m: 48";
 		rLen = 0;
-		rLoc = 1426;
+		rLoc = 1315;
 		rType = 0;
 		vrLen = 1325;
 		vrLoc = 564;
@@ -1970,7 +2018,7 @@
 		fRef = 1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */;
 		name = "AuthenticatonManager.m: 52";
 		rLen = 0;
-		rLoc = 1426;
+		rLoc = 1315;
 		rType = 0;
 		vrLen = 1106;
 		vrLoc = 815;
@@ -1990,7 +2038,7 @@
 		fRef = 1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */;
 		name = "AuthenticatonManager.m: 52";
 		rLen = 0;
-		rLoc = 1426;
+		rLoc = 1315;
 		rType = 0;
 		vrLen = 1106;
 		vrLoc = 815;
@@ -2010,7 +2058,7 @@
 		fRef = 1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */;
 		name = "AuthenticatonManager.m: 66";
 		rLen = 0;
-		rLoc = 1896;
+		rLoc = 1783;
 		rType = 0;
 		vrLen = 996;
 		vrLoc = 925;
@@ -2047,7 +2095,7 @@
 		fRef = 1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */;
 		name = "AuthenticatonManager.m: 66";
 		rLen = 18;
-		rLoc = 1839;
+		rLoc = 1726;
 		rType = 0;
 		vrLen = 996;
 		vrLoc = 925;
@@ -2115,7 +2163,7 @@
 		fRef = 1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */;
 		name = "AuthenticatonManager.m: 50";
 		rLen = 0;
-		rLoc = 1426;
+		rLoc = 1315;
 		rType = 0;
 		vrLen = 996;
 		vrLoc = 925;
@@ -2149,7 +2197,7 @@
 		fRef = 1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */;
 		name = "AuthenticatonManager.m: 50";
 		rLen = 0;
-		rLoc = 1426;
+		rLoc = 1315;
 		rType = 0;
 		vrLen = 996;
 		vrLoc = 925;
@@ -2203,7 +2251,7 @@
 		fRef = 1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */;
 		name = "AuthenticatonManager.m: 50";
 		rLen = 0;
-		rLoc = 1426;
+		rLoc = 1315;
 		rType = 0;
 		vrLen = 996;
 		vrLoc = 925;
@@ -2243,7 +2291,7 @@
 		fRef = 1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */;
 		name = "AuthenticatonManager.m: 50";
 		rLen = 0;
-		rLoc = 1426;
+		rLoc = 1315;
 		rType = 0;
 		vrLen = 996;
 		vrLoc = 925;
@@ -2283,7 +2331,7 @@
 		fRef = 1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */;
 		name = "AuthenticatonManager.m: 50";
 		rLen = 0;
-		rLoc = 1426;
+		rLoc = 1315;
 		rType = 0;
 		vrLen = 996;
 		vrLoc = 925;
@@ -2349,7 +2397,7 @@
 		fRef = 1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */;
 		name = "AuthenticatonManager.m: 50";
 		rLen = 0;
-		rLoc = 1426;
+		rLoc = 1315;
 		rType = 0;
 		vrLen = 996;
 		vrLoc = 925;
@@ -2400,7 +2448,7 @@
 		fRef = 1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */;
 		name = "AuthenticatonManager.m: 50";
 		rLen = 0;
-		rLoc = 1426;
+		rLoc = 1315;
 		rType = 0;
 		vrLen = 996;
 		vrLoc = 925;
@@ -2430,7 +2478,7 @@
 		fRef = 1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */;
 		name = "AuthenticatonManager.m: 50";
 		rLen = 0;
-		rLoc = 1426;
+		rLoc = 1315;
 		rType = 0;
 		vrLen = 996;
 		vrLoc = 925;
@@ -2450,7 +2498,7 @@
 		fRef = 1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */;
 		name = "AuthenticatonManager.m: 50";
 		rLen = 0;
-		rLoc = 1426;
+		rLoc = 1315;
 		rType = 0;
 		vrLen = 996;
 		vrLoc = 925;
@@ -2470,7 +2518,7 @@
 		fRef = 1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */;
 		name = "AuthenticatonManager.m: 50";
 		rLen = 0;
-		rLoc = 1426;
+		rLoc = 1315;
 		rType = 0;
 		vrLen = 996;
 		vrLoc = 925;
@@ -2528,7 +2576,7 @@
 		fRef = 1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */;
 		name = "AuthenticatonManager.m: 47";
 		rLen = 0;
-		rLoc = 1426;
+		rLoc = 1315;
 		rType = 0;
 		vrLen = 1338;
 		vrLoc = 563;
@@ -2558,7 +2606,7 @@
 		fRef = 1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */;
 		name = "AuthenticatonManager.m: 47";
 		rLen = 0;
-		rLoc = 1426;
+		rLoc = 1315;
 		rType = 0;
 		vrLen = 1351;
 		vrLoc = 563;
@@ -2631,7 +2679,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 1AB8B78012A2726A00038C19 /* FlashSync */;
-		activeSDKPreference = iphoneos3.2;
+		activeSDKPreference = iphonesimulator3.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* FlashSync */;
 		addToTargets = (
 			1AE47E6A12D362C2008930DA /* UnitTests */,
@@ -2757,6 +2805,12 @@
 			1ACFC59212D4483A00994D35 /* PBXBookmark */ = 1ACFC59212D4483A00994D35 /* PBXBookmark */;
 			1ACFC59312D4484300994D35 /* PBXTextBookmark */ = 1ACFC59312D4484300994D35 /* PBXTextBookmark */;
 			1ACFC59612D4484300994D35 /* PBXTextBookmark */ = 1ACFC59612D4484300994D35 /* PBXTextBookmark */;
+			1ACFC59E12D44A0C00994D35 /* PBXTextBookmark */ = 1ACFC59E12D44A0C00994D35 /* PBXTextBookmark */;
+			1ACFC59F12D44A2200994D35 /* PBXBookmark */ = 1ACFC59F12D44A2200994D35 /* PBXBookmark */;
+			1ACFC5A212D44A2E00994D35 /* PBXTextBookmark */ = 1ACFC5A212D44A2E00994D35 /* PBXTextBookmark */;
+			1ACFC5A312D44A2E00994D35 /* PBXBookmark */ = 1ACFC5A312D44A2E00994D35 /* PBXBookmark */;
+			1ACFC5A412D44A2E00994D35 /* PBXTextBookmark */ = 1ACFC5A412D44A2E00994D35 /* PBXTextBookmark */;
+			1ACFC5A712D44A2E00994D35 /* PBXTextBookmark */ = 1ACFC5A712D44A2E00994D35 /* PBXTextBookmark */;
 			1AE47E2E12D35E13008930DA = 1AE47E2E12D35E13008930DA /* PBXTextBookmark */;
 			1AE47EF312D367FE008930DA = 1AE47EF312D367FE008930DA /* PBXTextBookmark */;
 			1AE47EF512D367FE008930DA = 1AE47EF512D367FE008930DA /* PBXTextBookmark */;
