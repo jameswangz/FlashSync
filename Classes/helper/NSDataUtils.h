@@ -17,6 +17,7 @@
 + (NSString *)pathForFolder:(NSString *) folder;
 + (NSString *)pathForFolder:(NSString *) folder name:(NSString *) name;
 + (void) createFolderIfRequired:(NSString *) folder;
++ (void) createFolderIfRequired:(NSString *) folder absolutePath:(BOOL) absolutePath;
 + (BOOL)dataExistsInFolder:(NSString *) folder name:(NSString *) name; 
 + (NSData *)loadDataInFolder:(NSString *) folder name:(NSString *) name;
 + (void)saveData:(NSData *) data inFolder:(NSString *) folder name:(NSString *) name;

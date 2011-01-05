@@ -202,7 +202,48 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>1A13AFEE12D4A8D000A3BD87</string>
+				<string>1A13B04912D4B46100A3BD87</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>NSDataUtils.m</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>1A13B04A12D4B46100A3BD87</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>NSDataUtils.m</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>1A13B05612D4B48800A3BD87</string>
+						<key>history</key>
+						<array>
+							<string>1A13B05412D4B48800A3BD87</string>
+							<string>1A13B05512D4B48800A3BD87</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {1265, 619}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>15 118 1265 660 0 0 1280 778 </string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>1A13B00112D4AB1F00A3BD87</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>DetailViewController.m</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
@@ -210,16 +251,16 @@
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>1A13AFEF12D4A8D000A3BD87</string>
+						<string>1A13B00212D4AB1F00A3BD87</string>
 						<key>PBXProjectModuleLabel</key>
 						<string>DetailViewController.m</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>1A13AFF012D4A8D000A3BD87</string>
+						<string>1A13B05712D4B48800A3BD87</string>
 						<key>history</key>
 						<array>
-							<string>1A13AFE912D4A77600A3BD87</string>
+							<string>1A13B03212D4B22900A3BD87</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -367,7 +408,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>DetailViewController.m</string>
+								<string>NSDataUtils.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -375,11 +416,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>DetailViewController.m</string>
+										<string>NSDataUtils.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>1A13AFED12D4A8D000A3BD87</string>
+										<string>1A13B05312D4B48800A3BD87</string>
 										<key>history</key>
 										<array>
 											<string>1A4AD4A912AB879900173889</string>
@@ -401,13 +442,13 @@
 											<string>1AE47E2E12D35E13008930DA</string>
 											<string>1AE47F7612D36C19008930DA</string>
 											<string>1AE47F7812D36C19008930DA</string>
-											<string>1AE47F7912D36C19008930DA</string>
 											<string>1AE4800612D372EE008930DA</string>
 											<string>1AEB023D12D428E1009284E5</string>
 											<string>1AEB026D12D42AF4009284E5</string>
 											<string>1ACFC5A212D44A2E00994D35</string>
 											<string>1ACAF86312D47D760065C76F</string>
-											<string>1A13AFEC12D4A8D000A3BD87</string>
+											<string>1A13B04612D4B46100A3BD87</string>
+											<string>1A13B04712D4B46100A3BD87</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -605,11 +646,14 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>1A13B03812D4B23F00A3BD87</string>
+		<string>1A13B03512D4B22900A3BD87</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>1AB8B79C12A278F200038C19</string>
 		<string>/Users/James/iphone/FlashSync/FlashSync.xcodeproj</string>
-		<string>1A13AFEE12D4A8D000A3BD87</string>
+		<string>1A13B00112D4AB1F00A3BD87</string>
+		<string>1AB8B79C12A278F200038C19</string>
+		<string>1A13B04912D4B46100A3BD87</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 117 1280 661 0 0 1280 778 </string>
@@ -633,7 +677,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>NSDataUtils.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -650,6 +694,8 @@
 							<string>244pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -702,7 +748,7 @@
 			<key>WindowToolGUID</key>
 			<string>1AB8B79C12A278F200038C19</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -946,6 +992,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>

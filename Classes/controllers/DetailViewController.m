@@ -147,7 +147,7 @@
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	} else {
 		cell.imageView.image =[UIImage imageNamed:@"TextEdit.png"];
-		cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+		//cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
 		cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ @ %@", file.size, file.modifiedAt];		
 	}
 	return cell;
@@ -282,18 +282,27 @@
 - (void) sync: (NSString *) parentSrc to: (NSString*) parentDst  {
 	NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:parentSrc error:nil];
 	for (NSString *name in contents) {
-		NSString *src = [NSDataUtils pathForFolder:[NSString stringWithFormat:@"%@/%@", kFlashDisk, name]];
-		NSString *dst = [NSDataUtils pathForFolder:[NSString stringWithFormat:@"%@/%@", kImported, name]];
+		NSString *src = [parentSrc stringByAppendingPathComponent:name];
+		NSString *dst = [parentDst stringByAppendingPathComponent:name];
 		
 		BOOL dir;
 		[[NSFileManager defaultManager] fileExistsAtPath:src isDirectory:&dir];		
 		
-		
-		NSLog(@"Name %@", name);
-		if ([name hasSuffix:@".etmp"]) {
-			NSLog(@"Trying to decode %@", src);
+//		NSLog(@"Dir %d", dir);
+//		NSLog(@"Name %@", name);
+	
+		if (dir) {
+			[NSDataUtils createFolderIfRequired:dst absolutePath:YES];
+			[self sync:src to:dst];
 		} else {
-			[self overwrite: src dst: dst];
+			if ([name hasSuffix:@".etmp"]) {
+				//NSLog(@"Trying to decode %@", src);
+				NSData *data = [[NSData alloc] initWithContentsOfFile:src];
+				//NSLog(@"Content %@", data);
+				
+			} else {
+				[self overwrite: src dst: dst];
+			}
 		}
 	}
 

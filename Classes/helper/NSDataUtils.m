@@ -34,11 +34,16 @@
 	return [[[NSData alloc] initWithContentsOfFile:[self pathForFolder:folder name:name]] autorelease];
 }
 
-+ (void) createFolderIfRequired:(NSString *) folder {
-	NSString *path = [self pathForFolder:folder];
++ (void)createFolderIfRequired:(NSString *) folder absolutePath:(BOOL) absolutePath {
+	NSString *path = nil;
+	if (absolutePath) {
+		path = folder;
+	} else {
+		path = [self pathForFolder:folder];
+	}
+	
 	NSFileManager *fileManager = [NSFileManager defaultManager];
-	BOOL dir = YES;
-	BOOL exists = [fileManager fileExistsAtPath:path isDirectory:&dir];
+	BOOL exists = [fileManager fileExistsAtPath:path isDirectory:nil];
 	if (!exists) {
 		NSError *error = nil;
 		[fileManager createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:&error];
@@ -48,6 +53,10 @@
 			NSLog(@"Created folder %@ successfully.", path);
 		}
 	}
+}
+
++ (void) createFolderIfRequired:(NSString *) folder {
+	[self createFolderIfRequired:folder absolutePath:NO];
 }
 
 + (void)saveData:(NSData *) data inFolder:(NSString *) folder name:(NSString *) name {
