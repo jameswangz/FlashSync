@@ -22,7 +22,7 @@
 	unsigned short int key = 98;
 	unsigned short int tempKey = key;
 	for(int i = 0; i < lengthOfSeed; i++){
-		if(i % 23 == 0) {
+		if(i % 30 == 0) {
 			key = tempKey;
 		}
 		int current = seed[i];

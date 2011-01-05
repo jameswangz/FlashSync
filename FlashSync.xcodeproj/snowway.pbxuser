@@ -72,8 +72,8 @@
 	1AE47E2212D35D5E008930DA /* NSString-UDID.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1011, 684}}";
-			sepNavSelRange = "{597, 0}";
-			sepNavVisRange = "{291, 569}";
+			sepNavSelRange = "{585, 0}";
+			sepNavVisRange = "{256, 604}";
 		};
 	};
 	1AE47E6A12D362C2008930DA /* UnitTests */ = {
@@ -83,7 +83,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1012, 646}}";
 			sepNavSelRange = "{888, 0}";
-			sepNavVisRange = "{249, 810}";
+			sepNavVisRange = "{247, 812}";
 		};
 	};
 	1D3623240D0F684500981E51 /* FlashSyncAppDelegate.h */ = {
@@ -273,6 +273,14 @@
 			E7526AF812D4397C00D4FBE4 /* PBXTextBookmark */ = E7526AF812D4397C00D4FBE4 /* PBXTextBookmark */;
 			E7526AFB12D43A2D00D4FBE4 /* PBXTextBookmark */ = E7526AFB12D43A2D00D4FBE4 /* PBXTextBookmark */;
 			E7526AFC12D43A2F00D4FBE4 /* PBXTextBookmark */ = E7526AFC12D43A2F00D4FBE4 /* PBXTextBookmark */;
+			E7526AFD12D43B3900D4FBE4 /* PBXTextBookmark */ = E7526AFD12D43B3900D4FBE4 /* PBXTextBookmark */;
+			E7526AFE12D43B4900D4FBE4 /* PBXTextBookmark */ = E7526AFE12D43B4900D4FBE4 /* PBXTextBookmark */;
+			E7526AFF12D43BBD00D4FBE4 /* PBXTextBookmark */ = E7526AFF12D43BBD00D4FBE4 /* PBXTextBookmark */;
+			E7526B0212D43BCE00D4FBE4 /* PBXTextBookmark */ = E7526B0212D43BCE00D4FBE4 /* PBXTextBookmark */;
+			E7526B0512D43BD600D4FBE4 /* PBXTextBookmark */ = E7526B0512D43BD600D4FBE4 /* PBXTextBookmark */;
+			E7526B0612D43BD800D4FBE4 /* PBXTextBookmark */ = E7526B0612D43BD800D4FBE4 /* PBXTextBookmark */;
+			E7526B0712D43BD800D4FBE4 /* PBXTextBookmark */ = E7526B0712D43BD800D4FBE4 /* PBXTextBookmark */;
+			E7526B0812D43BD800D4FBE4 /* PBXTextBookmark */ = E7526B0812D43BD800D4FBE4 /* PBXTextBookmark */;
 			E7E0026D12D2B550006A3036 = E7E0026D12D2B550006A3036 /* PBXTextBookmark */;
 			E7E0029B12D2B978006A3036 = E7E0029B12D2B978006A3036 /* PBXBookmark */;
 			E7E0029C12D2B978006A3036 = E7E0029C12D2B978006A3036 /* PBXTextBookmark */;
@@ -987,6 +995,86 @@
 		rType = 0;
 		vrLen = 810;
 		vrLoc = 249;
+	};
+	E7526AFD12D43B3900D4FBE4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1AE47E7712D363B2008930DA /* NSString-UDIDTest.m */;
+		name = "NSString-UDIDTest.m: 27";
+		rLen = 40;
+		rLoc = 698;
+		rType = 0;
+		vrLen = 810;
+		vrLoc = 249;
+	};
+	E7526AFE12D43B4900D4FBE4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1AE47E7712D363B2008930DA /* NSString-UDIDTest.m */;
+		name = "NSString-UDIDTest.m: 30";
+		rLen = 36;
+		rLoc = 965;
+		rType = 0;
+		vrLen = 810;
+		vrLoc = 249;
+	};
+	E7526AFF12D43BBD00D4FBE4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1AE47E7712D363B2008930DA /* NSString-UDIDTest.m */;
+		name = "NSString-UDIDTest.m: 25";
+		rLen = 0;
+		rLoc = 621;
+		rType = 0;
+		vrLen = 810;
+		vrLoc = 249;
+	};
+	E7526B0212D43BCE00D4FBE4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1AE47E7712D363B2008930DA /* NSString-UDIDTest.m */;
+		name = "NSString-UDIDTest.m: 30";
+		rLen = 0;
+		rLoc = 948;
+		rType = 0;
+		vrLen = 672;
+		vrLoc = 387;
+	};
+	E7526B0512D43BD600D4FBE4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1AE47E7712D363B2008930DA /* NSString-UDIDTest.m */;
+		name = "NSString-UDIDTest.m: 30";
+		rLen = 0;
+		rLoc = 948;
+		rType = 0;
+		vrLen = 672;
+		vrLoc = 387;
+	};
+	E7526B0612D43BD800D4FBE4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1AE47E2212D35D5E008930DA /* NSString-UDID.m */;
+		name = "NSString-UDID.m: 25";
+		rLen = 0;
+		rLoc = 585;
+		rType = 0;
+		vrLen = 604;
+		vrLoc = 256;
+	};
+	E7526B0712D43BD800D4FBE4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1AE47E7712D363B2008930DA /* NSString-UDIDTest.m */;
+		name = "NSString-UDIDTest.m: 28";
+		rLen = 0;
+		rLoc = 888;
+		rType = 0;
+		vrLen = 812;
+		vrLoc = 247;
+	};
+	E7526B0812D43BD800D4FBE4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1AE47E7712D363B2008930DA /* NSString-UDIDTest.m */;
+		name = "NSString-UDIDTest.m: 28";
+		rLen = 0;
+		rLoc = 888;
+		rType = 0;
+		vrLen = 812;
+		vrLoc = 247;
 	};
 	E78912AF12A75D4800AABAF2 /* FlashSync */ = {
 		isa = PBXExecutable;
