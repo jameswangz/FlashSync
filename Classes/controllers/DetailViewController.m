@@ -265,32 +265,43 @@
 	self.syncButton.enabled = YES;
 }
 
-- (void) syncInBackground {
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+- (void) overwrite: (NSString *) src dst: (NSString *) dst  {
+	NSError *error = nil;
+	BOOL dir;
+	BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:dst isDirectory:&dir];		
+	if (fileExists) {
+		[[NSFileManager defaultManager] removeItemAtPath:dst error:nil];
+	}
 	
-	NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[NSDataUtils pathForFolder:kFlashDisk] error:nil];
-	
+	[[NSFileManager defaultManager] copyItemAtPath:src	toPath:dst error:&error];
+	if (error != nil) {
+		NSLog(@"Error : %@", error);
+	}
+}
+
+- (void) sync: (NSString *) folder  {
+	NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:folder error:nil];
 	for (NSString *name in contents) {
-		NSError *error = nil;
 		NSString *src = [NSDataUtils pathForFolder:[NSString stringWithFormat:@"%@/%@", kFlashDisk, name]];
 		NSString *dst = [NSDataUtils pathForFolder:[NSString stringWithFormat:@"%@/%@", kImported, name]];
 		
 		BOOL dir;
-		NSString *type = @"文件";
-		BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:dst isDirectory:&dir];
-		if (dir) {
-			type = @"目录";
-		}
+		[[NSFileManager defaultManager] fileExistsAtPath:src isDirectory:&dir];		
 		
-		if (fileExists) {
-			[[NSFileManager defaultManager] removeItemAtPath:dst error:nil];
-		}
 		
-		[[NSFileManager defaultManager] copyItemAtPath:src	toPath:dst error:&error];
-		NSLog(@"Error : %@", error);
+		NSLog(@"Name %@", name);
+		if ([name hasSuffix:@".etmp"]) {
+			NSLog(@"Trying to decode %@", src);
+		} else {
+			[self overwrite: src dst: dst];
+		}
 	}
-	
-	
+
+}
+- (void) syncInBackground {
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	NSString *folder = [NSDataUtils pathForFolder:kFlashDisk];
+	[self sync: folder];
 	[@"同步文件已完成, 请点击左侧 [已导入文件] 查看" showInDialogWithTitle:@"提示信息"];	
 	[pool release];
 	
