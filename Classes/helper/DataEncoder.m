@@ -12,18 +12,13 @@
 @implementation DataEncoder
 
 + (void) decode: (NSData *) data to: (NSMutableData *) decoded  {
-	//TODO optimize performance by using buffer
-	int totalSize = [data length];
-	unsigned char buffer[totalSize];
-	unsigned char decodedBuffer[totalSize];
-	
-	[data getBytes:buffer length:totalSize];
-	
-	for (int i = 0; i < sizeof(buffer); i++) {
-		decodedBuffer[i] = buffer[i] ^ 2;
+	char *bytes = (char *) [data bytes];
+
+	for (int i = 0; i < [data length]; i++) {
+		unsigned char decodedBytes[1];
+		decodedBytes[0] = bytes[i] ^ 2;
+		[decoded appendBytes: decodedBytes length:1];
 	}
-	
-	[decoded appendBytes:decodedBuffer length:totalSize];
 }
 
 @end
