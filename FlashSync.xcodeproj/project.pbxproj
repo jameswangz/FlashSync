@@ -23,6 +23,7 @@
 		1AAA5BDF12B3C23F00577207 /* iSync.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AAA5BDD12B3C23F00577207 /* iSync.png */; };
 		1ACF8C4F12B4A14D00D76EDC /* InspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ACF8C4D12B4A14D00D76EDC /* InspectorViewController.m */; };
 		1ACF8C5012B4A14D00D76EDC /* InspectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ACF8C4E12B4A14D00D76EDC /* InspectorViewController.xib */; };
+		1AE472C812D9A67500967539 /* RootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AE472C712D9A67500967539 /* RootView.xib */; };
 		1AE47E2312D35D5E008930DA /* NSString-UDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE47E2212D35D5E008930DA /* NSString-UDID.m */; };
 		1AE47E7812D363B2008930DA /* NSString-UDIDTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE47E7712D363B2008930DA /* NSString-UDIDTest.m */; };
 		1AE47F4612D36AA9008930DA /* NSDataUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A69181D12AA2AE100686504 /* NSDataUtils.m */; };
@@ -64,6 +65,7 @@
 		1ACF8C4D12B4A14D00D76EDC /* InspectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectorViewController.m; sourceTree = "<group>"; };
 		1ACF8C4E12B4A14D00D76EDC /* InspectorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InspectorViewController.xib; sourceTree = "<group>"; };
 		1ACF8F9912B4F41100D76EDC /* flashsync.xcclassmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcclassmodel; path = flashsync.xcclassmodel; sourceTree = "<group>"; };
+		1AE472C712D9A67500967539 /* RootView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootView.xib; sourceTree = "<group>"; };
 		1AE47E2112D35D5E008930DA /* NSString-UDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString-UDID.h"; sourceTree = "<group>"; };
 		1AE47E2212D35D5E008930DA /* NSString-UDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString-UDID.m"; sourceTree = "<group>"; };
 		1AE47E6B12D362C2008930DA /* UnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -259,6 +261,7 @@
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 				2804203B108E9BAB000629CD /* DetailView.xib */,
 				8D1107310486CEB800E47090 /* FlashSync-Info.plist */,
+				1AE472C712D9A67500967539 /* RootView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				1AAA5BDE12B3C23F00577207 /* Assistant Migration.png in Resources */,
 				1AAA5BDF12B3C23F00577207 /* iSync.png in Resources */,
 				1ACF8C5012B4A14D00D76EDC /* InspectorViewController.xib in Resources */,
+				1AE472C812D9A67500967539 /* RootView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
