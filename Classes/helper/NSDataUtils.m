@@ -64,6 +64,15 @@
 	[data writeToFile:[self pathForFolder:folder name:name] atomically:YES];
 }
 
++ (Boolean) isDirectory:(NSString *)fullPath {
+	NSError *error = nil;
+	NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfItemAtPath:fullPath error:&error];
+	if (error != nil) {
+		NSLog(@"%@", error);
+	}
+	id type = [attrs objectForKey:NSFileType];
+	return type == NSFileTypeDirectory;		
 
+}
 
 @end

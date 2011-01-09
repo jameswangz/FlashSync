@@ -21,5 +21,5 @@
 + (BOOL)dataExistsInFolder:(NSString *) folder name:(NSString *) name; 
 + (NSData *)loadDataInFolder:(NSString *) folder name:(NSString *) name;
 + (void)saveData:(NSData *) data inFolder:(NSString *) folder name:(NSString *) name;
-
++ (Boolean)isDirectory:(NSString *) fullPath;
 @end

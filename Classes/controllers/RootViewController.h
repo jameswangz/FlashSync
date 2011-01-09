@@ -18,5 +18,6 @@
 @property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
 
 - (void)presentWelcomeLogo:(NSString *)username;
+- (void)initializePanelItems;
 
 @end

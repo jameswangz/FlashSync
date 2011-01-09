@@ -25,6 +25,7 @@
 - (void)createImportedFolderIfRequired;
 - (void)openDirectly:(File *) file;
 - (void)openWithIFile:(File *) file;
+- (void)refreshRootViewController;
 @end
 
 
@@ -155,8 +156,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-	NSLog(@"deleing row %d", [indexPath row]);
 	File *file = [contentsOfCurrentFolder objectAtIndex:[indexPath row]];
+	NSLog(@"Deleting %@", file.path);
 	NSError *error = nil;
 	[[NSFileManager defaultManager] removeItemAtPath:file.path error:&error];
 	if (error != nil) {
@@ -165,6 +166,7 @@
 	}
 	[contentsOfCurrentFolder removeObjectAtIndex:[indexPath row]];
 	[self.contentsTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+	[self refreshRootViewController];
 }
 
 #pragma mark -
@@ -286,8 +288,7 @@
 		NSString *src = [parentSrc stringByAppendingPathComponent:name];
 		NSString *dst = [parentDst stringByAppendingPathComponent:name];
 		
-		BOOL dir;
-		[[NSFileManager defaultManager] fileExistsAtPath:src isDirectory:&dir];		
+		BOOL dir = [NSDataUtils isDirectory:src];
 		if (dir) {
 			[NSDataUtils createFolderIfRequired:dst absolutePath:YES];
 			[self sync:src to:dst];
@@ -307,12 +308,19 @@
 	}
 }
 
+- (void) refreshRootViewController {
+	FlashSyncAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+	[delegate.rootViewController initializePanelItems];
+	[delegate.rootViewController.tableView reloadData];
+}
+
 - (void) syncInBackground {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	NSString *src = [NSDataUtils pathForFolder:kFlashDisk];
 	NSString *dst = [NSDataUtils pathForFolder:kImported];
 	[self sync: src to: dst];
 	[@"同步文件已完成, 请点击左侧 [已导入文件] 查看" showInDialogWithTitle:@"提示信息"];	
+	[self refreshRootViewController];
 	[pool release];
 	
 	[self performSelectorOnMainThread:@selector(enableSyncButton) withObject:nil waitUntilDone:YES];
