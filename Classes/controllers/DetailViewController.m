@@ -241,6 +241,10 @@
 #pragma mark -
 #pragma mark IBAction Methods
 
+- (IBAction)cancelSync {
+	[@"Sync cancelled" showInDialog];
+}
+
 - (IBAction)syncAll {
 	if (![AuthenticatonManager authenticate]) {
 		return;
@@ -259,13 +263,13 @@
 }
 
 - (void)disableSyncButton {
-	self.syncButton.title = @"同步中, 请稍候...";
-	self.syncButton.enabled = NO;
+	//self.syncButton.title = @"同步中, 请稍候...";
+	//self.syncButton.enabled = NO;
 }
 
 - (void)enableSyncButton {
-	self.syncButton.title = @"从 U 盘同步所有文件";
-	self.syncButton.enabled = YES;
+	//self.syncButton.title = @"从 U 盘同步所有文件";
+	//self.syncButton.enabled = YES;
 }
 
 - (void) overwrite: (NSString *) src dst: (NSString *) dst  {
@@ -293,6 +297,11 @@
 			[NSDataUtils createFolderIfRequired:dst absolutePath:YES];
 			[self sync:src to:dst];
 		} else {
+			NSString *title = [[NSString alloc] initWithFormat:@"正在同步 %@... 点击取消", name];
+			self.syncButton.title = title;
+			self.syncButton.action = @selector(cancelSync);
+			[title release];
+			
 			if ([name hasSuffix:kEncodedFileSuffix]) {
 				NSData *data = [[NSData alloc] initWithContentsOfFile:src];
 				NSMutableData *decoded = [[NSMutableData alloc] init];

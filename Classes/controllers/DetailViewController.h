@@ -22,19 +22,21 @@
 	NSMutableArray *contentsOfCurrentFolder;
 	UILabel *fullPathLabel;
 	UITableView *contentsTableView;
-	UIBarItem *syncButton;
+	UIBarButtonItem *syncButton;
 	
 	File *activeFile;
+	BOOL sync;
 }
 
 
 @property (nonatomic, retain) id detailItem;
 @property (nonatomic, retain) IBOutlet UILabel *fullPathLabel;
 @property (nonatomic, retain) IBOutlet UITableView *contentsTableView;
-@property (nonatomic, retain) IBOutlet UIBarItem *syncButton;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *syncButton;
 @property (nonatomic) BOOL pushedFromNavigationController;
 
 - (IBAction)syncAll;
+- (IBAction)cancelSync;
 - (IBAction)toggleEdit;
 
 @end
