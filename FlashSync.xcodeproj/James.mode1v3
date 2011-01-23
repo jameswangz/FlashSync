@@ -216,11 +216,11 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>1A6023D012EC7C22004B0F0C</string>
+						<string>1A6023DF12EC7E84004B0F0C</string>
 						<key>history</key>
 						<array>
-							<string>1AD2D09712E5F00000FA11BE</string>
-							<string>1A6023CB12EC7BC4004B0F0C</string>
+							<string>1A6023D812EC7D49004B0F0C</string>
+							<string>1A6023DE12EC7E84004B0F0C</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -377,7 +377,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>1A6023CF12EC7C22004B0F0C</string>
+										<string>1A6023DD12EC7E84004B0F0C</string>
 										<key>history</key>
 										<array>
 											<string>1AAA5BFF12B3C4BF00577207</string>
@@ -604,6 +604,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>1A69183C12AA2C6500686504</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>/Users/James/iphone/FlashSync/FlashSync.xcodeproj</string>
@@ -1517,7 +1518,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1A69183C12AA2C6500686504</string>
-				<string>1AE4738D12DA11F300967539</string>
+				<string>1A6023E012EC7E84004B0F0C</string>
 				<string>1A69183B12AA2C6500686504</string>
 			</array>
 			<key>WindowString</key>

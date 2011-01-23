@@ -25,7 +25,7 @@
 	UIBarButtonItem *syncButton;
 	
 	File *activeFile;
-	BOOL sync;
+	BOOL userCancelled;
 }
 
 

@@ -242,7 +242,7 @@
 #pragma mark IBAction Methods
 
 - (IBAction)cancelSync {
-	[@"Sync cancelled" showInDialog];
+	userCancelled = YES;
 }
 
 - (IBAction)syncAll {
@@ -272,9 +272,10 @@
 	self.syncButton.title = title;
 }
 
-- (void)changeButton2Sync {
+- (void)resetSyncState {
 	self.syncButton.title = @"从 U 盘同步所有文件";
 	self.syncButton.action = @selector(syncAll);
+	userCancelled = NO;
 }
 
 - (void) overwrite: (NSString *) src dst: (NSString *) dst  {
@@ -295,6 +296,10 @@
 - (void) sync: (NSString *) parentSrc to: (NSString*) parentDst  {
 	NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:parentSrc error:nil];
 	for (NSString *name in contents) {
+		if (userCancelled) {
+			return;
+		}
+		
 		[self performSelectorOnMainThread:@selector(changeTitleOfSyncButton:) withObject:name waitUntilDone:YES];
 		NSString *src = [parentSrc stringByAppendingPathComponent:name];
 		NSString *dst = [parentDst stringByAppendingPathComponent:name];
@@ -330,11 +335,17 @@
 	NSString *src = [NSDataUtils pathForFolder:kFlashDisk];
 	NSString *dst = [NSDataUtils pathForFolder:kImported];
 	[self sync: src to: dst];
-	[@"同步文件已完成, 请点击左侧 [已导入文件] 查看" showInDialogWithTitle:@"提示信息"];	
+	
+	if (userCancelled) {
+		[@"同步过程被用户中止" showInDialogWithTitle:@"提示信息"];	
+	} else {
+		[@"同步文件已完成, 请点击左侧 [已导入文件] 查看" showInDialogWithTitle:@"提示信息"];	
+	}
+	
 	[self refreshRootViewController];
 	[pool release];
 	
-	[self performSelectorOnMainThread:@selector(changeButton2Sync) withObject:nil waitUntilDone:YES];
+	[self performSelectorOnMainThread:@selector(resetSyncState) withObject:nil waitUntilDone:YES];
 }
 
 
