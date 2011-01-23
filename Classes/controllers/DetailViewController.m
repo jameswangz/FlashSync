@@ -262,14 +262,19 @@
 	[actionSheet release];
 }
 
-- (void)disableSyncButton {
-	//self.syncButton.title = @"同步中, 请稍候...";
-	//self.syncButton.enabled = NO;
+- (void)changeButton2Cancel {
+	self.syncButton.title = @"取消";
+	self.syncButton.action = @selector(cancelSync);
 }
 
-- (void)enableSyncButton {
-	//self.syncButton.title = @"从 U 盘同步所有文件";
-	//self.syncButton.enabled = YES;
+- (void)changeTitleOfSyncButton:(NSString *)nowSyncingName {
+	NSString *title = [[NSString alloc] initWithFormat:@"正在同步 %@... 点击取消", nowSyncingName];
+	self.syncButton.title = title;
+}
+
+- (void)changeButton2Sync {
+	self.syncButton.title = @"从 U 盘同步所有文件";
+	self.syncButton.action = @selector(syncAll);
 }
 
 - (void) overwrite: (NSString *) src dst: (NSString *) dst  {
@@ -286,9 +291,11 @@
 	}
 }
 
+
 - (void) sync: (NSString *) parentSrc to: (NSString*) parentDst  {
 	NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:parentSrc error:nil];
 	for (NSString *name in contents) {
+		[self performSelectorOnMainThread:@selector(changeTitleOfSyncButton:) withObject:name waitUntilDone:YES];
 		NSString *src = [parentSrc stringByAppendingPathComponent:name];
 		NSString *dst = [parentDst stringByAppendingPathComponent:name];
 		
@@ -297,11 +304,6 @@
 			[NSDataUtils createFolderIfRequired:dst absolutePath:YES];
 			[self sync:src to:dst];
 		} else {
-			NSString *title = [[NSString alloc] initWithFormat:@"正在同步 %@... 点击取消", name];
-			self.syncButton.title = title;
-			self.syncButton.action = @selector(cancelSync);
-			[title release];
-			
 			if ([name hasSuffix:kEncodedFileSuffix]) {
 				NSData *data = [[NSData alloc] initWithContentsOfFile:src];
 				NSMutableData *decoded = [[NSMutableData alloc] init];
@@ -332,12 +334,12 @@
 	[self refreshRootViewController];
 	[pool release];
 	
-	[self performSelectorOnMainThread:@selector(enableSyncButton) withObject:nil waitUntilDone:YES];
+	[self performSelectorOnMainThread:@selector(changeButton2Sync) withObject:nil waitUntilDone:YES];
 }
 
 
 - (void)actualSync {
-	[self disableSyncButton];
+	[self changeButton2Cancel];
 	[self performSelectorInBackground:@selector(syncInBackground) withObject:nil];
 }
 
