@@ -31,7 +31,8 @@
 - (void)resetSyncState;
 - (void)clearSelected;
 - (void)deleteSelected;
-- (void)refreshData;
+- (void)changeStateOfDeleteButton;
+- (int)selectedCount;
 @end
 
 
@@ -42,6 +43,7 @@
 @synthesize fullPathLabel;
 @synthesize contentsTableView;
 @synthesize syncButton;
+@synthesize toolbar;
 @synthesize pushedFromNavigationController;
 
 #pragma mark -
@@ -219,10 +221,20 @@
 	NSLog(@"Opened %d", opened);	
 }
 
+- (int) selectedCount {
+	NSArray *selectedArray = [contentsOfCurrentFolder filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"selected == YES"]];
+	return [selectedArray count];
+}
+
+- (void) changeStateOfDeleteButton {
+	deleteButton.enabled = [self selectedCount] > 0;	
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	File *file = [contentsOfCurrentFolder objectAtIndex:[indexPath row]];
 	if (tableView.editing) {
 		file.selected = YES;
+		[self changeStateOfDeleteButton];
 		return;
 	}
 	if ([file isDir]) {
@@ -236,6 +248,7 @@
 	File *file = [contentsOfCurrentFolder objectAtIndex:[indexPath row]];
 	if (tableView.editing) {
 		file.selected = NO;
+		[self changeStateOfDeleteButton];
 	}	
 }
 
@@ -243,9 +256,6 @@
 	return 60;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return @"删除";
-}
 
 - (UITableViewCellEditingStyle) tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
 	return UITableViewCellAccessoryCheckmark;
@@ -376,15 +386,37 @@
 	}
 }
 
+- (void) addDeleteButton {
+	NSMutableArray *items = [self.toolbar.items mutableCopy];
+	deleteButton = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"删除选中文件"]
+													style:UIBarButtonItemStyleBordered
+												   target:self 
+												   action:@selector(deleteClicked)];
+	deleteButton.enabled = NO;
+	[items insertObject:deleteButton atIndex:2];
+	[deleteButton release];
+	[self.toolbar setItems:items animated:YES];
+	[items release];	
+}
+
+- (void) removeDeleteButton {
+	NSMutableArray *items = [self.toolbar.items mutableCopy];
+	[items removeObjectAtIndex:2];
+	[self.toolbar setItems:items animated:YES];
+	[items release];
+}
+
 - (IBAction)toggleEdit {
 	[self.contentsTableView setEditing:!self.contentsTableView.editing animated:YES];
 	if (self.contentsTableView.editing) {
 		self.navigationItem.rightBarButtonItem.title = @"完成";
 		self.navigationItem.rightBarButtonItem.style = UIBarButtonItemStyleDone;
 		[self clearSelected];
+		[self addDeleteButton];
 	} else {
 		self.navigationItem.rightBarButtonItem.title = @"编辑";
 		self.navigationItem.rightBarButtonItem.style = UIBarButtonItemStylePlain;
+		[self removeDeleteButton];
 	}
 }
 
@@ -393,7 +425,7 @@
 								  initWithTitle:@""
 								  delegate:self
 								  cancelButtonTitle:@"取消"
-								  destructiveButtonTitle:@"删除选中文件" 
+								  destructiveButtonTitle:[NSString stringWithFormat:@"删除 %d 个文件", [self selectedCount]]
 								  otherButtonTitles:nil,
 								  nil];
 	actionSheet.tag = kDeleteActionSheetTag;
@@ -455,6 +487,8 @@
 	self.fullPathLabel = nil;
 	self.contentsTableView = nil;
 	self.syncButton = nil;
+	deleteButton = nil;
+	self.toolbar = nil;
 }
 
 
@@ -469,6 +503,7 @@
 	[contentsTableView release];
 	[contentsOfCurrentFolder release];
 	[syncButton release];
+	[toolbar release];
 	[super dealloc];
 }
 
@@ -513,6 +548,7 @@
 	[self.contentsTableView endUpdates];
 	[indexPaths release];
 	
+	[self changeStateOfDeleteButton];
 	[self refreshRootViewController];
 }
 
