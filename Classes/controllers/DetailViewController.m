@@ -26,6 +26,9 @@
 - (void)openDirectly:(File *) file;
 - (void)openWithIFile:(File *) file;
 - (void)refreshRootViewController;
+- (void)changeButton2Cancel;
+- (void)changeTitleOfSyncButton:(NSString *)nowSyncingName;
+- (void)resetSyncState;
 @end
 
 
@@ -243,6 +246,7 @@
 
 - (IBAction)cancelSync {
 	userCancelled = YES;
+	[self changeTitleOfSyncButton:@"正在中止同步过程, 请稍候..."];
 }
 
 - (IBAction)syncAll {
@@ -267,9 +271,8 @@
 	self.syncButton.action = @selector(cancelSync);
 }
 
-- (void)changeTitleOfSyncButton:(NSString *)nowSyncingName {
-	NSString *title = [[NSString alloc] initWithFormat:@"正在同步 %@... 点击取消", nowSyncingName];
-	self.syncButton.title = title;
+- (void)changeTitleOfSyncButton:(NSString *)newTitle {
+	self.syncButton.title = newTitle;
 }
 
 - (void)resetSyncState {
@@ -300,7 +303,10 @@
 			return;
 		}
 		
-		[self performSelectorOnMainThread:@selector(changeTitleOfSyncButton:) withObject:name waitUntilDone:YES];
+		NSString *newTitle = [[NSString alloc] initWithFormat:@"正在同步 %@,  点击中止同步过程", name];
+		[self performSelectorOnMainThread:@selector(changeTitleOfSyncButton:) withObject:newTitle waitUntilDone:YES];
+		[newTitle release];
+		
 		NSString *src = [parentSrc stringByAppendingPathComponent:name];
 		NSString *dst = [parentDst stringByAppendingPathComponent:name];
 		
