@@ -6,7 +6,7 @@
 //  Copyright 2011 Freeze!. All rights reserved.
 //
 
-
+#import <UIKit/UIKit.h>
 #import <SenTestingKit/SenTestingKit.h>
 #import "NSString-UDID.h"
 
@@ -19,6 +19,8 @@
 @implementation NSString_UDIDTest
 
 - (void)testUnecrypt {
+	NSLog(@"udid %@", [[UIDevice currentDevice] uniqueIdentifier]);
+	
 	NSString *unencrypted1 = [@"CNFKDADGHXJTBZBUIFIYFBAWIHIU" unencrypt];
 	NSLog(@"Unencrypted1 --- %@", unencrypted1);
 	STAssertTrue([@"ADFJKAFJKLSA20" isEqualToString:unencrypted1], @"Not Equal");
