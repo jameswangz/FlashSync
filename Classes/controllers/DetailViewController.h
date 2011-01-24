@@ -11,6 +11,7 @@
 
 #define kSyncActionSheetTag		1
 #define kOpenWayActionSheetTag	2
+#define kDeleteActionSheetTag	3
 
 
 @interface DetailViewController : UIViewController<UIPopoverControllerDelegate, UISplitViewControllerDelegate, 
