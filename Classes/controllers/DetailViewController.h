@@ -38,5 +38,6 @@
 - (IBAction)syncAll;
 - (IBAction)cancelSync;
 - (IBAction)toggleEdit;
+- (IBAction)deleteSelected;
 
 @end

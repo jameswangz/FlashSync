@@ -29,6 +29,7 @@
 - (void)changeButton2Cancel;
 - (void)changeTitleOfSyncButton:(NSString *)nowSyncingName;
 - (void)resetSyncState;
+- (void)clearSelected;
 @end
 
 
@@ -143,6 +144,11 @@
 	return [contentsOfCurrentFolder count];
 }
 
+
+-(void)checkboxClick:(UIButton *)btn {
+    btn.selected = !btn.selected;
+}
+
 - (UITableViewCell *) tableView:(UITableView *)table cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	UITableViewCell *cell = [table dequeueOrInit:@"Cell" withStyle:UITableViewCellStyleSubtitle];
 	File *file = [contentsOfCurrentFolder objectAtIndex:[indexPath row]];
@@ -226,11 +232,22 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	File *file = [contentsOfCurrentFolder objectAtIndex:[indexPath row]];
+	if (tableView.editing) {
+		file.selected = YES;
+		return;
+	}
 	if ([file isDir]) {
 		[self presentFilesInDir: file];
 	} else {
 		[self presentContentOfFile: file];
 	}
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+	File *file = [contentsOfCurrentFolder objectAtIndex:[indexPath row]];
+	if (tableView.editing) {
+		file.selected = NO;
+	}	
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -239,6 +256,10 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
 	return @"删除";
+}
+
+- (UITableViewCellEditingStyle) tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+	return UITableViewCellAccessoryCheckmark;
 }
 
 #pragma mark -
@@ -359,15 +380,36 @@
 	[self performSelectorInBackground:@selector(syncInBackground) withObject:nil];
 }
 
+- (void)clearSelected {
+	for (File *file in contentsOfCurrentFolder) {
+		file.selected = NO;
+	}
+}
+
 - (IBAction)toggleEdit {
 	[self.contentsTableView setEditing:!self.contentsTableView.editing animated:YES];
 	if (self.contentsTableView.editing) {
 		self.navigationItem.rightBarButtonItem.title = @"完成";
 		self.navigationItem.rightBarButtonItem.style = UIBarButtonItemStyleDone;
+		[self clearSelected];
 	} else {
 		self.navigationItem.rightBarButtonItem.title = @"编辑";
 		self.navigationItem.rightBarButtonItem.style = UIBarButtonItemStylePlain;
 	}
+}
+
+- (IBAction)deleteSelected {
+	NSMutableArray *selected = [[NSMutableArray alloc] init];
+	
+	for (NSInteger i = 0; i < [contentsOfCurrentFolder count]; i++) {
+		File *file = [contentsOfCurrentFolder objectAtIndex:i];
+		if (file.selected) {
+			[selected addObject:[NSString stringWithFormat:@"%d", i]];
+		}
+	}
+	
+	[selected showInDialog];
+	[selected release];
 }
 
 #pragma mark -

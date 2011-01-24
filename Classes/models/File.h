@@ -14,6 +14,7 @@
 	NSString *name;
 	NSString *path;
 	NSDictionary *attributes;
+	BOOL selectected;
 }
 
 @property (nonatomic, retain) NSString *name;
@@ -21,6 +22,7 @@
 @property (nonatomic, retain) NSDictionary *attributes;
 @property (nonatomic, retain) NSString *size;
 @property (nonatomic, retain) NSString *modifiedAt;
+@property (nonatomic) BOOL selected;
 
 - (id)initWithName:(NSString *)name path:(NSString *)path attributes:(NSDictionary *)attributes;
 

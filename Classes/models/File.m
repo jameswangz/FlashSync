@@ -7,6 +7,7 @@
 //
 
 #import "File.h"
+#import "NSObject-Dialog.h"
 
 @implementation File
 
@@ -16,12 +17,14 @@
 @synthesize attributes;
 @synthesize size;
 @synthesize modifiedAt;
+@synthesize selected;
 
 - (id)initWithName:(NSString *)theName path:(NSString *)thePath attributes:(NSDictionary *)theAttributes {
 	if (self = [super init]) {
 		self.name = theName;
 		self.path = thePath;
 		self.attributes = theAttributes;
+		self.selected = NO;
 	}
 	return self;
 }
@@ -51,5 +54,6 @@
 	[formatter release];
 	return formatted;
 }
+
 
 @end
