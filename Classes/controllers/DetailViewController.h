@@ -35,9 +35,9 @@
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *syncButton;
 @property (nonatomic) BOOL pushedFromNavigationController;
 
-- (IBAction)syncAll;
+- (IBAction)syncClicked;
 - (IBAction)cancelSync;
 - (IBAction)toggleEdit;
-- (IBAction)deleteSelected;
+- (IBAction)deleteClicked;
 
 @end

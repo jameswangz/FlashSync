@@ -270,7 +270,7 @@
 	[self changeTitleOfSyncButton:@"正在中止同步过程, 请稍候..."];
 }
 
-- (IBAction)syncAll {
+- (IBAction)syncClicked {
 	if (![AuthenticatonManager authenticate]) {
 		return;
 	}
@@ -298,7 +298,7 @@
 
 - (void)resetSyncState {
 	self.syncButton.title = @"从 U 盘同步所有文件";
-	self.syncButton.action = @selector(syncAll);
+	self.syncButton.action = @selector(syncClicked);
 	userCancelled = NO;
 }
 
@@ -375,7 +375,7 @@
 }
 
 
-- (void)actualSync {
+- (void)syncAll {
 	[self changeButton2Cancel];
 	[self performSelectorInBackground:@selector(syncInBackground) withObject:nil];
 }
@@ -398,7 +398,7 @@
 	}
 }
 
-- (IBAction)deleteSelected {
+- (IBAction)deleteClicked {
 	NSMutableArray *selected = [[NSMutableArray alloc] init];
 	
 	for (NSInteger i = 0; i < [contentsOfCurrentFolder count]; i++) {
@@ -418,7 +418,7 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
 	if (actionSheet.tag == kSyncActionSheetTag) {
 		if (buttonIndex == 0) {
-			[self actualSync];
+			[self syncAll];
 		}		
 	}
 	if (actionSheet.tag == kOpenWayActionSheetTag) {

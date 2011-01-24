@@ -37,7 +37,7 @@
 				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 			</object>
 			<object class="IBUIView" id="647120888">
-				<reference key="NSNextResponder"/>
+				<nil key="NSNextResponder"/>
 				<int key="NSvFlags">274</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -46,7 +46,6 @@
 						<int key="NSvFlags">266</int>
 						<string key="NSFrame">{{0, 960}, {768, 44}}</string>
 						<reference key="NSSuperview" ref="647120888"/>
-						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -81,7 +80,6 @@
 						<int key="NSvFlags">274</int>
 						<string key="NSFrame">{{0, 29}, {778, 931}}</string>
 						<reference key="NSSuperview" ref="647120888"/>
-						<reference key="NSWindow"/>
 						<object class="NSColor" key="IBUIBackgroundColor" id="33107367">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
@@ -101,7 +99,6 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrameSize">{768, 30}</string>
 						<reference key="NSSuperview" ref="647120888"/>
-						<reference key="NSWindow"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
@@ -128,8 +125,6 @@
 					</object>
 				</object>
 				<string key="NSFrameSize">{768, 1004}</string>
-				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
 				<reference key="IBUIBackgroundColor" ref="33107367"/>
 				<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics">
@@ -148,14 +143,6 @@
 						<reference key="destination" ref="647120888"/>
 					</object>
 					<int key="connectionID">12</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">syncAll</string>
-						<reference key="source" ref="145807208"/>
-						<reference key="destination" ref="841351856"/>
-					</object>
-					<int key="connectionID">80</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
@@ -199,11 +186,19 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">deleteSelected</string>
+						<string key="label">syncClicked</string>
+						<reference key="source" ref="145807208"/>
+						<reference key="destination" ref="841351856"/>
+					</object>
+					<int key="connectionID">95</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">deleteClicked</string>
 						<reference key="source" ref="535118569"/>
 						<reference key="destination" ref="841351856"/>
 					</object>
-					<int key="connectionID">93</int>
+					<int key="connectionID">96</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -340,7 +335,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">93</int>
+			<int key="maxID">96</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -353,8 +348,8 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>cancelSync</string>
-							<string>deleteSelected</string>
-							<string>syncAll</string>
+							<string>deleteClicked</string>
+							<string>syncClicked</string>
 							<string>toggleEdit</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -370,8 +365,8 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>cancelSync</string>
-							<string>deleteSelected</string>
-							<string>syncAll</string>
+							<string>deleteClicked</string>
+							<string>syncClicked</string>
 							<string>toggleEdit</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -381,11 +376,11 @@
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">
-								<string key="name">deleteSelected</string>
+								<string key="name">deleteClicked</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">
-								<string key="name">syncAll</string>
+								<string key="name">syncClicked</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">
