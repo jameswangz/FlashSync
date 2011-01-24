@@ -18,6 +18,8 @@
 
 #define kEncodedFileSuffix @".etmp"
 
+#define kKeyDataFileName @"key.dat"
+
 @interface Constants : NSObject {
 
 }

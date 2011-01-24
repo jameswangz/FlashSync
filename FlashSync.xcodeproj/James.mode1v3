@@ -202,7 +202,7 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>1A942BA812EDF12E00DD80AE</string>
+				<string>1A942C0912EDF87700DD80AE</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>DetailViewController.m</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
@@ -210,16 +210,16 @@
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>1A942BA912EDF12E00DD80AE</string>
+						<string>1A942C0A12EDF87700DD80AE</string>
 						<key>PBXProjectModuleLabel</key>
 						<string>DetailViewController.m</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>1A942BFB12EDF6C700DD80AE</string>
+						<string>1A942C0C12EDF87700DD80AE</string>
 						<key>history</key>
 						<array>
-							<string>1A942BE812EDF5F400DD80AE</string>
+							<string>1A942C0B12EDF87700DD80AE</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -256,7 +256,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>1A942BFC12EDF6C700DD80AE</string>
+						<string>1A942C0D12EDF87700DD80AE</string>
 						<key>history</key>
 						<array>
 							<string>1A942B9B12EDF08300DD80AE</string>
@@ -351,6 +351,8 @@
 								<string>1AE47E7112D36345008930DA</string>
 								<string>1AE47E7212D3635E008930DA</string>
 								<string>080E96DDFE201D6D7F000001</string>
+								<string>1AEB024A12D42993009284E5</string>
+								<string>1A1DEC3C12A69B2100C7053B</string>
 								<string>1A1DEBBB12A68F1600C7053B</string>
 								<string>1A1DEB8912A68E1C00C7053B</string>
 								<string>29B97315FDCFA39411CA2CEA</string>
@@ -365,12 +367,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>39</integer>
+									<integer>31</integer>
+									<integer>27</integer>
+									<integer>4</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 333}, {338, 602}}</string>
+							<string>{{0, 53}, {338, 602}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -417,7 +421,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>1A942BFA12EDF6C700DD80AE</string>
+										<string>1A942C0812EDF87700DD80AE</string>
 										<key>history</key>
 										<array>
 											<string>1AAA5BFF12B3C4BF00577207</string>
@@ -652,7 +656,7 @@
 		<string>1AB8B79C12A278F200038C19</string>
 		<string>1A942B6912EDEEB000DD80AE</string>
 		<string>/Users/James/iphone/FlashSync/FlashSync.xcodeproj</string>
-		<string>1A942BA812EDF12E00DD80AE</string>
+		<string>1A942C0912EDF87700DD80AE</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 117 1280 661 0 0 1280 778 </string>

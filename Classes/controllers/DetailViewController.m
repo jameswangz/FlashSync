@@ -76,6 +76,10 @@
 	NSMutableArray  *files = [[NSMutableArray alloc] init];
 	
 	for (NSString *name in contents) {
+		if ([name isEqualToString:kKeyDataFileName]) {
+			continue;
+		}
+		
 		NSString *fullPath = [NSDataUtils pathForFolder:path name:name];
 		NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfItemAtPath:fullPath error:nil];
 		File *file = [[File alloc] initWithName:name path:fullPath attributes:attrs];
