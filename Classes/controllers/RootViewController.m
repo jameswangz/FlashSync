@@ -59,6 +59,11 @@
 	[quickLinkItems release];
 }
 
+- (void)refreshPanelItems {
+	[self initializePanelItems];
+	[self.tableView reloadData];
+}
+
 - (void)viewDidLoad {
     self.clearsSelectionOnViewWillAppear = NO;
     self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);

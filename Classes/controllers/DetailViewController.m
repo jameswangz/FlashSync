@@ -332,8 +332,7 @@
 
 - (void) refreshRootViewController {
 	FlashSyncAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-	[delegate.rootViewController initializePanelItems];
-	[delegate.rootViewController.tableView reloadData];
+	[delegate.rootViewController refreshPanelItems];
 }
 
 - (void) syncInBackground {
