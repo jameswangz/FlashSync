@@ -16,7 +16,7 @@
 			sepNavWindowFrame = "{{15, 62}, {1265, 716}}";
 		};
 	};
-	1A13B02D12D4B22600A3BD87 /* DetailViewController.m:321 */ = {
+	1A13B02D12D4B22600A3BD87 /* DetailViewController.m:316 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -28,7 +28,7 @@
 		functionName = "-sync:to:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 321;
+		lineNumber = 316;
 		location = FlashSync;
 		modificationTime = 317583504.94199;
 		originalNumberOfMultipleMatches = 1;
@@ -116,7 +116,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 442";
 		rLen = 0;
-		rLoc = 17055;
+		rLoc = 16978;
 		rType = 0;
 		vrLen = 437;
 		vrLoc = 8936;
@@ -148,7 +148,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 442";
 		rLen = 0;
-		rLoc = 17055;
+		rLoc = 16978;
 		rType = 0;
 		vrLen = 437;
 		vrLoc = 8936;
@@ -320,7 +320,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 246";
 		rLen = 0;
-		rLoc = 8897;
+		rLoc = 8820;
 		rType = 0;
 		vrLen = 842;
 		vrLoc = 7983;
@@ -359,7 +359,7 @@
 		isa = PBXTextBookmark;
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		rLen = 1;
-		rLoc = 297;
+		rLoc = 292;
 		rType = 1;
 	};
 	1A3C0BBB12ED6C5200722370 /* PBXTextBookmark */ = {
@@ -367,7 +367,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 309";
 		rLen = 0;
-		rLoc = 10634;
+		rLoc = 10557;
 		rType = 0;
 		vrLen = 1354;
 		vrLoc = 9728;
@@ -387,7 +387,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 249";
 		rLen = 0;
-		rLoc = 8889;
+		rLoc = 8812;
 		rType = 0;
 		vrLen = 902;
 		vrLoc = 8316;
@@ -407,7 +407,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 335";
 		rLen = 0;
-		rLoc = 11563;
+		rLoc = 11486;
 		rType = 0;
 		vrLen = 917;
 		vrLoc = 11011;
@@ -427,7 +427,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 335";
 		rLen = 0;
-		rLoc = 11558;
+		rLoc = 11481;
 		rType = 0;
 		vrLen = 922;
 		vrLoc = 11011;
@@ -461,7 +461,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 145";
 		rLen = 0;
-		rLoc = 4630;
+		rLoc = 4629;
 		rType = 0;
 		vrLen = 1440;
 		vrLoc = 3993;
@@ -481,7 +481,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 168";
 		rLen = 0;
-		rLoc = 5408;
+		rLoc = 5331;
 		rType = 0;
 		vrLen = 1456;
 		vrLoc = 4179;
@@ -501,7 +501,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 173";
 		rLen = 0;
-		rLoc = 5408;
+		rLoc = 5331;
 		rType = 0;
 		vrLen = 1582;
 		vrLoc = 4436;
@@ -525,7 +525,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 166";
 		rLen = 0;
-		rLoc = 5408;
+		rLoc = 5331;
 		rType = 0;
 		vrLen = 1621;
 		vrLoc = 4511;
@@ -545,7 +545,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 166";
 		rLen = 0;
-		rLoc = 5408;
+		rLoc = 5331;
 		rType = 0;
 		vrLen = 1650;
 		vrLoc = 4438;
@@ -565,7 +565,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 155";
 		rLen = 0;
-		rLoc = 4976;
+		rLoc = 4899;
 		rType = 0;
 		vrLen = 1606;
 		vrLoc = 4438;
@@ -585,7 +585,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 156";
 		rLen = 0;
-		rLoc = 4976;
+		rLoc = 4899;
 		rType = 0;
 		vrLen = 1625;
 		vrLoc = 4438;
@@ -605,7 +605,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 157";
 		rLen = 0;
-		rLoc = 5009;
+		rLoc = 4932;
 		rType = 0;
 		vrLen = 1626;
 		vrLoc = 4438;
@@ -625,7 +625,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 154";
 		rLen = 0;
-		rLoc = 4976;
+		rLoc = 4899;
 		rType = 0;
 		vrLen = 1626;
 		vrLoc = 4438;
@@ -649,7 +649,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 168";
 		rLen = 0;
-		rLoc = 5408;
+		rLoc = 5331;
 		rType = 0;
 		vrLen = 1698;
 		vrLoc = 4477;
@@ -669,7 +669,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 161";
 		rLen = 0;
-		rLoc = 5158;
+		rLoc = 5081;
 		rType = 0;
 		vrLen = 1621;
 		vrLoc = 4305;
@@ -689,7 +689,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 161";
 		rLen = 43;
-		rLoc = 5115;
+		rLoc = 5038;
 		rType = 0;
 		vrLen = 1631;
 		vrLoc = 4305;
@@ -709,7 +709,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 177";
 		rLen = 0;
-		rLoc = 5408;
+		rLoc = 5331;
 		rType = 0;
 		vrLen = 1684;
 		vrLoc = 4477;
@@ -739,7 +739,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 177";
 		rLen = 0;
-		rLoc = 5408;
+		rLoc = 5331;
 		rType = 0;
 		vrLen = 1043;
 		vrLoc = 8353;
@@ -749,7 +749,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 266";
 		rLen = 0;
-		rLoc = 8751;
+		rLoc = 8674;
 		rType = 0;
 		vrLen = 1134;
 		vrLoc = 8373;
@@ -769,7 +769,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 170";
 		rLen = 0;
-		rLoc = 5408;
+		rLoc = 5331;
 		rType = 0;
 		vrLen = 1479;
 		vrLoc = 5162;
@@ -789,7 +789,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 266";
 		rLen = 0;
-		rLoc = 8750;
+		rLoc = 8673;
 		rType = 0;
 		vrLen = 942;
 		vrLoc = 8904;
@@ -809,7 +809,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 250";
 		rLen = 0;
-		rLoc = 7562;
+		rLoc = 7485;
 		rType = 0;
 		vrLen = 1129;
 		vrLoc = 8153;
@@ -829,7 +829,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 251";
 		rLen = 0;
-		rLoc = 7562;
+		rLoc = 7485;
 		rType = 0;
 		vrLen = 1036;
 		vrLoc = 9678;
@@ -849,7 +849,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 249";
 		rLen = 0;
-		rLoc = 7562;
+		rLoc = 7485;
 		rType = 0;
 		vrLen = 1119;
 		vrLoc = 8353;
@@ -879,7 +879,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 250";
 		rLen = 0;
-		rLoc = 7562;
+		rLoc = 7485;
 		rType = 0;
 		vrLen = 1498;
 		vrLoc = 6992;
@@ -889,7 +889,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 250";
 		rLen = 0;
-		rLoc = 7562;
+		rLoc = 7485;
 		rType = 0;
 		vrLen = 989;
 		vrLoc = 8470;
@@ -909,7 +909,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 270";
 		rLen = 33;
-		rLoc = 8717;
+		rLoc = 8640;
 		rType = 0;
 		vrLen = 1047;
 		vrLoc = 8558;
@@ -938,7 +938,7 @@
 		isa = PBXTextBookmark;
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		rLen = 0;
-		rLoc = 17055;
+		rLoc = 16978;
 		rType = 0;
 	};
 	1A3C0C6B12EDB90100722370 /* PBXTextBookmark */ = {
@@ -946,7 +946,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 403";
 		rLen = 0;
-		rLoc = 12136;
+		rLoc = 12059;
 		rType = 0;
 		vrLen = 1104;
 		vrLoc = 12605;
@@ -966,7 +966,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 388";
 		rLen = 0;
-		rLoc = 12136;
+		rLoc = 12059;
 		rType = 0;
 		vrLen = 1047;
 		vrLoc = 12251;
@@ -986,7 +986,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 385";
 		rLen = 0;
-		rLoc = 12136;
+		rLoc = 12059;
 		rType = 0;
 		vrLen = 1071;
 		vrLoc = 12251;
@@ -1006,7 +1006,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 387";
 		rLen = 0;
-		rLoc = 12136;
+		rLoc = 12059;
 		rType = 0;
 		vrLen = 1082;
 		vrLoc = 12251;
@@ -1026,7 +1026,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 378";
 		rLen = 0;
-		rLoc = 12136;
+		rLoc = 12059;
 		rType = 0;
 		vrLen = 1046;
 		vrLoc = 12023;
@@ -1046,7 +1046,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 401";
 		rLen = 0;
-		rLoc = 12136;
+		rLoc = 12059;
 		rType = 0;
 		vrLen = 1078;
 		vrLoc = 12299;
@@ -1056,7 +1056,7 @@
 			sepNavWindowFrame = "{{15, 62}, {1265, 716}}";
 		};
 	};
-	1A4AD4CD12AB893F00173889 /* DetailViewController.m:279 */ = {
+	1A4AD4CD12AB893F00173889 /* DetailViewController.m:274 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -1068,7 +1068,7 @@
 		functionName = "-syncAll";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 279;
+		lineNumber = 274;
 		location = FlashSync;
 		modificationTime = 317583504.940607;
 		originalNumberOfMultipleMatches = 1;
@@ -1096,7 +1096,7 @@
 		comments = "'name' undeclared (first use in this function)";
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		rLen = 1;
-		rLoc = 293;
+		rLoc = 288;
 		rType = 1;
 	};
 	1A6023E212EC8651004B0F0C /* PBXTextBookmark */ = {
@@ -1104,7 +1104,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 442";
 		rLen = 0;
-		rLoc = 17055;
+		rLoc = 16978;
 		rType = 0;
 		vrLen = 461;
 		vrLoc = 8912;
@@ -1176,7 +1176,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 404";
 		rLen = 0;
-		rLoc = 12136;
+		rLoc = 12059;
 		rType = 0;
 		vrLen = 1067;
 		vrLoc = 12275;
@@ -1196,7 +1196,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 236";
 		rLen = 0;
-		rLoc = 7562;
+		rLoc = 7485;
 		rType = 0;
 		vrLen = 1271;
 		vrLoc = 7275;
@@ -1216,7 +1216,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 236";
 		rLen = 0;
-		rLoc = 7562;
+		rLoc = 7485;
 		rType = 0;
 		vrLen = 1211;
 		vrLoc = 7275;
@@ -1245,7 +1245,7 @@
 		isa = PBXTextBookmark;
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		rLen = 0;
-		rLoc = 9223372036854777866;
+		rLoc = 9223372036854777789;
 		rType = 0;
 	};
 	1A942A3B12EDBFF200DD80AE /* PBXTextBookmark */ = {
@@ -1253,7 +1253,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 249";
 		rLen = 0;
-		rLoc = 7562;
+		rLoc = 7485;
 		rType = 0;
 		vrLen = 1168;
 		vrLoc = 7666;
@@ -1303,7 +1303,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 234";
 		rLen = 0;
-		rLoc = 7562;
+		rLoc = 7485;
 		rType = 0;
 		vrLen = 1161;
 		vrLoc = 7666;
@@ -1333,7 +1333,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 383";
 		rLen = 0;
-		rLoc = 12136;
+		rLoc = 12059;
 		rType = 0;
 		vrLen = 959;
 		vrLoc = 8700;
@@ -1343,7 +1343,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 275";
 		rLen = 0;
-		rLoc = 8984;
+		rLoc = 8907;
 		rType = 0;
 		vrLen = 866;
 		vrLoc = 8827;
@@ -1367,7 +1367,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 301";
 		rLen = 0;
-		rLoc = 9723;
+		rLoc = 9646;
 		rType = 0;
 		vrLen = 828;
 		vrLoc = 9599;
@@ -1386,7 +1386,7 @@
 		isa = PBXTextBookmark;
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		rLen = 1;
-		rLoc = 381;
+		rLoc = 376;
 		rType = 1;
 	};
 	1A942A6112EDDCBA00DD80AE /* PBXTextBookmark */ = {
@@ -1394,7 +1394,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 378";
 		rLen = 7;
-		rLoc = 12136;
+		rLoc = 12059;
 		rType = 0;
 		vrLen = 867;
 		vrLoc = 13132;
@@ -1424,7 +1424,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 423";
 		rLen = 0;
-		rLoc = 14260;
+		rLoc = 14183;
 		rType = 0;
 		vrLen = 1055;
 		vrLoc = 8031;
@@ -1434,7 +1434,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 301";
 		rLen = 0;
-		rLoc = 9723;
+		rLoc = 9646;
 		rType = 0;
 		vrLen = 917;
 		vrLoc = 9373;
@@ -1454,7 +1454,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 301";
 		rLen = 0;
-		rLoc = 9723;
+		rLoc = 9646;
 		rType = 0;
 		vrLen = 1040;
 		vrLoc = 9349;
@@ -1501,7 +1501,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 408";
 		rLen = 0;
-		rLoc = 13831;
+		rLoc = 13754;
 		rType = 0;
 		vrLen = 1189;
 		vrLoc = 12593;
@@ -1511,7 +1511,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 413";
 		rLen = 0;
-		rLoc = 13999;
+		rLoc = 13922;
 		rType = 0;
 		vrLen = 1140;
 		vrLoc = 12594;
@@ -1551,7 +1551,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 498";
 		rLen = 0;
-		rLoc = 16059;
+		rLoc = 15982;
 		rType = 0;
 		vrLen = 743;
 		vrLoc = 14894;
@@ -1571,7 +1571,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 500";
 		rLen = 0;
-		rLoc = 16059;
+		rLoc = 15982;
 		rType = 0;
 		vrLen = 653;
 		vrLoc = 15013;
@@ -1591,7 +1591,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 495";
 		rLen = 0;
-		rLoc = 16033;
+		rLoc = 15956;
 		rType = 0;
 		vrLen = 653;
 		vrLoc = 15013;
@@ -1601,7 +1601,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 495";
 		rLen = 0;
-		rLoc = 16033;
+		rLoc = 15956;
 		rType = 0;
 		vrLen = 649;
 		vrLoc = 15012;
@@ -1621,7 +1621,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 495";
 		rLen = 0;
-		rLoc = 16033;
+		rLoc = 15956;
 		rType = 0;
 		vrLen = 677;
 		vrLoc = 15012;
@@ -1641,7 +1641,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 499";
 		rLen = 0;
-		rLoc = 16059;
+		rLoc = 15982;
 		rType = 0;
 		vrLen = 768;
 		vrLoc = 14955;
@@ -1665,7 +1665,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 504";
 		rLen = 0;
-		rLoc = 16682;
+		rLoc = 16605;
 		rType = 0;
 		vrLen = 1000;
 		vrLoc = 15061;
@@ -1685,7 +1685,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 504";
 		rLen = 0;
-		rLoc = 16682;
+		rLoc = 16605;
 		rType = 0;
 		vrLen = 965;
 		vrLoc = 15113;
@@ -1705,7 +1705,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 507";
 		rLen = 0;
-		rLoc = 16767;
+		rLoc = 16690;
 		rType = 0;
 		vrLen = 989;
 		vrLoc = 15113;
@@ -1725,7 +1725,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 506";
 		rLen = 0;
-		rLoc = 16675;
+		rLoc = 16598;
 		rType = 0;
 		vrLen = 1014;
 		vrLoc = 15113;
@@ -1749,7 +1749,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 513";
 		rLen = 0;
-		rLoc = 16911;
+		rLoc = 16834;
 		rType = 0;
 		vrLen = 967;
 		vrLoc = 15254;
@@ -1769,7 +1769,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 504";
 		rLen = 0;
-		rLoc = 16604;
+		rLoc = 16527;
 		rType = 0;
 		vrLen = 1110;
 		vrLoc = 15231;
@@ -1789,7 +1789,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 514";
 		rLen = 0;
-		rLoc = 16953;
+		rLoc = 16876;
 		rType = 0;
 		vrLen = 936;
 		vrLoc = 15231;
@@ -1809,7 +1809,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 512";
 		rLen = 0;
-		rLoc = 16911;
+		rLoc = 16834;
 		rType = 0;
 		vrLen = 935;
 		vrLoc = 15231;
@@ -1829,7 +1829,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 508";
 		rLen = 0;
-		rLoc = 16517;
+		rLoc = 16440;
 		rType = 0;
 		vrLen = 886;
 		vrLoc = 15274;
@@ -1849,7 +1849,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 512";
 		rLen = 0;
-		rLoc = 16575;
+		rLoc = 16498;
 		rType = 0;
 		vrLen = 992;
 		vrLoc = 15419;
@@ -1869,7 +1869,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 524";
 		rLen = 0;
-		rLoc = 17047;
+		rLoc = 16970;
 		rType = 0;
 		vrLen = 995;
 		vrLoc = 15421;
@@ -1889,7 +1889,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 527";
 		rLen = 0;
-		rLoc = 17046;
+		rLoc = 16969;
 		rType = 0;
 		vrLen = 981;
 		vrLoc = 15469;
@@ -1909,7 +1909,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 168";
 		rLen = 0;
-		rLoc = 5425;
+		rLoc = 5348;
 		rType = 0;
 		vrLen = 1352;
 		vrLoc = 4829;
@@ -1929,7 +1929,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 171";
 		rLen = 0;
-		rLoc = 5482;
+		rLoc = 5405;
 		rType = 0;
 		vrLen = 1396;
 		vrLoc = 4829;
@@ -1948,7 +1948,7 @@
 		isa = PBXTextBookmark;
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		rLen = 1;
-		rLoc = 361;
+		rLoc = 356;
 		rType = 1;
 	};
 	1A942B3512EDE91500DD80AE /* PBXTextBookmark */ = {
@@ -1956,7 +1956,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 360";
 		rLen = 0;
-		rLoc = 11973;
+		rLoc = 11896;
 		rType = 0;
 		vrLen = 889;
 		vrLoc = 11055;
@@ -1996,7 +1996,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 459";
 		rLen = 0;
-		rLoc = 15554;
+		rLoc = 15477;
 		rType = 0;
 		vrLen = 706;
 		vrLoc = 14241;
@@ -2030,7 +2030,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 451";
 		rLen = 0;
-		rLoc = 15315;
+		rLoc = 15238;
 		rType = 0;
 		vrLen = 963;
 		vrLoc = 13483;
@@ -2054,7 +2054,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 451";
 		rLen = 0;
-		rLoc = 15315;
+		rLoc = 15238;
 		rType = 0;
 		vrLen = 1041;
 		vrLoc = 13457;
@@ -2084,7 +2084,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 387";
 		rLen = 0;
-		rLoc = 12360;
+		rLoc = 12283;
 		rType = 0;
 		vrLen = 1004;
 		vrLoc = 11945;
@@ -2094,7 +2094,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 387";
 		rLen = 0;
-		rLoc = 12360;
+		rLoc = 12283;
 		rType = 0;
 		vrLen = 1007;
 		vrLoc = 11945;
@@ -2105,7 +2105,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 485;
+		rLoc = 480;
 		rType = 1;
 	};
 	1A942B6412EDEEB000DD80AE /* PBXTextBookmark */ = {
@@ -2152,7 +2152,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 461";
 		rLen = 0;
-		rLoc = 15315;
+		rLoc = 15238;
 		rType = 0;
 		vrLen = 919;
 		vrLoc = 14034;
@@ -2172,7 +2172,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 387";
 		rLen = 0;
-		rLoc = 12360;
+		rLoc = 12283;
 		rType = 0;
 		vrLen = 918;
 		vrLoc = 758;
@@ -2182,7 +2182,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 386";
 		rLen = 0;
-		rLoc = 12360;
+		rLoc = 12283;
 		rType = 0;
 		vrLen = 1127;
 		vrLoc = 11790;
@@ -2202,7 +2202,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 467";
 		rLen = 0;
-		rLoc = 15488;
+		rLoc = 15411;
 		rType = 0;
 		vrLen = 1128;
 		vrLoc = 11919;
@@ -2212,7 +2212,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 386";
 		rLen = 0;
-		rLoc = 12360;
+		rLoc = 12283;
 		rType = 0;
 		vrLen = 1127;
 		vrLoc = 11790;
@@ -2232,7 +2232,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 387";
 		rLen = 0;
-		rLoc = 12360;
+		rLoc = 12283;
 		rType = 0;
 		vrLen = 1108;
 		vrLoc = 11919;
@@ -2242,7 +2242,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 386";
 		rLen = 0;
-		rLoc = 12360;
+		rLoc = 12283;
 		rType = 0;
 		vrLen = 1097;
 		vrLoc = 11790;
@@ -2262,7 +2262,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 375";
 		rLen = 0;
-		rLoc = 12350;
+		rLoc = 12273;
 		rType = 0;
 		vrLen = 1108;
 		vrLoc = 11919;
@@ -2272,7 +2272,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 386";
 		rLen = 0;
-		rLoc = 12360;
+		rLoc = 12283;
 		rType = 0;
 		vrLen = 1097;
 		vrLoc = 11790;
@@ -2283,7 +2283,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 558;
+		rLoc = 553;
 		rType = 1;
 	};
 	1A942B8212EDEF4C00DD80AE /* XCBuildMessageTextBookmark */ = {
@@ -2292,7 +2292,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 558;
+		rLoc = 553;
 		rType = 1;
 	};
 	1A942B8312EDEF4C00DD80AE /* PBXTextBookmark */ = {
@@ -2300,7 +2300,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 533";
 		rLen = 0;
-		rLoc = 17050;
+		rLoc = 16973;
 		rType = 0;
 		vrLen = 333;
 		vrLoc = 15959;
@@ -2330,12 +2330,12 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 385";
 		rLen = 0;
-		rLoc = 12360;
+		rLoc = 12283;
 		rType = 0;
 		vrLen = 1133;
 		vrLoc = 11787;
 	};
-	1A942B8912EDEF7D00DD80AE /* DetailViewController.m:393 */ = {
+	1A942B8912EDEF7D00DD80AE /* DetailViewController.m:388 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -2347,7 +2347,7 @@
 		functionName = "-toggleEdit";
 		hitCount = 1;
 		ignoreCount = 0;
-		lineNumber = 393;
+		lineNumber = 388;
 		location = FlashSync;
 		modificationTime = 317583509.168574;
 		originalNumberOfMultipleMatches = 1;
@@ -2368,7 +2368,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 394";
 		rLen = 0;
-		rLoc = 12360;
+		rLoc = 12283;
 		rType = 0;
 		vrLen = 1107;
 		vrLoc = 11992;
@@ -2378,7 +2378,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 394";
 		rLen = 0;
-		rLoc = 12360;
+		rLoc = 12283;
 		rType = 0;
 		vrLen = 1104;
 		vrLoc = 11995;
@@ -2388,7 +2388,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 385";
 		rLen = 0;
-		rLoc = 12360;
+		rLoc = 12283;
 		rType = 0;
 		vrLen = 1133;
 		vrLoc = 11787;
@@ -2398,7 +2398,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 532";
 		rLen = 0;
-		rLoc = 17050;
+		rLoc = 16973;
 		rType = 0;
 		vrLen = 335;
 		vrLoc = 15936;
@@ -2408,7 +2408,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 532";
 		rLen = 0;
-		rLoc = 17050;
+		rLoc = 16973;
 		rType = 0;
 		vrLen = 335;
 		vrLoc = 15936;
@@ -2428,7 +2428,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 385";
 		rLen = 0;
-		rLoc = 12360;
+		rLoc = 12283;
 		rType = 0;
 		vrLen = 1161;
 		vrLoc = 11787;
@@ -2468,7 +2468,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 395";
 		rLen = 0;
-		rLoc = 12360;
+		rLoc = 12283;
 		rType = 0;
 		vrLen = 1189;
 		vrLoc = 11991;
@@ -2488,7 +2488,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 395";
 		rLen = 0;
-		rLoc = 12360;
+		rLoc = 12283;
 		rType = 0;
 		vrLen = 1189;
 		vrLoc = 11991;
@@ -2508,7 +2508,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 535";
 		rLen = 0;
-		rLoc = 17050;
+		rLoc = 16973;
 		rType = 0;
 		vrLen = 337;
 		vrLoc = 16009;
@@ -2532,7 +2532,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 393";
 		rLen = 0;
-		rLoc = 12360;
+		rLoc = 12283;
 		rType = 0;
 		vrLen = 1163;
 		vrLoc = 11837;
@@ -2562,7 +2562,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 389";
 		rLen = 0;
-		rLoc = 12360;
+		rLoc = 12283;
 		rType = 0;
 		vrLen = 1165;
 		vrLoc = 11837;
@@ -2592,7 +2592,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 401";
 		rLen = 0;
-		rLoc = 12830;
+		rLoc = 12753;
 		rType = 0;
 		vrLen = 1138;
 		vrLoc = 12321;
@@ -2622,7 +2622,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 391";
 		rLen = 0;
-		rLoc = 12360;
+		rLoc = 12283;
 		rType = 0;
 		vrLen = 1255;
 		vrLoc = 12166;
@@ -2642,7 +2642,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 545";
 		rLen = 0;
-		rLoc = 17055;
+		rLoc = 16978;
 		rType = 0;
 		vrLen = 528;
 		vrLoc = 12324;
@@ -2652,7 +2652,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 409";
 		rLen = 0;
-		rLoc = 13512;
+		rLoc = 13435;
 		rType = 0;
 		vrLen = 1103;
 		vrLoc = 12219;
@@ -2672,7 +2672,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 552";
 		rLen = 0;
-		rLoc = 17055;
+		rLoc = 16978;
 		rType = 0;
 		vrLen = 511;
 		vrLoc = 12736;
@@ -2682,7 +2682,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 226";
 		rLen = 0;
-		rLoc = 7562;
+		rLoc = 7485;
 		rType = 0;
 		vrLen = 1312;
 		vrLoc = 6868;
@@ -2692,7 +2692,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 231";
 		rLen = 0;
-		rLoc = 7562;
+		rLoc = 7485;
 		rType = 0;
 		vrLen = 1101;
 		vrLoc = 7185;
@@ -2712,7 +2712,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 553";
 		rLen = 0;
-		rLoc = 17055;
+		rLoc = 16978;
 		rType = 0;
 		vrLen = 482;
 		vrLoc = 12753;
@@ -2722,7 +2722,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 225";
 		rLen = 0;
-		rLoc = 7562;
+		rLoc = 7485;
 		rType = 0;
 		vrLen = 1396;
 		vrLoc = 6932;
@@ -2742,7 +2742,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 553";
 		rLen = 0;
-		rLoc = 17055;
+		rLoc = 16978;
 		rType = 0;
 		vrLen = 581;
 		vrLoc = 12847;
@@ -2752,7 +2752,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 231";
 		rLen = 0;
-		rLoc = 8055;
+		rLoc = 7978;
 		rType = 0;
 		vrLen = 1215;
 		vrLoc = 7270;
@@ -2772,7 +2772,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 553";
 		rLen = 0;
-		rLoc = 17055;
+		rLoc = 16978;
 		rType = 0;
 		vrLen = 657;
 		vrLoc = 12847;
@@ -2782,7 +2782,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 235";
 		rLen = 0;
-		rLoc = 8125;
+		rLoc = 8048;
 		rType = 0;
 		vrLen = 1217;
 		vrLoc = 7270;
@@ -2802,7 +2802,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 555";
 		rLen = 0;
-		rLoc = 17055;
+		rLoc = 16978;
 		rType = 0;
 		vrLen = 526;
 		vrLoc = 12881;
@@ -2812,7 +2812,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 550";
 		rLen = 0;
-		rLoc = 17011;
+		rLoc = 16934;
 		rType = 0;
 		vrLen = 1049;
 		vrLoc = 16004;
@@ -2832,7 +2832,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 551";
 		rLen = 0;
-		rLoc = 17055;
+		rLoc = 16978;
 		rType = 0;
 		vrLen = 534;
 		vrLoc = 12838;
@@ -2841,7 +2841,7 @@
 		isa = PBXTextBookmark;
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		rLen = 1;
-		rLoc = 227;
+		rLoc = 222;
 		rType = 1;
 	};
 	1A942BE312EDF52F00DD80AE /* PBXTextBookmark */ = {
@@ -2849,7 +2849,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 250";
 		rLen = 11;
-		rLoc = 8543;
+		rLoc = 8466;
 		rType = 0;
 		vrLen = 896;
 		vrLoc = 7859;
@@ -2869,7 +2869,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 556";
 		rLen = 0;
-		rLoc = 17055;
+		rLoc = 16978;
 		rType = 0;
 		vrLen = 593;
 		vrLoc = 12374;
@@ -2878,7 +2878,7 @@
 		isa = PBXTextBookmark;
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		rLen = 1;
-		rLoc = 227;
+		rLoc = 222;
 		rType = 1;
 	};
 	1A942BE912EDF5F400DD80AE /* PBXTextBookmark */ = {
@@ -2886,7 +2886,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 391";
 		rLen = 0;
-		rLoc = 12534;
+		rLoc = 12457;
 		rType = 0;
 		vrLen = 1010;
 		vrLoc = 11959;
@@ -2906,7 +2906,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 556";
 		rLen = 0;
-		rLoc = 17055;
+		rLoc = 16978;
 		rType = 0;
 		vrLen = 568;
 		vrLoc = 12374;
@@ -2916,7 +2916,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 428";
 		rLen = 0;
-		rLoc = 13782;
+		rLoc = 13705;
 		rType = 0;
 		vrLen = 1111;
 		vrLoc = 12879;
@@ -2936,7 +2936,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 556";
 		rLen = 0;
-		rLoc = 17055;
+		rLoc = 16978;
 		rType = 0;
 		vrLen = 568;
 		vrLoc = 12374;
@@ -2946,7 +2946,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 428";
 		rLen = 0;
-		rLoc = 13758;
+		rLoc = 13681;
 		rType = 0;
 		vrLen = 1070;
 		vrLoc = 12924;
@@ -2966,7 +2966,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 556";
 		rLen = 0;
-		rLoc = 17055;
+		rLoc = 16978;
 		rType = 0;
 		vrLen = 568;
 		vrLoc = 12374;
@@ -2976,7 +2976,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 428";
 		rLen = 0;
-		rLoc = 13758;
+		rLoc = 13681;
 		rType = 0;
 		vrLen = 1147;
 		vrLoc = 12944;
@@ -2996,7 +2996,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 556";
 		rLen = 0;
-		rLoc = 17055;
+		rLoc = 16978;
 		rType = 0;
 		vrLen = 570;
 		vrLoc = 12374;
@@ -3006,7 +3006,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 426";
 		rLen = 0;
-		rLoc = 13652;
+		rLoc = 13575;
 		rType = 0;
 		vrLen = 1220;
 		vrLoc = 12944;
@@ -3026,7 +3026,7 @@
 		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
 		name = "DetailViewController.m: 560";
 		rLen = 0;
-		rLoc = 17055;
+		rLoc = 16978;
 		rType = 0;
 		vrLen = 568;
 		vrLoc = 12443;
@@ -3108,7 +3108,7 @@
 		isa = PBXCodeSenseManager;
 		indexTemplatePath = "";
 	};
-	1AC132CA12ABED5300642A7E /* DetailViewController.m:357 */ = {
+	1AC132CA12ABED5300642A7E /* DetailViewController.m:352 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -3120,13 +3120,13 @@
 		functionName = "-actualSync";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 357;
+		lineNumber = 352;
 		location = FlashSync;
 		modificationTime = 317583504.941282;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
-	1AC132E712ABEE0A00642A7E /* DetailViewController.m:357 */ = {
+	1AC132E712ABEE0A00642A7E /* DetailViewController.m:352 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -3138,7 +3138,7 @@
 		functionName = "-actualSync";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 357;
+		lineNumber = 352;
 		location = FlashSync;
 		modificationTime = 317583504.94142;
 		originalNumberOfMultipleMatches = 1;
@@ -3630,13 +3630,13 @@
 			1D6058900D05DD3D006BFB54 /* FlashSync */,
 		);
 		breakpoints = (
-			1A4AD4CD12AB893F00173889 /* DetailViewController.m:279 */,
-			1AC132CA12ABED5300642A7E /* DetailViewController.m:357 */,
-			1AC132E712ABEE0A00642A7E /* DetailViewController.m:357 */,
+			1A4AD4CD12AB893F00173889 /* DetailViewController.m:274 */,
+			1AC132CA12ABED5300642A7E /* DetailViewController.m:352 */,
+			1AC132E712ABEE0A00642A7E /* DetailViewController.m:352 */,
 			1ACF8CA712B4AD7C00D76EDC /* InspectorViewController.m:21 */,
 			1ACF8D5412B4B63400D76EDC /* DetailViewController.m:127 */,
-			1A13B02D12D4B22600A3BD87 /* DetailViewController.m:321 */,
-			1A942B8912EDEF7D00DD80AE /* DetailViewController.m:393 */,
+			1A13B02D12D4B22600A3BD87 /* DetailViewController.m:316 */,
+			1A942B8912EDEF7D00DD80AE /* DetailViewController.m:388 */,
 		);
 		codeSenseManager = 1AB8B78F12A2728A00038C19 /* Code sense */;
 		executables = (

@@ -152,11 +152,6 @@
 	return [contentsOfCurrentFolder count];
 }
 
-
--(void)checkboxClick:(UIButton *)btn {
-    btn.selected = !btn.selected;
-}
-
 - (UITableViewCell *) tableView:(UITableView *)table cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	UITableViewCell *cell = [table dequeueOrInit:@"Cell" withStyle:UITableViewCellStyleSubtitle];
 	File *file = [contentsOfCurrentFolder objectAtIndex:[indexPath row]];
