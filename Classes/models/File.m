@@ -9,6 +9,12 @@
 #import "File.h"
 #import "NSObject-Dialog.h"
 
+@interface File ()
+
+- (NSString *)imageNameOf:(NSString *)pathExtension;
+
+@end
+
 @implementation File
 
 
@@ -17,6 +23,7 @@
 @synthesize attributes;
 @synthesize size;
 @synthesize modifiedAt;
+@synthesize image;
 @synthesize selected;
 
 - (id)initWithName:(NSString *)theName path:(NSString *)thePath attributes:(NSDictionary *)theAttributes {
@@ -55,5 +62,32 @@
 	return formatted;
 }
 
+- (UIImage *)image {
+	if ([self isDir]) {
+		return [UIImage imageNamed:@"folder.png"];
+	}
+	
+	NSString *imageName = [NSString stringWithFormat:@"%@.png", [name pathExtension]];
+	UIImage *theImage = [UIImage imageNamed:imageName];
+	if (theImage == nil) {
+		theImage = [UIImage imageNamed:[self imageNameOf:[name pathExtension]]];
+	}
+	if (theImage == nil) {
+		theImage = [UIImage imageNamed:@"empty.png"];	
+	}
+	return theImage;
+}
+
+- (NSString *)imageNameOf:(NSString *)pathExtension {
+	NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+	[dict setObject:@"jpeg.png" forKey:@"jpg"];
+	[dict setObject:@"spreadsheet.png" forKey:@"xls"];
+	[dict setObject:@"video.png" forKey:@"avi"];
+	[dict setObject:@"video.png" forKey:@"mov"];
+	[dict setObject:@"mpeg.png" forKey:@"mpg"];	
+	NSString *imageName = [dict objectForKey:pathExtension];
+	[dict release];
+	return imageName;
+}
 
 @end

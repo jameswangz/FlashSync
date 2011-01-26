@@ -156,12 +156,12 @@
 	UITableViewCell *cell = [table dequeueOrInit:@"Cell" withStyle:UITableViewCellStyleSubtitle];
 	File *file = [contentsOfCurrentFolder objectAtIndex:[indexPath row]];
 	cell.textLabel.text = file.name;
+	cell.imageView.image = file.image;
 	if ([file isDir]) {
-		cell.imageView.image =[UIImage imageNamed:@"Dossier.png"];
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+		cell.detailTextLabel.text = @"";		
 	} else {
-		cell.imageView.image =[UIImage imageNamed:@"TextEdit.png"];
-		//cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+		cell.accessoryType = UITableViewCellAccessoryNone;
 		cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ @ %@", file.size, file.modifiedAt];		
 	}
 	return cell;
@@ -252,7 +252,7 @@
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return 60;
+	return 50;
 }
 
 

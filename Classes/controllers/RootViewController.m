@@ -33,8 +33,8 @@
 	panelItems = [[NSMutableArray alloc] init];
 	
 	NSMutableArray *rootItems = [[NSMutableArray alloc] init];
-	[rootItems addObject:[NSDictionary dictionaryWithObjectsAndKeys:kImported, kPath, @"已导入文件", kName, @"HDD.png", kImage, nil]];
-	[rootItems addObject:[NSDictionary dictionaryWithObjectsAndKeys:kFlashDisk, kPath, @"U 盘文件", kName, @"HDD USB.png", kImage, nil]];
+	[rootItems addObject:[NSDictionary dictionaryWithObjectsAndKeys:kImported, kPath, @"已导入文件", kName, @"Bookmarks-HomeFolderIcon.png", kImage, nil]];
+	[rootItems addObject:[NSDictionary dictionaryWithObjectsAndKeys:kFlashDisk, kPath, @"U 盘文件", kName, @"Bookmarks-Drives.png", kImage, nil]];
 	[panelItems addObject:rootItems];
 	[rootItems release];
 	
@@ -50,7 +50,7 @@
 			NSString *fullPath = [[NSDataUtils documentsDirectory] stringByAppendingPathComponent:relativePath];
 			BOOL dir = [NSDataUtils isDirectory:fullPath];
 			if (dir) {
-				[quickLinkItems addObject:[NSDictionary dictionaryWithObjectsAndKeys:relativePath, kPath, name, kName, @"Dossier.png", kImage, nil]];		
+				[quickLinkItems addObject:[NSDictionary dictionaryWithObjectsAndKeys:relativePath, kPath, name, kName, @"folder.png", kImage, nil]];		
 			}
 		}
 	}

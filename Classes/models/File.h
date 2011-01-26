@@ -23,9 +23,11 @@
 @property (nonatomic, retain) NSString *size;
 @property (nonatomic, retain) NSString *modifiedAt;
 @property (nonatomic) BOOL selected;
+@property (nonatomic, retain) UIImage *image; 
 
 - (id)initWithName:(NSString *)name path:(NSString *)path attributes:(NSDictionary *)attributes;
 
 - (BOOL)isDir;
+
 
 @end
