@@ -76,10 +76,11 @@
 #pragma mark -
 #pragma mark Rotation support
 
-// Ensure that the view controller supports rotation and that the split view can therefore show in both portrait and landscape.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return YES;
+	return YES;
 }
+
+
 
 
 #pragma mark -
