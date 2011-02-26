@@ -186,9 +186,9 @@
 	UIActionSheet *actionSheet = [[UIActionSheet alloc] 
 								  initWithTitle:@"请选择打开方式"
 								  delegate:self
-								  cancelButtonTitle:@"取消"
+								  cancelButtonTitle:nil
 								  destructiveButtonTitle:@"直接打开" 
-								  otherButtonTitles:@"在 iFile 中打开",
+								  otherButtonTitles:@"在 iFile 中打开", @"取消",
 								  nil];
 	actionSheet.tag = kOpenWayActionSheetTag;
 	actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
@@ -274,12 +274,12 @@
 	UIActionSheet *actionSheet = [[UIActionSheet alloc] 
 								  initWithTitle:@"同步会覆盖已导入的所有文件, 确认吗?"
 								  delegate:self
-								  cancelButtonTitle:@"取消"
+								  cancelButtonTitle:nil
 								  destructiveButtonTitle:@"确定" 
-								  otherButtonTitles:nil,
+								  otherButtonTitles:@"取消",
 								  nil];
 	actionSheet.tag = kSyncActionSheetTag;
-	actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
+	actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
 	[actionSheet showInView:self.view];
 	[actionSheet release];
 }
@@ -422,9 +422,9 @@
 	UIActionSheet *actionSheet = [[UIActionSheet alloc] 
 								  initWithTitle:@""
 								  delegate:self
-								  cancelButtonTitle:@"取消"
+								  cancelButtonTitle:nil
 								  destructiveButtonTitle:[NSString stringWithFormat:@"删除 %d 个文件", [self selectedCount]]
-								  otherButtonTitles:nil,
+								  otherButtonTitles:@"取消",
 								  nil];
 	actionSheet.tag = kDeleteActionSheetTag;
 	actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;

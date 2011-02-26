@@ -202,7 +202,7 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>1A3E36561319732000D59A40</string>
+				<string>1A3E367A1319755900D59A40</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>DetailViewController.m</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
@@ -210,17 +210,16 @@
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>1A3E36571319732000D59A40</string>
+						<string>1A3E367B1319755900D59A40</string>
 						<key>PBXProjectModuleLabel</key>
 						<string>DetailViewController.m</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>1A3E36741319747300D59A40</string>
+						<string>1A3E3686131976DD00D59A40</string>
 						<key>history</key>
 						<array>
-							<string>1A3E3662131973D800D59A40</string>
-							<string>1A3E3663131973D800D59A40</string>
+							<string>1A3E36761319750100D59A40</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -236,7 +235,7 @@
 				<key>PBXModuleWindowStatusBarHidden2</key>
 				<false/>
 				<key>RubberWindowFrame</key>
-				<string>15 113 1265 660 0 0 1280 778 </string>
+				<string>15 118 1265 660 0 0 1280 778 </string>
 			</dict>
 		</dict>
 	</array>
@@ -380,7 +379,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>1A3E36731319747300D59A40</string>
+										<string>1A3E3685131976DD00D59A40</string>
 										<key>history</key>
 										<array>
 											<string>1AFEFCA812B3E4A3009A25F0</string>
@@ -607,7 +606,7 @@
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>1AB8B79C12A278F200038C19</string>
 		<string>/Users/James/iphone/FlashSync/FlashSync.xcodeproj</string>
-		<string>1A3E36561319732000D59A40</string>
+		<string>1A3E367A1319755900D59A40</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 117 1280 661 0 0 1280 778 </string>
