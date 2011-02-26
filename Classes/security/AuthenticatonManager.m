@@ -41,20 +41,20 @@
 }
 
 + (BOOL)authenticate {
-//	NSString *udid = [[UIDevice currentDevice] uniqueIdentifier];
-//	NSDictionary *authentication = [self initializeAuthentication];
-//	if (authentication == nil) {
-//		[[NSString stringWithFormat:@"读取身份认证信息失败"] showInDialogWithTitle:@"错误信息"];
-//		return NO;	
-//	}
-//	
-//	BOOL authSuccessful = [[authentication valueForKey:@"udid"] isEqualToString:udid];
-//	
-//	if (!authSuccessful) {
-//		[[NSString stringWithFormat:@"对不起, 您的身份认证信息与优盘不匹配"] showInDialogWithTitle:@"错误信息"];
-//		return NO;		
-//	}
-//	[self presentWelcomeLogo:[authentication valueForKey:@"username"]];
+	NSString *udid = [[UIDevice currentDevice] uniqueIdentifier];
+	NSDictionary *authentication = [self initializeAuthentication];
+	if (authentication == nil) {
+		[[NSString stringWithFormat:@"读取身份认证信息失败"] showInDialogWithTitle:@"错误信息"];
+		return NO;	
+	}
+	
+	BOOL authSuccessful = [[authentication valueForKey:@"udid"] isEqualToString:udid];
+	
+	if (!authSuccessful) {
+		[[NSString stringWithFormat:@"对不起, 您的身份认证信息与优盘不匹配"] showInDialogWithTitle:@"错误信息"];
+		return NO;		
+	}
+	[self presentWelcomeLogo:[authentication valueForKey:@"username"]];
 	return YES;
 }
 @end
