@@ -1,9 +1,9 @@
 //
 //  DetailViewController.m
-//  FlashSync
+//  iPadTest
 //
-//  Created by James Wang on 11/28/10.
-//  Copyright DerbySoft 2010. All rights reserved.
+//  Created by James Wang on 2/25/11.
+//  Copyright 2011 Freeze!. All rights reserved.
 //
 
 #import "DetailViewController.h"
@@ -118,6 +118,7 @@
 }
 
 
+
 #pragma mark -
 #pragma mark Split view support
 
@@ -135,11 +136,9 @@
 #pragma mark -
 #pragma mark Rotation support
 
-// Ensure that the view controller supports rotation and that the split view can therefore show in both portrait and landscape.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
 	return YES;
 }
-
 
 #pragma mark -
 #pragma mark UITableView DataSource Methods
@@ -187,9 +186,9 @@
 	UIActionSheet *actionSheet = [[UIActionSheet alloc] 
 								  initWithTitle:@"请选择打开方式"
 								  delegate:self
-								  cancelButtonTitle:@"取消"
+								  cancelButtonTitle:nil
 								  destructiveButtonTitle:@"直接打开" 
-								  otherButtonTitles:@"在 iFile 中打开",
+								  otherButtonTitles:@"在 iFile 中打开", @"取消",
 								  nil];
 	actionSheet.tag = kOpenWayActionSheetTag;
 	actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
@@ -275,9 +274,9 @@
 	UIActionSheet *actionSheet = [[UIActionSheet alloc] 
 								  initWithTitle:@"同步会覆盖已导入的所有文件, 确认吗?"
 								  delegate:self
-								  cancelButtonTitle:@"取消"
+								  cancelButtonTitle:nil
 								  destructiveButtonTitle:@"确定" 
-								  otherButtonTitles:nil,
+								  otherButtonTitles:@"取消",
 								  nil];
 	actionSheet.tag = kSyncActionSheetTag;
 	actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
@@ -423,9 +422,9 @@
 	UIActionSheet *actionSheet = [[UIActionSheet alloc] 
 								  initWithTitle:@""
 								  delegate:self
-								  cancelButtonTitle:@"取消"
+								  cancelButtonTitle:nil
 								  destructiveButtonTitle:[NSString stringWithFormat:@"删除 %d 个文件", [self selectedCount]]
-								  otherButtonTitles:nil,
+								  otherButtonTitles:@"取消",
 								  nil];
 	actionSheet.tag = kDeleteActionSheetTag;
 	actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
