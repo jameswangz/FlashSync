@@ -1,9 +1,9 @@
 //
 //  RootViewController.h
-//  FlashSync
+//  iPadTest
 //
-//  Created by James Wang on 11/28/10.
-//  Copyright DerbySoft 2010. All rights reserved.
+//  Created by James Wang on 2/25/11.
+//  Copyright 2011 Freeze!. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -12,7 +12,7 @@
 
 @interface RootViewController : UITableViewController {
     DetailViewController *detailViewController;
-	NSMutableArray *panelItems;
+    NSMutableArray *panelItems;
 }
 
 @property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
@@ -21,3 +21,4 @@
 - (void)refreshPanelItems;
 
 @end
+
