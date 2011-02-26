@@ -279,7 +279,7 @@
 								  otherButtonTitles:nil,
 								  nil];
 	actionSheet.tag = kSyncActionSheetTag;
-	actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
+	actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
 	[actionSheet showInView:self.view];
 	[actionSheet release];
 }
@@ -433,6 +433,29 @@
 }
 
 #pragma mark -
+#pragma mark UIActionSheetDelegate Methods
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
+	if (actionSheet.tag == kSyncActionSheetTag) {
+		if (buttonIndex == 0) {
+			[self syncAll];
+		}		
+	}
+	else if (actionSheet.tag == kOpenWayActionSheetTag) {
+		if (buttonIndex == 0) {
+			[self openDirectly:activeFile];
+		} else if (buttonIndex == 1) {
+			[self openWithIFile:activeFile];
+		}
+	}
+	else if (actionSheet.tag == kDeleteActionSheetTag) {
+		if (buttonIndex == 0) {
+			[self deleteSelected];
+		}
+	}
+}
+
+#pragma mark -
 #pragma mark View lifecycle
 
 - (void) addEditButton {
@@ -467,10 +490,9 @@
 }
 
 
-
-
 #pragma mark -
 #pragma mark Memory management
+
 
 - (void)dealloc {
     [popoverController release];
@@ -489,4 +511,43 @@
 - (void)createImportedFolderIfRequired {
 	[NSDataUtils createFolderIfRequired:kImported];
 }
+
+
+#pragma mark -
+#pragma mark Delete File Methods
+
+- (void)deleteSelected {	
+	NSMutableIndexSet *indexes = [[NSMutableIndexSet alloc] init];
+	NSMutableArray *indexPaths = [[NSMutableArray alloc] init];
+	
+	for (int i = 0; i < [contentsOfCurrentFolder count]; i++) {
+		File *file = [contentsOfCurrentFolder objectAtIndex:i];
+		if (file.selected) {
+			NSLog(@"Deleting %@", file.path);
+			NSError *error = nil;
+			[[NSFileManager defaultManager] removeItemAtPath:file.path error:&error];
+			if (error != nil) {
+				[error showInDialog];
+				return;
+			}
+			
+			[self refreshRootViewController];
+			
+			[indexes addIndex:i];
+			[indexPaths addObject:[NSIndexPath indexPathForRow:i inSection:0]];		
+		}
+	}
+	
+	[contentsOfCurrentFolder removeObjectsAtIndexes:indexes];
+	[indexes release];
+	
+	[self.contentsTableView beginUpdates];
+	[self.contentsTableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
+	[self.contentsTableView endUpdates];
+	[indexPaths release];
+	
+	[self changeStateOfDeleteButton];
+	[self refreshRootViewController];
+}
+
 @end
