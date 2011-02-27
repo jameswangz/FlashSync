@@ -72,7 +72,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 1AD0ABC213197D3A00E2532D /* FlashSync */;
-		activeSDKPreference = iphoneos4.2;
+		activeSDKPreference = iphonesimulator4.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* FlashSync */;
 		codeSenseManager = 1AD0ABD513197D4000E2532D /* Code sense */;
 		executables = (
@@ -86,7 +86,7 @@
 					20,
 					768,
 					20,
-					48.16259765625,
+					48,
 					43,
 					43,
 					20,
@@ -101,8 +101,8 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 320437562;
-			PBXWorkspaceStateSaveDate = 320437562;
+			PBXPerProjectTemplateStateSaveDate = 320495786;
+			PBXWorkspaceStateSaveDate = 320495786;
 		};
 		sourceControlManager = 1AD0ABD413197D4000E2532D /* Source Control */;
 		userBuildSettings = {

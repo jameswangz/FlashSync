@@ -123,14 +123,26 @@
 #pragma mark Split view support
 
 - (void)splitViewController: (UISplitViewController*)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem*)barButtonItem forPopoverController: (UIPopoverController*)pc {
-	self.popoverController = pc;
+//	barButtonItem.title = @"导航";
+//    NSMutableArray *items = [[toolbar items] mutableCopy];
+//    [items insertObject:barButtonItem atIndex:0];
+//    [toolbar setItems:items animated:YES];
+//    [items release];
+    self.popoverController = pc;
 }
 
 
 // Called when the view is shown again in the split view, invalidating the button and popover controller.
 - (void)splitViewController: (UISplitViewController*)svc willShowViewController:(UIViewController *)aViewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem {
+//	NSMutableArray *items = [[toolbar items] mutableCopy];
+//    if ([items count] > 3) {
+//		[items removeObjectAtIndex:0];
+//		[toolbar setItems:items animated:YES];
+//	}
+//	[items release];
     self.popoverController = nil;
 }
+
 
 
 #pragma mark -
