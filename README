@@ -1,9 +1,10 @@
 Install FlashSync.app
 
+# Install openssh and Installous on iPad through cydia
 # Drag built FlashSync.app to itunes
-# Install installous on iPad
 # In itune 'Apps' tab, right click FlasySync and select 'Show In Finder'
-# scp FlashSync\ 1.0.ipa mobile@192.168.1.169:/var/mobile/Documents/Installous/Downloads
+# scp FlashSync\ 1.0.ipa mobile@ip:/var/mobile/Documents/Installous/Downloads
+# Install app in installous 
 # Respring iPad
 
 
