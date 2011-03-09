@@ -81,10 +81,16 @@
 - (NSString *)imageNameOf:(NSString *)pathExtension {
 	NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
 	[dict setObject:@"jpeg.png" forKey:@"jpg"];
+	[dict setObject:@"doc.png" forKey:@"docx"];
 	[dict setObject:@"spreadsheet.png" forKey:@"xls"];
+	[dict setObject:@"spreadsheet.png" forKey:@"xlxs"];
+	[dict setObject:@"config.png" forKey:@"plist"];
 	[dict setObject:@"video.png" forKey:@"avi"];
 	[dict setObject:@"video.png" forKey:@"mov"];
+	[dict setObject:@"video.png" forKey:@"mp4"];
 	[dict setObject:@"mpeg.png" forKey:@"mpg"];	
+	[dict setObject:@"zip.png" forKey:@"rar"];
+	[dict setObject:@"flash.png" forKey:@"swf"];
 	NSString *imageName = [dict objectForKey:pathExtension];
 	[dict release];
 	return imageName;
