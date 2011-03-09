@@ -25,7 +25,7 @@
 
 + (NSDictionary *)initializeAuthentication {
 	NSString *keyDatPath = [NSDataUtils pathForFolder:kFlashDisk name:kKeyDataFileName];
-	NSString *content = [NSString stringWithContentsOfFile:keyDatPath encoding:NSASCIIStringEncoding error:nil];
+	NSString *content = [NSString stringWithContentsOfFile:keyDatPath encoding:NSUTF8StringEncoding error:nil];
 	NSArray *contents = [content componentsSeparatedByString:@"\n"];
 	if (contents.count < 2) {
 		return nil;

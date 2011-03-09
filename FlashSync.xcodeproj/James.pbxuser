@@ -35,7 +35,7 @@
 		fRef = 1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */;
 		name = "AuthenticatonManager.m: 61";
 		rLen = 0;
-		rLoc = 1798;
+		rLoc = 1797;
 		rType = 0;
 		vrLen = 564;
 		vrLoc = 0;
@@ -49,7 +49,7 @@
 		fRef = 1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */;
 		name = "AuthenticatonManager.m: 61";
 		rLen = 0;
-		rLoc = 1798;
+		rLoc = 1797;
 		rType = 0;
 		vrLen = 561;
 		vrLoc = 0;
@@ -69,7 +69,7 @@
 		fRef = 1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */;
 		name = "AuthenticatonManager.m: 61";
 		rLen = 0;
-		rLoc = 1798;
+		rLoc = 1797;
 		rType = 0;
 		vrLen = 563;
 		vrLoc = 0;
@@ -223,19 +223,19 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 320504420;
-			PBXWorkspaceStateSaveDate = 320504420;
+			PBXPerProjectTemplateStateSaveDate = 321374562;
+			PBXWorkspaceStateSaveDate = 321374562;
 		};
 		perUserProjectItems = {
 			1A0838FF131A643B000170FC = 1A0838FF131A643B000170FC /* PBXTextBookmark */;
 			1A083900131A643B000170FC = 1A083900131A643B000170FC /* PBXTextBookmark */;
 			1A083910131A7CD0000170FC = 1A083910131A7CD0000170FC /* PBXTextBookmark */;
 			1A083932131A8016000170FC = 1A083932131A8016000170FC /* PBXTextBookmark */;
-			1A083939131A8269000170FC /* PBXBookmark */ = 1A083939131A8269000170FC /* PBXBookmark */;
-			1A08393C131A8276000170FC /* PBXTextBookmark */ = 1A08393C131A8276000170FC /* PBXTextBookmark */;
-			1A083941131A8276000170FC /* PBXTextBookmark */ = 1A083941131A8276000170FC /* PBXTextBookmark */;
-			1A08394A131A829C000170FC /* PBXTextBookmark */ = 1A08394A131A829C000170FC /* PBXTextBookmark */;
-			1A08394B131A829C000170FC /* PBXTextBookmark */ = 1A08394B131A829C000170FC /* PBXTextBookmark */;
+			1A083939131A8269000170FC = 1A083939131A8269000170FC /* PBXBookmark */;
+			1A08393C131A8276000170FC = 1A08393C131A8276000170FC /* PBXTextBookmark */;
+			1A083941131A8276000170FC = 1A083941131A8276000170FC /* PBXTextBookmark */;
+			1A08394A131A829C000170FC = 1A08394A131A829C000170FC /* PBXTextBookmark */;
+			1A08394B131A829C000170FC = 1A08394B131A829C000170FC /* PBXTextBookmark */;
 		};
 		sourceControlManager = 1AD0ABD413197D4000E2532D /* Source Control */;
 		userBuildSettings = {
