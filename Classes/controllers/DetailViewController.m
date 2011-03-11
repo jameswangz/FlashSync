@@ -312,17 +312,35 @@
 }
 
 - (void) overwrite: (NSString *) src dst: (NSString *) dst  {
-	NSError *error = nil;
+	if (userCancelled) {
+		return;
+	}
+	
 	BOOL dir;
 	BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:dst isDirectory:&dir];		
 	if (fileExists) {
 		[[NSFileManager defaultManager] removeItemAtPath:dst error:nil];
 	}
 	
-	[[NSFileManager defaultManager] copyItemAtPath:src	toPath:dst error:&error];
-	if (error != nil) {
-		NSLog(@"Error : %@", error);
+//	NSError *error = nil;
+//	[[NSFileManager defaultManager] copyItemAtPath:src	toPath:dst error:&error];
+//	if (error != nil) {
+//		NSLog(@"Error : %@", error);
+//	}
+	
+	NSData *data = [[NSData alloc] initWithContentsOfFile:src];
+	char *bytes = (char *) [data bytes];
+	
+	for (int i = 0; i < [data length]; i++) {
+		NSMutableData *decoded = [[NSMutableData alloc] init];
+		unsigned char decodedBytes[1];
+		decodedBytes[0] = bytes[i];
+		[decoded appendBytes:decodedBytes length:1];
+		//[decoded writeToFile:dst atomically:YES];
+		[decoded release];
 	}
+	
+	[data release];
 }
 
 
