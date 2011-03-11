@@ -276,6 +276,7 @@
 
 - (IBAction)cancelSync {
 	userCancelled = YES;
+	fileSynchronizer.skip = YES;
 	[self changeTitleOfSyncButton:@"正在中止同步过程, 请稍候..."];
 }
 
@@ -311,38 +312,6 @@
 	userCancelled = NO;
 }
 
-- (void) overwrite: (NSString *) src dst: (NSString *) dst  {
-	if (userCancelled) {
-		return;
-	}
-	
-	BOOL dir;
-	BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:dst isDirectory:&dir];		
-	if (fileExists) {
-		[[NSFileManager defaultManager] removeItemAtPath:dst error:nil];
-	}
-	
-//	NSError *error = nil;
-//	[[NSFileManager defaultManager] copyItemAtPath:src	toPath:dst error:&error];
-//	if (error != nil) {
-//		NSLog(@"Error : %@", error);
-//	}
-	
-	NSData *data = [[NSData alloc] initWithContentsOfFile:src];
-	char *bytes = (char *) [data bytes];
-	
-	for (int i = 0; i < [data length]; i++) {
-		NSMutableData *decoded = [[NSMutableData alloc] init];
-		unsigned char decodedBytes[1];
-		decodedBytes[0] = bytes[i];
-		[decoded appendBytes:decodedBytes length:1];
-		//[decoded writeToFile:dst atomically:YES];
-		[decoded release];
-	}
-	
-	[data release];
-}
-
 
 - (void) sync: (NSString *) parentSrc to: (NSString*) parentDst  {
 	NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:parentSrc error:nil];
@@ -363,6 +332,7 @@
 			[NSDataUtils createFolderIfRequired:dst absolutePath:YES];
 			[self sync:src to:dst];
 		} else {
+			fileSynchronizer.skip = userCancelled;
 			if ([name hasSuffix:kEncodedFileSuffix]) {
 				NSData *data = [[NSData alloc] initWithContentsOfFile:src];
 				NSMutableData *decoded = [[NSMutableData alloc] init];
@@ -372,7 +342,7 @@
 				[data release];
 				[decoded release];
 			} else {
-				[self overwrite: src dst: dst];
+				[fileSynchronizer syncFrom:src to:dst];
 			}
 		}
 	}
@@ -507,6 +477,7 @@
 		[self configureView];
 	}
 	[self addEditButton];
+	fileSynchronizer = [[FileSynchronizer alloc] init];
 }
 
 - (void)viewDidUnload {
@@ -517,6 +488,7 @@
 	self.syncButton = nil;
 	deleteButton = nil;
 	self.toolbar = nil;
+	fileSynchronizer = nil;
 }
 
 
@@ -532,6 +504,7 @@
 	[contentsOfCurrentFolder release];
 	[syncButton release];
 	[toolbar release];
+	[fileSynchronizer release];
 	[super dealloc];
 }
 

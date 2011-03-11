@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "File.h"
+#import "FileSynchronizer.h"
 
 #define kSyncActionSheetTag		1
 #define kOpenWayActionSheetTag	2
@@ -29,6 +30,7 @@
 		
 	File *activeFile;
 	BOOL userCancelled;
+	FileSynchronizer *fileSynchronizer;
 }
 
 

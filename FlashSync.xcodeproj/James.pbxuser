@@ -20,10 +20,18 @@
 	};
 	1A2BDC6113195C1100B87C15 /* DetailViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {2152, 11361}}";
-			sepNavSelRange = "{3902, 0}";
-			sepNavVisRange = "{3349, 555}";
+			sepNavIntBoundsRect = "{{0, 0}, {1242, 11537}}";
+			sepNavSelRange = "{10371, 0}";
+			sepNavVisRange = "{9919, 747}";
 			sepNavWindowFrame = "{{15, 62}, {1265, 716}}";
+		};
+	};
+	1A2BDC6213195C1100B87C15 /* DetailViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1171, 988}}";
+			sepNavSelRange = "{778, 21}";
+			sepNavVisRange = "{0, 801}";
+			sepNavWindowFrame = "{{15, 58}, {1230, 719}}";
 		};
 	};
 	1A2BDCAA13195E4A00B87C15 /* RootViewController.m */ = {
@@ -172,6 +180,9 @@
 		activeExecutable = 1AD0ABC213197D3A00E2532D /* FlashSync */;
 		activeSDKPreference = iphonesimulator4.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* FlashSync */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* FlashSync */,
+		);
 		codeSenseManager = 1AD0ABD513197D4000E2532D /* Code sense */;
 		executables = (
 			1AD0ABC213197D3A00E2532D /* FlashSync */,
@@ -199,15 +210,15 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 321449748;
-			PBXWorkspaceStateSaveDate = 321449748;
+			PBXPerProjectTemplateStateSaveDate = 321554812;
+			PBXWorkspaceStateSaveDate = 321554812;
 		};
 		perUserProjectItems = {
-			1A083900131A643B000170FC /* PBXTextBookmark */ = 1A083900131A643B000170FC /* PBXTextBookmark */;
-			1A3C4B171328F61500CFCF71 /* PBXTextBookmark */ = 1A3C4B171328F61500CFCF71 /* PBXTextBookmark */;
-			1A3C4B181328F61500CFCF71 /* PBXTextBookmark */ = 1A3C4B181328F61500CFCF71 /* PBXTextBookmark */;
-			1A3C4B191328F61500CFCF71 /* PBXBookmark */ = 1A3C4B191328F61500CFCF71 /* PBXBookmark */;
-			1A3C4B1A1328F61500CFCF71 /* PBXTextBookmark */ = 1A3C4B1A1328F61500CFCF71 /* PBXTextBookmark */;
+			1A083900131A643B000170FC = 1A083900131A643B000170FC /* PBXTextBookmark */;
+			1A3C4B171328F61500CFCF71 = 1A3C4B171328F61500CFCF71 /* PBXTextBookmark */;
+			1A3C4B181328F61500CFCF71 = 1A3C4B181328F61500CFCF71 /* PBXTextBookmark */;
+			1A3C4B191328F61500CFCF71 = 1A3C4B191328F61500CFCF71 /* PBXBookmark */;
+			1A3C4B1A1328F61500CFCF71 = 1A3C4B1A1328F61500CFCF71 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 1AD0ABD413197D4000E2532D /* Source Control */;
 		userBuildSettings = {
