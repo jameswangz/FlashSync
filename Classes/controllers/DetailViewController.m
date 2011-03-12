@@ -26,7 +26,6 @@
 - (void)openDirectly:(File *) file;
 - (void)openWithIFile:(File *) file;
 - (void)refreshRootViewController;
-- (void)changeButton2Cancel;
 - (void)changeTitleOfSyncButton:(NSString *)nowSyncingName;
 - (void)resetSyncState;
 - (void)clearSelected;
@@ -45,6 +44,7 @@
 @synthesize syncButton;
 @synthesize toolbar;
 @synthesize pushedFromNavigationController;
+
 
 #pragma mark -
 #pragma mark Managing the detail item
@@ -188,6 +188,8 @@
 	NSString *path = [[dict valueForKey:kPath] stringByAppendingPathComponent:file.name];
 	detailViewController.pushedFromNavigationController = YES;
 	detailViewController.detailItem = [[NSDictionary alloc] initWithObjectsAndKeys:path, kPath, file.name, kName, nil];
+	NSLog(@"items %d", [self.toolbarItems count]);
+	detailViewController.toolbarItems = self.toolbarItems;
 	[self.navigationController pushViewController:detailViewController animated:YES];
 	[detailViewController release];
 }
@@ -204,7 +206,7 @@
 								  nil];
 	actionSheet.tag = kOpenWayActionSheetTag;
 	actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
-	[actionSheet showInView:self.view];
+	[actionSheet showInView:self.navigationController.view];
 	[actionSheet release];
 }
 
@@ -293,13 +295,8 @@
 								  nil];
 	actionSheet.tag = kSyncActionSheetTag;
 	actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
-	[actionSheet showInView:self.view];
+	[actionSheet showInView:self.navigationController.view];
 	[actionSheet release];
-}
-
-- (void)changeButton2Cancel {
-	self.syncButton.title = @"取消";
-	self.syncButton.action = @selector(cancelSync);
 }
 
 - (void)changeTitleOfSyncButton:(NSString *)newTitle {
@@ -307,7 +304,7 @@
 }
 
 - (void)resetSyncState {
-	self.syncButton.title = @"从 U 盘同步所有文件";
+	self.syncButton.title = @"同步所有文件";
 	self.syncButton.action = @selector(syncClicked);
 	userCancelled = NO;
 }
@@ -369,7 +366,6 @@
 
 
 - (void)syncAll {
-	[self changeButton2Cancel];
 	[self performSelectorInBackground:@selector(syncInBackground) withObject:nil];
 }
 
@@ -380,22 +376,22 @@
 }
 
 - (void) addDeleteButton {
-	NSMutableArray *items = [self.toolbar.items mutableCopy];
-	deleteButton = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"删除选中文件"]
+	NSMutableArray *items = [self.toolbarItems mutableCopy];
+	deleteButton = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"删除"]
 													style:UIBarButtonItemStyleBordered
 												   target:self 
 												   action:@selector(deleteClicked)];
 	deleteButton.enabled = NO;
 	[items insertObject:deleteButton atIndex:2];
 	[deleteButton release];
-	[self.toolbar setItems:items animated:YES];
+	[self setToolbarItems:items animated:YES];
 	[items release];	
 }
 
 - (void) removeDeleteButton {
-	NSMutableArray *items = [self.toolbar.items mutableCopy];
+	NSMutableArray *items = [self.toolbarItems mutableCopy];
 	[items removeObjectAtIndex:2];
-	[self.toolbar setItems:items animated:YES];
+	[self setToolbarItems:items animated:YES];
 	[items release];
 }
 
@@ -423,7 +419,7 @@
 								  nil];
 	actionSheet.tag = kDeleteActionSheetTag;
 	actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
-	[actionSheet showInView:self.view];
+	[actionSheet showInView:self.navigationController.view];
 	[actionSheet release];
 }
 
@@ -493,7 +489,7 @@
 
 - (void)dealloc {
     [popoverController release];
-    [detailItem release];
+	[detailItem release];
 	[fullPathLabel release];
 	[contentsTableView release];
 	[contentsOfCurrentFolder release];

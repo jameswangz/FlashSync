@@ -15,6 +15,7 @@
 
 @implementation RootViewController
 
+@synthesize tableView;
 @synthesize detailViewController;
 
 - (UIColor *) backgroundColor {
@@ -60,9 +61,9 @@
 #pragma mark View lifecycle
 
 - (void)viewDidLoad {
-	self.clearsSelectionOnViewWillAppear = NO;
-    self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
-    self.tableView.backgroundColor = [self backgroundColor];
+	//self.tableView.clearsSelectionOnViewWillAppear = NO;
+	//self.tableView.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
+    //self.tableView.backgroundColor = [self backgroundColor];
     [self initializePanelItems];
 }
 
@@ -87,10 +88,10 @@
 }
 
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSArray *items = [panelItems objectAtIndex:[indexPath section]];
     static NSString *CellIdentifier = @"CellIdentifier";
-    UITableViewCell *cell = [tableView dequeueOrInit:CellIdentifier];
+    UITableViewCell *cell = [aTableView dequeueOrInit:CellIdentifier];
     NSDictionary *dict = [items objectAtIndex:[indexPath row]];
     cell.textLabel.text = [dict objectForKey:kName];
     cell.imageView.image = [UIImage imageNamed:[dict objectForKey:kImage]];
@@ -123,12 +124,14 @@
 
 
 - (void)viewDidUnload {
+	tableView = nil;
     detailViewController = nil;
     panelItems = nil;
 }
 
 
 - (void)dealloc {
+	[tableView release];
     [detailViewController release];
     [panelItems release];
     [super dealloc];

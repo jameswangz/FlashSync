@@ -10,11 +10,13 @@
 
 @class DetailViewController;
 
-@interface RootViewController : UITableViewController {
+@interface RootViewController : UIViewController<UITableViewDataSource, UITableViewDelegate> {
+	UITableView *tableView;
     DetailViewController *detailViewController;
     NSMutableArray *panelItems;
 }
 
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
 
 - (void)presentWelcomeLogo:(NSString *)username;
