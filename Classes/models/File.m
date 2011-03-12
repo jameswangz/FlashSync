@@ -84,6 +84,7 @@
 	[dict setObject:@"doc.png" forKey:@"docx"];
 	[dict setObject:@"spreadsheet.png" forKey:@"xls"];
 	[dict setObject:@"spreadsheet.png" forKey:@"xlxs"];
+	[dict setObject:@"keynote.png" forKey:@"key"];
 	[dict setObject:@"config.png" forKey:@"plist"];
 	[dict setObject:@"video.png" forKey:@"avi"];
 	[dict setObject:@"video.png" forKey:@"mov"];
