@@ -92,6 +92,7 @@
 	[dict setObject:@"mpeg.png" forKey:@"mpg"];	
 	[dict setObject:@"zip.png" forKey:@"rar"];
 	[dict setObject:@"flash.png" forKey:@"swf"];
+	[dict setObject:@"html" forKey:@"htm"];
 	NSString *imageName = [dict objectForKey:pathExtension];
 	[dict release];
 	return imageName;

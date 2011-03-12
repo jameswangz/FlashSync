@@ -51,6 +51,8 @@
 			<string>config</string>
 			<key>conf</key>
 			<string>config</string>
+			<key>xib</key>
+			<string>xib</string>
 		</dict>
 	</dict>
 	<key>text/html</key>
@@ -154,6 +156,171 @@
 		</array>
 		<key>DefaultIcon</key>
 		<string>ico</string>
+		<key>Icons</key>
+		<dict/>
+	</dict>
+	<key>image/x-canon-cr2</key>
+	<dict>
+		<key>Extensions</key>
+		<array>
+			<string>cr2</string>
+		</array>
+		<key>DefaultIcon</key>
+		<string>image</string>
+		<key>Icons</key>
+		<dict/>
+	</dict>
+	<key>image/x-canon-crw</key>
+	<dict>
+		<key>Extensions</key>
+		<array>
+			<string>crw</string>
+		</array>
+		<key>DefaultIcon</key>
+		<string>image</string>
+		<key>Icons</key>
+		<dict/>
+	</dict>
+	<key>image/x-epson-erf</key>
+	<dict>
+		<key>Extensions</key>
+		<array>
+			<string>erf</string>
+		</array>
+		<key>DefaultIcon</key>
+		<string>image</string>
+		<key>Icons</key>
+		<dict/>
+	</dict>
+	<key>image/x-fuji-raf</key>
+	<dict>
+		<key>Extensions</key>
+		<array>
+			<string>raf</string>
+		</array>
+		<key>DefaultIcon</key>
+		<string>image</string>
+		<key>Icons</key>
+		<dict/>
+	</dict>
+	<key>image/x-hasselblad-3fr</key>
+	<dict>
+		<key>Extensions</key>
+		<array>
+			<string>3fr</string>
+		</array>
+		<key>DefaultIcon</key>
+		<string>image</string>
+		<key>Icons</key>
+		<dict/>
+	</dict>
+	<key>image/x-kodak-kdc</key>
+	<dict>
+		<key>Extensions</key>
+		<array>
+			<string>kdc</string>
+		</array>
+		<key>DefaultIcon</key>
+		<string>image</string>
+		<key>Icons</key>
+		<dict/>
+	</dict>
+	<key>image/x-mamiya-mef</key>
+	<dict>
+		<key>Extensions</key>
+		<array>
+			<string>mef</string>
+		</array>
+		<key>DefaultIcon</key>
+		<string>image</string>
+		<key>Icons</key>
+		<dict/>
+	</dict>
+	<key>image/x-minolta-mrw</key>
+	<dict>
+		<key>Extensions</key>
+		<array>
+			<string>mrw</string>
+		</array>
+		<key>DefaultIcon</key>
+		<string>image</string>
+		<key>Icons</key>
+		<dict/>
+	</dict>
+	<key>image/x-nikon-nef</key>
+	<dict>
+		<key>Extensions</key>
+		<array>
+			<string>nef</string>
+		</array>
+		<key>DefaultIcon</key>
+		<string>image</string>
+		<key>Icons</key>
+		<dict/>
+	</dict>
+	<key>image/x-nikon-nrw</key>
+	<dict>
+		<key>Extensions</key>
+		<array>
+			<string>nrw</string>
+		</array>
+		<key>DefaultIcon</key>
+		<string>image</string>
+		<key>Icons</key>
+		<dict/>
+	</dict>
+	<key>image/x-olympus-orf</key>
+	<dict>
+		<key>Extensions</key>
+		<array>
+			<string>orf</string>
+		</array>
+		<key>DefaultIcon</key>
+		<string>image</string>
+		<key>Icons</key>
+		<dict/>
+	</dict>
+	<key>image/x-panasonic-rw2</key>
+	<dict>
+		<key>Extensions</key>
+		<array>
+			<string>rw2</string>
+		</array>
+		<key>DefaultIcon</key>
+		<string>image</string>
+		<key>Icons</key>
+		<dict/>
+	</dict>
+	<key>image/x-pentax-pef</key>
+	<dict>
+		<key>Extensions</key>
+		<array>
+			<string>pef</string>
+		</array>
+		<key>DefaultIcon</key>
+		<string>image</string>
+		<key>Icons</key>
+		<dict/>
+	</dict>
+	<key>image/x-sony-arw</key>
+	<dict>
+		<key>Extensions</key>
+		<array>
+			<string>arw</string>
+		</array>
+		<key>DefaultIcon</key>
+		<string>image</string>
+		<key>Icons</key>
+		<dict/>
+	</dict>
+	<key>image/x-sony-sr2</key>
+	<dict>
+		<key>Extensions</key>
+		<array>
+			<string>sr2</string>
+		</array>
+		<key>DefaultIcon</key>
+		<string>image</string>
 		<key>Icons</key>
 		<dict/>
 	</dict>
@@ -378,6 +545,7 @@
 			<string>nib</string>
 			<string>plist</string>
 			<string>strings</string>
+			<string>mobileconfig</string>
 		</array>
 		<key>DefaultIcon</key>
 		<string>text</string>
@@ -583,6 +751,18 @@
 		</array>
 		<key>DefaultIcon</key>
 		<string>3gpp</string>
+		<key>Icons</key>
+		<dict/>
+	</dict>
+	<key>video/3gpp2</key>
+	<dict>
+		<key>Extensions</key>
+		<array>
+			<string>3g2</string>
+			<string>3gpp2</string>
+		</array>
+		<key>DefaultIcon</key>
+		<string>video</string>
 		<key>Icons</key>
 		<dict/>
 	</dict>
