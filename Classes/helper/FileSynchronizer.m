@@ -9,11 +9,16 @@
 #import "FileSynchronizer.h"
 #import "NSObject-Dialog.h"
 
+@interface FileSynchronizer ()
+- (void) decode:(uint8_t*) encoded to:(uint8_t*) decoded length:(int) length;
+@end
+
+
 @implementation FileSynchronizer
 
 @synthesize skip;
 
-- (void)syncFrom:(NSString *)src to:(NSString *)dst {
+- (void)syncFrom:(NSString *)src to:(NSString *)dst decode:(BOOL) decode {
 	if (skip) {
 		return;
 	}
@@ -40,7 +45,13 @@
 			[[NSFileManager defaultManager] removeItemAtPath:dst error:nil];
 			break;
 		}
-		[out write:buffer maxLength:length];
+		if (decode) {
+			uint8_t decoded[length];
+			[self decode:buffer to:decoded length:length];
+			[out write:decoded maxLength:length];
+		} else {
+			[out write:buffer maxLength:length];			
+		}
 	}
 	
 	[in close];
@@ -50,6 +61,12 @@
 	
 	if (skip) {
 		[[NSFileManager defaultManager] removeItemAtPath:dst error:nil];
+	}
+}
+
+- (void) decode:(uint8_t*) encoded to:(uint8_t*) decoded length:(int) length {
+	for (int i = 0; i < length; i++) {
+		decoded[i] = encoded[i] ^ 2;
 	}
 }
 

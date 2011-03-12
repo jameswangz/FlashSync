@@ -16,7 +16,7 @@
 
 @property (nonatomic) BOOL skip;
 
-- (void)syncFrom:(NSString *) src to:(NSString *) dst;
+- (void)syncFrom:(NSString *) src to:(NSString *) dst decode:(BOOL) decode;
 
 
 @end

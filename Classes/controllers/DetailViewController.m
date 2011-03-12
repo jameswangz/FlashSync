@@ -17,7 +17,7 @@
 #import "InspectorViewController.h"
 #import "NSString-UDID.h"
 #import "AuthenticatonManager.h"
-#import "DataEncoder.h"
+
 
 @interface DetailViewController ()
 @property (nonatomic, retain) UIPopoverController *popoverController;
@@ -334,15 +334,10 @@
 		} else {
 			fileSynchronizer.skip = userCancelled;
 			if ([name hasSuffix:kEncodedFileSuffix]) {
-				NSData *data = [[NSData alloc] initWithContentsOfFile:src];
-				NSMutableData *decoded = [[NSMutableData alloc] init];
-				[DataEncoder decode: data to: decoded];
 				NSString *dstFileName = [dst substringToIndex:([dst length] - [kEncodedFileSuffix length])];
-				[decoded writeToFile:dstFileName atomically:YES];
-				[data release];
-				[decoded release];
+				[fileSynchronizer syncFrom:src to:dstFileName decode:YES];
 			} else {
-				[fileSynchronizer syncFrom:src to:dst];
+				[fileSynchronizer syncFrom:src to:dst decode:NO];
 			}
 		}
 	}
