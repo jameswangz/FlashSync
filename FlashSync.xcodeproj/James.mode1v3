@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>1AB4AFAC132B7A4900649FA6</string>
+						<string>1AB4AFB8132B7E4F00649FA6</string>
 						<key>history</key>
 						<array>
 							<string>1AB4AF7F132B73EF00649FA6</string>
@@ -373,7 +373,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>1AB4AFAB132B7A4900649FA6</string>
+										<string>1AB4AFB7132B7E4F00649FA6</string>
 										<key>history</key>
 										<array>
 											<string>1A083900131A643B000170FC</string>
@@ -1433,7 +1433,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {864, 512}}</string>
 								<key>RubberWindowFrame</key>
-								<string>36 202 864 553 0 0 1280 778 </string>
+								<string>320 63 864 553 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCRefactoringModule</string>
@@ -1460,7 +1460,7 @@
 				<string>1AB4AF94132B76C700649FA6</string>
 			</array>
 			<key>WindowString</key>
-			<string>36 202 864 553 0 0 1280 778 </string>
+			<string>320 63 864 553 0 0 1280 778 </string>
 			<key>WindowToolGUID</key>
 			<string>1AB4AF95132B76C700649FA6</string>
 			<key>WindowToolIsVisible</key>

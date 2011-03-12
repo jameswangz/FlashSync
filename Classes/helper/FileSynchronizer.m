@@ -10,6 +10,7 @@
 #import "NSObject-Dialog.h"
 
 @interface FileSynchronizer ()
+- (void) removeIfExists: (NSString *) dst;
 - (void) decode:(uint8_t*) encoded to:(uint8_t*) decoded length:(int) length;
 @end
 
@@ -18,17 +19,14 @@
 
 @synthesize skip;
 
+
 - (void)syncFrom:(NSString *)src to:(NSString *)dst decode:(BOOL) decode {
 	if (skip) {
 		return;
 	}
 	
-	BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:dst isDirectory:nil];		
-	if (fileExists) {
-		[[NSFileManager defaultManager] removeItemAtPath:dst error:nil];
-	}
-	
-	
+	[self removeIfExists: dst];
+
 	NSInputStream *in = [[NSInputStream alloc] initWithFileAtPath:src];
 	NSOutputStream *out = [[NSOutputStream alloc] initToFileAtPath:dst append:YES];
 	[in open];
@@ -37,20 +35,24 @@
 	static int BUFFER_SIZE = 1024;
 	uint8_t buffer[BUFFER_SIZE];
 	
-	//TODO handle errors
 	while (!skip && [in hasBytesAvailable]) {
 		int length = [in read:buffer maxLength:BUFFER_SIZE];
 		if (![out hasSpaceAvailable]) {
 			[@"iPad 上磁盘空间不足" showInDialog];
-			[[NSFileManager defaultManager] removeItemAtPath:dst error:nil];
+			[self removeIfExists:dst];
 			break;
 		}
+		
+		int result;
 		if (decode) {
 			uint8_t decoded[length];
 			[self decode:buffer to:decoded length:length];
-			[out write:decoded maxLength:length];
+			result = [out write:decoded maxLength:length];
 		} else {
-			[out write:buffer maxLength:length];			
+			result = [out write:buffer maxLength:length];			
+		}
+		if (result == -1) {
+			NSLog(@"Write failed : %d", result);		
 		}
 	}
 	
@@ -60,6 +62,13 @@
 	[out release];
 	
 	if (skip) {
+		[self removeIfExists:dst];
+	}
+}
+
+- (void) removeIfExists: (NSString *) dst  {
+	BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:dst isDirectory:nil];		
+	if (fileExists) {
 		[[NSFileManager defaultManager] removeItemAtPath:dst error:nil];
 	}
 }
