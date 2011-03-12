@@ -17,7 +17,7 @@
 #import "InspectorViewController.h"
 #import "NSString-UDID.h"
 #import "AuthenticatonManager.h"
-#import "DataEncoder.h"
+
 
 @interface DetailViewController ()
 @property (nonatomic, retain) UIPopoverController *popoverController;
@@ -276,6 +276,7 @@
 
 - (IBAction)cancelSync {
 	userCancelled = YES;
+	fileSynchronizer.skip = YES;
 	[self changeTitleOfSyncButton:@"正在中止同步过程, 请稍候..."];
 }
 
@@ -311,20 +312,6 @@
 	userCancelled = NO;
 }
 
-- (void) overwrite: (NSString *) src dst: (NSString *) dst  {
-	NSError *error = nil;
-	BOOL dir;
-	BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:dst isDirectory:&dir];		
-	if (fileExists) {
-		[[NSFileManager defaultManager] removeItemAtPath:dst error:nil];
-	}
-	
-	[[NSFileManager defaultManager] copyItemAtPath:src	toPath:dst error:&error];
-	if (error != nil) {
-		NSLog(@"Error : %@", error);
-	}
-}
-
 
 - (void) sync: (NSString *) parentSrc to: (NSString*) parentDst  {
 	NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:parentSrc error:nil];
@@ -345,16 +332,12 @@
 			[NSDataUtils createFolderIfRequired:dst absolutePath:YES];
 			[self sync:src to:dst];
 		} else {
+			fileSynchronizer.skip = userCancelled;
 			if ([name hasSuffix:kEncodedFileSuffix]) {
-				NSData *data = [[NSData alloc] initWithContentsOfFile:src];
-				NSMutableData *decoded = [[NSMutableData alloc] init];
-				[DataEncoder decode: data to: decoded];
 				NSString *dstFileName = [dst substringToIndex:([dst length] - [kEncodedFileSuffix length])];
-				[decoded writeToFile:dstFileName atomically:YES];
-				[data release];
-				[decoded release];
+				[fileSynchronizer syncFrom:src to:dstFileName decode:YES];
 			} else {
-				[self overwrite: src dst: dst];
+				[fileSynchronizer syncFrom:src to:dst decode:NO];
 			}
 		}
 	}
@@ -489,6 +472,7 @@
 		[self configureView];
 	}
 	[self addEditButton];
+	fileSynchronizer = [[FileSynchronizer alloc] init];
 }
 
 - (void)viewDidUnload {
@@ -499,6 +483,7 @@
 	self.syncButton = nil;
 	deleteButton = nil;
 	self.toolbar = nil;
+	fileSynchronizer = nil;
 }
 
 
@@ -514,6 +499,7 @@
 	[contentsOfCurrentFolder release];
 	[syncButton release];
 	[toolbar release];
+	[fileSynchronizer release];
 	[super dealloc];
 }
 

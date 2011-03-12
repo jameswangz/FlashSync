@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1A05643712A5578200C1D423 /* NSObject-Dialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A05643512A5578200C1D423 /* NSObject-Dialog.m */; };
-		1A13B09812D4C15B00A3BD87 /* DataEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A13B09712D4C15B00A3BD87 /* DataEncoder.m */; };
-		1A13B09912D4C15B00A3BD87 /* DataEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A13B09712D4C15B00A3BD87 /* DataEncoder.m */; };
 		1A1DEC2E12A6990200C7053B /* UITableView-WithCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1DEC2C12A6990100C7053B /* UITableView-WithCell.m */; };
 		1A1DEC4912A69D5900C7053B /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1DEC4812A69D5900C7053B /* Constants.m */; };
 		1A2BDC6313195C1100B87C15 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2BDC6113195C1100B87C15 /* DetailViewController.m */; };
@@ -70,6 +68,7 @@
 		1A7E010812F067B20016E53B /* aiff.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A7E00D312F067B20016E53B /* aiff.png */; };
 		1A7E010912F067B20016E53B /* aac.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A7E00D412F067B20016E53B /* aac.png */; };
 		1A7E010A12F067B20016E53B /* 3gpp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A7E00D512F067B20016E53B /* 3gpp.png */; };
+		1AC981A2132AA09C0079FD10 /* FileSynchronizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC981A1132AA09B0079FD10 /* FileSynchronizer.m */; };
 		1ACF8C4F12B4A14D00D76EDC /* InspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ACF8C4D12B4A14D00D76EDC /* InspectorViewController.m */; };
 		1ACF8C5012B4A14D00D76EDC /* InspectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ACF8C4E12B4A14D00D76EDC /* InspectorViewController.xib */; };
 		1AE472C812D9A67500967539 /* RootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AE472C712D9A67500967539 /* RootView.xib */; };
@@ -90,8 +89,6 @@
 /* Begin PBXFileReference section */
 		1A05643512A5578200C1D423 /* NSObject-Dialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject-Dialog.m"; sourceTree = "<group>"; };
 		1A05643612A5578200C1D423 /* NSObject-Dialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject-Dialog.h"; sourceTree = "<group>"; };
-		1A13B09612D4C15B00A3BD87 /* DataEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataEncoder.h; sourceTree = "<group>"; };
-		1A13B09712D4C15B00A3BD87 /* DataEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataEncoder.m; sourceTree = "<group>"; };
 		1A1DEC2C12A6990100C7053B /* UITableView-WithCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView-WithCell.m"; sourceTree = "<group>"; };
 		1A1DEC2D12A6990200C7053B /* UITableView-WithCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView-WithCell.h"; sourceTree = "<group>"; };
 		1A1DEC4712A69D5900C7053B /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -158,6 +155,8 @@
 		1A7E00D312F067B20016E53B /* aiff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aiff.png; sourceTree = "<group>"; };
 		1A7E00D412F067B20016E53B /* aac.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aac.png; sourceTree = "<group>"; };
 		1A7E00D512F067B20016E53B /* 3gpp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3gpp.png; sourceTree = "<group>"; };
+		1AC981A0132AA09B0079FD10 /* FileSynchronizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileSynchronizer.h; sourceTree = "<group>"; };
+		1AC981A1132AA09B0079FD10 /* FileSynchronizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileSynchronizer.m; sourceTree = "<group>"; };
 		1ACF8C4C12B4A14D00D76EDC /* InspectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectorViewController.h; sourceTree = "<group>"; };
 		1ACF8C4D12B4A14D00D76EDC /* InspectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectorViewController.m; sourceTree = "<group>"; };
 		1ACF8C4E12B4A14D00D76EDC /* InspectorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InspectorViewController.xib; sourceTree = "<group>"; };
@@ -251,8 +250,8 @@
 				1A05643612A5578200C1D423 /* NSObject-Dialog.h */,
 				1AE47E2112D35D5E008930DA /* NSString-UDID.h */,
 				1AE47E2212D35D5E008930DA /* NSString-UDID.m */,
-				1A13B09612D4C15B00A3BD87 /* DataEncoder.h */,
-				1A13B09712D4C15B00A3BD87 /* DataEncoder.m */,
+				1AC981A0132AA09B0079FD10 /* FileSynchronizer.h */,
+				1AC981A1132AA09B0079FD10 /* FileSynchronizer.m */,
 			);
 			path = helper;
 			sourceTree = "<group>";
@@ -577,7 +576,6 @@
 				1AE47F4612D36AA9008930DA /* NSDataUtils.m in Sources */,
 				1AE47F4A12D36AC3008930DA /* NSString-UDID.m in Sources */,
 				1AEB024D12D429D6009284E5 /* AuthenticatonManager.m in Sources */,
-				1A13B09912D4C15B00A3BD87 /* DataEncoder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,9 +593,9 @@
 				1ACF8C4F12B4A14D00D76EDC /* InspectorViewController.m in Sources */,
 				1AE47E2312D35D5E008930DA /* NSString-UDID.m in Sources */,
 				1AEB024E12D429D6009284E5 /* AuthenticatonManager.m in Sources */,
-				1A13B09812D4C15B00A3BD87 /* DataEncoder.m in Sources */,
 				1A2BDC6313195C1100B87C15 /* DetailViewController.m in Sources */,
 				1A2BDCAC13195E4A00B87C15 /* RootViewController.m in Sources */,
+				1AC981A2132AA09C0079FD10 /* FileSynchronizer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
