@@ -177,7 +177,9 @@
 		cell.detailTextLabel.text = @"";		
 	} else {
 		cell.accessoryType = UITableViewCellAccessoryNone;
-		cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ @ %@", file.size, file.modifiedAt];		
+		if (file.modifiedAt != nil) {
+			cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ @ %@", file.size, file.modifiedAt];		
+		}
 	}
 	return cell;
 }

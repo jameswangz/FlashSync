@@ -55,9 +55,13 @@
 }
 
 - (NSString *)modifiedAt {
+	id modifiedDate = [attributes objectForKey:NSFileModificationDate];
+	if (modifiedDate == nil) {
+		return nil;
+	}
 	NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
 	[formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-	NSString *formatted = [formatter stringFromDate:[attributes objectForKey:NSFileModificationDate]];
+	NSString *formatted = [formatter stringFromDate:modifiedDate];
 	[formatter release];
 	return formatted;
 }
