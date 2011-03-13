@@ -21,6 +21,8 @@
     RootViewController *rootViewController;
     DetailViewController *detailViewController;
 	UINavigationController *detailNavigationController;
+	
+	NSArray *detailViewToolbarItems;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
@@ -30,5 +32,6 @@
 @property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
 @property (nonatomic, retain) IBOutlet UINavigationController *detailNavigationController;
 
+@property (nonatomic, retain) NSArray *detailViewToolbarItems;
 
 @end

@@ -14,10 +14,12 @@
 #define kOpenWayActionSheetTag	2
 #define kDeleteActionSheetTag	3
 
+#define kDeleteButtonTag		99
+
 #define kSkipButtonIndex		3
 
 @interface DetailViewController : UIViewController<UIPopoverControllerDelegate, UISplitViewControllerDelegate, 
-	UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate> {
+	UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, UINavigationControllerDelegate> {
     
     UIPopoverController *popoverController;    
     id detailItem;
@@ -27,6 +29,7 @@
 	UIBarButtonItem *syncStatusButton;
 	UIBarButtonItem *syncButton;
 	UIBarButtonItem *deleteButton;
+	UIBarButtonItem *skipButton;
 		
 	File *activeFile;
 	BOOL userCancelled;

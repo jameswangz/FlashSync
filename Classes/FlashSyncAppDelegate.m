@@ -17,6 +17,7 @@
 
 @synthesize window, splitViewController, rootViewController, detailViewController;
 @synthesize detailNavigationController;
+@synthesize detailViewToolbarItems;
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -66,6 +67,7 @@
 
 
 - (void)dealloc {
+	[detailViewToolbarItems release];
     [splitViewController release];
     [window release];
     [super dealloc];

@@ -38,6 +38,7 @@
 - (void)addSkipButton;
 - (void)removeSkipButton;
 - (void)skipCurrentFile;
+- (void)setGlogalToolbarItems:(NSArray *) items;
 @end
 
 
@@ -49,7 +50,6 @@
 @synthesize syncStatusButton;
 @synthesize syncButton;
 @synthesize pushedFromNavigationController;
-
 
 #pragma mark -
 #pragma mark Managing the detail item
@@ -192,8 +192,7 @@
 	NSString *path = [[dict valueForKey:kPath] stringByAppendingPathComponent:file.name];
 	detailViewController.pushedFromNavigationController = YES;
 	detailViewController.detailItem = [[NSDictionary alloc] initWithObjectsAndKeys:path, kPath, file.name, kName, nil];
-	NSLog(@"items %d", [self.toolbarItems count]);
-	detailViewController.toolbarItems = self.toolbarItems;
+	[self setGlogalToolbarItems:self.navigationController.topViewController.toolbarItems];
 	[self.navigationController pushViewController:detailViewController animated:YES];
 	[detailViewController release];
 }
@@ -403,41 +402,61 @@
 }
 
 - (void) addDeleteButton {
-	NSMutableArray *items = [self.toolbarItems mutableCopy];
+	UIViewController *topController = self.navigationController.topViewController;
+	NSMutableArray *items = [topController.toolbarItems mutableCopy];
 	deleteButton = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"删除"]
 													style:UIBarButtonItemStyleBordered
 												   target:self 
 												   action:@selector(deleteClicked)];
 	deleteButton.enabled = NO;
+	deleteButton.tag = kDeleteButtonTag;
 	[items addObject:deleteButton];
-	[deleteButton release];
-	[self setToolbarItems:items animated:YES];
+	[topController setToolbarItems:items animated:YES];
 	[items release];	
 }
 
 - (void) removeDeleteButton {
-	NSMutableArray *items = [self.toolbarItems mutableCopy];
+	UIViewController *topController = self.navigationController.topViewController;
+	NSMutableArray *items = [topController.toolbarItems mutableCopy];
 	[items removeLastObject];
-	[self setToolbarItems:items animated:YES];
+	[topController setToolbarItems:items animated:YES];
+	[items release];
+}
+
+- (void)setGlogalToolbarItems:(NSArray *)allItems {
+	//don't pass the delete button
+	NSMutableArray *items = [[NSMutableArray alloc] init];	
+	for (UIBarButtonItem *item in allItems) {
+		if (item.tag != kDeleteButtonTag) {
+			[items addObject:item];
+		}
+	}
+	
+	FlashSyncAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+	delegate.detailViewToolbarItems = items;
 	[items release];
 }
 
 - (void) addSkipButton {
-	NSMutableArray *items = [self.toolbarItems mutableCopy];
-	UIBarButtonItem *skipButton = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"跳过当前文件"]
+	UIViewController *topController = self.navigationController.topViewController;
+	NSMutableArray *items = [topController.toolbarItems mutableCopy];
+	skipButton = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"跳过当前文件"]
 																   style:UIBarButtonItemStyleBordered
 																  target:self 
 																  action:@selector(skipCurrentFile)];
 	[items insertObject:skipButton atIndex:kSkipButtonIndex];
 	[skipButton release];
-	[self setToolbarItems:items animated:YES];
+	[topController setToolbarItems:items animated:YES];
+	[self setGlogalToolbarItems:items];
 	[items release];	
 }
 
 - (void) removeSkipButton {
-	NSMutableArray *items = [self.toolbarItems mutableCopy];
+	UIViewController *topController = self.navigationController.topViewController;
+	NSMutableArray *items = [topController.toolbarItems mutableCopy];
 	[items removeObjectAtIndex:kSkipButtonIndex];
-	[self setToolbarItems:items animated:YES];
+	[topController setToolbarItems:items animated:YES];
+	[self setGlogalToolbarItems:items];
 	[items release];
 }
 
@@ -468,6 +487,16 @@
 	actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
 	[actionSheet showInView:self.navigationController.view];
 	[actionSheet release];
+}
+
+#pragma mark -
+#pragma mark UINavigationControllerDelegate Methods
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+	FlashSyncAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+	if ([delegate.detailViewToolbarItems count] > 0) {
+		viewController.toolbarItems = delegate.detailViewToolbarItems;	
+	}
 }
 
 #pragma mark -
@@ -503,8 +532,9 @@
 																  action:@selector(toggleEdit)];
 	self.navigationItem.rightBarButtonItem = editButton;
 	[editButton release];
-
 }
+
+
 - (void)viewDidLoad {
 	[self createImportedFolderIfRequired];
 	contentsOfCurrentFolder = [[NSMutableArray alloc] init];
@@ -523,7 +553,6 @@
 	self.contentsTableView = nil;
 	self.syncStatusButton = nil;
 	self.syncButton = nil;
-	deleteButton = nil;
 	fileSynchronizer = nil;
 }
 
