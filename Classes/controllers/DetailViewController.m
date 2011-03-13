@@ -40,10 +40,8 @@
 
 @synthesize popoverController;
 @synthesize detailItem;
-@synthesize fullPathLabel;
 @synthesize contentsTableView;
 @synthesize syncButton;
-@synthesize toolbar;
 @synthesize pushedFromNavigationController;
 
 
@@ -105,7 +103,6 @@
 	NSDictionary *dict = self.detailItem;
 	NSString *path = [dict objectForKey:kPath];
 	self.title = [dict objectForKey:kName];
-	self.fullPathLabel.text = path;
 	if (path == kFlashDisk) {
 		if (![AuthenticatonManager authenticate]) {
 			[contentsOfCurrentFolder removeAllObjects];
@@ -272,6 +269,11 @@
 
 - (UITableViewCellEditingStyle) tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
 	return UITableViewCellAccessoryCheckmark;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+	NSDictionary *dict = self.detailItem;
+	return [dict objectForKey:kPath];
 }
 
 #pragma mark -
@@ -479,13 +481,10 @@
 }
 
 - (void)viewDidUnload {
-    // Release any retained subviews of the main view.
     self.popoverController = nil;
-	self.fullPathLabel = nil;
 	self.contentsTableView = nil;
 	self.syncButton = nil;
 	deleteButton = nil;
-	self.toolbar = nil;
 	fileSynchronizer = nil;
 }
 
@@ -497,11 +496,9 @@
 - (void)dealloc {
     [popoverController release];
 	[detailItem release];
-	[fullPathLabel release];
 	[contentsTableView release];
 	[contentsOfCurrentFolder release];
 	[syncButton release];
-	[toolbar release];
 	[fileSynchronizer release];
 	[super dealloc];
 }

@@ -22,11 +22,9 @@
     id detailItem;
 	BOOL pushedFromNavigationController;
 	NSMutableArray *contentsOfCurrentFolder;
-	UILabel *fullPathLabel;
 	UITableView *contentsTableView;
 	UIBarButtonItem *syncButton;
 	UIBarButtonItem *deleteButton;
-	UIToolbar *toolbar;
 		
 	File *activeFile;
 	BOOL userCancelled;
@@ -34,10 +32,8 @@
 }
 
 @property (nonatomic, retain) id detailItem;
-@property (nonatomic, retain) IBOutlet UILabel *fullPathLabel;
 @property (nonatomic, retain) IBOutlet UITableView *contentsTableView;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *syncButton;
-@property (nonatomic, retain) IBOutlet UIToolbar *toolbar;
 @property (nonatomic) BOOL pushedFromNavigationController;
 
 - (IBAction)syncClicked;
