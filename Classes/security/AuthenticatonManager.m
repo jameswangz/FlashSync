@@ -41,8 +41,8 @@
 }
 
 + (BOOL)authenticate {
-	[self presentWelcomeLogo:@"王政"];
-	return YES;
+	//[self presentWelcomeLogo:@"王政"];
+	//return YES;
 	NSString *udid = [[UIDevice currentDevice] uniqueIdentifier];
 	NSDictionary *authentication = [self initializeAuthentication];
 	if (authentication == nil) {

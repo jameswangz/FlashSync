@@ -1656,11 +1656,25 @@
 		vrLen = 1015;
 		vrLoc = 13613;
 	};
+	1AE9E6CB132D23B80006AB16 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */;
+	};
+	1AE9E6D4132D23D30006AB16 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */;
+		name = "AuthenticatonManager.m: 36";
+		rLen = 0;
+		rLoc = 1018;
+		rType = 0;
+		vrLen = 1177;
+		vrLoc = 564;
+	};
 	1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1206, 1184}}";
-			sepNavSelRange = "{1252, 0}";
-			sepNavVisRange = "{227, 1013}";
+			sepNavIntBoundsRect = "{{0, 0}, {1206, 1209}}";
+			sepNavSelRange = "{1018, 0}";
+			sepNavVisRange = "{564, 1177}";
 			sepNavWindowFrame = "{{15, 62}, {1265, 716}}";
 		};
 	};
@@ -1689,7 +1703,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 1AD0ABC213197D3A00E2532D /* FlashSync */;
-		activeSDKPreference = iphoneos4.2;
+		activeSDKPreference = iphonesimulator4.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* FlashSync */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* FlashSync */,
@@ -1721,8 +1735,8 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 321724077;
-			PBXWorkspaceStateSaveDate = 321724077;
+			PBXPerProjectTemplateStateSaveDate = 321725364;
+			PBXWorkspaceStateSaveDate = 321725364;
 		};
 		perUserProjectItems = {
 			1A083900131A643B000170FC = 1A083900131A643B000170FC /* PBXTextBookmark */;
@@ -1881,6 +1895,8 @@
 			1AE9E696132D1C070006AB16 = 1AE9E696132D1C070006AB16 /* PBXTextBookmark */;
 			1AE9E697132D1C070006AB16 = 1AE9E697132D1C070006AB16 /* PBXTextBookmark */;
 			1AE9E698132D1C070006AB16 = 1AE9E698132D1C070006AB16 /* PBXTextBookmark */;
+			1AE9E6CB132D23B80006AB16 /* PBXBookmark */ = 1AE9E6CB132D23B80006AB16 /* PBXBookmark */;
+			1AE9E6D4132D23D30006AB16 /* PBXTextBookmark */ = 1AE9E6D4132D23D30006AB16 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 1AD0ABD413197D4000E2532D /* Source Control */;
 		userBuildSettings = {
