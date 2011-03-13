@@ -30,9 +30,14 @@
 - (void)changeSyncState2Cancel;
 - (void)resetSyncState;
 - (void)clearSelected;
+- (void)addDeleteButton;
+- (void)removeDeleteButton;
 - (void)deleteSelected;
 - (void)changeStateOfDeleteButton;
 - (int)selectedCount;
+- (void)addSkipButton;
+- (void)removeSkipButton;
+- (void)skipCurrentFile;
 @end
 
 
@@ -281,9 +286,16 @@
 #pragma mark IBAction Methods
 
 - (IBAction)cancelSync {
-	[self changeTitleOfSyncStatusButton:@"正在中止同步过程, 请稍候..."];
+	[self changeTitleOfSyncStatusButton:@"正在中止同步过程..."];
 	userCancelled = YES;
 	fileSynchronizer.skip = YES;
+}
+
+- (void)skipCurrentFile {
+	NSString *title = [[NSString alloc] initWithFormat:@"正在跳过 %@...", [fileSynchronizer syncingFileName]];
+	[self changeTitleOfSyncStatusButton:title];
+	[title release];
+	fileSynchronizer.skip = YES;	
 }
 
 - (IBAction)syncClicked {
@@ -327,7 +339,7 @@
 			return;
 		}
 		
-		NSString *newTitle = [[NSString alloc] initWithFormat:@"正在同步 %@", name];
+		NSString *newTitle = [[NSString alloc] initWithFormat:@"正在同步 %@...", name];
 		[self performSelectorOnMainThread:@selector(changeTitleOfSyncStatusButton:) withObject:newTitle waitUntilDone:YES];
 		[newTitle release];
 		
@@ -370,6 +382,7 @@
 
 	[self performSelectorOnMainThread:@selector(resetSyncState) withObject:nil waitUntilDone:YES];
 	[self performSelectorOnMainThread:@selector(changeTitleOfSyncStatusButton:) withObject:@"" waitUntilDone:YES]; 
+	[self performSelectorOnMainThread:@selector(removeSkipButton) withObject:nil waitUntilDone:YES];
 	
 	[self configureView];
 	[self refreshRootViewController];
@@ -379,6 +392,7 @@
 
 - (void)syncAll {
 	[self changeSyncState2Cancel];
+	[self addSkipButton];
 	[self performSelectorInBackground:@selector(syncInBackground) withObject:nil];
 }
 
@@ -395,7 +409,7 @@
 												   target:self 
 												   action:@selector(deleteClicked)];
 	deleteButton.enabled = NO;
-	[items insertObject:deleteButton atIndex:kDeleteButtonIndex];
+	[items addObject:deleteButton];
 	[deleteButton release];
 	[self setToolbarItems:items animated:YES];
 	[items release];	
@@ -403,10 +417,30 @@
 
 - (void) removeDeleteButton {
 	NSMutableArray *items = [self.toolbarItems mutableCopy];
-	[items removeObjectAtIndex:kDeleteButtonIndex];
+	[items removeLastObject];
 	[self setToolbarItems:items animated:YES];
 	[items release];
 }
+
+- (void) addSkipButton {
+	NSMutableArray *items = [self.toolbarItems mutableCopy];
+	UIBarButtonItem *skipButton = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"跳过当前文件"]
+																   style:UIBarButtonItemStyleBordered
+																  target:self 
+																  action:@selector(skipCurrentFile)];
+	[items insertObject:skipButton atIndex:kSkipButtonIndex];
+	[skipButton release];
+	[self setToolbarItems:items animated:YES];
+	[items release];	
+}
+
+- (void) removeSkipButton {
+	NSMutableArray *items = [self.toolbarItems mutableCopy];
+	[items removeObjectAtIndex:kSkipButtonIndex];
+	[self setToolbarItems:items animated:YES];
+	[items release];
+}
+
 
 - (IBAction)toggleEdit {
 	[self.contentsTableView setEditing:!self.contentsTableView.editing animated:YES];

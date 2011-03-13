@@ -11,12 +11,13 @@
 @interface FileSynchronizer : NSObject {
 
 	BOOL skip;
+	NSString *syncingFileName;
 	
 }
 
 @property (nonatomic) BOOL skip;
 
 - (void)syncFrom:(NSString *) src to:(NSString *) dst decode:(BOOL) decode;
-
+- (NSString *)syncingFileName;
 
 @end

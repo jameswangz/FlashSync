@@ -14,8 +14,7 @@
 #define kOpenWayActionSheetTag	2
 #define kDeleteActionSheetTag	3
 
-#define kDeleteButtonIndex		3
-
+#define kSkipButtonIndex		3
 
 @interface DetailViewController : UIViewController<UIPopoverControllerDelegate, UISplitViewControllerDelegate, 
 	UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate> {

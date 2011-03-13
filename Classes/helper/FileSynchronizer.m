@@ -21,6 +21,7 @@
 
 
 - (void)syncFrom:(NSString *)src to:(NSString *)dst decode:(BOOL) decode {
+	syncingFileName = src;
 	if (skip) {
 		return;
 	}
@@ -77,6 +78,10 @@
 	for (int i = 0; i < length; i++) {
 		decoded[i] = encoded[i] ^ 2;
 	}
+}
+
+- (NSString *)syncingFileName {
+	return syncingFileName;
 }
 
 @end
