@@ -17,6 +17,7 @@
 
 @synthesize tableView;
 @synthesize detailViewController;
+@synthesize welcomeLogo;
 
 - (UIColor *) backgroundColor {
 	return [UIColor colorWithRed:0.8 green:0.9 blue:0.9 alpha:1.0];
@@ -127,6 +128,7 @@
 	tableView = nil;
     detailViewController = nil;
     panelItems = nil;
+	welcomeLogo = nil;
 }
 
 
@@ -134,6 +136,7 @@
 	[tableView release];
     [detailViewController release];
     [panelItems release];
+	[welcomeLogo release];
     [super dealloc];
 }
 
@@ -141,11 +144,9 @@
 #pragma mark Custom Methods
 
 - (void)presentWelcomeLogo:(NSString *)username {
-    UILabel *welcomeLabel = [[UILabel alloc] initWithFrame:CGRectMake(3, 3, 50, 40)];
-    welcomeLabel.text = [NSString stringWithFormat:@"您好, %@, 欢迎使用优盘同步工具", username];
-    //welcomeLabel.backgroundColor = [self backgroundColor];
-    self.tableView.tableFooterView = welcomeLabel;
-    [welcomeLabel release];
+	NSString *logo = [[NSString alloc] initWithFormat:@"您好, %@", username];
+	self.welcomeLogo.title = logo;
+	[logo release];
 }
 
 - (void)refreshPanelItems {

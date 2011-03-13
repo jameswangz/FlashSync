@@ -14,10 +14,12 @@
 	UITableView *tableView;
     DetailViewController *detailViewController;
     NSMutableArray *panelItems;
+	UIBarButtonItem *welcomeLogo;
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *welcomeLogo;
 
 - (void)presentWelcomeLogo:(NSString *)username;
 - (void)refreshPanelItems;
