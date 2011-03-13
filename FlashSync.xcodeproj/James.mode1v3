@@ -277,8 +277,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>15</integer>
-									<integer>11</integer>
+									<integer>5</integer>
+									<integer>3</integer>
 									<integer>2</integer>
 									<integer>0</integer>
 								</array>
@@ -332,7 +332,6 @@
 										<array>
 											<string>1A083900131A643B000170FC</string>
 											<string>1AD6B392132CAC2C002531E8</string>
-											<string>1AE9E4BE132CBD720006AB16</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -344,14 +343,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1007, 292}}</string>
+								<string>{{0, 0}, {1007, 270}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 117 1280 661 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>292pt</string>
+							<string>270pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -364,14 +363,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 297}, {1007, 323}}</string>
+								<string>{{0, 275}, {1007, 345}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 117 1280 661 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>323pt</string>
+							<string>345pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -390,9 +389,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>1AE9E4FB132CC38B0006AB16</string>
+				<string>1AE9E54E132CCFAC0006AB16</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>1AE9E4FC132CC38B0006AB16</string>
+				<string>1AE9E54F132CCFAC0006AB16</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -530,11 +529,11 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1AE9E505132CC38B0006AB16</string>
-		<string>1AE9E506132CC38B0006AB16</string>
+		<string>1AE9E559132CD1250006AB16</string>
+		<string>1AE9E55A132CD1250006AB16</string>
+		<string>1AE9E55B132CD1250006AB16</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>1AE9E507132CC38B0006AB16</string>
 		<string>1AD0ABD213197D4000E2532D</string>
 		<string>/Users/James/iphone/FlashSync/FlashSync.xcodeproj</string>
 	</array>
@@ -616,7 +615,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1AD0ABD213197D4000E2532D</string>
-				<string>1AE9E4FD132CC38B0006AB16</string>
+				<string>1AE9E550132CCFAC0006AB16</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -738,13 +737,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>1AE9E4FE132CC38B0006AB16</string>
+				<string>1AE9E552132CD1250006AB16</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>1AE9E4FF132CC38B0006AB16</string>
-				<string>1AE9E500132CC38B0006AB16</string>
-				<string>1AE9E501132CC38B0006AB16</string>
-				<string>1AE9E502132CC38B0006AB16</string>
-				<string>1AE9E503132CC38B0006AB16</string>
+				<string>1AE9E553132CD1250006AB16</string>
+				<string>1AE9E554132CD1250006AB16</string>
+				<string>1AE9E555132CD1250006AB16</string>
+				<string>1AE9E556132CD1250006AB16</string>
+				<string>1AE9E557132CD1250006AB16</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -906,7 +905,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>1AE9E504132CC38B0006AB16</string>
+				<string>1AE9E558132CD1250006AB16</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>

@@ -11,7 +11,7 @@
 @interface FileSynchronizer : NSObject {
 
 	BOOL skip;
-	NSString *syncingFileName;
+	NSString *syncingFilePath;
 	
 }
 

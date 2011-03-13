@@ -21,7 +21,7 @@
 
 
 - (void)syncFrom:(NSString *)src to:(NSString *)dst decode:(BOOL) decode {
-	syncingFileName = src;
+	syncingFilePath = src;
 	if (skip) {
 		return;
 	}
@@ -81,7 +81,7 @@
 }
 
 - (NSString *)syncingFileName {
-	return syncingFileName;
+	return [syncingFilePath lastPathComponent];
 }
 
 @end
