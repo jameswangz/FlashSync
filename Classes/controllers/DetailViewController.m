@@ -27,6 +27,7 @@
 - (void)openWithIFile:(File *) file;
 - (void)refreshRootViewController;
 - (void)changeTitleOfSyncButton:(NSString *)nowSyncingName;
+- (void)changeSyncState2Cancel;
 - (void)resetSyncState;
 - (void)clearSelected;
 - (void)deleteSelected;
@@ -303,6 +304,11 @@
 	self.syncButton.title = newTitle;
 }
 
+
+- (void)changeSyncState2Cancel {
+	self.syncButton.action = @selector(cancelSync);
+}
+
 - (void)resetSyncState {
 	self.syncButton.title = @"同步所有文件";
 	self.syncButton.action = @selector(syncClicked);
@@ -366,6 +372,7 @@
 
 
 - (void)syncAll {
+	[self changeSyncState2Cancel];
 	[self performSelectorInBackground:@selector(syncInBackground) withObject:nil];
 }
 
