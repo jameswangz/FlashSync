@@ -26,7 +26,7 @@
 - (void)openDirectly:(File *) file;
 - (void)openWithIFile:(File *) file;
 - (void)refreshRootViewController;
-- (void)changeTitleOfSyncButton:(NSString *)nowSyncingName;
+- (void)changeTitleOfSyncStatusButton:(NSString *)nowSyncingName;
 - (void)changeSyncState2Cancel;
 - (void)resetSyncState;
 - (void)clearSelected;
@@ -41,6 +41,7 @@
 @synthesize popoverController;
 @synthesize detailItem;
 @synthesize contentsTableView;
+@synthesize syncStatusButton;
 @synthesize syncButton;
 @synthesize pushedFromNavigationController;
 
@@ -280,9 +281,9 @@
 #pragma mark IBAction Methods
 
 - (IBAction)cancelSync {
+	[self changeTitleOfSyncStatusButton:@"正在中止同步过程, 请稍候..."];
 	userCancelled = YES;
 	fileSynchronizer.skip = YES;
-	[self changeTitleOfSyncButton:@"正在中止同步过程, 请稍候..."];
 }
 
 - (IBAction)syncClicked {
@@ -302,12 +303,13 @@
 	[actionSheet release];
 }
 
-- (void)changeTitleOfSyncButton:(NSString *)newTitle {
-	self.syncButton.title = newTitle;
+- (void)changeTitleOfSyncStatusButton:(NSString *)newTitle {
+	self.syncStatusButton.title = newTitle;
 }
 
 
 - (void)changeSyncState2Cancel {
+	self.syncButton.title = @"中止同步过程";
 	self.syncButton.action = @selector(cancelSync);
 }
 
@@ -325,8 +327,8 @@
 			return;
 		}
 		
-		NSString *newTitle = [[NSString alloc] initWithFormat:@"正在同步 %@,  点击中止同步过程", name];
-		[self performSelectorOnMainThread:@selector(changeTitleOfSyncButton:) withObject:newTitle waitUntilDone:YES];
+		NSString *newTitle = [[NSString alloc] initWithFormat:@"正在同步 %@", name];
+		[self performSelectorOnMainThread:@selector(changeTitleOfSyncStatusButton:) withObject:newTitle waitUntilDone:YES];
 		[newTitle release];
 		
 		NSString *src = [parentSrc stringByAppendingPathComponent:name];
@@ -360,16 +362,18 @@
 	[self sync: src to: dst];
 	
 	if (userCancelled) {
-		[@"同步过程被用户中止" showInDialogWithTitle:@"提示信息"];	
+		[@"同步过程被用户中止" showInDialogWithTitle:@"提示信息"];
 	} else {
-		[@"同步文件已完成, 请点击左侧 [已导入文件] 查看" showInDialogWithTitle:@"提示信息"];	
+		[@"同步文件已完成, 请点击左侧 [已导入文件] 查看" showInDialogWithTitle:@"提示信息"];
 	}
+
+
+	[self performSelectorOnMainThread:@selector(resetSyncState) withObject:nil waitUntilDone:YES];
+	[self performSelectorOnMainThread:@selector(changeTitleOfSyncStatusButton:) withObject:@"" waitUntilDone:YES]; 
 	
 	[self configureView];
 	[self refreshRootViewController];
-	[pool release];
-	
-	[self performSelectorOnMainThread:@selector(resetSyncState) withObject:nil waitUntilDone:YES];
+	[pool release];	
 }
 
 
@@ -483,6 +487,7 @@
 - (void)viewDidUnload {
     self.popoverController = nil;
 	self.contentsTableView = nil;
+	self.syncStatusButton = nil;
 	self.syncButton = nil;
 	deleteButton = nil;
 	fileSynchronizer = nil;
@@ -498,6 +503,7 @@
 	[detailItem release];
 	[contentsTableView release];
 	[contentsOfCurrentFolder release];
+	[syncStatusButton release];
 	[syncButton release];
 	[fileSynchronizer release];
 	[super dealloc];

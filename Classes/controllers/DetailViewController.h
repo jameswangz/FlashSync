@@ -23,6 +23,7 @@
 	BOOL pushedFromNavigationController;
 	NSMutableArray *contentsOfCurrentFolder;
 	UITableView *contentsTableView;
+	UIBarButtonItem *syncStatusButton;
 	UIBarButtonItem *syncButton;
 	UIBarButtonItem *deleteButton;
 		
@@ -33,6 +34,7 @@
 
 @property (nonatomic, retain) id detailItem;
 @property (nonatomic, retain) IBOutlet UITableView *contentsTableView;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *syncStatusButton;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *syncButton;
 @property (nonatomic) BOOL pushedFromNavigationController;
 
