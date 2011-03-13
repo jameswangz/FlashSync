@@ -19,17 +19,17 @@
 	};
 	1A2BDC6113195C1100B87C15 /* DetailViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1242, 10841}}";
-			sepNavSelRange = "{11958, 27}";
-			sepNavVisRange = "{11383, 842}";
+			sepNavIntBoundsRect = "{{0, 0}, {1171, 10772}}";
+			sepNavSelRange = "{12659, 0}";
+			sepNavVisRange = "{12187, 859}";
 			sepNavWindowFrame = "{{15, 62}, {1230, 716}}";
 		};
 	};
 	1A2BDC6213195C1100B87C15 /* DetailViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1171, 893}}";
-			sepNavSelRange = "{1046, 0}";
-			sepNavVisRange = "{308, 974}";
+			sepNavIntBoundsRect = "{{0, 0}, {1171, 969}}";
+			sepNavSelRange = "{337, 0}";
+			sepNavVisRange = "{137, 752}";
 			sepNavWindowFrame = "{{15, 62}, {1230, 716}}";
 		};
 	};
@@ -162,7 +162,7 @@
 		fRef = 1A2BDC6113195C1100B87C15 /* DetailViewController.m */;
 		name = "DetailViewController.m: 490";
 		rLen = 0;
-		rLoc = 15459;
+		rLoc = 15493;
 		rType = 0;
 		vrLen = 70;
 		vrLoc = 15317;
@@ -202,7 +202,7 @@
 		fRef = 1A2BDC6113195C1100B87C15 /* DetailViewController.m */;
 		name = "DetailViewController.m: 490";
 		rLen = 0;
-		rLoc = 15459;
+		rLoc = 15493;
 		rType = 0;
 		vrLen = 70;
 		vrLoc = 15317;
@@ -212,7 +212,7 @@
 		fRef = 1A2BDC6113195C1100B87C15 /* DetailViewController.m */;
 		name = "DetailViewController.m: 494";
 		rLen = 0;
-		rLoc = 15508;
+		rLoc = 15542;
 		rType = 0;
 		vrLen = 373;
 		vrLoc = 14944;
@@ -236,7 +236,7 @@
 		fRef = 1A2BDC6113195C1100B87C15 /* DetailViewController.m */;
 		name = "DetailViewController.m: 494";
 		rLen = 0;
-		rLoc = 15508;
+		rLoc = 15542;
 		rType = 0;
 		vrLen = 410;
 		vrLoc = 14883;
@@ -256,7 +256,7 @@
 		fRef = 1A2BDC6113195C1100B87C15 /* DetailViewController.m */;
 		name = "DetailViewController.m: 494";
 		rLen = 0;
-		rLoc = 15508;
+		rLoc = 15542;
 		rType = 0;
 		vrLen = 373;
 		vrLoc = 14958;

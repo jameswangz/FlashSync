@@ -395,7 +395,7 @@
 												   target:self 
 												   action:@selector(deleteClicked)];
 	deleteButton.enabled = NO;
-	[items insertObject:deleteButton atIndex:2];
+	[items insertObject:deleteButton atIndex:kDeleteButtonIndex];
 	[deleteButton release];
 	[self setToolbarItems:items animated:YES];
 	[items release];	
@@ -403,7 +403,7 @@
 
 - (void) removeDeleteButton {
 	NSMutableArray *items = [self.toolbarItems mutableCopy];
-	[items removeObjectAtIndex:2];
+	[items removeObjectAtIndex:kDeleteButtonIndex];
 	[self setToolbarItems:items animated:YES];
 	[items release];
 }
