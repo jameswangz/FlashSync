@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-
+#define kFavorite @"Favorite"
 #define kImported @"Imported"
 #define kFlashDisk @"FlashDisk"
 

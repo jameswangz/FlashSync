@@ -30,7 +30,8 @@
     panelItems = [[NSMutableArray alloc] init];
 	
     NSMutableArray *rootItems = [[NSMutableArray alloc] init];
-    [rootItems addObject:[NSDictionary dictionaryWithObjectsAndKeys:kImported, kPath, @"已导入文件", kName, @"Bookmarks-HomeFolderIcon.png", kImage, nil]];
+    [rootItems addObject:[NSDictionary dictionaryWithObjectsAndKeys:kFavorite, kPath, @"收藏夹", kName, @"Bookmarks-HomeFolderIcon.png", kImage, nil]];	
+	[rootItems addObject:[NSDictionary dictionaryWithObjectsAndKeys:kImported, kPath, @"已导入文件", kName, @"Bookmarks-HomeFolderIcon.png", kImage, nil]];
     [rootItems addObject:[NSDictionary dictionaryWithObjectsAndKeys:kFlashDisk, kPath, @"U 盘文件", kName, @"Bookmarks-Drives.png", kImage, nil]];
     [panelItems addObject:rootItems];
     [rootItems release];

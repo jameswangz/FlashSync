@@ -30,6 +30,10 @@
 	NSString *unencrypted3 = [@"CDJIEUBEHVABDRBMHYFVERDWJOFFFNHXGNCGFSGOIDGQFWBWBQJKHKEWANCTBZCLHLDIEWDZ" unencrypt];
 	NSLog(@"Unencrypted3 --- %@", unencrypted3);
 	STAssertTrue([@"7ECB8E2D-470D-5CEE-B258-9305343AAC40" isEqualToString:unencrypted3], @"Not Equal");		
+	NSString *unencrypted4 = [@"CCIMIPFWDYAYGODCJKGGJHINDEEQIHDGAHITDPIAERHOAQDKJNBCHEIHIDAHBXIJCZHQCZJKBLDOHNDA" unencrypt];
+	NSLog(@"Unencrypted4 --- %@", unencrypted4);
+	STAssertTrue([@"6577578359027ee7c1a29d298412121850d4f903" isEqualToString:unencrypted4], @"Not Equal");	
+	
 }
 
 @end

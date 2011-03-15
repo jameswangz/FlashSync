@@ -15,6 +15,7 @@
 #define kDeleteActionSheetTag	3
 
 #define kDeleteButtonTag		99
+#define kFavoriteButtonTag		100
 
 #define kSkipButtonIndex		3
 
@@ -29,6 +30,7 @@
 	UIBarButtonItem *syncStatusButton;
 	UIBarButtonItem *syncButton;
 	UIBarButtonItem *deleteButton;
+	UIBarButtonItem *favoriteButton;
 	UIBarButtonItem *skipButton;
 		
 	File *activeFile;

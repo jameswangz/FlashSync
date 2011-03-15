@@ -22,7 +22,7 @@
 @interface DetailViewController ()
 @property (nonatomic, retain) UIPopoverController *popoverController;
 - (void)configureView;
-- (void)createImportedFolderIfRequired;
+- (void)createFoldersIfRequired;
 - (void)openDirectly:(File *) file;
 - (void)openWithIFile:(File *) file;
 - (void)refreshRootViewController;
@@ -30,8 +30,8 @@
 - (void)changeSyncState2Cancel;
 - (void)resetSyncState;
 - (void)clearSelected;
-- (void)addDeleteButton;
-- (void)removeDeleteButton;
+- (void)addOperationButtons;
+- (void)removeOperationButtons;
 - (void)deleteSelected;
 - (void)changeStateOfDeleteButton;
 - (int)selectedCount;
@@ -59,6 +59,7 @@
  */
 - (void)setDetailItem:(id)newDetailItem {
     if (detailItem != newDetailItem) {
+		NSLog(@"detail item %@", newDetailItem);
         [detailItem release];
         detailItem = [newDetailItem retain];
 		// Update the view.
@@ -403,9 +404,10 @@
 	}
 }
 
-- (void) addDeleteButton {
+- (void) addOperationButtons {
 	UIViewController *topController = self.navigationController.topViewController;
 	NSMutableArray *items = [topController.toolbarItems mutableCopy];
+	
 	deleteButton = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"删除"]
 													style:UIBarButtonItemStyleBordered
 												   target:self 
@@ -413,11 +415,20 @@
 	deleteButton.enabled = NO;
 	deleteButton.tag = kDeleteButtonTag;
 	[items addObject:deleteButton];
+	
+	favoriteButton = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"收藏"]
+													style:UIBarButtonItemStyleBordered
+												   target:self 
+												   action:@selector(favoriteClicked)];
+	favoriteButton.enabled = NO;
+	favoriteButton.tag = kFavoriteButtonTag;
+	[items addObject:favoriteButton];
+	
 	[topController setToolbarItems:items animated:YES];
 	[items release];	
 }
 
-- (void) removeDeleteButton {
+- (void) removeOperationButtons {
 	UIViewController *topController = self.navigationController.topViewController;
 	NSMutableArray *items = [topController.toolbarItems mutableCopy];
 	[items removeLastObject];
@@ -469,11 +480,11 @@
 		self.navigationItem.rightBarButtonItem.title = @"完成";
 		self.navigationItem.rightBarButtonItem.style = UIBarButtonItemStyleDone;
 		[self clearSelected];
-		[self addDeleteButton];
+		[self addOperationButtons];
 	} else {
 		self.navigationItem.rightBarButtonItem.title = @"编辑";
 		self.navigationItem.rightBarButtonItem.style = UIBarButtonItemStylePlain;
-		[self removeDeleteButton];
+		[self removeOperationButtons];
 	}
 }
 
@@ -538,7 +549,7 @@
 
 
 - (void)viewDidLoad {
-	[self createImportedFolderIfRequired];
+	[self createFoldersIfRequired];
 	contentsOfCurrentFolder = [[NSMutableArray alloc] init];
 	if ([self.detailItem isKindOfClass:[NSDictionary class]] == NO) {
 		self.detailItem = [[NSDictionary alloc] initWithObjectsAndKeys:kImported, kPath, @"已导入文件", kName, nil];
@@ -571,14 +582,15 @@
 	[syncStatusButton release];
 	[syncButton release];
 	[fileSynchronizer release];
-	[super dealloc];
+	[super dealloc]
 }
 
 #pragma mark -
 #pragma mark Initialization Methods
 
-- (void)createImportedFolderIfRequired {
+- (void)createFoldersIfRequired {
 	[NSDataUtils createFolderIfRequired:kImported];
+	[NSDataUtils createFolderIfRequired:kFavorite];
 }
 
 
