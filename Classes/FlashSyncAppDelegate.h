@@ -22,7 +22,8 @@
     DetailViewController *detailViewController;
 	UINavigationController *detailNavigationController;
 	
-	NSArray *detailViewToolbarItems;
+	NSArray *detailViewToolbarItems;	
+	BOOL working;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
@@ -33,5 +34,6 @@
 @property (nonatomic, retain) IBOutlet UINavigationController *detailNavigationController;
 
 @property (nonatomic, retain) NSArray *detailViewToolbarItems;
+@property (nonatomic) BOOL working;
 
 @end

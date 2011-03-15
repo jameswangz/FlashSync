@@ -41,6 +41,10 @@
 - (void)setGlogalToolbarItems:(NSArray *) items;
 - (BOOL)inFavoriteFolder;
 - (NSString *)currentPath;
+- (FlashSyncAppDelegate *)appDelegate;
+- (BOOL)globalWorking;
+- (void)globalWorkStarted;
+- (void)globalWorkFinished;
 @end
 
 
@@ -247,9 +251,9 @@
 }
 
 - (void) changeStateOfOperationButtons {
-	BOOL hasSelected = [self selectedCount] > 0;
-	deleteButton.enabled = hasSelected;
-	favoriteButton.enabled = hasSelected;
+	BOOL shouldEnable = self.contentsTableView.editing && ![self globalWorking] && [self selectedCount] > 0;
+	deleteButton.enabled = shouldEnable;
+	favoriteButton.enabled = shouldEnable;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -384,21 +388,23 @@
 	} else {
 		[@"同步文件已完成, 请点击左侧 [已导入文件] 查看" showInDialogWithTitle:@"提示信息"];
 	}
-
-
-	[self performSelectorOnMainThread:@selector(resetSyncState) withObject:nil waitUntilDone:YES];
-	[self performSelectorOnMainThread:@selector(changeTitleOfSyncStatusButton:) withObject:@"" waitUntilDone:YES]; 
-	[self performSelectorOnMainThread:@selector(removeSkipButton) withObject:nil waitUntilDone:YES];
 	
 	[self configureView];
 	[self refreshRootViewController];
 	[pool release];	
+	
+	[self performSelectorOnMainThread:@selector(globalWorkFinished) withObject:nil waitUntilDone:YES];
+	[self performSelectorOnMainThread:@selector(resetSyncState) withObject:nil waitUntilDone:YES];
+	[self performSelectorOnMainThread:@selector(changeTitleOfSyncStatusButton:) withObject:@"" waitUntilDone:YES]; 
+	[self performSelectorOnMainThread:@selector(removeSkipButton) withObject:nil waitUntilDone:YES];
+	[self performSelectorOnMainThread:@selector(changeStateOfOperationButtons) withObject:nil waitUntilDone:YES];
 }
 
-
 - (void)syncAll {
+	[self globalWorkStarted];
 	[self changeSyncState2Cancel];
 	[self addSkipButton];
+	[self changeStateOfOperationButtons];
 	[self performSelectorInBackground:@selector(syncInBackground) withObject:nil];
 }
 
@@ -511,6 +517,20 @@
 	[actionSheet release];
 }
 
+- (IBAction)favoriteClicked {
+	UIActionSheet *actionSheet = [[UIActionSheet alloc] 
+								  initWithTitle:@""
+								  delegate:self
+								  cancelButtonTitle:nil
+								  destructiveButtonTitle:[NSString stringWithFormat:@"收藏 %d 个文件", [self selectedCount]]
+								  otherButtonTitles:@"取消",
+								  nil];
+	actionSheet.tag = kFavoriteActionSheetTag;
+	actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
+	[actionSheet showInView:self.navigationController.view];
+	[actionSheet release];
+}
+
 #pragma mark -
 #pragma mark UINavigationControllerDelegate Methods
 
@@ -540,6 +560,11 @@
 	else if (actionSheet.tag == kDeleteActionSheetTag) {
 		if (buttonIndex == 0) {
 			[self deleteSelected];
+		}
+	}
+	else if (actionSheet.tag = kFavoriteActionSheetTag) {
+		if (buttonIndex == 0) {
+			[@"Favorite" showInDialog];
 		}
 	}
 }
@@ -652,6 +677,22 @@
 	NSString *path = [self currentPath];
 	NSLog(@"path %@", path);
 	return [path hasPrefix:kFavorite];
+}
+
+- (FlashSyncAppDelegate *)appDelegate {
+	return [[UIApplication sharedApplication] delegate];
+}
+
+- (BOOL)globalWorking {
+	return [self appDelegate].working;
+}
+
+- (void)globalWorkStarted {
+	[self appDelegate].working = YES;
+}
+
+- (void)globalWorkFinished {
+	[self appDelegate].working = NO;
 }
 
 @end

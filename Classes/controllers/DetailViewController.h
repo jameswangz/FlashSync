@@ -13,6 +13,7 @@
 #define kSyncActionSheetTag		1
 #define kOpenWayActionSheetTag	2
 #define kDeleteActionSheetTag	3
+#define kFavoriteActionSheetTag	4
 
 #define kDeleteButtonTag		99
 #define kFavoriteButtonTag		100

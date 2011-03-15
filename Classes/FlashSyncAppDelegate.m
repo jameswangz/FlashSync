@@ -18,6 +18,7 @@
 @synthesize window, splitViewController, rootViewController, detailViewController;
 @synthesize detailNavigationController;
 @synthesize detailViewToolbarItems;
+@synthesize working;
 
 #pragma mark -
 #pragma mark Application lifecycle
