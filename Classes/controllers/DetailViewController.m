@@ -33,12 +33,14 @@
 - (void)addOperationButtons;
 - (void)removeOperationButtons;
 - (void)deleteSelected;
-- (void)changeStateOfDeleteButton;
+- (void)changeStateOfOperationButtons;
 - (int)selectedCount;
 - (void)addSkipButton;
 - (void)removeSkipButton;
 - (void)skipCurrentFile;
 - (void)setGlogalToolbarItems:(NSArray *) items;
+- (BOOL)inFavoriteFolder;
+- (NSString *)currentPath;
 @end
 
 
@@ -244,15 +246,17 @@
 	return [selectedArray count];
 }
 
-- (void) changeStateOfDeleteButton {
-	deleteButton.enabled = [self selectedCount] > 0;	
+- (void) changeStateOfOperationButtons {
+	BOOL hasSelected = [self selectedCount] > 0;
+	deleteButton.enabled = hasSelected;
+	favoriteButton.enabled = hasSelected;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	File *file = [contentsOfCurrentFolder objectAtIndex:[indexPath row]];
 	if (tableView.editing) {
 		file.selected = YES;
-		[self changeStateOfDeleteButton];
+		[self changeStateOfOperationButtons];
 		return;
 	}
 	if ([file isDir]) {
@@ -266,7 +270,7 @@
 	File *file = [contentsOfCurrentFolder objectAtIndex:[indexPath row]];
 	if (tableView.editing) {
 		file.selected = NO;
-		[self changeStateOfDeleteButton];
+		[self changeStateOfOperationButtons];
 	}	
 }
 
@@ -416,13 +420,15 @@
 	deleteButton.tag = kDeleteButtonTag;
 	[items addObject:deleteButton];
 	
-	favoriteButton = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"收藏"]
-													style:UIBarButtonItemStyleBordered
-												   target:self 
-												   action:@selector(favoriteClicked)];
-	favoriteButton.enabled = NO;
-	favoriteButton.tag = kFavoriteButtonTag;
-	[items addObject:favoriteButton];
+	if (![self inFavoriteFolder]) {
+		favoriteButton = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"收藏"]
+														  style:UIBarButtonItemStyleBordered
+														 target:self 
+														 action:@selector(favoriteClicked)];
+		favoriteButton.enabled = NO;
+		favoriteButton.tag = kFavoriteButtonTag;
+		[items addObject:favoriteButton];
+	}
 	
 	[topController setToolbarItems:items animated:YES];
 	[items release];	
@@ -432,6 +438,9 @@
 	UIViewController *topController = self.navigationController.topViewController;
 	NSMutableArray *items = [topController.toolbarItems mutableCopy];
 	[items removeLastObject];
+	if (![self inFavoriteFolder]) {
+		[items removeLastObject];
+	}
 	[topController setToolbarItems:items animated:YES];
 	[items release];
 }
@@ -440,7 +449,7 @@
 	//don't pass the delete button
 	NSMutableArray *items = [[NSMutableArray alloc] init];	
 	for (UIBarButtonItem *item in allItems) {
-		if (item.tag != kDeleteButtonTag) {
+		if (item.tag != kDeleteButtonTag && item.tag != kFavoriteButtonTag) {
 			[items addObject:item];
 		}
 	}
@@ -582,7 +591,7 @@
 	[syncStatusButton release];
 	[syncButton release];
 	[fileSynchronizer release];
-	[super dealloc]
+	[super dealloc];
 }
 
 #pragma mark -
@@ -627,8 +636,22 @@
 	[self.contentsTableView endUpdates];
 	[indexPaths release];
 	
-	[self changeStateOfDeleteButton];
+	[self changeStateOfOperationButtons];
 	[self refreshRootViewController];
+}
+
+#pragma mark -
+#pragma mark helper methods
+
+- (NSString *)currentPath {
+	NSDictionary *dict = self.detailItem;
+	return [dict objectForKey:kPath];
+}
+
+- (BOOL)inFavoriteFolder {
+	NSString *path = [self currentPath];
+	NSLog(@"path %@", path);
+	return [path hasPrefix:kFavorite];
 }
 
 @end

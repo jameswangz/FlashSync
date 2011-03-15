@@ -20,16 +20,24 @@
 	1A1DEC4712A69D5900C7053B /* Constants.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1171, 588}}";
-			sepNavSelRange = "{193, 0}";
+			sepNavSelRange = "{433, 0}";
 			sepNavVisRange = "{0, 443}";
+			sepNavWindowFrame = "{{15, 62}, {1230, 716}}";
+		};
+	};
+	1A1DEC4812A69D5900C7053B /* Constants.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1171, 588}}";
+			sepNavSelRange = "{185, 0}";
+			sepNavVisRange = "{0, 185}";
 			sepNavWindowFrame = "{{15, 62}, {1230, 716}}";
 		};
 	};
 	1A2BDC6113195C1100B87C15 /* DetailViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1171, 12216}}";
-			sepNavSelRange = "{19915, 0}";
-			sepNavVisRange = "{13144, 1051}";
+			sepNavIntBoundsRect = "{{0, 0}, {1171, 12730}}";
+			sepNavSelRange = "{20409, 0}";
+			sepNavVisRange = "{652, 769}";
 			sepNavWindowFrame = "{{15, 62}, {1230, 716}}";
 		};
 	};
@@ -85,7 +93,7 @@
 		isa = PBXTextBookmark;
 		fRef = 1A2BDC6113195C1100B87C15 /* DetailViewController.m */;
 		rLen = 0;
-		rLoc = 9223372036854775834;
+		rLoc = 9223372036854776399;
 		rType = 0;
 	};
 	1A620181132F59E6003D8EB8 /* PBXTextBookmark */ = {
@@ -233,7 +241,7 @@
 		comments = "Object cannot be set - either readonly property or no setter found";
 		fRef = 1A2BDC6113195C1100B87C15 /* DetailViewController.m */;
 		rLen = 0;
-		rLoc = 568;
+		rLoc = 577;
 		rType = 1;
 	};
 	1AD6B440132CBCF8002531E8 /* PBXTextBookmark */ = {
@@ -266,9 +274,9 @@
 	};
 	1AE47E7712D363B2008930DA /* NSString-UDIDTest.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1012, 624}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 477}";
+			sepNavIntBoundsRect = "{{0, 0}, {1262, 760}}";
+			sepNavSelRange = "{1193, 0}";
+			sepNavVisRange = "{158, 1268}";
 			sepNavWindowFrame = "{{15, 62}, {1265, 716}}";
 		};
 	};
@@ -355,7 +363,7 @@
 		comments = "Incomplete implementation of class 'DetailViewController'";
 		fRef = 1A2BDC6113195C1100B87C15 /* DetailViewController.m */;
 		rLen = 1;
-		rLoc = 633;
+		rLoc = 656;
 		rType = 1;
 	};
 	1AE9E513132CC4440006AB16 /* PBXTextBookmark */ = {
@@ -363,7 +371,7 @@
 		fRef = 1A2BDC6113195C1100B87C15 /* DetailViewController.m */;
 		name = "DetailViewController.m: 563";
 		rLen = 0;
-		rLoc = 19910;
+		rLoc = 20475;
 		rType = 0;
 		vrLen = 368;
 		vrLoc = 16903;
@@ -413,7 +421,7 @@
 		isa = PBXTextBookmark;
 		fRef = 1A2BDC6113195C1100B87C15 /* DetailViewController.m */;
 		rLen = 0;
-		rLoc = 19915;
+		rLoc = 20480;
 		rType = 0;
 	};
 	1AE9E58F132CFA4B0006AB16 /* PBXTextBookmark */ = {
@@ -581,7 +589,7 @@
 		comments = "'deleteButton' undeclared (first use in this function)";
 		fRef = 1A2BDC6113195C1100B87C15 /* DetailViewController.m */;
 		rLen = 1;
-		rLoc = 247;
+		rLoc = 251;
 		rType = 1;
 	};
 	1AE9E5C6132D00530006AB16 /* PBXTextBookmark */ = {
@@ -599,7 +607,7 @@
 		comments = "'deleteButton' undeclared (first use in this function)";
 		fRef = 1A2BDC6113195C1100B87C15 /* DetailViewController.m */;
 		rLen = 1;
-		rLoc = 247;
+		rLoc = 251;
 		rType = 1;
 	};
 	1AE9E5CE132D013E0006AB16 /* PBXTextBookmark */ = {
@@ -626,7 +634,7 @@
 		isa = PBXTextBookmark;
 		fRef = 1A2BDC6113195C1100B87C15 /* DetailViewController.m */;
 		rLen = 0;
-		rLoc = 454;
+		rLoc = 463;
 		rType = 1;
 	};
 	1AE9E5D1132D013E0006AB16 /* PBXTextBookmark */ = {
@@ -823,7 +831,7 @@
 		isa = PBXTextBookmark;
 		fRef = 1A2BDC6113195C1100B87C15 /* DetailViewController.m */;
 		rLen = 1;
-		rLoc = 191;
+		rLoc = 193;
 		rType = 1;
 	};
 	1AE9E5F3132D04F40006AB16 /* PBXTextBookmark */ = {
@@ -1195,7 +1203,7 @@
 		comments = "'selt' undeclared (first use in this function)";
 		fRef = 1A2BDC6113195C1100B87C15 /* DetailViewController.m */;
 		rLen = 1;
-		rLoc = 471;
+		rLoc = 480;
 		rType = 1;
 	};
 	1AE9E632132D0E6F0006AB16 /* PBXTextBookmark */ = {
@@ -1203,7 +1211,7 @@
 		comments = "'selt' undeclared (first use in this function)";
 		fRef = 1A2BDC6113195C1100B87C15 /* DetailViewController.m */;
 		rLen = 1;
-		rLoc = 471;
+		rLoc = 480;
 		rType = 1;
 	};
 	1AE9E633132D0E6F0006AB16 /* PBXTextBookmark */ = {
@@ -1291,7 +1299,7 @@
 		comments = "'selt' undeclared (first use in this function)";
 		fRef = 1A2BDC6113195C1100B87C15 /* DetailViewController.m */;
 		rLen = 1;
-		rLoc = 471;
+		rLoc = 480;
 		rType = 1;
 	};
 	1AE9E644132D0FFD0006AB16 /* PBXTextBookmark */ = {
@@ -1338,7 +1346,7 @@
 		isa = PBXTextBookmark;
 		fRef = 1A2BDC6113195C1100B87C15 /* DetailViewController.m */;
 		rLen = 1;
-		rLoc = 540;
+		rLoc = 549;
 		rType = 1;
 	};
 	1AE9E64D132D11890006AB16 /* PBXTextBookmark */ = {
@@ -1485,7 +1493,7 @@
 		isa = PBXTextBookmark;
 		fRef = 1A2BDC6113195C1100B87C15 /* DetailViewController.m */;
 		rLen = 1;
-		rLoc = 241;
+		rLoc = 243;
 		rType = 1;
 	};
 	1AE9E66A132D16D60006AB16 /* PBXTextBookmark */ = {
@@ -1552,7 +1560,7 @@
 		isa = PBXTextBookmark;
 		fRef = 1A2BDC6113195C1100B87C15 /* DetailViewController.m */;
 		rLen = 1;
-		rLoc = 406;
+		rLoc = 410;
 		rType = 1;
 	};
 	1AE9E67D132D18B80006AB16 /* PBXTextBookmark */ = {
@@ -1782,8 +1790,8 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 1AD0ABC213197D3A00E2532D /* FlashSync */;
-		activeSDKPreference = iphonesimulator4.2;
-		activeTarget = 1AE47E6A12D362C2008930DA /* UnitTests */;
+		activeSDKPreference = iphoneos4.2;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* FlashSync */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* FlashSync */,
 		);
