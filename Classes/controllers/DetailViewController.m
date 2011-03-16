@@ -49,8 +49,9 @@
 - (void)addFavorites;
 - (void)addFavoritesInBackground:(NSArray *) files;
 - (void)configureTableView;
+- (void)setStatusWhileWorkStarted;
+- (void)setStatusWhileWorkFinished;
 @end
-
 
 @implementation DetailViewController
 
@@ -412,21 +413,29 @@
 	[self configureView];
 	[self refreshRootViewController];
 	[pool release];	
-	
-	[self performSelectorOnMainThread:@selector(globalWorkFinished) withObject:nil waitUntilDone:YES];
-	[self performSelectorOnMainThread:@selector(resetSyncState) withObject:nil waitUntilDone:YES];
-	[self performSelectorOnMainThread:@selector(changeTitleOfSyncStatusButton:) withObject:@"" waitUntilDone:YES]; 
-	[self performSelectorOnMainThread:@selector(removeSkipButton) withObject:nil waitUntilDone:YES];
-	[self performSelectorOnMainThread:@selector(changeStateOfOperationButtons) withObject:nil waitUntilDone:YES];
+
+	[self setStatusWhileWorkFinished];
 }
 
 - (void)syncAll {
 	[self appDelegate].workName = @"同步";
+	[self setStatusWhileWorkStarted];
+	[self performSelectorInBackground:@selector(syncInBackground) withObject:nil];
+}
+
+- (void)setStatusWhileWorkStarted {
 	[self globalWorkStarted];
 	[self changeSyncState2Cancel];
 	[self addSkipButton];
 	[self changeStateOfOperationButtons];
-	[self performSelectorInBackground:@selector(syncInBackground) withObject:nil];
+}
+
+- (void) setStatusWhileWorkFinished {
+	[self performSelectorOnMainThread:@selector(globalWorkFinished) withObject:nil waitUntilDone:YES];
+	[self performSelectorOnMainThread:@selector(resetSyncState) withObject:nil waitUntilDone:YES];
+	[self performSelectorOnMainThread:@selector(changeTitleOfSyncStatusButton:) withObject:@"" waitUntilDone:YES]; 
+	[self performSelectorOnMainThread:@selector(removeSkipButton) withObject:nil waitUntilDone:YES];
+	[self performSelectorOnMainThread:@selector(changeStateOfOperationButtons) withObject:nil waitUntilDone:YES];	
 }
 
 - (void)clearSelected {
@@ -698,11 +707,7 @@
 
 - (void)addFavorites {
 	[self appDelegate].workName = @"收藏";
-	[self globalWorkStarted];
-	[self changeSyncState2Cancel];
-	[self addSkipButton];
-	[self changeStateOfOperationButtons];
-	
+	[self setStatusWhileWorkStarted];
 	NSArray *selectedFiles = [self selectedFiles];
 	[self performSelectorInBackground:@selector(addFavoritesInBackground:) withObject:selectedFiles];
 }
@@ -735,11 +740,7 @@
 	[self refreshRootViewController];
 	[pool release];	
 	
-	[self performSelectorOnMainThread:@selector(globalWorkFinished) withObject:nil waitUntilDone:YES];
-	[self performSelectorOnMainThread:@selector(resetSyncState) withObject:nil waitUntilDone:YES];
-	[self performSelectorOnMainThread:@selector(changeTitleOfSyncStatusButton:) withObject:@"" waitUntilDone:YES]; 
-	[self performSelectorOnMainThread:@selector(removeSkipButton) withObject:nil waitUntilDone:YES];
-	[self performSelectorOnMainThread:@selector(changeStateOfOperationButtons) withObject:nil waitUntilDone:YES];	
+	[self setStatusWhileWorkFinished];
 }
 
 
