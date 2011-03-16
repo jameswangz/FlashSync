@@ -338,7 +338,9 @@
 
 
 - (void)changeSyncState2Cancel {
-	self.syncButton.title = @"中止同步过程";
+	NSString *newTitle = [[NSString alloc] initWithFormat:@"中止%@过程", [self appDelegate].workName];
+	self.syncButton.title = newTitle;
+	[newTitle release];
 	self.syncButton.action = @selector(cancelSync);
 }
 
@@ -368,7 +370,7 @@
 			return;
 		}
 		
-		NSString *newTitle = [[NSString alloc] initWithFormat:@"正在同步 %@...", name];
+		NSString *newTitle = [[NSString alloc] initWithFormat:@"正在%@ %@...", [self appDelegate].workName, name];
 		[self performSelectorOnMainThread:@selector(changeTitleOfSyncStatusButton:) withObject:newTitle waitUntilDone:YES];
 		[newTitle release];
 		
@@ -414,6 +416,7 @@
 }
 
 - (void)syncAll {
+	[self appDelegate].workName = @"同步";
 	[self globalWorkStarted];
 	[self changeSyncState2Cancel];
 	[self addSkipButton];
@@ -682,6 +685,7 @@
 #pragma mark Add Favorites methods
 
 - (void)addFavorites {
+	[self appDelegate].workName = @"收藏";
 	[self globalWorkStarted];
 	[self changeSyncState2Cancel];
 	[self addSkipButton];

@@ -24,6 +24,7 @@
 	
 	NSArray *detailViewToolbarItems;	
 	BOOL working;
+	NSString *workName;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
@@ -35,5 +36,6 @@
 
 @property (nonatomic, retain) NSArray *detailViewToolbarItems;
 @property (nonatomic) BOOL working;
+@property (nonatomic, retain) NSString *workName;
 
 @end

@@ -35,17 +35,17 @@
 	};
 	1A2BDC6113195C1100B87C15 /* DetailViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1242, 15083}}";
-			sepNavSelRange = "{10813, 0}";
-			sepNavVisRange = "{10340, 802}";
+			sepNavIntBoundsRect = "{{0, 0}, {1242, 14718}}";
+			sepNavSelRange = "{11855, 0}";
+			sepNavVisRange = "{11610, 676}";
 			sepNavWindowFrame = "{{15, 62}, {1230, 716}}";
 		};
 	};
 	1A2BDC6213195C1100B87C15 /* DetailViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1171, 1045}}";
-			sepNavSelRange = "{275, 0}";
-			sepNavVisRange = "{44, 887}";
+			sepNavIntBoundsRect = "{{0, 0}, {1171, 1026}}";
+			sepNavSelRange = "{1016, 0}";
+			sepNavVisRange = "{546, 956}";
 			sepNavWindowFrame = "{{15, 62}, {1230, 716}}";
 		};
 	};
@@ -70,7 +70,7 @@
 		comments = "Expected ';' before '}' token";
 		fRef = 1A2BDC6113195C1100B87C15 /* DetailViewController.m */;
 		rLen = 1;
-		rLoc = 632;
+		rLoc = 635;
 		rType = 1;
 	};
 	1A6201C6132FB64B003D8EB8 /* PBXTextBookmark */ = {
@@ -78,7 +78,7 @@
 		fRef = 1A2BDC6113195C1100B87C15 /* DetailViewController.m */;
 		name = "DetailViewController.m: 699";
 		rLen = 0;
-		rLoc = 23770;
+		rLoc = 23991;
 		rType = 0;
 		vrLen = 161;
 		vrLoc = 19617;
@@ -87,7 +87,7 @@
 		isa = PBXTextBookmark;
 		fRef = 1A2BDC6113195C1100B87C15 /* DetailViewController.m */;
 		rLen = 0;
-		rLoc = 352;
+		rLoc = 354;
 		rType = 1;
 	};
 	1A6201CA132FB64B003D8EB8 /* PBXTextBookmark */ = {
@@ -95,7 +95,7 @@
 		fRef = 1A2BDC6113195C1100B87C15 /* DetailViewController.m */;
 		name = "DetailViewController.m: 567";
 		rLen = 0;
-		rLoc = 11051;
+		rLoc = 11167;
 		rType = 0;
 		vrLen = 775;
 		vrLoc = 18134;
@@ -205,7 +205,7 @@
 		fRef = 1A2BDC6113195C1100B87C15 /* DetailViewController.m */;
 		name = "DetailViewController.m: 699";
 		rLen = 0;
-		rLoc = 23770;
+		rLoc = 23991;
 		rType = 0;
 		vrLen = 160;
 		vrLoc = 19617;
@@ -215,7 +215,7 @@
 		fRef = 1A2BDC6113195C1100B87C15 /* DetailViewController.m */;
 		name = "DetailViewController.m: 567";
 		rLen = 0;
-		rLoc = 11051;
+		rLoc = 11167;
 		rType = 0;
 		vrLen = 775;
 		vrLoc = 18134;
@@ -226,7 +226,7 @@
 		fRef = 1A2BDC6113195C1100B87C15 /* DetailViewController.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 0;
-		rLoc = 362;
+		rLoc = 364;
 		rType = 1;
 	};
 	1ADA75CA1330A7CF0044D428 /* PBXTextBookmark */ = {
@@ -234,7 +234,7 @@
 		fRef = 1A2BDC6113195C1100B87C15 /* DetailViewController.m */;
 		name = "DetailViewController.m: 375";
 		rLen = 0;
-		rLoc = 11493;
+		rLoc = 11609;
 		rType = 0;
 		vrLen = 421;
 		vrLoc = 11960;
@@ -244,7 +244,7 @@
 		fRef = 1A2BDC6113195C1100B87C15 /* DetailViewController.m */;
 		name = "DetailViewController.m: 375";
 		rLen = 0;
-		rLoc = 11493;
+		rLoc = 11609;
 		rType = 0;
 		vrLen = 421;
 		vrLoc = 11960;
@@ -254,7 +254,7 @@
 		fRef = 1A2BDC6113195C1100B87C15 /* DetailViewController.m */;
 		name = "DetailViewController.m: 375";
 		rLen = 0;
-		rLoc = 11493;
+		rLoc = 11609;
 		rType = 0;
 		vrLen = 496;
 		vrLoc = 11904;
@@ -264,7 +264,7 @@
 		fRef = 1A2BDC6113195C1100B87C15 /* DetailViewController.m */;
 		name = "DetailViewController.m: 363";
 		rLen = 0;
-		rLoc = 11493;
+		rLoc = 11609;
 		rType = 0;
 		vrLen = 556;
 		vrLoc = 11698;
@@ -274,7 +274,7 @@
 		fRef = 1A2BDC6113195C1100B87C15 /* DetailViewController.m */;
 		name = "DetailViewController.m: 363";
 		rLen = 0;
-		rLoc = 11493;
+		rLoc = 11609;
 		rType = 0;
 		vrLen = 480;
 		vrLoc = 11817;
@@ -315,17 +315,17 @@
 	};
 	1D3623240D0F684500981E51 /* FlashSyncAppDelegate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1171, 760}}";
-			sepNavSelRange = "{1063, 0}";
-			sepNavVisRange = "{165, 913}";
+			sepNavIntBoundsRect = "{{0, 0}, {1171, 798}}";
+			sepNavSelRange = "{1132, 0}";
+			sepNavVisRange = "{166, 973}";
 			sepNavWindowFrame = "{{15, 59}, {1230, 719}}";
 		};
 	};
 	1D3623250D0F684500981E51 /* FlashSyncAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1171, 1577}}";
-			sepNavSelRange = "{459, 0}";
-			sepNavVisRange = "{44, 827}";
+			sepNavIntBoundsRect = "{{0, 0}, {2802, 1558}}";
+			sepNavSelRange = "{2034, 0}";
+			sepNavVisRange = "{1589, 569}";
 			sepNavWindowFrame = "{{15, 62}, {1230, 716}}";
 		};
 	};
