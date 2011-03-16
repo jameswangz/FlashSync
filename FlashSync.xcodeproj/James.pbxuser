@@ -35,9 +35,9 @@
 	};
 	1A2BDC6113195C1100B87C15 /* DetailViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1212, 14642}}";
-			sepNavSelRange = "{17267, 0}";
-			sepNavVisRange = "{16822, 1159}";
+			sepNavIntBoundsRect = "{{0, 0}, {1122, 15105}}";
+			sepNavSelRange = "{3989, 0}";
+			sepNavVisRange = "{3728, 396}";
 			sepNavWindowFrame = "{{15, 62}, {1230, 716}}";
 		};
 	};
@@ -489,6 +489,11 @@
 		vrLoc = 11625;
 	};
 	1ADA76321330C63D0044D428 /* Bookmarks.png */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = image.png;
+		name = Bookmarks.png;
+		path = /Users/James/iphone/FlashSync/Images/Icons/Bookmarks.png;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavWindowFrame = "{{15, 62}, {1230, 716}}";
 		};

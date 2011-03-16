@@ -75,7 +75,6 @@
 		1AC981A2132AA09C0079FD10 /* FileSynchronizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC981A1132AA09B0079FD10 /* FileSynchronizer.m */; };
 		1ACF8C4F12B4A14D00D76EDC /* InspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ACF8C4D12B4A14D00D76EDC /* InspectorViewController.m */; };
 		1ACF8C5012B4A14D00D76EDC /* InspectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ACF8C4E12B4A14D00D76EDC /* InspectorViewController.xib */; };
-		1ADA76331330C63D0044D428 /* Bookmarks.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ADA76321330C63D0044D428 /* Bookmarks.png */; };
 		1ADA76391330C71B0044D428 /* Favorites-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ADA76381330C71B0044D428 /* Favorites-icon.png */; };
 		1AE472C812D9A67500967539 /* RootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AE472C712D9A67500967539 /* RootView.xib */; };
 		1AE47E2312D35D5E008930DA /* NSString-UDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE47E2212D35D5E008930DA /* NSString-UDID.m */; };
@@ -171,7 +170,6 @@
 		1ACF8C4D12B4A14D00D76EDC /* InspectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectorViewController.m; sourceTree = "<group>"; };
 		1ACF8C4E12B4A14D00D76EDC /* InspectorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InspectorViewController.xib; sourceTree = "<group>"; };
 		1ACF8F9912B4F41100D76EDC /* flashsync.xcclassmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcclassmodel; path = flashsync.xcclassmodel; sourceTree = "<group>"; };
-		1ADA76321330C63D0044D428 /* Bookmarks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bookmarks.png; sourceTree = "<group>"; };
 		1ADA76381330C71B0044D428 /* Favorites-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Favorites-icon.png"; sourceTree = "<group>"; };
 		1AE472C712D9A67500967539 /* RootView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootView.xib; sourceTree = "<group>"; };
 		1AE47E2112D35D5E008930DA /* NSString-UDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString-UDID.h"; sourceTree = "<group>"; };
@@ -291,7 +289,6 @@
 			isa = PBXGroup;
 			children = (
 				1ADA76381330C71B0044D428 /* Favorites-icon.png */,
-				1ADA76321330C63D0044D428 /* Bookmarks.png */,
 				1AB4B00D132B8AAD00649FA6 /* xib.png */,
 				1AB4B00E132B8AAD00649FA6 /* text.png */,
 				1AB4B00F132B8AAD00649FA6 /* Pages.png */,
@@ -568,7 +565,6 @@
 				1AB4B012132B8AAD00649FA6 /* text.png in Resources */,
 				1AB4B013132B8AAD00649FA6 /* Pages.png in Resources */,
 				1AB4B014132B8AAD00649FA6 /* image.png in Resources */,
-				1ADA76331330C63D0044D428 /* Bookmarks.png in Resources */,
 				1ADA76391330C71B0044D428 /* Favorites-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
