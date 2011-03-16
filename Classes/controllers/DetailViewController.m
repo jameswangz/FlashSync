@@ -48,6 +48,7 @@
 - (void)globalWorkFinished;
 - (void)addFavorites;
 - (void)addFavoritesInBackground:(NSArray *) files;
+- (void)configureTableView;
 @end
 
 
@@ -128,7 +129,10 @@
 	}
 	
 	[self fillContentsOfCurrentFolder: path];
+	
 	[self.contentsTableView reloadData];
+	self.contentsTableView.editing = NO;
+	[self configureTableView];
 }
 
 
@@ -459,10 +463,11 @@
 - (void) removeOperationButtons {
 	UIViewController *topController = self.navigationController.topViewController;
 	NSMutableArray *items = [topController.toolbarItems mutableCopy];
-	[items removeLastObject];
-	if (![self inFavoriteFolder]) {
-		[items removeLastObject];
-	}
+	NSPredicate *removePredicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+		UIBarButtonItem *item = (UIBarButtonItem *) evaluatedObject;
+		return item.tag != kDeleteButtonTag && item.tag != kFavoriteButtonTag;
+	}];
+	[items filterUsingPredicate:removePredicate];
 	[topController setToolbarItems:items animated:YES];
 	[items release];
 }
@@ -507,6 +512,11 @@
 
 - (IBAction)toggleEdit {
 	[self.contentsTableView setEditing:!self.contentsTableView.editing animated:YES];
+	[self configureTableView];
+	
+}
+
+- (void)configureTableView {
 	if (self.contentsTableView.editing) {
 		self.navigationItem.rightBarButtonItem.title = @"完成";
 		self.navigationItem.rightBarButtonItem.style = UIBarButtonItemStyleDone;
@@ -518,6 +528,7 @@
 		[self removeOperationButtons];
 	}
 }
+
 
 - (IBAction)deleteClicked {
 	UIActionSheet *actionSheet = [[UIActionSheet alloc] 
