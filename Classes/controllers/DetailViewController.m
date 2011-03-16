@@ -359,7 +359,6 @@
 
 
 - (void) syncSingle: (NSString *) src to: (NSString *) dst  {
-	NSLog(@"syncsingle %@ to %@", src, dst);
 	fileSynchronizer.skip = userCancelled;
 	NSString *name = [src lastPathComponent];
 	
@@ -723,8 +722,6 @@
 		NSString *src = file.path;
 		NSString *dst = [[NSDataUtils pathForFolder:kFavorite] stringByAppendingPathComponent:[src lastPathComponent]];
 		
-		NSLog(@"favorite dst %@", dst);
-		
 		BOOL dir = [NSDataUtils isDirectory:src];
 		if (dir) {
 			[NSDataUtils createFolderIfRequired:dst absolutePath:YES];
@@ -758,7 +755,6 @@
 
 - (BOOL)inFavoriteFolder {
 	NSString *path = [self currentPath];
-	NSLog(@"path %@", path);
 	return [path hasPrefix:kFavorite];
 }
 
