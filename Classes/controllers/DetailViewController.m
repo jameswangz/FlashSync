@@ -131,9 +131,10 @@
 	
 	[self fillContentsOfCurrentFolder: path];
 	
-	[self.contentsTableView reloadData];
-	self.contentsTableView.editing = NO;
-	[self configureTableView];
+	DetailViewController *topController = (DetailViewController *) self.navigationController.topViewController;
+	[topController.contentsTableView reloadData];
+	topController.contentsTableView.editing = NO;
+	[topController configureTableView];
 }
 
 
@@ -521,21 +522,23 @@
 
 
 - (IBAction)toggleEdit {
-	[self.contentsTableView setEditing:!self.contentsTableView.editing animated:YES];
-	[self configureTableView];
-	
+	DetailViewController *topController = (DetailViewController *) self.navigationController.topViewController;
+	[topController.contentsTableView setEditing:!self.contentsTableView.editing animated:YES];
+	[topController configureTableView];	
 }
 
 - (void)configureTableView {
-	if (self.contentsTableView.editing) {
-		self.navigationItem.rightBarButtonItem.title = @"完成";
-		self.navigationItem.rightBarButtonItem.style = UIBarButtonItemStyleDone;
-		[self clearSelected];
-		[self addOperationButtons];
+	DetailViewController *topController = (DetailViewController *) self.navigationController.topViewController;
+	
+	if (topController.contentsTableView.editing) {
+		topController.navigationItem.rightBarButtonItem.title = @"完成";
+		topController.navigationItem.rightBarButtonItem.style = UIBarButtonItemStyleDone;
+		[topController clearSelected];
+		[topController addOperationButtons];
 	} else {
-		self.navigationItem.rightBarButtonItem.title = @"编辑";
-		self.navigationItem.rightBarButtonItem.style = UIBarButtonItemStylePlain;
-		[self removeOperationButtons];
+		topController.navigationItem.rightBarButtonItem.title = @"编辑";
+		topController.navigationItem.rightBarButtonItem.style = UIBarButtonItemStylePlain;
+		[topController removeOperationButtons];
 	}
 }
 
