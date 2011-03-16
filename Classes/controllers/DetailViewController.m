@@ -34,6 +34,7 @@
 - (void)removeOperationButtons;
 - (void)deleteSelected;
 - (void)changeStateOfOperationButtons;
+- (NSArray *)selectedFiles;
 - (int)selectedCount;
 - (void)addSkipButton;
 - (void)removeSkipButton;
@@ -45,6 +46,8 @@
 - (BOOL)globalWorking;
 - (void)globalWorkStarted;
 - (void)globalWorkFinished;
+- (void)addFavorites;
+- (void)addFavoritesInBackground:(NSArray *) files;
 @end
 
 
@@ -245,9 +248,13 @@
 	NSLog(@"Opened %d", opened);	
 }
 
+- (NSArray *)selectedFiles {
+	return [contentsOfCurrentFolder filteredArrayUsingPredicate:
+			[NSPredicate predicateWithFormat:@"selected == YES"]];
+}
+
 - (int) selectedCount {
-	NSArray *selectedArray = [contentsOfCurrentFolder filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"selected == YES"]];
-	return [selectedArray count];
+	return [[self selectedFiles] count];
 }
 
 - (void) changeStateOfOperationButtons {
@@ -342,6 +349,18 @@
 }
 
 
+- (void) syncSingle: (NSString *) src to: (NSString *) dst  {
+	NSLog(@"syncsingle %@ to %@", src, dst);
+	fileSynchronizer.skip = userCancelled;
+	NSString *name = [src lastPathComponent];
+	if ([name hasSuffix:kEncodedFileSuffix]) {
+		NSString *dstFileName = [dst substringToIndex:([dst length] - [kEncodedFileSuffix length])];
+		[fileSynchronizer syncFrom:src to:dstFileName decode:YES];
+	} else {
+		[fileSynchronizer syncFrom:src to:dst decode:NO];
+	}	
+}
+
 - (void) sync: (NSString *) parentSrc to: (NSString*) parentDst  {
 	NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:parentSrc error:nil];
 	for (NSString *name in contents) {
@@ -361,13 +380,7 @@
 			[NSDataUtils createFolderIfRequired:dst absolutePath:YES];
 			[self sync:src to:dst];
 		} else {
-			fileSynchronizer.skip = userCancelled;
-			if ([name hasSuffix:kEncodedFileSuffix]) {
-				NSString *dstFileName = [dst substringToIndex:([dst length] - [kEncodedFileSuffix length])];
-				[fileSynchronizer syncFrom:src to:dstFileName decode:YES];
-			} else {
-				[fileSynchronizer syncFrom:src to:dst decode:NO];
-			}
+			[self syncSingle:src to:dst];
 		}
 	}
 }
@@ -564,7 +577,7 @@
 	}
 	else if (actionSheet.tag = kFavoriteActionSheetTag) {
 		if (buttonIndex == 0) {
-			[@"Favorite" showInDialog];
+			[self addFavorites];
 		}
 	}
 }
@@ -664,6 +677,55 @@
 	[self changeStateOfOperationButtons];
 	[self refreshRootViewController];
 }
+
+#pragma mark -
+#pragma mark Add Favorites methods
+
+- (void)addFavorites {
+	[self globalWorkStarted];
+	[self changeSyncState2Cancel];
+	[self addSkipButton];
+	[self changeStateOfOperationButtons];
+	
+	NSArray *selectedFiles = [self selectedFiles];
+	[self performSelectorInBackground:@selector(addFavoritesInBackground:) withObject:selectedFiles];
+}
+
+- (void) addFavoritesInBackground:(NSArray *)files {
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	
+	for (File * file in files) {
+		NSString *src = file.path;
+		NSString *dst = [[NSDataUtils pathForFolder:kFavorite] stringByAppendingPathComponent:[src lastPathComponent]];
+		
+		NSLog(@"favorite dst %@", dst);
+		
+		BOOL dir = [NSDataUtils isDirectory:src];
+		if (dir) {
+			[NSDataUtils createFolderIfRequired:dst absolutePath:YES];
+			[self sync: src to: dst];		
+		} else {
+			[self syncSingle:src to:dst];
+		}
+	}
+	
+	if (userCancelled) {
+		[@"收藏过程被用户中止" showInDialogWithTitle:@"提示信息"];
+	} else {
+		[@"收藏文件已完成, 请点击左侧 [收藏夹] 查看" showInDialogWithTitle:@"提示信息"];
+	}
+	
+	[self configureView];
+	[self refreshRootViewController];
+	[pool release];	
+	
+	[self performSelectorOnMainThread:@selector(globalWorkFinished) withObject:nil waitUntilDone:YES];
+	[self performSelectorOnMainThread:@selector(resetSyncState) withObject:nil waitUntilDone:YES];
+	[self performSelectorOnMainThread:@selector(changeTitleOfSyncStatusButton:) withObject:@"" waitUntilDone:YES]; 
+	[self performSelectorOnMainThread:@selector(removeSkipButton) withObject:nil waitUntilDone:YES];
+	[self performSelectorOnMainThread:@selector(changeStateOfOperationButtons) withObject:nil waitUntilDone:YES];	
+}
+
 
 #pragma mark -
 #pragma mark helper methods
