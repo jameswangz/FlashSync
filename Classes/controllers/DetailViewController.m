@@ -51,6 +51,7 @@
 - (void)configureTableView;
 - (void)setStatusWhileWorkStarted;
 - (void)setStatusWhileWorkFinished;
+- (DetailViewController *)topController;
 @end
 
 @implementation DetailViewController
@@ -131,7 +132,7 @@
 	
 	[self fillContentsOfCurrentFolder: path];
 	
-	DetailViewController *topController = (DetailViewController *) self.navigationController.topViewController;
+	DetailViewController *topController = [self topController];
 	[topController.contentsTableView reloadData];
 	topController.contentsTableView.editing = NO;
 	[topController configureTableView];
@@ -522,13 +523,13 @@
 
 
 - (IBAction)toggleEdit {
-	DetailViewController *topController = (DetailViewController *) self.navigationController.topViewController;
+	DetailViewController *topController = [self topController];
 	[topController.contentsTableView setEditing:!self.contentsTableView.editing animated:YES];
 	[topController configureTableView];	
 }
 
 - (void)configureTableView {
-	DetailViewController *topController = (DetailViewController *) self.navigationController.topViewController;
+	DetailViewController *topController = [self topController];
 	
 	if (topController.contentsTableView.editing) {
 		topController.navigationItem.rightBarButtonItem.title = @"完成";
@@ -775,6 +776,11 @@
 
 - (void)globalWorkFinished {
 	[self appDelegate].working = NO;
+}
+
+- (DetailViewController *)topController {
+	DetailViewController *topController = (DetailViewController *) self.navigationController.topViewController;
+	return topController;
 }
 
 @end

@@ -202,7 +202,7 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>1ADA76531330C9C90044D428</string>
+				<string>1ADA76631330CD100044D428</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>DetailViewController.m</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
@@ -210,16 +210,16 @@
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>1ADA76541330C9C90044D428</string>
+						<string>1ADA76641330CD100044D428</string>
 						<key>PBXProjectModuleLabel</key>
 						<string>DetailViewController.m</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>1ADA76561330C9C90044D428</string>
+						<string>1ADA76651330CD100044D428</string>
 						<key>history</key>
 						<array>
-							<string>1ADA76551330C9C90044D428</string>
+							<string>1ADA76611330CC9A0044D428</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -316,7 +316,6 @@
 								<string>1A1DEB8912A68E1C00C7053B</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>1A4AD35312AB697B00173889</string>
-								<string>1A4AD35412AB69A700173889</string>
 								<string>19C28FACFE9D520D11CA2CBB</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
@@ -330,7 +329,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 298}, {251, 602}}</string>
+							<string>{{0, 128}, {251, 602}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -377,7 +376,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>1ADA76521330C9C90044D428</string>
+										<string>1ADA76621330CD100044D428</string>
 										<key>history</key>
 										<array>
 											<string>1A083900131A643B000170FC</string>
@@ -385,7 +384,6 @@
 											<string>1ADA764C1330C9C90044D428</string>
 											<string>1ADA764D1330C9C90044D428</string>
 											<string>1ADA764E1330C9C90044D428</string>
-											<string>1ADA764F1330C9C90044D428</string>
 											<string>1ADA76501330C9C90044D428</string>
 											<string>1ADA76511330C9C90044D428</string>
 										</array>
@@ -590,9 +588,9 @@
 		<string>1ADA76181330B6640044D428</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>/Users/James/iphone/FlashSync/FlashSync.xcodeproj</string>
 		<string>1AD0ABD213197D4000E2532D</string>
-		<string>1ADA76531330C9C90044D428</string>
+		<string>/Users/James/iphone/FlashSync/FlashSync.xcodeproj</string>
+		<string>1ADA76631330CD100044D428</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 117 1280 661 0 0 1280 778 </string>
