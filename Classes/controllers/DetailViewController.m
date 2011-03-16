@@ -359,6 +359,11 @@
 	NSLog(@"syncsingle %@ to %@", src, dst);
 	fileSynchronizer.skip = userCancelled;
 	NSString *name = [src lastPathComponent];
+	
+	NSString *newTitle = [[NSString alloc] initWithFormat:@"正在%@ %@...", [self appDelegate].workName, name];
+	[self performSelectorOnMainThread:@selector(changeTitleOfSyncStatusButton:) withObject:newTitle waitUntilDone:YES];
+	[newTitle release];
+	
 	if ([name hasSuffix:kEncodedFileSuffix]) {
 		NSString *dstFileName = [dst substringToIndex:([dst length] - [kEncodedFileSuffix length])];
 		[fileSynchronizer syncFrom:src to:dstFileName decode:YES];
@@ -374,13 +379,9 @@
 			return;
 		}
 		
-		NSString *newTitle = [[NSString alloc] initWithFormat:@"正在%@ %@...", [self appDelegate].workName, name];
-		[self performSelectorOnMainThread:@selector(changeTitleOfSyncStatusButton:) withObject:newTitle waitUntilDone:YES];
-		[newTitle release];
-		
 		NSString *src = [parentSrc stringByAppendingPathComponent:name];
 		NSString *dst = [parentDst stringByAppendingPathComponent:name];
-		
+	
 		BOOL dir = [NSDataUtils isDirectory:src];
 		if (dir) {
 			[NSDataUtils createFolderIfRequired:dst absolutePath:YES];
