@@ -16,6 +16,7 @@
 #import "FlashSyncAppDelegate.h"
 #import "InspectorViewController.h"
 #import "NSString-UDID.h"
+#import "NSString-Extension.h"
 #import "AuthenticatonManager.h"
 
 
@@ -71,7 +72,7 @@
  */
 - (void)setDetailItem:(id)newDetailItem {
     if (detailItem != newDetailItem) {
-		NSLog(@"detail item %@", newDetailItem);
+		//NSLog(@"detail item %@", newDetailItem);
         [detailItem release];
         detailItem = [newDetailItem retain];
 		// Update the view.
@@ -99,8 +100,9 @@
 		}
 		
 		NSString *fullPath = [NSDataUtils pathForFolder:path name:name];
+		NSString *relativePath = [path stringByAppendingPathComponent:name];
 		NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfItemAtPath:fullPath error:nil];
-		File *file = [[File alloc] initWithName:name path:fullPath attributes:attrs];
+		File *file = [[File alloc] initWithName:name path:fullPath relativePath:relativePath attributes:attrs];
 		if ([file isDir]) {
 			[folders addObject:file];
 		} else {
@@ -725,18 +727,21 @@
 	[self performSelectorInBackground:@selector(addFavoritesInBackground:) withObject:selectedFiles];
 }
 
+
 - (void) addFavoritesInBackground:(NSArray *)files {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	
 	for (File * file in files) {
 		NSString *src = file.path;
-		NSString *dst = [[NSDataUtils pathForFolder:kFavorite] stringByAppendingPathComponent:[src lastPathComponent]];
+		NSString *dstRelativePath = [file.relativePath stringByDeletingFirstPathComponent];
+		NSString *dst = [[NSDataUtils pathForFolder:kFavorite] stringByAppendingPathComponent:dstRelativePath];
 		
 		BOOL dir = [NSDataUtils isDirectory:src];
 		if (dir) {
 			[NSDataUtils createFolderIfRequired:dst absolutePath:YES];
 			[self sync: src to: dst];		
 		} else {
+			[NSDataUtils createFolderIfRequired:[dst stringByDeletingLastPathComponent] absolutePath:YES];
 			[self syncSingle:src to:dst];
 		}
 	}

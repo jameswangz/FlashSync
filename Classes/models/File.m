@@ -20,16 +20,18 @@
 
 @synthesize name;
 @synthesize path;
+@synthesize relativePath;
 @synthesize attributes;
 @synthesize size;
 @synthesize modifiedAt;
 @synthesize image;
 @synthesize selected;
 
-- (id)initWithName:(NSString *)theName path:(NSString *)thePath attributes:(NSDictionary *)theAttributes {
+- (id)initWithName:(NSString *)theName path:(NSString *)thePath relativePath:(NSString *) theRelativePath attributes:(NSDictionary *)theAttributes {
 	if (self = [super init]) {
 		self.name = theName;
 		self.path = thePath;
+		self.relativePath = theRelativePath;
 		self.attributes = theAttributes;
 		self.selected = NO;
 	}

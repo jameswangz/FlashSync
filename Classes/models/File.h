@@ -13,19 +13,21 @@
 @interface File : NSObject {
 	NSString *name;
 	NSString *path;
+	NSString *relativePath;
 	NSDictionary *attributes;
 	BOOL selectected;
 }
 
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *path;
+@property (nonatomic, retain) NSString *relativePath;
 @property (nonatomic, retain) NSDictionary *attributes;
 @property (nonatomic, retain) NSString *size;
 @property (nonatomic, retain) NSString *modifiedAt;
 @property (nonatomic) BOOL selected;
 @property (nonatomic, retain) UIImage *image; 
 
-- (id)initWithName:(NSString *)name path:(NSString *)path attributes:(NSDictionary *)attributes;
+- (id)initWithName:(NSString *)name path:(NSString *)path relativePath:(NSString *) relativePath attributes:(NSDictionary *)attributes;
 
 - (BOOL)isDir;
 

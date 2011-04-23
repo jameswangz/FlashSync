@@ -68,6 +68,8 @@
 		1A7E010812F067B20016E53B /* aiff.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A7E00D312F067B20016E53B /* aiff.png */; };
 		1A7E010912F067B20016E53B /* aac.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A7E00D412F067B20016E53B /* aac.png */; };
 		1A7E010A12F067B20016E53B /* 3gpp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A7E00D512F067B20016E53B /* 3gpp.png */; };
+		1A7FBE68136339D800E7B1C5 /* NSString-Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7FBE67136339D800E7B1C5 /* NSString-Extension.m */; };
+		1A7FBE69136339D800E7B1C5 /* NSString-Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7FBE67136339D800E7B1C5 /* NSString-Extension.m */; };
 		1AB4B011132B8AAD00649FA6 /* xib.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AB4B00D132B8AAD00649FA6 /* xib.png */; };
 		1AB4B012132B8AAD00649FA6 /* text.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AB4B00E132B8AAD00649FA6 /* text.png */; };
 		1AB4B013132B8AAD00649FA6 /* Pages.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AB4B00F132B8AAD00649FA6 /* Pages.png */; };
@@ -160,6 +162,8 @@
 		1A7E00D312F067B20016E53B /* aiff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aiff.png; sourceTree = "<group>"; };
 		1A7E00D412F067B20016E53B /* aac.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aac.png; sourceTree = "<group>"; };
 		1A7E00D512F067B20016E53B /* 3gpp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3gpp.png; sourceTree = "<group>"; };
+		1A7FBE66136339D800E7B1C5 /* NSString-Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString-Extension.h"; sourceTree = "<group>"; };
+		1A7FBE67136339D800E7B1C5 /* NSString-Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString-Extension.m"; sourceTree = "<group>"; };
 		1AB4B00D132B8AAD00649FA6 /* xib.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xib.png; sourceTree = "<group>"; };
 		1AB4B00E132B8AAD00649FA6 /* text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = text.png; sourceTree = "<group>"; };
 		1AB4B00F132B8AAD00649FA6 /* Pages.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pages.png; sourceTree = "<group>"; };
@@ -262,6 +266,8 @@
 				1AE47E2212D35D5E008930DA /* NSString-UDID.m */,
 				1AC981A0132AA09B0079FD10 /* FileSynchronizer.h */,
 				1AC981A1132AA09B0079FD10 /* FileSynchronizer.m */,
+				1A7FBE66136339D800E7B1C5 /* NSString-Extension.h */,
+				1A7FBE67136339D800E7B1C5 /* NSString-Extension.m */,
 			);
 			path = helper;
 			sourceTree = "<group>";
@@ -596,6 +602,7 @@
 				1AE47F4612D36AA9008930DA /* NSDataUtils.m in Sources */,
 				1AE47F4A12D36AC3008930DA /* NSString-UDID.m in Sources */,
 				1AEB024D12D429D6009284E5 /* AuthenticatonManager.m in Sources */,
+				1A7FBE69136339D800E7B1C5 /* NSString-Extension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,6 +623,7 @@
 				1A2BDC6313195C1100B87C15 /* DetailViewController.m in Sources */,
 				1A2BDCAC13195E4A00B87C15 /* RootViewController.m in Sources */,
 				1AC981A2132AA09C0079FD10 /* FileSynchronizer.m in Sources */,
+				1A7FBE68136339D800E7B1C5 /* NSString-Extension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
