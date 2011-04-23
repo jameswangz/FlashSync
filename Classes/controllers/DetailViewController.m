@@ -399,10 +399,20 @@
 	[delegate.rootViewController refreshPanelItems];
 }
 
+- (void) clearImported: (NSString *) dst  {
+  [[NSFileManager defaultManager] removeItemAtPath:dst error:nil];
+	[NSDataUtils createFolderIfRequired:dst absolutePath:YES];
+	if ([[self currentPath] hasPrefix:kImported]) {
+		[self.navigationController performSelectorOnMainThread:@selector(popToRootViewControllerAnimated:) withObject:[NSNumber numberWithBool:YES] waitUntilDone:YES];
+		[self performSelectorOnMainThread:@selector(configureView) withObject:nil waitUntilDone:YES];
+	}
+}
+
 - (void) syncInBackground {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	NSString *src = [NSDataUtils pathForFolder:kFlashDisk];
 	NSString *dst = [NSDataUtils pathForFolder:kImported];
+	[self clearImported: dst];
 	[self sync: src to: dst];
 	
 	if (userCancelled) {
