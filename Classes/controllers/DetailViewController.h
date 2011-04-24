@@ -37,6 +37,7 @@
 	File *activeFile;
 	BOOL userCancelled;
 	FileSynchronizer *fileSynchronizer;
+	BOOL selectedAll;
 }
 
 @property (nonatomic, retain) id detailItem;

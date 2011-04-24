@@ -303,9 +303,45 @@
 	return UITableViewCellAccessoryCheckmark;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	NSDictionary *dict = self.detailItem;
-	return [dict objectForKey:kPath];
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+//	NSDictionary *dict = self.detailItem;
+//	return [dict objectForKey:kPath];
+//}
+
+- (IBAction)selectAll {
+	UIView *headerView = self.contentsTableView.tableHeaderView;
+	UIButton *checkAllButton = [headerView.subviews objectAtIndex:0];
+	
+	if (selectedAll) {
+		[checkAllButton setImage:[UIImage imageNamed:@"Unselected.png"] forState:UIControlStateNormal];	
+	} else {
+		[checkAllButton setImage:[UIImage imageNamed:@"Selected.png"] forState:UIControlStateNormal];
+	}
+	
+	selectedAll = !selectedAll;
+}
+
+- (void)configureTableHeader {
+	CGFloat height = 22.5;
+	UIColor *bgColor = [UIColor grayColor];
+	CGRect titleRect = CGRectMake(0, 0, 1000, height);
+	
+	UIView *headerView = [[UIView alloc] initWithFrame:titleRect];
+	headerView.backgroundColor = bgColor;
+	
+	UIButton *checkAllButton = [UIButton buttonWithType:UIButtonTypeCustom];
+	checkAllButton.frame = CGRectMake(0, 0, 40, height);
+	[checkAllButton setImage:[UIImage imageNamed:@"Unselected.png"] forState:UIControlStateNormal];
+	[checkAllButton addTarget:self action:@selector(selectAll) forControlEvents:UIControlEventTouchUpInside];
+	[headerView addSubview:checkAllButton];
+	UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(50, 0, 800, height)];
+	label.text = [self currentPath];
+	label.backgroundColor = bgColor;
+	[headerView addSubview:label];
+	[label release];
+	
+	self.contentsTableView.tableHeaderView = headerView;
+	[headerView release];
 }
 
 #pragma mark -
@@ -633,7 +669,6 @@
 	[editButton release];
 }
 
-
 - (void)viewDidLoad {
 	[self createFoldersIfRequired];
 	contentsOfCurrentFolder = [[NSMutableArray alloc] init];
@@ -644,6 +679,7 @@
 		[self configureView];
 	}
 	[self addEditButton];
+	[self configureTableHeader];
 	fileSynchronizer = [[FileSynchronizer alloc] init];
 }
 
