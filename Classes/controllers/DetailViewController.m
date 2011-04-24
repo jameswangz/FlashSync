@@ -315,6 +315,11 @@
 	if (selectedAll) {
 		[checkAllButton setImage:[UIImage imageNamed:@"Unselected.png"] forState:UIControlStateNormal];	
 	} else {
+		for (int i = 0; i < [contentsOfCurrentFolder count]; i++) {
+			NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+			[self tableView:self.contentsTableView didSelectRowAtIndexPath:indexPath];
+		}
+		
 		[checkAllButton setImage:[UIImage imageNamed:@"Selected.png"] forState:UIControlStateNormal];
 	}
 	
