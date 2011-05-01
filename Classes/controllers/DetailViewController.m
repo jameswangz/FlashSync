@@ -300,10 +300,6 @@
 
 
 - (UITableViewCellEditingStyle) tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
-	File *file = [contentsOfCurrentFolder objectAtIndex:[indexPath row]];
-	if (file.selected) {
-		return UITableViewCellAccessoryCheckmark;
-	}
 	return UITableViewCellAccessoryCheckmark;
 }
 
@@ -313,33 +309,31 @@
 //}
 
 - (IBAction)selectAll {
+	if (!self.contentsTableView.editing) {
+		return;
+	}
+	
 	UIView *headerView = self.contentsTableView.tableHeaderView;
 	UIButton *checkAllButton = [headerView.subviews objectAtIndex:0];
 	
 	if (selectedAll) {
 		for (int i = 0; i < [contentsOfCurrentFolder count]; i++) {
 			NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+			[self.contentsTableView deselectRowAtIndexPath:indexPath animated:YES];
 			[self tableView:self.contentsTableView didDeselectRowAtIndexPath:indexPath];
-			UITableViewCell *cell = [self.contentsTableView cellForRowAtIndexPath:indexPath];
-			//cell.editingAccessoryType = UITableViewCellAccessoryNone;
-			
-			cell.editing = NO;
 		}
 		[checkAllButton setImage:[UIImage imageNamed:@"Unselected.png"] forState:UIControlStateNormal];	
 	} else {
 		for (int i = 0; i < [contentsOfCurrentFolder count]; i++) {
 			NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+			[self.contentsTableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionTop];
 			[self tableView:self.contentsTableView didSelectRowAtIndexPath:indexPath];
-			UITableViewCell *cell = [self.contentsTableView cellForRowAtIndexPath:indexPath];
-//			cell.editingAccessoryType = UITableViewCellAccessoryCheckmark;
-			cell.editing = YES;
 		}
 		
 		[checkAllButton setImage:[UIImage imageNamed:@"Selected.png"] forState:UIControlStateNormal];
 	}
 	
 	selectedAll = !selectedAll;
-	//[self.contentsTableView reloadData];
 }
 
 - (void)configureTableHeader {
