@@ -109,6 +109,14 @@
 }
 
 
+- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+	return kTableHeaderHeight;
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	return kTableRowHeight;
+}
+
 #pragma mark -
 #pragma mark Table view delegate
 

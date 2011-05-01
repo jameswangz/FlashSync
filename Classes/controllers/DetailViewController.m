@@ -36,6 +36,7 @@
 - (void)deleteSelected;
 - (void)changeStateOfOperationButtons;
 - (NSArray *)selectedFiles;
+- (NSArray *)unselectedFiles;
 - (int)selectedCount;
 - (void)addSkipButton;
 - (void)removeSkipButton;
@@ -53,6 +54,13 @@
 - (void)setStatusWhileWorkStarted;
 - (void)setStatusWhileWorkFinished;
 - (DetailViewController *)topController;
+- (void)presentSelectAllButton;
+- (void)hideSelectAllButton;
+- (void)checkSelectAllButton;
+- (void)uncheckSelectAllButton;
+- (void)checkOrUncheckSelectAllButton;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPathForControl:(NSIndexPath *)indexPath;
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPathForControl:(NSIndexPath *)indexPath;
 @end
 
 @implementation DetailViewController
@@ -262,6 +270,11 @@
 			[NSPredicate predicateWithFormat:@"selected == YES"]];
 }
 
+- (NSArray *)unselectedFiles {
+	return [contentsOfCurrentFolder filteredArrayUsingPredicate:
+			[NSPredicate predicateWithFormat:@"selected == NO"]];
+}
+
 - (int) selectedCount {
 	return [[self selectedFiles] count];
 }
@@ -272,7 +285,7 @@
 	favoriteButton.enabled = shouldEnable;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void) tableView: (UITableView *) tableView didSelectRowAtIndexPathForControl: (NSIndexPath *) indexPath  {
 	File *file = [contentsOfCurrentFolder objectAtIndex:[indexPath row]];
 	if (tableView.editing) {
 		file.selected = YES;
@@ -286,16 +299,27 @@
 	}
 }
 
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	[self tableView: tableView didSelectRowAtIndexPathForControl: indexPath];
+	[self checkOrUncheckSelectAllButton];
+
+}
+
+- (void) tableView: (UITableView *) tableView didDeselectRowAtIndexPathForControl: (NSIndexPath *) indexPath  {
 	File *file = [contentsOfCurrentFolder objectAtIndex:[indexPath row]];
 	if (tableView.editing) {
 		file.selected = NO;
 		[self changeStateOfOperationButtons];
-	}	
+	}
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+	[self tableView: tableView didDeselectRowAtIndexPathForControl: indexPath];
+	[self checkOrUncheckSelectAllButton];
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return 50;
+	return kTableRowHeight;
 }
 
 
@@ -303,9 +327,98 @@
 	return UITableViewCellAccessoryCheckmark;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	NSDictionary *dict = self.detailItem;
-	return [dict objectForKey:kPath];
+
+- (IBAction)selectAll {
+	if (!self.contentsTableView.editing) {
+		return;
+	}
+	
+	if (selectedAll) {
+		for (int i = 0; i < [contentsOfCurrentFolder count]; i++) {
+			NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+			[self.contentsTableView deselectRowAtIndexPath:indexPath animated:YES];
+			[self tableView:self.contentsTableView didDeselectRowAtIndexPathForControl:indexPath];
+		}
+		[self uncheckSelectAllButton];
+	} else {
+		for (int i = 0; i < [contentsOfCurrentFolder count]; i++) {
+			NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+			[self.contentsTableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+			[self tableView:self.contentsTableView didSelectRowAtIndexPathForControl:indexPath];
+		}
+		
+		[self checkSelectAllButton];
+	}
+	
+	selectedAll = !selectedAll;
+}
+
+- (void)checkOrUncheckSelectAllButton {
+	if (!self.contentsTableView.editing) {
+		return;
+	}
+	NSArray *unselectedFiles = [self unselectedFiles];
+	if ([unselectedFiles count] > 0) {
+		[self uncheckSelectAllButton];
+	} else {
+		[self checkSelectAllButton];
+	}
+}
+
+
+- (void) setImageOfSelectAllButton: (NSString *) imageName  {
+	UIView *headerView = self.contentsTableView.tableHeaderView;
+	UIButton *selectAllButton = [headerView.subviews objectAtIndex:0];
+	[selectAllButton setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+}
+
+- (void)checkSelectAllButton {
+	[self setImageOfSelectAllButton: @"Selected.png"];
+		
+}
+
+- (void)uncheckSelectAllButton {
+	[self setImageOfSelectAllButton:@"Unselected.png"];
+}
+
+- (void) setWidthOfSelectAllButton: (CGFloat) width  {
+	UIView *headerView = self.contentsTableView.tableHeaderView;
+	UIView *selectAllButton = [headerView.subviews objectAtIndex:0];
+	UIView *label = [headerView.subviews objectAtIndex:1];
+	selectAllButton.frame = CGRectMake(1, 0, width, kTableHeaderHeight);
+	label.frame = CGRectMake(width + 4, 0, 960, kTableHeaderHeight);
+}
+
+- (void)presentSelectAllButton {
+	[self setWidthOfSelectAllButton: 40];
+}
+
+- (void)hideSelectAllButton {
+	[self setWidthOfSelectAllButton:0];
+}
+
+
+- (void)configureTableHeader {
+	UIColor *bgColor = [UIColor colorWithRed:0.5 green:0.6 blue:0.7 alpha:1.0];
+	CGRect titleRect = CGRectMake(0, 0, 1000, kTableHeaderHeight);
+	
+	UIView *headerView = [[UIView alloc] initWithFrame:titleRect];
+	headerView.backgroundColor = bgColor;
+	
+	UIButton *checkAllButton = [UIButton buttonWithType:UIButtonTypeCustom];
+	[checkAllButton addTarget:self action:@selector(selectAll) forControlEvents:UIControlEventTouchUpInside];
+	[headerView addSubview:checkAllButton];
+	
+	UILabel *label = [[UILabel alloc] init];
+	label.text = [self currentPath];
+	label.backgroundColor = bgColor;
+	[headerView addSubview:label];
+	[label release];
+	
+	self.contentsTableView.tableHeaderView = headerView;
+	[headerView release];
+	
+	[self hideSelectAllButton];
 }
 
 #pragma mark -
@@ -547,10 +660,13 @@
 		topController.navigationItem.rightBarButtonItem.style = UIBarButtonItemStyleDone;
 		[topController clearSelected];
 		[topController addOperationButtons];
+		[self presentSelectAllButton];
+		[self uncheckSelectAllButton];
 	} else {
 		topController.navigationItem.rightBarButtonItem.title = @"编辑";
 		topController.navigationItem.rightBarButtonItem.style = UIBarButtonItemStylePlain;
 		[topController removeOperationButtons];
+		[self hideSelectAllButton];
 	}
 }
 
@@ -633,7 +749,6 @@
 	[editButton release];
 }
 
-
 - (void)viewDidLoad {
 	[self createFoldersIfRequired];
 	contentsOfCurrentFolder = [[NSMutableArray alloc] init];
@@ -644,6 +759,7 @@
 		[self configureView];
 	}
 	[self addEditButton];
+	[self configureTableHeader];
 	fileSynchronizer = [[FileSynchronizer alloc] init];
 }
 
