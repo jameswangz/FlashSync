@@ -20,6 +20,8 @@
 
 #define kKeyDataFileName @"key.dat"
 
+#define kTableHeaderHeight 22.5
+
 @interface Constants : NSObject {
 
 }

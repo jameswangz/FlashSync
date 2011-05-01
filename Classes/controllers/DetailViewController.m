@@ -53,6 +53,10 @@
 - (void)setStatusWhileWorkStarted;
 - (void)setStatusWhileWorkFinished;
 - (DetailViewController *)topController;
+- (void)presentSelectAllButton;
+- (void)hideSelectAllButton;
+- (void)checkSelectAllButton;
+- (void)uncheckSelectAllButton;
 @end
 
 @implementation DetailViewController
@@ -313,43 +317,72 @@
 		return;
 	}
 	
-	UIView *headerView = self.contentsTableView.tableHeaderView;
-	UIButton *checkAllButton = [headerView.subviews objectAtIndex:0];
-	
+
 	if (selectedAll) {
 		for (int i = 0; i < [contentsOfCurrentFolder count]; i++) {
 			NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
 			[self.contentsTableView deselectRowAtIndexPath:indexPath animated:YES];
 			[self tableView:self.contentsTableView didDeselectRowAtIndexPath:indexPath];
 		}
-		[checkAllButton setImage:[UIImage imageNamed:@"Unselected.png"] forState:UIControlStateNormal];	
+		[self uncheckSelectAllButton];
 	} else {
 		for (int i = 0; i < [contentsOfCurrentFolder count]; i++) {
 			NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
-			[self.contentsTableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionTop];
+			[self.contentsTableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
 			[self tableView:self.contentsTableView didSelectRowAtIndexPath:indexPath];
 		}
 		
-		[checkAllButton setImage:[UIImage imageNamed:@"Selected.png"] forState:UIControlStateNormal];
+		[self checkSelectAllButton];
 	}
 	
 	selectedAll = !selectedAll;
 }
 
+
+- (void) setImageOfSelectAllButton: (NSString *) imageName  {
+	UIView *headerView = self.contentsTableView.tableHeaderView;
+	UIButton *selectAllButton = [headerView.subviews objectAtIndex:0];
+	[selectAllButton setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+}
+
+- (void)checkSelectAllButton {
+	[self setImageOfSelectAllButton: @"Selected.png"];
+		
+}
+
+- (void)uncheckSelectAllButton {
+	[self setImageOfSelectAllButton:@"Unselected.png"];
+}
+
+- (void) setWidthOfSelectAllButton: (CGFloat) width  {
+	UIView *headerView = self.contentsTableView.tableHeaderView;
+	UIView *selectAllButton = [headerView.subviews objectAtIndex:0];
+	UIView *label = [headerView.subviews objectAtIndex:1];
+	selectAllButton.frame = CGRectMake(0, 0, width, kTableHeaderHeight);
+	label.frame = CGRectMake(width + 10, 0, 800, 22.5);
+}
+
+- (void)presentSelectAllButton {
+	[self setWidthOfSelectAllButton: 40];
+}
+
+- (void)hideSelectAllButton {
+	[self setWidthOfSelectAllButton:0];
+}
+
+
 - (void)configureTableHeader {
-	CGFloat height = 22.5;
 	UIColor *bgColor = [UIColor grayColor];
-	CGRect titleRect = CGRectMake(0, 0, 1000, height);
+	CGRect titleRect = CGRectMake(0, 0, 1000, kTableHeaderHeight);
 	
 	UIView *headerView = [[UIView alloc] initWithFrame:titleRect];
 	headerView.backgroundColor = bgColor;
 	
 	UIButton *checkAllButton = [UIButton buttonWithType:UIButtonTypeCustom];
-	checkAllButton.frame = CGRectMake(0, 0, 40, height);
-	[checkAllButton setImage:[UIImage imageNamed:@"Unselected.png"] forState:UIControlStateNormal];
 	[checkAllButton addTarget:self action:@selector(selectAll) forControlEvents:UIControlEventTouchUpInside];
 	[headerView addSubview:checkAllButton];
-	UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(50, 0, 800, height)];
+	
+	UILabel *label = [[UILabel alloc] init];
 	label.text = [self currentPath];
 	label.backgroundColor = bgColor;
 	[headerView addSubview:label];
@@ -357,6 +390,8 @@
 	
 	self.contentsTableView.tableHeaderView = headerView;
 	[headerView release];
+	
+	[self hideSelectAllButton];
 }
 
 #pragma mark -
@@ -598,10 +633,13 @@
 		topController.navigationItem.rightBarButtonItem.style = UIBarButtonItemStyleDone;
 		[topController clearSelected];
 		[topController addOperationButtons];
+		[self presentSelectAllButton];
+		[self uncheckSelectAllButton];
 	} else {
 		topController.navigationItem.rightBarButtonItem.title = @"编辑";
 		topController.navigationItem.rightBarButtonItem.style = UIBarButtonItemStylePlain;
 		[topController removeOperationButtons];
+		[self hideSelectAllButton];
 	}
 }
 
