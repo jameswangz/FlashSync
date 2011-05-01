@@ -36,6 +36,7 @@
 - (void)deleteSelected;
 - (void)changeStateOfOperationButtons;
 - (NSArray *)selectedFiles;
+- (NSArray *)unselectedFiles;
 - (int)selectedCount;
 - (void)addSkipButton;
 - (void)removeSkipButton;
@@ -57,6 +58,9 @@
 - (void)hideSelectAllButton;
 - (void)checkSelectAllButton;
 - (void)uncheckSelectAllButton;
+- (void)checkOrUncheckSelectAllButton;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPathForControl:(NSIndexPath *)indexPath;
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPathForControl:(NSIndexPath *)indexPath;
 @end
 
 @implementation DetailViewController
@@ -266,6 +270,11 @@
 			[NSPredicate predicateWithFormat:@"selected == YES"]];
 }
 
+- (NSArray *)unselectedFiles {
+	return [contentsOfCurrentFolder filteredArrayUsingPredicate:
+			[NSPredicate predicateWithFormat:@"selected == NO"]];
+}
+
 - (int) selectedCount {
 	return [[self selectedFiles] count];
 }
@@ -276,7 +285,7 @@
 	favoriteButton.enabled = shouldEnable;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void) tableView: (UITableView *) tableView didSelectRowAtIndexPathForControl: (NSIndexPath *) indexPath  {
 	File *file = [contentsOfCurrentFolder objectAtIndex:[indexPath row]];
 	if (tableView.editing) {
 		file.selected = YES;
@@ -290,12 +299,23 @@
 	}
 }
 
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	[self tableView: tableView didSelectRowAtIndexPathForControl: indexPath];
+	[self checkOrUncheckSelectAllButton];
+
+}
+
+- (void) tableView: (UITableView *) tableView didDeselectRowAtIndexPathForControl: (NSIndexPath *) indexPath  {
 	File *file = [contentsOfCurrentFolder objectAtIndex:[indexPath row]];
 	if (tableView.editing) {
 		file.selected = NO;
 		[self changeStateOfOperationButtons];
-	}	
+	}
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+	[self tableView: tableView didDeselectRowAtIndexPathForControl: indexPath];
+	[self checkOrUncheckSelectAllButton];
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -317,20 +337,32 @@
 		for (int i = 0; i < [contentsOfCurrentFolder count]; i++) {
 			NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
 			[self.contentsTableView deselectRowAtIndexPath:indexPath animated:YES];
-			[self tableView:self.contentsTableView didDeselectRowAtIndexPath:indexPath];
+			[self tableView:self.contentsTableView didDeselectRowAtIndexPathForControl:indexPath];
 		}
 		[self uncheckSelectAllButton];
 	} else {
 		for (int i = 0; i < [contentsOfCurrentFolder count]; i++) {
 			NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
 			[self.contentsTableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
-			[self tableView:self.contentsTableView didSelectRowAtIndexPath:indexPath];
+			[self tableView:self.contentsTableView didSelectRowAtIndexPathForControl:indexPath];
 		}
 		
 		[self checkSelectAllButton];
 	}
 	
 	selectedAll = !selectedAll;
+}
+
+- (void)checkOrUncheckSelectAllButton {
+	if (!self.contentsTableView.editing) {
+		return;
+	}
+	NSArray *unselectedFiles = [self unselectedFiles];
+	if ([unselectedFiles count] > 0) {
+		[self uncheckSelectAllButton];
+	} else {
+		[self checkSelectAllButton];
+	}
 }
 
 
@@ -367,7 +399,7 @@
 
 
 - (void)configureTableHeader {
-	UIColor *bgColor = [UIColor grayColor];
+	UIColor *bgColor = [UIColor colorWithRed:0.5 green:0.6 blue:0.7 alpha:1.0];
 	CGRect titleRect = CGRectMake(0, 0, 1000, kTableHeaderHeight);
 	
 	UIView *headerView = [[UIView alloc] initWithFrame:titleRect];
