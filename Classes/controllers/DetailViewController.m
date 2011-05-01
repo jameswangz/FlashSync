@@ -299,7 +299,7 @@
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return 50;
+	return kTableRowHeight;
 }
 
 
@@ -307,17 +307,12 @@
 	return UITableViewCellAccessoryCheckmark;
 }
 
-//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-//	NSDictionary *dict = self.detailItem;
-//	return [dict objectForKey:kPath];
-//}
 
 - (IBAction)selectAll {
 	if (!self.contentsTableView.editing) {
 		return;
 	}
 	
-
 	if (selectedAll) {
 		for (int i = 0; i < [contentsOfCurrentFolder count]; i++) {
 			NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
@@ -358,8 +353,8 @@
 	UIView *headerView = self.contentsTableView.tableHeaderView;
 	UIView *selectAllButton = [headerView.subviews objectAtIndex:0];
 	UIView *label = [headerView.subviews objectAtIndex:1];
-	selectAllButton.frame = CGRectMake(0, 0, width, kTableHeaderHeight);
-	label.frame = CGRectMake(width + 10, 0, 800, 22.5);
+	selectAllButton.frame = CGRectMake(1, 0, width, kTableHeaderHeight);
+	label.frame = CGRectMake(width + 4, 0, 960, kTableHeaderHeight);
 }
 
 - (void)presentSelectAllButton {

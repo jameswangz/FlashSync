@@ -202,7 +202,7 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>1A979546136D9EBA008B95B3</string>
+				<string>1A97959D136DA5B9008B95B3</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>DetailViewController.m</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
@@ -210,16 +210,16 @@
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>1A979547136D9EBA008B95B3</string>
+						<string>1A97959E136DA5B9008B95B3</string>
 						<key>PBXProjectModuleLabel</key>
 						<string>DetailViewController.m</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>1A97956F136DA343008B95B3</string>
+						<string>1A9795AB136DA705008B95B3</string>
 						<key>history</key>
 						<array>
-							<string>1A979556136DA046008B95B3</string>
+							<string>1A979599136DA59C008B95B3</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -326,7 +326,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 94}, {290, 602}}</string>
+							<string>{{0, 197}, {290, 602}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -361,7 +361,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>DetailViewController.m</string>
+								<string>NSString-UDID.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -369,11 +369,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>DetailViewController.m</string>
+										<string>NSString-UDID.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>1A97956E136DA343008B95B3</string>
+										<string>1A9795AA136DA705008B95B3</string>
 										<key>history</key>
 										<array>
 											<string>1A083900131A643B000170FC</string>
@@ -386,7 +386,6 @@
 											<string>1A7FBE0913632A6E00E7B1C5</string>
 											<string>1A7FBE7713633AA700E7B1C5</string>
 											<string>1A7FBE7813633AA700E7B1C5</string>
-											<string>1A979559136DA053008B95B3</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -587,9 +586,9 @@
 		<string>1AB4AF95132B76C700649FA6</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>/Users/James/iphone/FlashSync/FlashSync.xcodeproj</string>
 		<string>1AD0ABD213197D4000E2532D</string>
-		<string>1A979546136D9EBA008B95B3</string>
+		<string>/Users/James/iphone/FlashSync/FlashSync.xcodeproj</string>
+		<string>1A97959D136DA5B9008B95B3</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 117 1280 661 0 0 1280 778 </string>
@@ -613,21 +612,21 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>DetailViewController.m</string>
+								<string>&lt;No Editor&gt;</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {903, 307}}</string>
+								<string>{{0, 0}, {903, 0}}</string>
 								<key>RubberWindowFrame</key>
 								<string>267 126 903 589 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>307pt</string>
+							<string>0pt</string>
 						</dict>
 						<dict>
 							<key>BecomeActive</key>
@@ -646,14 +645,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 312}, {903, 236}}</string>
+								<string>{{0, 5}, {903, 543}}</string>
 								<key>RubberWindowFrame</key>
 								<string>267 126 903 589 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXBuildResultsModule</string>
 							<key>Proportion</key>
-							<string>236pt</string>
+							<string>543pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -684,7 +683,7 @@
 			<key>WindowToolGUID</key>
 			<string>1AD0ABD213197D4000E2532D</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
