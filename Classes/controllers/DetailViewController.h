@@ -35,8 +35,6 @@
 	UIBarButtonItem *skipButton;
 		
 	File *activeFile;
-	BOOL userCancelled;
-	FileSynchronizer *fileSynchronizer;
 	BOOL selectedAll;
 }
 

@@ -11,7 +11,7 @@
 
 #import "RootViewController.h"
 #import "DetailViewController.h"
-
+#import "FileSynchronizer.h"
 
 @implementation FlashSyncAppDelegate
 
@@ -20,6 +20,8 @@
 @synthesize detailViewToolbarItems;
 @synthesize working;
 @synthesize workName;
+@synthesize userCancelled;
+@synthesize fileSynchronizer;
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -27,7 +29,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
     // Override point for customization after app launch.
-    
+    fileSynchronizer = [[FileSynchronizer alloc] init];
+	
     // Add the split view controller's view to the window and display.
     [window addSubview:splitViewController.view];
     [window makeKeyAndVisible];
@@ -69,11 +72,12 @@
 
 
 - (void)dealloc {
+	[fileSynchronizer release];
 	[workName release];
 	[detailViewToolbarItems release];
     [splitViewController release];
     [window release];
-    [super dealloc];
+	[super dealloc];
 }
 
 

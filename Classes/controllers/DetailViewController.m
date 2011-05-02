@@ -72,6 +72,7 @@
 @synthesize syncButton;
 @synthesize pushedFromNavigationController;
 
+
 #pragma mark -
 #pragma mark Managing the detail item
 
@@ -425,16 +426,16 @@
 #pragma mark IBAction Methods
 
 - (IBAction)cancelSync {
-	[self changeTitleOfSyncStatusButton:@"正在中止同步过程..."];
-	userCancelled = YES;
-	fileSynchronizer.skip = YES;
+	[self changeTitleOfSyncStatusButton:[NSString stringWithFormat:@"正在中止%@过程...", [self appDelegate].workName]];
+	[self appDelegate].userCancelled = YES;
+	[self appDelegate].fileSynchronizer.skip = YES;
 }
 
 - (void)skipCurrentFile {
-	NSString *title = [[NSString alloc] initWithFormat:@"正在跳过 %@...", [fileSynchronizer syncingFileName]];
+	NSString *title = [[NSString alloc] initWithFormat:@"正在跳过 %@...", [[self appDelegate].fileSynchronizer syncingFileName]];
 	[self changeTitleOfSyncStatusButton:title];
 	[title release];
-	fileSynchronizer.skip = YES;	
+	[self appDelegate].fileSynchronizer.skip = YES;	
 }
 
 - (IBAction)syncClicked {
@@ -455,26 +456,29 @@
 }
 
 - (void)changeTitleOfSyncStatusButton:(NSString *)newTitle {
-	self.syncStatusButton.title = newTitle;
+	DetailViewController *rootController = [self appDelegate].detailViewController;
+	rootController.syncStatusButton.title = newTitle;
 }
 
 
 - (void)changeSyncState2Cancel {
+	DetailViewController *rootController = [self appDelegate].detailViewController;
 	NSString *newTitle = [[NSString alloc] initWithFormat:@"中止%@过程", [self appDelegate].workName];
-	self.syncButton.title = newTitle;
+	rootController.syncButton.title = newTitle;
 	[newTitle release];
-	self.syncButton.action = @selector(cancelSync);
+	rootController.syncButton.action = @selector(cancelSync);
 }
 
 - (void)resetSyncState {
-	self.syncButton.title = @"同步所有文件";
-	self.syncButton.action = @selector(syncClicked);
-	userCancelled = NO;
+	DetailViewController *rootController = [self appDelegate].detailViewController;
+	rootController.syncButton.title = @"同步所有文件";
+	rootController.syncButton.action = @selector(syncClicked);
+	[self appDelegate].userCancelled = NO;
 }
 
 
 - (void) syncSingle: (NSString *) src to: (NSString *) dst  {
-	fileSynchronizer.skip = userCancelled;
+	[self appDelegate].fileSynchronizer.skip = [self appDelegate].userCancelled;
 	NSString *name = [src lastPathComponent];
 	
 	NSString *newTitle = [[NSString alloc] initWithFormat:@"正在%@ %@...", [self appDelegate].workName, name];
@@ -483,16 +487,16 @@
 	
 	if ([name hasSuffix:kEncodedFileSuffix]) {
 		NSString *dstFileName = [dst substringToIndex:([dst length] - [kEncodedFileSuffix length])];
-		[fileSynchronizer syncFrom:src to:dstFileName decode:YES];
+		[[self appDelegate].fileSynchronizer syncFrom:src to:dstFileName decode:YES];
 	} else {
-		[fileSynchronizer syncFrom:src to:dst decode:NO];
+		[[self appDelegate].fileSynchronizer syncFrom:src to:dst decode:NO];
 	}	
 }
 
 - (void) sync: (NSString *) parentSrc to: (NSString*) parentDst  {
 	NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:parentSrc error:nil];
 	for (NSString *name in contents) {
-		if (userCancelled) {
+		if ([self appDelegate].userCancelled) {
 			return;
 		}
 		
@@ -530,7 +534,7 @@
 	[self clearImported: dst];
 	[self sync: src to: dst];
 	
-	if (userCancelled) {
+	if ([self appDelegate].userCancelled) {
 		[@"同步过程被用户中止" showInDialogWithTitle:@"提示信息"];
 	} else {
 		[@"同步文件已完成, 请点击左侧 [已导入文件] 查看" showInDialogWithTitle:@"提示信息"];
@@ -585,7 +589,7 @@
 	if (![self inFavoriteFolder]) {
 		favoriteButton = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"收藏"]
 														  style:UIBarButtonItemStyleBordered
-														 target:self 
+														 target:self
 														 action:@selector(favoriteClicked)];
 		favoriteButton.enabled = NO;
 		favoriteButton.tag = kFavoriteButtonTag;
@@ -609,7 +613,7 @@
 }
 
 - (void)setGlogalToolbarItems:(NSArray *)allItems {
-	//don't pass the delete button
+	//don't pass the delete button and favorite button because their states are rely on the view
 	NSMutableArray *items = [[NSMutableArray alloc] init];	
 	for (UIBarButtonItem *item in allItems) {
 		if (item.tag != kDeleteButtonTag && item.tag != kFavoriteButtonTag) {
@@ -760,7 +764,6 @@
 	}
 	[self addEditButton];
 	[self configureTableHeader];
-	fileSynchronizer = [[FileSynchronizer alloc] init];
 }
 
 - (void)viewDidUnload {
@@ -768,7 +771,6 @@
 	self.contentsTableView = nil;
 	self.syncStatusButton = nil;
 	self.syncButton = nil;
-	fileSynchronizer = nil;
 }
 
 
@@ -783,7 +785,6 @@
 	[contentsOfCurrentFolder release];
 	[syncStatusButton release];
 	[syncButton release];
-	[fileSynchronizer release];
 	[super dealloc];
 }
 
@@ -862,7 +863,7 @@
 		}
 	}
 	
-	if (userCancelled) {
+	if ([self appDelegate].userCancelled) {
 		[@"收藏过程被用户中止" showInDialogWithTitle:@"提示信息"];
 	} else {
 		[@"收藏文件已完成, 请点击左侧 [收藏夹] 查看" showInDialogWithTitle:@"提示信息"];

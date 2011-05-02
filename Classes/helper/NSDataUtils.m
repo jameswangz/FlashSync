@@ -50,7 +50,7 @@
 		if (error != nil) {
 			NSLog(@"%@", error);
 		} else {
-			NSLog(@"Created folder %@ successfully.", path);
+			//NSLog(@"Created folder %@ successfully.", path);
 		}
 	}
 }

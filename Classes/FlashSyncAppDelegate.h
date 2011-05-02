@@ -11,6 +11,7 @@
 
 @class RootViewController;
 @class DetailViewController;
+@class FileSynchronizer;
 
 @interface FlashSyncAppDelegate : NSObject <UIApplicationDelegate> {
     
@@ -25,6 +26,9 @@
 	NSArray *detailViewToolbarItems;	
 	BOOL working;
 	NSString *workName;
+	
+	BOOL userCancelled;
+	FileSynchronizer *fileSynchronizer;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
@@ -37,5 +41,8 @@
 @property (nonatomic, retain) NSArray *detailViewToolbarItems;
 @property (nonatomic) BOOL working;
 @property (nonatomic, retain) NSString *workName;
+
+@property (nonatomic) BOOL userCancelled;
+@property (nonatomic, retain) FileSynchronizer *fileSynchronizer;
 
 @end
