@@ -93,6 +93,8 @@
 		1AE47F4A12D36AC3008930DA /* NSString-UDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE47E2212D35D5E008930DA /* NSString-UDID.m */; };
 		1AEB024D12D429D6009284E5 /* AuthenticatonManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */; };
 		1AEB024E12D429D6009284E5 /* AuthenticatonManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */; };
+		1AF0DA03139682E000AC4B36 /* flashsync-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AF0DA02139682E000AC4B36 /* flashsync-icon.png */; };
+		1AF0DA04139682E000AC4B36 /* flashsync-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AF0DA02139682E000AC4B36 /* flashsync-icon.png */; };
 		1D3623260D0F684500981E51 /* FlashSyncAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* FlashSyncAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -195,6 +197,7 @@
 		1AE47E7712D363B2008930DA /* NSString-UDIDTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString-UDIDTest.m"; sourceTree = "<group>"; };
 		1AEB024B12D429D6009284E5 /* AuthenticatonManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticatonManager.h; sourceTree = "<group>"; };
 		1AEB024C12D429D6009284E5 /* AuthenticatonManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticatonManager.m; sourceTree = "<group>"; };
+		1AF0DA02139682E000AC4B36 /* flashsync-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flashsync-icon.png"; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* FlashSyncAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashSyncAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* FlashSyncAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashSyncAppDelegate.m; sourceTree = "<group>"; };
@@ -306,6 +309,7 @@
 		1A4AD35412AB69A700173889 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				1AF0DA02139682E000AC4B36 /* flashsync-icon.png */,
 				1A30D4B01363EFA3005B9BCD /* Selected.png */,
 				1A30D4B11363EFA3005B9BCD /* Unselected.png */,
 				1A30D49C1363EE31005B9BCD /* Selected@2x.png */,
@@ -523,6 +527,7 @@
 				1A30D4A11363EE31005B9BCD /* Unselected@2x.png in Resources */,
 				1A30D4B41363EFA3005B9BCD /* Selected.png in Resources */,
 				1A30D4B51363EFA3005B9BCD /* Unselected.png in Resources */,
+				1AF0DA04139682E000AC4B36 /* flashsync-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,6 +601,7 @@
 				1A30D49F1363EE31005B9BCD /* Unselected@2x.png in Resources */,
 				1A30D4B21363EFA3005B9BCD /* Selected.png in Resources */,
 				1A30D4B31363EFA3005B9BCD /* Unselected.png in Resources */,
+				1AF0DA03139682E000AC4B36 /* flashsync-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

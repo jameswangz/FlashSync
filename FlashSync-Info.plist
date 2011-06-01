@@ -5,11 +5,11 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleDisplayName</key>
-	<string>${PRODUCT_NAME}</string>
+	<string>多媒体办公</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
-	<string>Assistant Migration.png</string>
+	<string>flashsync-icon.png</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.james.ipad.FlashSync</string>
 	<key>CFBundleInfoDictionaryVersion</key>
